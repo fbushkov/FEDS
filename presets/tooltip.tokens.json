@@ -1,0 +1,385 @@
+{
+  "component": "tooltip",
+  "roots": [
+    "tooltip"
+  ],
+  "title": "Tooltip",
+  "kind": "component",
+  "analog": "simple-select",
+  "source": "input/backlog/tooltip.md",
+  "axes": {
+    "Inverse": [
+      "False",
+      "True"
+    ],
+    "Tail": [
+      "None",
+      "Top",
+      "Bottom",
+      "Left",
+      "Right"
+    ]
+  },
+  "parts": [
+    "container",
+    "text",
+    "tail"
+  ],
+  "l2": [
+    {
+      "name": "space/tooltip/x",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Tooltip — горизонтальный отступ контейнера"
+    },
+    {
+      "name": "space/tooltip/y",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Tooltip — вертикальный отступ контейнера"
+    },
+    {
+      "name": "space/tooltip/offset",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Tooltip — зазор от триггера до острия хвостика"
+    },
+    {
+      "name": "radius/tooltip/container",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "description": "Tooltip — скругление контейнера"
+    },
+    {
+      "name": "border/tooltip/container",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Tooltip — толщина обводки контейнера"
+    },
+    {
+      "name": "size/tooltip/max-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": 320,
+        "dark": 320
+      },
+      "description": "Tooltip — максимальная ширина контейнера, дальше текст переносится"
+    },
+    {
+      "name": "size/tooltip/tail/width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/8",
+        "dark": "size/8"
+      },
+      "description": "Tooltip — ширина основания хвостика"
+    },
+    {
+      "name": "size/tooltip/tail/height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/4",
+        "dark": "size/4"
+      },
+      "description": "Tooltip — вылет хвостика от контейнера"
+    },
+    {
+      "name": "typography/tooltip/text/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "description": "Tooltip — текст подсказки: кегль 12"
+    },
+    {
+      "name": "typography/tooltip/text/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "description": "Tooltip — текст подсказки: интерлиньяж 16"
+    },
+    {
+      "name": "typography/tooltip/text/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "description": "Tooltip — текст подсказки: межбуквенный интервал 0.25"
+    },
+    {
+      "name": "typography/tooltip/text/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Tooltip — текст подсказки: начертание 400"
+    }
+  ],
+  "l3": [
+    {
+      "name": "tooltip/bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Tooltip — фон контейнера"
+    },
+    {
+      "name": "tooltip/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Tooltip — фон контейнера на инверсной (тёмной) поверхности"
+    },
+    {
+      "name": "tooltip/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Tooltip — обводка контейнера и хвостика"
+    },
+    {
+      "name": "tooltip/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Tooltip — обводка контейнера и хвостика на инверсной поверхности"
+    },
+    {
+      "name": "tooltip/tail",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Tooltip — заливка хвостика, совпадает с фоном контейнера"
+    },
+    {
+      "name": "tooltip/inverse-tail",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Tooltip — заливка хвостика на инверсной поверхности, совпадает с фоном контейнера"
+    },
+    {
+      "name": "tooltip/text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Tooltip — цвет текста: текст подсказки"
+    },
+    {
+      "name": "tooltip/inverse-text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Tooltip — цвет текста на инверсной поверхности: текст подсказки"
+    },
+    {
+      "name": "tooltip/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/tooltip/x",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Tooltip — горизонтальный отступ контейнера"
+    },
+    {
+      "name": "tooltip/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/tooltip/y",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Tooltip — вертикальный отступ контейнера"
+    },
+    {
+      "name": "tooltip/size/m/offset",
+      "type": "FLOAT",
+      "alias": "space/tooltip/offset",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Tooltip — зазор от триггера до острия хвостика"
+    },
+    {
+      "name": "tooltip/size/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/tooltip/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Tooltip — скругление контейнера"
+    },
+    {
+      "name": "tooltip/size/m/border",
+      "type": "FLOAT",
+      "alias": "border/tooltip/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Tooltip — толщина обводки контейнера"
+    },
+    {
+      "name": "tooltip/size/m/max-width",
+      "type": "FLOAT",
+      "alias": "size/tooltip/max-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Tooltip — максимальная ширина контейнера"
+    },
+    {
+      "name": "tooltip/size/m/tail-width",
+      "type": "FLOAT",
+      "alias": "size/tooltip/tail/width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Tooltip — ширина основания хвостика"
+    },
+    {
+      "name": "tooltip/size/m/tail-height",
+      "type": "FLOAT",
+      "alias": "size/tooltip/tail/height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Tooltip — вылет хвостика"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/tooltip/text",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/tooltip/text/size",
+        "lineHeight": "typography/tooltip/text/line-height",
+        "letterSpacing": "typography/tooltip/text/letter-spacing",
+        "fontWeight": "typography/tooltip/text/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "tooltip/text",
+      "bg": "tooltip/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "tooltip/inverse-text",
+      "bg": "tooltip/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "tooltip/border",
+      "bg": "tooltip/bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "обводка контейнера декоративная: границу оверлея задают тень и контраст содержимого; WCAG 1.4.11 не требует 3:1 для границ контейнеров, текст внутри проходит 4.5:1. Шкала color/static/border/base до 3:1 доходит только на `hard` (0.9) — это визуально тяжёлая рамка"
+    },
+    {
+      "fg": "tooltip/inverse-border",
+      "bg": "tooltip/inverse-bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "обводка контейнера декоративная: границу оверлея задают тень и контраст содержимого; WCAG 1.4.11 не требует 3:1 для границ контейнеров, текст внутри проходит 4.5:1. Шкала color/static/border/base до 3:1 доходит только на `hard` (0.9) — это визуально тяжёлая рамка",
+      "over": "color/bg/page/inverse-main"
+    }
+  ],
+  "exceptions": [
+    {
+      "token": "size/tooltip/max-width",
+      "reason": "в L1 нет size/320; ближайший size/256 меняет максимальную ширину на 20% и расходится с шириной M у Popover/Hint (320)"
+    }
+  ],
+  "decisions": [
+    "Имена из backlog-документа (`space/overlay/*`, `size/overlay/*`, `radius/{c}` без размера, `typography/body/*`, `typography/heading/*`, `shadow/*`, `color/layer/*`) в FEroom отсутствуют — взяты только значения. Имена построены по грамматике FEroom: корень L3 компонента и собственные L2 `{size|space|gap|radius|border}/{component}/…`, `typography/{component}/…`.",
+    "Инверсия — токенами, а не режимом dark на фрейме (расхождение с документом: «инверсия через dark-режим, inverse-токенов нет»). В FEroom инверсия — сегменты `inverse-*` (CLAUDE.md). Форма — часть `inverse-*` (`inverse-bg`, `inverse-text`, `inverse-border`) как у checkbox/switch и Dropdown у Select (`field/select/dropdown/container/inverse-base`); неинтерактивным оверлеям состояния не нужны, поэтому сегмента state нет. Алиасы — на `inverse-*` L2.",
+    "Поверхность — `color/bg/raised/main` / `inverse-main`: в описании L2 автора `color/bg/raised/*` — «Панель, карточка, popover, tooltip». Dropdown у Select использует `color/static/bg/solid/base/pure` / `inverse-pure`: в light/dark `pure` = `raised/main` (neutral/0 · neutral/900), `inverse-pure` темнее на шаг (neutral/925 против 900).",
+    "Хвостик — отдельная часть с отдельным цветом `tail` (scope SHAPE_FILL, т.к. это вектор) и размерами `tail-width` (основание 8) и `tail-height` (вылет 4). Обводка хвостика — тот же `{c}/border`. Правило «хвостик не ближе к углу, чем длина основания» — поведение, отдельного токена нет (равно `tail-width`).",
+    "Размеры, не зависящие от размера компонента, заведены в L2 без суффикса размера (прецедент: `radius/divider/circle`, `radius/badge/box/circle` на все размеры); в L3 каждый размер получает полный набор `{c}/size/{s}/{prop}`.",
+    "Зазор до триггера (4) заведён как `offset` (GAP): в сборке он нужен только в спецификации и примерах позиционирования.",
+    "Тени не создаём (эффект-стили отложены автором). z-index (`z-index/tooltip` 1700, `z-index/popover` 1500 — есть в L1) и задержки анимации — не переменные сборки Figma, в пресет не входят.",
+    "Размеры L1: 320 и 400 в `1. Primitives` нет (`size/*`: …240, 256 — дальше нет). Ближайший 256 меняет ширину на 20% и ломает шкалу 240 · 320 · 400 — поэтому сырое значение в L2 с записью в exceptions. L1 не трогаем.",
+    "codeSyntax не заполняется (решение автора 2026-09-21). L3 публикуются (как все L3); публикацию новых L2 решает плагин по правилу соседей: размеры и типографика компонентов в основном скрыты.",
+    "Оси размера нет (один тултип на все триггеры). Чтобы сохранить грамматику `{c}/size/{s}/{prop}`, единственный размер назван `m`; ось Size в компоненте не выводится. Типографика — без размера: `typography/tooltip/text/*`.",
+    "Регулярный тултип — светлая поверхность `color/bg/raised/main` (в описании L2 автора tooltip указан у `raised/main`, но не у `raised/inverse-main`; документ тоже описывает тултип в цвете режима). Inverse=True — `raised/inverse-main` для тёмных поверхностей. Если нужен классический тёмный тултип на светлом интерфейсе — поменять алиасы `bg/tail` ↔ `inverse-bg/inverse-tail` и `text` ↔ `inverse-text` (см. открытые вопросы).",
+    "Обводка 1 px добавлена, хотя в документе у Tooltip её нет: светлая поверхность `raised/main` совпадает с `bg/page/main` (контраст 1.00 в обоих режимах), а в dark тень почти не видна. Сборщик может скрыть обводку, токены остаются.",
+    "Текст — 12/16, 400, LS 0.25 (значения `typography/body/small`): в FEroom 12-кегль всегда идёт с `font/letter-spacing/25` (ср. `typography/content/label/caption`). Стиль `typography/tooltip/text` без группы `action` — тултип неинтерактивен.",
+    "Цвет текста — `color/static/text/base/hard` / `inverse-hard` (15.1 / 16.5 : 1).",
+    "Эффект-стиль понадобится: `effect/tooltip/{regular|inverse}` — тень 0 · 2 · 8 · 0 (по документу), числа в L2 `effects/tooltip/{x|y|blur|spread}` по образцу `effects/select/*`. Не создаётся до решения автора.",
+    "Задержки открытия/закрытия (300 / 100 мс) и z-index 1700 — поведение для кода, не переменные сборки."
+  ]
+}

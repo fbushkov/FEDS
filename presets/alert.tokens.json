@@ -1,0 +1,1351 @@
+{
+  "component": "alert",
+  "roots": [
+    "alert"
+  ],
+  "title": "Alert",
+  "kind": "component",
+  "analog": "status",
+  "source": "input/backlog/alert.md",
+  "axes": {
+    "Size": [
+      "M",
+      "S"
+    ],
+    "Role": [
+      "Info",
+      "Success",
+      "Warning",
+      "Error"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "icon",
+    "title",
+    "description",
+    "actions",
+    "close"
+  ],
+  "l2": [
+    {
+      "name": "border/alert/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Alert M — толщина обводки контейнера"
+    },
+    {
+      "name": "border/alert/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Alert S — толщина обводки контейнера"
+    },
+    {
+      "name": "gap/alert/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Alert M — промежуток между текстом и строкой действий (Button/Link)"
+    },
+    {
+      "name": "gap/alert/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Alert S — промежуток между текстом и строкой действий (Button/Link)"
+    },
+    {
+      "name": "gap/alert/close/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Alert M — промежуток между контентом и кнопкой закрытия"
+    },
+    {
+      "name": "gap/alert/close/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Alert S — промежуток между контентом и кнопкой закрытия"
+    },
+    {
+      "name": "gap/alert/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Alert M — промежуток между иконкой роли и текстовым блоком"
+    },
+    {
+      "name": "gap/alert/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Alert S — промежуток между иконкой роли и текстовым блоком"
+    },
+    {
+      "name": "gap/alert/title/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Alert M — промежуток между заголовком и текстом"
+    },
+    {
+      "name": "gap/alert/title/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Alert S — промежуток между заголовком и текстом"
+    },
+    {
+      "name": "radius/alert/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Alert M — скругление контейнера"
+    },
+    {
+      "name": "radius/alert/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "description": "Alert S — скругление контейнера"
+    },
+    {
+      "name": "size/alert/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Alert M — размер иконки роли"
+    },
+    {
+      "name": "size/alert/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Alert S — размер иконки роли"
+    },
+    {
+      "name": "space/alert/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Alert M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/alert/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Alert S — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/alert/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Alert M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/alert/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Alert S — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "typography/alert/m/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Alert M — текст сообщения: letter-spacing"
+    },
+    {
+      "name": "typography/alert/m/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Alert M — текст сообщения: line-height"
+    },
+    {
+      "name": "typography/alert/m/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Alert M — текст сообщения: size"
+    },
+    {
+      "name": "typography/alert/m/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Alert M — текст сообщения: weight"
+    },
+    {
+      "name": "typography/alert/m/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Alert M — заголовок: letter-spacing"
+    },
+    {
+      "name": "typography/alert/m/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Alert M — заголовок: line-height"
+    },
+    {
+      "name": "typography/alert/m/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Alert M — заголовок: size"
+    },
+    {
+      "name": "typography/alert/m/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Alert M — заголовок: weight"
+    },
+    {
+      "name": "typography/alert/s/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "description": "Alert S — текст сообщения: letter-spacing"
+    },
+    {
+      "name": "typography/alert/s/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "description": "Alert S — текст сообщения: line-height"
+    },
+    {
+      "name": "typography/alert/s/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "description": "Alert S — текст сообщения: size"
+    },
+    {
+      "name": "typography/alert/s/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Alert S — текст сообщения: weight"
+    },
+    {
+      "name": "typography/alert/s/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "description": "Alert S — заголовок: letter-spacing"
+    },
+    {
+      "name": "typography/alert/s/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "description": "Alert S — заголовок: line-height"
+    },
+    {
+      "name": "typography/alert/s/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "description": "Alert S — заголовок: size"
+    },
+    {
+      "name": "typography/alert/s/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Alert S — заголовок: weight"
+    },
+    {
+      "name": "gap/alert/action/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Alert M — зазор между двумя действиями"
+    },
+    {
+      "name": "gap/alert/action/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Alert S — зазор между двумя действиями"
+    }
+  ],
+  "l3": [
+    {
+      "name": "alert/bg/error",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Error, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/bg/info",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Info, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/bg/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/red/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Error, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/bg/inverse-info",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/blue/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Info, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/bg/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/green/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Success, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/bg/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/yellow/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Warning, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/bg/success",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Success, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/bg/warning",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Alert — фон контейнера, роль Warning, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/border/error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Error, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/border/info",
+      "type": "COLOR",
+      "alias": "color/static/border/info/firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Info, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/border/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/inverse-firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Error, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/border/inverse-info",
+      "type": "COLOR",
+      "alias": "color/static/border/info/inverse-firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Info, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/border/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/border/success/inverse-hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Success, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/border/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/border/warning/inverse-hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Warning, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/border/success",
+      "type": "COLOR",
+      "alias": "color/static/border/success/hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Success, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/border/warning",
+      "type": "COLOR",
+      "alias": "color/static/border/warning/hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert — обводка контейнера, роль Warning, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/icon/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Error, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/icon/info",
+      "type": "COLOR",
+      "alias": "color/static/indicator/info/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Info, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/icon/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Error, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/icon/inverse-info",
+      "type": "COLOR",
+      "alias": "color/static/indicator/info/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Info, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/icon/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Success, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/icon/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Warning, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/icon/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Success, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/icon/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Alert — иконка роли Warning, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/size/m/actions-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/actions/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — промежуток между текстом и строкой действий (Button/Link)"
+    },
+    {
+      "name": "alert/size/m/border",
+      "type": "FLOAT",
+      "alias": "border/alert/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Alert M — толщина обводки контейнера"
+    },
+    {
+      "name": "alert/size/m/close-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/close/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — промежуток между контентом и кнопкой закрытия"
+    },
+    {
+      "name": "alert/size/m/icon",
+      "type": "FLOAT",
+      "alias": "size/alert/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Alert M — размер иконки роли"
+    },
+    {
+      "name": "alert/size/m/icon-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — промежуток между иконкой роли и текстовым блоком"
+    },
+    {
+      "name": "alert/size/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/alert/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Alert M — скругление контейнера"
+    },
+    {
+      "name": "alert/size/m/title-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/title/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — промежуток между заголовком и текстом"
+    },
+    {
+      "name": "alert/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/alert/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "alert/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/alert/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "alert/size/s/actions-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/actions/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — промежуток между текстом и строкой действий (Button/Link)"
+    },
+    {
+      "name": "alert/size/s/border",
+      "type": "FLOAT",
+      "alias": "border/alert/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Alert S — толщина обводки контейнера"
+    },
+    {
+      "name": "alert/size/s/close-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/close/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — промежуток между контентом и кнопкой закрытия"
+    },
+    {
+      "name": "alert/size/s/icon",
+      "type": "FLOAT",
+      "alias": "size/alert/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Alert S — размер иконки роли"
+    },
+    {
+      "name": "alert/size/s/icon-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — промежуток между иконкой роли и текстовым блоком"
+    },
+    {
+      "name": "alert/size/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/alert/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Alert S — скругление контейнера"
+    },
+    {
+      "name": "alert/size/s/title-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/title/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — промежуток между заголовком и текстом"
+    },
+    {
+      "name": "alert/size/s/x",
+      "type": "FLOAT",
+      "alias": "space/alert/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "alert/size/s/y",
+      "type": "FLOAT",
+      "alias": "space/alert/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "alert/text/description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert — цвет основного текста сообщения (одинаков для всех ролей), на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/text/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert — цвет основного текста сообщения (одинаков для всех ролей), на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/text/inverse-title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert — цвет заголовка (одинаков для всех ролей), на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "alert/text/title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert — цвет заголовка (одинаков для всех ролей), на светлой (обычной) поверхности"
+    },
+    {
+      "name": "alert/size/m/action-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/action/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert M — зазор между действиями (Button, Link)"
+    },
+    {
+      "name": "alert/size/s/action-gap",
+      "type": "FLOAT",
+      "alias": "gap/alert/action/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Alert S — зазор между действиями (Button, Link)"
+    },
+    {
+      "name": "alert/default/bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Alert Default: поверхность карточки"
+    },
+    {
+      "name": "alert/default/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Alert Default на тёмной поверхности"
+    },
+    {
+      "name": "alert/default/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/low",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert Default: рамка карточки"
+    },
+    {
+      "name": "alert/default/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-low",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Alert Default на тёмной поверхности: рамка"
+    },
+    {
+      "name": "alert/bold/bg/info",
+      "type": "COLOR",
+      "alias": "color/status/blue/bold/default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Alert Bold info: заливка"
+    },
+    {
+      "name": "alert/bold/text/info",
+      "type": "COLOR",
+      "alias": "color/status/blue/bold/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold info: заголовок"
+    },
+    {
+      "name": "alert/bold/description/info",
+      "type": "COLOR",
+      "alias": "color/status/blue/bold/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold info: текст"
+    },
+    {
+      "name": "alert/bold/icon/info",
+      "type": "COLOR",
+      "alias": "color/status/blue/bold/on",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Alert Bold info: иконка в цвет заголовка"
+    },
+    {
+      "name": "alert/bold/bg/success",
+      "type": "COLOR",
+      "alias": "color/status/green/bold/default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Alert Bold success: заливка"
+    },
+    {
+      "name": "alert/bold/text/success",
+      "type": "COLOR",
+      "alias": "color/status/green/bold/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold success: заголовок"
+    },
+    {
+      "name": "alert/bold/description/success",
+      "type": "COLOR",
+      "alias": "color/status/green/bold/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold success: текст"
+    },
+    {
+      "name": "alert/bold/icon/success",
+      "type": "COLOR",
+      "alias": "color/status/green/bold/on",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Alert Bold success: иконка в цвет заголовка"
+    },
+    {
+      "name": "alert/bold/bg/warning",
+      "type": "COLOR",
+      "alias": "color/status/yellow/bold/default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Alert Bold warning: заливка"
+    },
+    {
+      "name": "alert/bold/text/warning",
+      "type": "COLOR",
+      "alias": "color/status/yellow/bold/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold warning: заголовок"
+    },
+    {
+      "name": "alert/bold/description/warning",
+      "type": "COLOR",
+      "alias": "color/status/yellow/bold/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold warning: текст"
+    },
+    {
+      "name": "alert/bold/icon/warning",
+      "type": "COLOR",
+      "alias": "color/status/yellow/bold/on",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Alert Bold warning: иконка в цвет заголовка"
+    },
+    {
+      "name": "alert/bold/bg/error",
+      "type": "COLOR",
+      "alias": "color/status/red/bold/default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Alert Bold error: заливка"
+    },
+    {
+      "name": "alert/bold/text/error",
+      "type": "COLOR",
+      "alias": "color/status/red/bold/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold error: заголовок"
+    },
+    {
+      "name": "alert/bold/description/error",
+      "type": "COLOR",
+      "alias": "color/status/red/bold/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Alert Bold error: текст"
+    },
+    {
+      "name": "alert/bold/icon/error",
+      "type": "COLOR",
+      "alias": "color/status/red/bold/on",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Alert Bold error: иконка в цвет заголовка"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/alert/m/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/alert/m/title/size",
+        "lineHeight": "typography/alert/m/title/line-height",
+        "letterSpacing": "typography/alert/m/title/letter-spacing",
+        "fontWeight": "typography/alert/m/title/weight"
+      },
+      "description": "Alert M — заголовок"
+    },
+    {
+      "name": "typography/alert/m/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/alert/m/description/size",
+        "lineHeight": "typography/alert/m/description/line-height",
+        "letterSpacing": "typography/alert/m/description/letter-spacing",
+        "fontWeight": "typography/alert/m/description/weight"
+      },
+      "description": "Alert M — текст сообщения"
+    },
+    {
+      "name": "typography/alert/s/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/alert/s/title/size",
+        "lineHeight": "typography/alert/s/title/line-height",
+        "letterSpacing": "typography/alert/s/title/letter-spacing",
+        "fontWeight": "typography/alert/s/title/weight"
+      },
+      "description": "Alert S — заголовок"
+    },
+    {
+      "name": "typography/alert/s/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/alert/s/description/size",
+        "lineHeight": "typography/alert/s/description/line-height",
+        "letterSpacing": "typography/alert/s/description/letter-spacing",
+        "fontWeight": "typography/alert/s/description/weight"
+      },
+      "description": "Alert S — текст сообщения"
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "alert/text/title",
+      "bg": "alert/bg/info",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/text/description",
+      "bg": "alert/bg/info",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/icon/info",
+      "bg": "alert/bg/info",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/border/info",
+      "bg": "alert/bg/info",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/text/inverse-title",
+      "bg": "alert/bg/inverse-info",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/inverse-description",
+      "bg": "alert/bg/inverse-info",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/icon/inverse-info",
+      "bg": "alert/bg/inverse-info",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/border/inverse-info",
+      "bg": "alert/bg/inverse-info",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/title",
+      "bg": "alert/bg/success",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/text/description",
+      "bg": "alert/bg/success",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/icon/success",
+      "bg": "alert/bg/success",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/border/success",
+      "bg": "alert/bg/success",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/text/inverse-title",
+      "bg": "alert/bg/inverse-success",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/inverse-description",
+      "bg": "alert/bg/inverse-success",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/icon/inverse-success",
+      "bg": "alert/bg/inverse-success",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/border/inverse-success",
+      "bg": "alert/bg/inverse-success",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/title",
+      "bg": "alert/bg/warning",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/text/description",
+      "bg": "alert/bg/warning",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/icon/warning",
+      "bg": "alert/bg/warning",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/border/warning",
+      "bg": "alert/bg/warning",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/text/inverse-title",
+      "bg": "alert/bg/inverse-warning",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/inverse-description",
+      "bg": "alert/bg/inverse-warning",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/icon/inverse-warning",
+      "bg": "alert/bg/inverse-warning",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/border/inverse-warning",
+      "bg": "alert/bg/inverse-warning",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/title",
+      "bg": "alert/bg/error",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/text/description",
+      "bg": "alert/bg/error",
+      "kind": "text"
+    },
+    {
+      "fg": "alert/icon/error",
+      "bg": "alert/bg/error",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/border/error",
+      "bg": "alert/bg/error",
+      "kind": "graphic"
+    },
+    {
+      "fg": "alert/text/inverse-title",
+      "bg": "alert/bg/inverse-error",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/text/inverse-description",
+      "bg": "alert/bg/inverse-error",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/icon/inverse-error",
+      "bg": "alert/bg/inverse-error",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "alert/border/inverse-error",
+      "bg": "alert/bg/inverse-error",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Грамматика: короткая форма неинтерактивного компонента, как у Status — `{c}/{part}/{variant}`; части bg, border, icon, text. Размеры — `{c}/size/{s}/{prop}` → свои L2 `space|gap|size|radius|border/{c}/…`.",
+    "Роли: info · success · warning · error. Документ называет четвёртую роль `danger`; в L3 взято имя `error`, как у Status и Field (`status/*/error`, `field/description/*/error`). В L2 роль идёт в семантику `color/static/*/danger/*`. Роль brand не заводится (документ). Neutral в документе нет — не заводится.",
+    "Соответствие оттенков как у Status: info → blue, success → green, warning → yellow, error → red.",
+    "Фон (regular) — `color/status/{hue}/soft/default`, тот же, что у Status Soft и Badge Soft. Документ предлагал `color/layer/card|page/{role}/subtle` — такого корня в FEroom нет.",
+    "Инверсия — по образцу Field (`field/description/*/inverse-{role}`) и Status (`status/text/inverse`): отдельные L3 с сегментом `inverse-{role}` / `inverse-title`, алиасы на `inverse-*` L2 (`color/static/{text,indicator,border}/…/inverse-firm|inverse-hard`). Документ пишет «Inverse наследует режим фрейма, отдельного варианта нет, inverse-токенов нет» — в FEroom тема приходит через light/dark, а тёмная поверхность внутри светлой темы — через `inverse-*`, поэтому нужна ось Inverse = False/True.",
+    "Фон inverse: у цветных `color/status/{hue}` нет `inverse-soft`, а у `color/bg/*` нет blue/yellow. Взят `color/static/bg/transparent/accent/{hue}/light` (прозрачный тон 10–12 %, одинаков в light/dark) — полупрозрачная заливка корректно ложится и на тёмную, и на светлую инверсную поверхность. Новый цвет в L2 не создавался.",
+    "Иконка роли — `color/static/indicator/{role}/firm`, обводка — `color/static/border/{role}/firm`; там, где firm не даёт 3:1 к фону, взят следующий шаг той же шкалы `hard` (см. список замен ниже). Документ требует обводку ≥ 3:1 (`color/static/border/{role}/default`) — в FEroom шага default нет.",
+    "Заголовок и текст нейтральные (`color/static/text/base/*`), одинаковые для всех ролей — роль несут иконка, фон и обводка (WCAG 1.4.1).",
+    "Вложенные действия — экземпляры Button и Link, кнопка закрытия — экземпляр Button Icon Only (на inverse — тип Inverse-secondary). Их токены не дублируются; ссылки в сводке ошибок — экземпляры Link.",
+    "Типографика: L2 `typography/{c}/{size}/{title|description}/{size|line-height|letter-spacing|weight}` → `font/*`, стили `typography/{c}/{size}/{slot}` без группы action (компонент неинтерактивный, `interactive: false`). Межбуквенный интервал по соглашению FEroom для этих кеглей: 14/20 → 0.1 (`font/letter-spacing/10`), 12/16 → 0.25 (`font/letter-spacing/25`) — как у `typography/content/label/*`, `field/*`. Документ интервал не задаёт. Начертание заголовка 600 → Roboto SemiBold.",
+    "Слоты текста названы `title` и `description` (как Name/Description у Checkbox, Chip, Avatar); документ называет их «Заголовок» и «Текст».",
+    "Эффекты и тени не создаются: Alert/Banner лежат в потоке и тени не требуют.",
+    "codeSyntax не заполняется (решение автора). L3 публикуются (как все L3). Правило скрытия L2 от публикации ещё не выведено (figma-conventions.md) — флаг не задаётся в пресете, решает плагин по правилу аналитика.",
+    "Все L2 размеров ссылаются на существующие примитивы L1, исключений (сырых значений, L3 → L1) нет. `gap/*` → `space/*` L1, как у `gap/status/*`.",
+    "Alert: два размера S и M по документу (размер S в документе — открытый вопрос, числа 12/8 взяты из «Решений для согласования»).",
+    "Alert: скругление S 6 / M 8 → `radius/alert/{s,m}` → `radius/6`, `radius/8`.",
+    "Alert: основной текст — `color/static/text/base/hard` (документ: `text/neutral/primary`). У Banner пояснение — `base/medium` (документ: `neutral/secondary`); расхождение сохранено по документам.",
+    "Alert: промежуток текст ↔ действия S 4 / M 8, контент ↔ закрытие 8 / 8, заголовок ↔ текст 4 / 4 — из таблицы размеров документа.",
+    "Alert: толщина обводки 1 (документ толщину не задаёт) → `border/1`.",
+    "Замена по контрасту: `alert/icon/success`: `color/static/indicator/success/firm` не даёт 3:1 к фону → `color/static/indicator/success/hard`",
+    "Замена по контрасту: `alert/border/success`: `color/static/border/success/firm` не даёт 3:1 к фону → `color/static/border/success/hard`",
+    "Замена по контрасту: `alert/icon/inverse-success`: `color/static/indicator/success/inverse-firm` не даёт 3:1 к фону → `color/static/indicator/success/inverse-hard`",
+    "Замена по контрасту: `alert/border/inverse-success`: `color/static/border/success/inverse-firm` не даёт 3:1 к фону → `color/static/border/success/inverse-hard`",
+    "Замена по контрасту: `alert/icon/warning`: `color/static/indicator/warning/firm` не даёт 3:1 к фону → `color/static/indicator/warning/hard`",
+    "Замена по контрасту: `alert/border/warning`: `color/static/border/warning/firm` не даёт 3:1 к фону → `color/static/border/warning/hard`",
+    "Замена по контрасту: `alert/icon/inverse-warning`: `color/static/indicator/warning/inverse-firm` не даёт 3:1 к фону → `color/static/indicator/warning/inverse-hard`",
+    "Замена по контрасту: `alert/border/inverse-warning`: `color/static/border/warning/inverse-firm` не даёт 3:1 к фону → `color/static/border/warning/inverse-hard`",
+    "Добавлено при проектировании сборки (2026-09-21): `alert/size/{s}/action-gap` → `gap/alert/action/{s}` = 8 — зазор между двумя действиями; в документе не задан, без токена значение было бы захардкожено."
+  ]
+}

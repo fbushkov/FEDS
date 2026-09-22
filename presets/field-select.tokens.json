@@ -1,0 +1,4463 @@
+{
+  "component": "field-select",
+  "title": "SimpleSelect",
+  "kind": "component",
+  "origin": "existing",
+  "source": "input/tokens/variables.json",
+  "doc": "input/builds/simple-select/select.md",
+  "roots": [
+    "field"
+  ],
+  "prefixes": [
+    "field/select/",
+    "field/size/select/"
+  ],
+  "decisions": [
+    "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+  ],
+  "l2": [
+    {
+      "name": "border/field/select/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/select/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/select/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/select/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/select/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/select/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/button-dropdown/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/button-dropdown/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/button-dropdown/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/dropdown/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/dropdown/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/dropdown/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/option/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/option/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/option/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/text/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/trailing/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/trailing/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/select/trailing/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/option/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/option/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/select/option/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/action/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/action/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/action/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/leading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/leading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/leading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/leading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/leading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/leading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/loading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/loading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/loading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/loading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/loading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/loading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/indicator/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/indicator/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/indicator/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/indicator/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/indicator/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/indicator/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/leading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/leading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/leading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/leading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/leading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/leading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/loader/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/loader/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/option/loader/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/validation-markers/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/validation-markers/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/validation-markers/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/validation-markers/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/validation-markers/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/select/validation-markers/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/action/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/action/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/action/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/button/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/button/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/button/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/button/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/button/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/button/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/dropdown/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/dropdown/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/dropdown/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/dropdown/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/dropdown/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/dropdown/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/leading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/leading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/leading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/loading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/loading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/loading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/container/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/container/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/container/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/container/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/container/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/container/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/indicator/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/indicator/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/indicator/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/leading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/leading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/leading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/option/text/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/text/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/validation-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/validation-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/select/validation-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/hint/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/500",
+        "dark": "font/weight/500"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/500",
+        "dark": "font/weight/500"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option-title/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/500",
+        "dark": "font/weight/500"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/option/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/select/text/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    }
+  ],
+  "l3": [
+    {
+      "name": "field/select/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/inverse-pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/bg/read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/border/warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/container/base",
+      "type": "COLOR",
+      "alias": "color/static/bg/solid/base/pure",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/container/hint",
+      "type": "COLOR",
+      "alias": "color/static/text/base/light",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/container/inverse-base",
+      "type": "COLOR",
+      "alias": "color/static/bg/solid/base/inverse-pure",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/container/inverse-hint",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-light",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/container/inverse-loader-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/container/loader-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/active",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/active-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/active-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-active",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/calm/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-active-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-active-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/calm/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/inverse-pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/divider/inverse",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/indicator/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/brand/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/brand/medium",
+        "approved": "2026-09-21, галочка выбранного пункта: контраст ≥ 3:1 на подложке выбранного (WCAG 1.4.11)"
+      }
+    },
+    {
+      "name": "field/select/dropdown/option/indicator/icon-disabled",
+      "type": "COLOR",
+      "alias": "color/static/indicator/brand/calm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/indicator/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/brand/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/brand/inverse-firm",
+        "approved": "2026-09-21, галочка выбранного пункта: контраст ≥ 3:1 на подложке выбранного (WCAG 1.4.11)"
+      }
+    },
+    {
+      "name": "field/select/dropdown/option/indicator/inverse-icon-disabled",
+      "type": "COLOR",
+      "alias": "color/static/indicator/brand/calm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/leading-icon/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/leading-icon/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/leading-icon/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/leading-icon/read-only",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/text/inverse-value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/dropdown/option/text/value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/inverse-focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/inverse-brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/disabled",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/inactive",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/inactive-disabled",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/mild",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/inverse-inactive",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/base/inverse-soft",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/leading-icon/inverse-inactive-disabled",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-mild",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/inverse-value",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/read-only",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/leading-icon/value",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/loading/inverse-loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/loading/loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/inactive",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/inactive-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/mild",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/inverse-inactive",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/base/inverse-soft",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/text/inverse-inactive-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-mild",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/inverse-value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/text/value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/select/validation-icons/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/danger/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/validation-icons/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/danger/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/validation-icons/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/success/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/validation-icons/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/warning/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/validation-icons/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/success/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/select/validation-icons/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/warning/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/size/select/l/button-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/button-dropdown/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/action-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/action/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/action-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/action/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/container",
+      "type": "FLOAT",
+      "alias": "size/field/select/button/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/container-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/button/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/button/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/button/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/button/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/button/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/focus-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/focus/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/focus/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/leading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/loading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/loading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/loading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/trailing-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/trailing/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/validation-markers/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/validation-markers/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/button/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/validation-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/dropdown-box/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/dropdown/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/dropdown-box/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/dropdown/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/dropdown-box/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/dropdown/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/dropdown-box/loader",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/loader/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/container",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/container/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/option/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/option/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/container/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/container/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/indicator-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/indicator/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/indicator-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/indicator/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/indicator-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/indicator/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/leading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/l/option/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/button-dropdown/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/action-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/action/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/action-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/action/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/container",
+      "type": "FLOAT",
+      "alias": "size/field/select/button/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/container-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/button/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/button/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/button/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/button/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/button/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/focus-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/leading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/loading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/loading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/loading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/trailing-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/trailing/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/validation-markers/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/validation-markers/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/button/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/validation-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/dropdown-box/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/dropdown/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/dropdown-box/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/dropdown/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/dropdown-box/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/dropdown/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/dropdown-box/loader",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/loader/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/container",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/container/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/option/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/option/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/container/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/container/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/indicator-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/indicator/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/indicator-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/indicator/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/indicator-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/indicator/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/leading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/m/option/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/button-dropdown/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/action-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/action/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/action-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/action/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/container",
+      "type": "FLOAT",
+      "alias": "size/field/select/button/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/container-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/button/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/button/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/button/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/button/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/button/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/focus-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/focus/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/focus/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/leading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/loading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/loading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/loading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/text/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/text/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/trailing-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/trailing/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/validation-markers/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/validation-markers/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/button/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/validation-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/dropdown-box/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/dropdown/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/dropdown-box/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/dropdown/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/dropdown-box/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/dropdown/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/dropdown-box/loader",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/loader/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/container",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/container/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/container-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/option/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/option/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/container/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/container/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/indicator-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/indicator/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/indicator-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/indicator/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/indicator-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/indicator/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/leading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/leading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/select/s/option/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/text/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/field/select/text/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/text/l/size",
+        "lineHeight": "typography/field/select/text/l/line-height",
+        "letterSpacing": "typography/field/select/text/l/letter-spacing",
+        "fontWeight": "typography/field/select/text/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/text/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/text/m/size",
+        "lineHeight": "typography/field/select/text/m/line-height",
+        "letterSpacing": "typography/field/select/text/m/letter-spacing",
+        "fontWeight": "typography/field/select/text/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/text/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/text/s/size",
+        "lineHeight": "typography/field/select/text/s/line-height",
+        "letterSpacing": "typography/field/select/text/s/letter-spacing",
+        "fontWeight": "typography/field/select/text/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/option/l/size",
+        "lineHeight": "typography/field/select/option/l/line-height",
+        "letterSpacing": "typography/field/select/option/l/letter-spacing",
+        "fontWeight": "typography/field/select/option/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/option/m/size",
+        "lineHeight": "typography/field/select/option/m/line-height",
+        "letterSpacing": "typography/field/select/option/m/letter-spacing",
+        "fontWeight": "typography/field/select/option/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/option/s/size",
+        "lineHeight": "typography/field/select/option/s/line-height",
+        "letterSpacing": "typography/field/select/option/s/letter-spacing",
+        "fontWeight": "typography/field/select/option/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option_title/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Medium",
+      "vars": {
+        "fontSize": "typography/field/select/option-title/l/size",
+        "lineHeight": "typography/field/select/option-title/l/line-height",
+        "letterSpacing": "typography/field/select/option-title/l/letter-spacing",
+        "fontWeight": "typography/field/select/option-title/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option_title/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Medium",
+      "vars": {
+        "fontSize": "typography/field/select/option-title/m/size",
+        "lineHeight": "typography/field/select/option-title/m/line-height",
+        "letterSpacing": "typography/field/select/option-title/m/letter-spacing",
+        "fontWeight": "typography/field/select/option-title/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option_title/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Medium",
+      "vars": {
+        "fontSize": "typography/field/select/option-title/s/size",
+        "lineHeight": "typography/field/select/option-title/s/line-height",
+        "letterSpacing": "typography/field/select/option-title/s/letter-spacing",
+        "fontWeight": "typography/field/select/option-title/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/hint/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/hint/l/size",
+        "lineHeight": "typography/field/select/hint/l/line-height",
+        "letterSpacing": "typography/field/select/hint/l/letter-spacing",
+        "fontWeight": "typography/field/select/hint/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/hint/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/hint/m/size",
+        "lineHeight": "typography/field/select/hint/m/line-height",
+        "letterSpacing": "typography/field/select/hint/m/letter-spacing",
+        "fontWeight": "typography/field/select/hint/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/hint/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/hint/s/size",
+        "lineHeight": "typography/field/select/hint/s/line-height",
+        "letterSpacing": "typography/field/select/hint/s/letter-spacing",
+        "fontWeight": "typography/field/select/hint/s/weight"
+      }
+    }
+  ],
+  "exceptions": [],
+  "includes": [
+    "field-dropdown"
+  ]
+}

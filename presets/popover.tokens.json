@@ -1,0 +1,849 @@
+{
+  "component": "popover",
+  "roots": [
+    "popover"
+  ],
+  "title": "Popover",
+  "kind": "component",
+  "analog": "simple-select",
+  "source": "input/backlog/popover.md",
+  "axes": {
+    "Size": [
+      "S",
+      "M",
+      "L"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ],
+    "Tail": [
+      "None",
+      "Top",
+      "Bottom",
+      "Left",
+      "Right"
+    ]
+  },
+  "parts": [
+    "container",
+    "header",
+    "title",
+    "close-button",
+    "content",
+    "text",
+    "footer",
+    "tail"
+  ],
+  "l2": [
+    {
+      "name": "size/popover/width/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/240",
+        "dark": "size/240"
+      },
+      "description": "Popover — ширина панели S (240)"
+    },
+    {
+      "name": "size/popover/width/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": 320,
+        "dark": 320
+      },
+      "description": "Popover — ширина панели M (320)"
+    },
+    {
+      "name": "size/popover/width/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": 400,
+        "dark": 400
+      },
+      "description": "Popover — ширина панели L (400)"
+    },
+    {
+      "name": "space/popover/x",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Popover — горизонтальный отступ панели с заголовком и действиями"
+    },
+    {
+      "name": "space/popover/y",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Popover — вертикальный отступ панели с заголовком и действиями"
+    },
+    {
+      "name": "space/popover/wrapper",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Popover — отступ панели-обёртки, у содержимого которой свои отступы"
+    },
+    {
+      "name": "space/popover/offset",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Popover — зазор от триггера до острия хвостика"
+    },
+    {
+      "name": "gap/popover/container",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Popover — вертикальный ритм между заголовком, контентом и действиями"
+    },
+    {
+      "name": "gap/popover/header",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Popover — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "gap/popover/footer",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Popover — расстояние между кнопками действий"
+    },
+    {
+      "name": "radius/popover/container",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Popover — скругление панели"
+    },
+    {
+      "name": "border/popover/container",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Popover — толщина обводки панели"
+    },
+    {
+      "name": "size/popover/close/box",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Popover — зона кнопки закрытия, не меньше 24 × 24 (WCAG 2.5.8)"
+    },
+    {
+      "name": "size/popover/tail/width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/8",
+        "dark": "size/8"
+      },
+      "description": "Popover — ширина основания хвостика"
+    },
+    {
+      "name": "size/popover/tail/height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/4",
+        "dark": "size/4"
+      },
+      "description": "Popover — вылет хвостика от панели"
+    },
+    {
+      "name": "typography/popover/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Popover — заголовок панели: кегль 16"
+    },
+    {
+      "name": "typography/popover/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Popover — заголовок панели: интерлиньяж 24"
+    },
+    {
+      "name": "typography/popover/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Popover — заголовок панели: межбуквенный интервал 0"
+    },
+    {
+      "name": "typography/popover/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Popover — заголовок панели: начертание 600"
+    },
+    {
+      "name": "typography/popover/text/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Popover — текст панели: кегль 14"
+    },
+    {
+      "name": "typography/popover/text/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Popover — текст панели: интерлиньяж 20"
+    },
+    {
+      "name": "typography/popover/text/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Popover — текст панели: межбуквенный интервал 0.1"
+    },
+    {
+      "name": "typography/popover/text/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Popover — текст панели: начертание 400"
+    }
+  ],
+  "l3": [
+    {
+      "name": "popover/bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Popover — фон контейнера"
+    },
+    {
+      "name": "popover/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Popover — фон контейнера на инверсной (тёмной) поверхности"
+    },
+    {
+      "name": "popover/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Popover — обводка контейнера и хвостика"
+    },
+    {
+      "name": "popover/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Popover — обводка контейнера и хвостика на инверсной поверхности"
+    },
+    {
+      "name": "popover/tail",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Popover — заливка хвостика, совпадает с фоном контейнера"
+    },
+    {
+      "name": "popover/inverse-tail",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Popover — заливка хвостика на инверсной поверхности, совпадает с фоном контейнера"
+    },
+    {
+      "name": "popover/text/title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Popover — цвет текста: заголовок"
+    },
+    {
+      "name": "popover/inverse-text/title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Popover — цвет текста на инверсной поверхности: заголовок"
+    },
+    {
+      "name": "popover/text/body",
+      "type": "COLOR",
+      "alias": "color/static/text/base/firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Popover — цвет текста: основной текст"
+    },
+    {
+      "name": "popover/inverse-text/body",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Popover — цвет текста на инверсной поверхности: основной текст"
+    },
+    {
+      "name": "popover/size/s/width",
+      "type": "FLOAT",
+      "alias": "size/popover/width/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover S — ширина панели"
+    },
+    {
+      "name": "popover/size/s/x",
+      "type": "FLOAT",
+      "alias": "space/popover/x",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — горизонтальный отступ панели"
+    },
+    {
+      "name": "popover/size/s/y",
+      "type": "FLOAT",
+      "alias": "space/popover/y",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — вертикальный отступ панели"
+    },
+    {
+      "name": "popover/size/s/wrapper-xy",
+      "type": "FLOAT",
+      "alias": "space/popover/wrapper",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — отступ панели-обёртки с произвольным содержимым"
+    },
+    {
+      "name": "popover/size/s/gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/container",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — расстояние между заголовком, контентом и действиями"
+    },
+    {
+      "name": "popover/size/s/header-gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/header",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "popover/size/s/footer-gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/footer",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — расстояние между кнопками действий"
+    },
+    {
+      "name": "popover/size/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/popover/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Popover S — скругление панели"
+    },
+    {
+      "name": "popover/size/s/border",
+      "type": "FLOAT",
+      "alias": "border/popover/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Popover S — толщина обводки панели"
+    },
+    {
+      "name": "popover/size/s/close-box",
+      "type": "FLOAT",
+      "alias": "size/popover/close/box",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover S — зона кнопки закрытия"
+    },
+    {
+      "name": "popover/size/s/tail-width",
+      "type": "FLOAT",
+      "alias": "size/popover/tail/width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover S — ширина основания хвостика"
+    },
+    {
+      "name": "popover/size/s/tail-height",
+      "type": "FLOAT",
+      "alias": "size/popover/tail/height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover S — вылет хвостика"
+    },
+    {
+      "name": "popover/size/s/offset",
+      "type": "FLOAT",
+      "alias": "space/popover/offset",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover S — зазор от триггера до острия хвостика"
+    },
+    {
+      "name": "popover/size/m/width",
+      "type": "FLOAT",
+      "alias": "size/popover/width/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover M — ширина панели"
+    },
+    {
+      "name": "popover/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/popover/x",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — горизонтальный отступ панели"
+    },
+    {
+      "name": "popover/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/popover/y",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — вертикальный отступ панели"
+    },
+    {
+      "name": "popover/size/m/wrapper-xy",
+      "type": "FLOAT",
+      "alias": "space/popover/wrapper",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — отступ панели-обёртки с произвольным содержимым"
+    },
+    {
+      "name": "popover/size/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/container",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — расстояние между заголовком, контентом и действиями"
+    },
+    {
+      "name": "popover/size/m/header-gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/header",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "popover/size/m/footer-gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/footer",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — расстояние между кнопками действий"
+    },
+    {
+      "name": "popover/size/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/popover/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Popover M — скругление панели"
+    },
+    {
+      "name": "popover/size/m/border",
+      "type": "FLOAT",
+      "alias": "border/popover/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Popover M — толщина обводки панели"
+    },
+    {
+      "name": "popover/size/m/close-box",
+      "type": "FLOAT",
+      "alias": "size/popover/close/box",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover M — зона кнопки закрытия"
+    },
+    {
+      "name": "popover/size/m/tail-width",
+      "type": "FLOAT",
+      "alias": "size/popover/tail/width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover M — ширина основания хвостика"
+    },
+    {
+      "name": "popover/size/m/tail-height",
+      "type": "FLOAT",
+      "alias": "size/popover/tail/height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover M — вылет хвостика"
+    },
+    {
+      "name": "popover/size/m/offset",
+      "type": "FLOAT",
+      "alias": "space/popover/offset",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover M — зазор от триггера до острия хвостика"
+    },
+    {
+      "name": "popover/size/l/width",
+      "type": "FLOAT",
+      "alias": "size/popover/width/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover L — ширина панели"
+    },
+    {
+      "name": "popover/size/l/x",
+      "type": "FLOAT",
+      "alias": "space/popover/x",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — горизонтальный отступ панели"
+    },
+    {
+      "name": "popover/size/l/y",
+      "type": "FLOAT",
+      "alias": "space/popover/y",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — вертикальный отступ панели"
+    },
+    {
+      "name": "popover/size/l/wrapper-xy",
+      "type": "FLOAT",
+      "alias": "space/popover/wrapper",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — отступ панели-обёртки с произвольным содержимым"
+    },
+    {
+      "name": "popover/size/l/gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/container",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — расстояние между заголовком, контентом и действиями"
+    },
+    {
+      "name": "popover/size/l/header-gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/header",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "popover/size/l/footer-gap",
+      "type": "FLOAT",
+      "alias": "gap/popover/footer",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — расстояние между кнопками действий"
+    },
+    {
+      "name": "popover/size/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/popover/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Popover L — скругление панели"
+    },
+    {
+      "name": "popover/size/l/border",
+      "type": "FLOAT",
+      "alias": "border/popover/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Popover L — толщина обводки панели"
+    },
+    {
+      "name": "popover/size/l/close-box",
+      "type": "FLOAT",
+      "alias": "size/popover/close/box",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover L — зона кнопки закрытия"
+    },
+    {
+      "name": "popover/size/l/tail-width",
+      "type": "FLOAT",
+      "alias": "size/popover/tail/width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover L — ширина основания хвостика"
+    },
+    {
+      "name": "popover/size/l/tail-height",
+      "type": "FLOAT",
+      "alias": "size/popover/tail/height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Popover L — вылет хвостика"
+    },
+    {
+      "name": "popover/size/l/offset",
+      "type": "FLOAT",
+      "alias": "space/popover/offset",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Popover L — зазор от триггера до острия хвостика"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/popover/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/popover/title/size",
+        "lineHeight": "typography/popover/title/line-height",
+        "letterSpacing": "typography/popover/title/letter-spacing",
+        "fontWeight": "typography/popover/title/weight"
+      }
+    },
+    {
+      "name": "typography/popover/text",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/popover/text/size",
+        "lineHeight": "typography/popover/text/line-height",
+        "letterSpacing": "typography/popover/text/letter-spacing",
+        "fontWeight": "typography/popover/text/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "popover/text/title",
+      "bg": "popover/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "popover/text/body",
+      "bg": "popover/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "popover/inverse-text/title",
+      "bg": "popover/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "popover/inverse-text/body",
+      "bg": "popover/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "popover/border",
+      "bg": "popover/bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "обводка контейнера декоративная: границу оверлея задают тень и контраст содержимого; WCAG 1.4.11 не требует 3:1 для границ контейнеров, текст внутри проходит 4.5:1. Шкала color/static/border/base до 3:1 доходит только на `hard` (0.9) — это визуально тяжёлая рамка"
+    },
+    {
+      "fg": "popover/inverse-border",
+      "bg": "popover/inverse-bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "обводка контейнера декоративная: границу оверлея задают тень и контраст содержимого; WCAG 1.4.11 не требует 3:1 для границ контейнеров, текст внутри проходит 4.5:1. Шкала color/static/border/base до 3:1 доходит только на `hard` (0.9) — это визуально тяжёлая рамка",
+      "over": "color/bg/page/inverse-main"
+    }
+  ],
+  "exceptions": [
+    {
+      "token": "size/popover/width/m",
+      "reason": "в L1 нет size/320; ближайший size/256 ломает шкалу ширин 240 · 320 · 400"
+    },
+    {
+      "token": "size/popover/width/l",
+      "reason": "в L1 нет size/400; ближайшего примитива нет (максимум шкалы size/* — 256)"
+    }
+  ],
+  "decisions": [
+    "Имена из backlog-документа (`space/overlay/*`, `size/overlay/*`, `radius/{c}` без размера, `typography/body/*`, `typography/heading/*`, `shadow/*`, `color/layer/*`) в FEroom отсутствуют — взяты только значения. Имена построены по грамматике FEroom: корень L3 компонента и собственные L2 `{size|space|gap|radius|border}/{component}/…`, `typography/{component}/…`.",
+    "Инверсия — токенами, а не режимом dark на фрейме (расхождение с документом: «инверсия через dark-режим, inverse-токенов нет»). В FEroom инверсия — сегменты `inverse-*` (CLAUDE.md). Форма — часть `inverse-*` (`inverse-bg`, `inverse-text`, `inverse-border`) как у checkbox/switch и Dropdown у Select (`field/select/dropdown/container/inverse-base`); неинтерактивным оверлеям состояния не нужны, поэтому сегмента state нет. Алиасы — на `inverse-*` L2.",
+    "Поверхность — `color/bg/raised/main` / `inverse-main`: в описании L2 автора `color/bg/raised/*` — «Панель, карточка, popover, tooltip». Dropdown у Select использует `color/static/bg/solid/base/pure` / `inverse-pure`: в light/dark `pure` = `raised/main` (neutral/0 · neutral/900), `inverse-pure` темнее на шаг (neutral/925 против 900).",
+    "Хвостик — отдельная часть с отдельным цветом `tail` (scope SHAPE_FILL, т.к. это вектор) и размерами `tail-width` (основание 8) и `tail-height` (вылет 4). Обводка хвостика — тот же `{c}/border`. Правило «хвостик не ближе к углу, чем длина основания» — поведение, отдельного токена нет (равно `tail-width`).",
+    "Размеры, не зависящие от размера компонента, заведены в L2 без суффикса размера (прецедент: `radius/divider/circle`, `radius/badge/box/circle` на все размеры); в L3 каждый размер получает полный набор `{c}/size/{s}/{prop}`.",
+    "Зазор до триггера (4) заведён как `offset` (GAP): в сборке он нужен только в спецификации и примерах позиционирования.",
+    "Тени не создаём (эффект-стили отложены автором). z-index (`z-index/tooltip` 1700, `z-index/popover` 1500 — есть в L1) и задержки анимации — не переменные сборки Figma, в пресет не входят.",
+    "Размеры L1: 320 и 400 в `1. Primitives` нет (`size/*`: …240, 256 — дальше нет). Ближайший 256 меняет ширину на 20% и ломает шкалу 240 · 320 · 400 — поэтому сырое значение в L2 с записью в exceptions. L1 не трогаем.",
+    "codeSyntax не заполняется (решение автора 2026-09-21). L3 публикуются (как все L3); публикацию новых L2 решает плагин по правилу соседей: размеры и типографика компонентов в основном скрыты.",
+    "Ось Size = ширина панели S 240 · M 320 · L 400 (документ: «не ось размера контрола»). В L3 у каждого размера полный набор, но от ширины зависит только `width`; отступы, gap, радиус и типографика общие (L2 без суффикса размера, типографика `typography/popover/{title|text}/*` без размера).",
+    "Два отступа: `x`/`y` = 16 для панели с заголовком и действиями (открытый вопрос документа закрыт в пользу 16) и `wrapper-xy` = 8 для панели-обёртки, у содержимого которой свои отступы.",
+    "Кнопка закрытия и кнопки футера — экземпляры Button (Icon Only / Filled / Text), ссылка — экземпляр Link; их цвета и размеры не дублируются. Свои токены: зона кнопки закрытия `close-box` = 24 (WCAG 2.5.8), `header-gap` (заголовок ↔ закрытие) и `footer-gap` (между кнопками) = 8 — в документе не заданы, взят вертикальный ритм 8. Для Inverse=True внутри используются Inverse-типы Button.",
+    "Текстовые стили `typography/popover/title` (16/24, SemiBold, LS 0) и `typography/popover/text` (14/20, Regular, LS 0.1) — без группы `action`: сами текстовые слоты неинтерактивны, действия несут собственные стили Button/Link. LS по шкале FEroom: 16 → 0, 14 → 0.1.",
+    "Цвета текста: заголовок `color/static/text/base/hard` (15.1 : 1), текст `firm` (10.4 : 1); инверсные — `inverse-hard` / `inverse-firm`.",
+    "Эффект-стиль понадобится: `effect/popover/{regular|inverse}` — тень 0 · 8 · 16 · −2 (по документу), числа в L2 `effects/popover/{x|y|blur|spread}`. Не создаётся до решения автора. Для Loading/Empty используются экземпляры Spinner/Skeleton — своих токенов нет."
+  ]
+}

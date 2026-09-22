@@ -1,0 +1,4453 @@
+{
+  "component": "button",
+  "title": "Button",
+  "kind": "component",
+  "origin": "existing",
+  "source": "input/tokens/variables.json",
+  "doc": "input/builds/button/button.md",
+  "roots": [
+    "button"
+  ],
+  "prefixes": [
+    "button/"
+  ],
+  "decisions": [
+    "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений.",
+    {
+      "id": "text-button-inverse-contrast",
+      "date": "2026-09-21",
+      "decision": "button/text-button/inverse/text/* переведены с color/action/text/brand/firm/* (синий, контраст 2.5–4.3 на тёмном) на color/action/text/base/inverse-hard/* (белый) по запросу автора: WCAG 4.5:1 на inverse-поверхности, текст в цвет иконок inverse/icon/primary."
+    },
+    {
+      "id": "button-inverse",
+      "date": "2026-09-21",
+      "decision": "Тип Inverse у Filled, Icon - Filled, Outline, Icon - Outline и Text: кнопки для тёмных и насыщенных поверхностей. Компоненты с кнопками (Alert и др.) используют Inverse, а не свои кнопки. Text Inverse: текст inverse-hard (как иконка)."
+    }
+  ],
+  "l2": [
+    {
+      "name": "border/button/fill",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/0",
+        "dark": "border/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "border/button/focus-bold",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "border/button/focus-regular",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "border/button/none",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/0",
+        "dark": "border/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "border/button/outline",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "gap/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/button/l-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": "Для Text Button"
+    },
+    {
+      "name": "gap/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/button/m-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": "Для Text Button"
+    },
+    {
+      "name": "gap/button/none",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/button/s-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": "Для Text Button"
+    },
+    {
+      "name": "gap/button/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/button/xl-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": "Для Text Button"
+    },
+    {
+      "name": "gap/button/xs-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": "Для Text Button"
+    },
+    {
+      "name": "radius/button/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/9",
+        "dark": "radius/9"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/focus/none",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/0",
+        "dark": "radius/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/7",
+        "dark": "radius/7"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/focus/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/14",
+        "dark": "radius/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "radius/button/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/l-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/m-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/s-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/14",
+        "dark": "size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/button/xl-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "space/button/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/x/l-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": "Для Icon Button"
+    },
+    {
+      "name": "space/button/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/x/m-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": "Для Icon Button"
+    },
+    {
+      "name": "space/button/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/x/s-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": "Для Icon Button"
+    },
+    {
+      "name": "space/button/x/text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/x/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/20",
+        "dark": "space/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/x/xl-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": "Для Icon Button"
+    },
+    {
+      "name": "space/button/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/y/text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/button/y/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "typography/button/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Primary button - Letter spacing"
+    },
+    {
+      "name": "typography/button/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": "Primary button - Line height"
+    },
+    {
+      "name": "typography/button/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": "Primary button - Font size"
+    },
+    {
+      "name": "typography/button/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Primary button - Font weight"
+    },
+    {
+      "name": "typography/button/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Primary button - Letter spacing"
+    },
+    {
+      "name": "typography/button/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": "Primary button - Line height"
+    },
+    {
+      "name": "typography/button/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": "Primary button - Font size"
+    },
+    {
+      "name": "typography/button/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Primary button - Font weight"
+    },
+    {
+      "name": "typography/button/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Letter spacing"
+    },
+    {
+      "name": "typography/button/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/14",
+        "dark": "font/line-height/14"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Line height"
+    },
+    {
+      "name": "typography/button/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font size"
+    },
+    {
+      "name": "typography/button/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font weight"
+    },
+    {
+      "name": "typography/button/xl/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Large CTA button - Letter spacing"
+    },
+    {
+      "name": "typography/button/xl/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": "Large CTA button - Line height"
+    },
+    {
+      "name": "typography/button/xl/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": "Large CTA button - Font size"
+    },
+    {
+      "name": "typography/button/xl/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Large CTA button - Font weight"
+    }
+  ],
+  "l3": [
+    {
+      "name": "button/fill/danger-soft/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/light/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/light/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/light/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/light/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger-soft/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/danger/calm/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger-soft/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/danger/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/danger-soft/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/fill/danger-soft/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/fill/danger-soft/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/danger/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/danger-soft/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/danger/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/danger/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/medium/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/danger/medium/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/danger/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/danger/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/ghost/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/fill/ghost/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/fill/ghost/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/ghost/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary-soft/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/primary-soft/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/primary-soft/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/fill/primary-soft/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/fill/primary-soft/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/primary-soft/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/fill/primary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/primary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/primary/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/on-bold/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/fill/secondary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/soft/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/soft/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/fill/secondary/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/fill/secondary/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/secondary/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/calm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/calm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/calm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/calm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/calm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/outline/danger-soft/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/calm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/outline/danger-soft/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/calm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger-soft/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/calm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/firm/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/firm/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/firm/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/firm/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/outline/danger/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/outline/danger/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/danger/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/light/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/ghost/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/outline/ghost/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/outline/ghost/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/outline/ghost/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/outline/ghost/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/outline/ghost/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/brand/firm/default",
+        "approved": "2026-09-21, светлая тема: контраст WCAG AA (минимальные пороги)"
+      }
+    },
+    {
+      "name": "button/outline/primary-soft/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/calm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/calm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/calm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/calm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/calm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/outline/primary-soft/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/calm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/outline/primary-soft/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/calm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary-soft/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/calm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/firm/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/firm/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/firm/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/firm/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/outline/primary/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/outline/primary/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/primary/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/border/base/soft/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/outline/secondary/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/border/base/soft/hover",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/outline/secondary/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/border/base/soft/pressed",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "button/outline/secondary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/outline/secondary/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/outline/secondary/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/outline/secondary/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/border-fill",
+      "type": "FLOAT",
+      "alias": "border/button/fill",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/border-focus",
+      "type": "FLOAT",
+      "alias": "border/button/focus-bold",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/border-outline",
+      "type": "FLOAT",
+      "alias": "border/button/outline",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/border-text",
+      "type": "FLOAT",
+      "alias": "border/button/none",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/box",
+      "type": "FLOAT",
+      "alias": "size/button/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/gap",
+      "type": "FLOAT",
+      "alias": "gap/button/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/button/l-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/icon",
+      "type": "FLOAT",
+      "alias": "size/button/l-icon",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/button/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/radius-focus",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/radius-text",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/none",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/x",
+      "type": "FLOAT",
+      "alias": "space/button/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/x-icon-button",
+      "type": "FLOAT",
+      "alias": "space/button/x/l-icon",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/x-text",
+      "type": "FLOAT",
+      "alias": "space/button/x/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/y",
+      "type": "FLOAT",
+      "alias": "space/button/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/l/y-text",
+      "type": "FLOAT",
+      "alias": "space/button/y/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/border-fill",
+      "type": "FLOAT",
+      "alias": "border/button/fill",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/border-focus",
+      "type": "FLOAT",
+      "alias": "border/button/focus-regular",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/border-outline",
+      "type": "FLOAT",
+      "alias": "border/button/outline",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/border-text",
+      "type": "FLOAT",
+      "alias": "border/button/none",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/box",
+      "type": "FLOAT",
+      "alias": "size/button/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/button/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/button/m-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/icon",
+      "type": "FLOAT",
+      "alias": "size/button/m-icon",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/button/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/radius-focus",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/radius-text",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/none",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/button/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/x-icon-button",
+      "type": "FLOAT",
+      "alias": "space/button/x/m-icon",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/x-text",
+      "type": "FLOAT",
+      "alias": "space/button/x/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/button/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/m/y-text",
+      "type": "FLOAT",
+      "alias": "space/button/y/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/border-fill",
+      "type": "FLOAT",
+      "alias": "border/button/fill",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/border-focus",
+      "type": "FLOAT",
+      "alias": "border/button/focus-regular",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/border-outline",
+      "type": "FLOAT",
+      "alias": "border/button/outline",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/border-text",
+      "type": "FLOAT",
+      "alias": "border/button/none",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/box",
+      "type": "FLOAT",
+      "alias": "size/button/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/gap",
+      "type": "FLOAT",
+      "alias": "gap/button/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/button/s-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/icon",
+      "type": "FLOAT",
+      "alias": "size/button/s-icon",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/button/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/radius-focus",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/radius-text",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/none",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/x",
+      "type": "FLOAT",
+      "alias": "space/button/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/x-icon-button",
+      "type": "FLOAT",
+      "alias": "space/button/x/s-icon",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/x-text",
+      "type": "FLOAT",
+      "alias": "space/button/x/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/y",
+      "type": "FLOAT",
+      "alias": "space/button/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/s/y-text",
+      "type": "FLOAT",
+      "alias": "space/button/y/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/border-fill",
+      "type": "FLOAT",
+      "alias": "border/button/fill",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/border-focus",
+      "type": "FLOAT",
+      "alias": "border/button/focus-bold",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/border-outline",
+      "type": "FLOAT",
+      "alias": "border/button/outline",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/border-text",
+      "type": "FLOAT",
+      "alias": "border/button/none",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/box",
+      "type": "FLOAT",
+      "alias": "size/button/xl",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/gap",
+      "type": "FLOAT",
+      "alias": "gap/button/xl",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/button/xl-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/icon",
+      "type": "FLOAT",
+      "alias": "size/button/xl-icon",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/radius",
+      "type": "FLOAT",
+      "alias": "radius/button/xl",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/radius-focus",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/xl",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/radius-text",
+      "type": "FLOAT",
+      "alias": "radius/button/focus/none",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/x",
+      "type": "FLOAT",
+      "alias": "space/button/x/xl",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/x-icon-button",
+      "type": "FLOAT",
+      "alias": "space/button/x/xl-icon",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/x-text",
+      "type": "FLOAT",
+      "alias": "space/button/x/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/y",
+      "type": "FLOAT",
+      "alias": "space/button/y/xl",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/size/xl/y-text",
+      "type": "FLOAT",
+      "alias": "space/button/y/text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/danger/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/text-button/danger/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/text-button/danger/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/danger/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/danger/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/primary/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/primary/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/primary/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/primary/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/secondary/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-light/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/secondary/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-light/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/secondary/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-light/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/icon/secondary/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-light/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/inverse/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label",
+      "change": {
+        "was": "color/action/text/brand/firm/default",
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/text-button/inverse/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled",
+      "change": {
+        "was": "color/action/text/brand/firm/disabled",
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/text-button/inverse/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/brand/firm/hover",
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/text-button/inverse/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/text/brand/firm/pressed",
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/text-button/primary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/firm/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/text-button/primary/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/text-button/primary/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/primary/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/brand/firm/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label"
+    },
+    {
+      "name": "button/text-button/secondary/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button primary primary-label-disabled"
+    },
+    {
+      "name": "button/text-button/secondary/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/secondary/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/light/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/light/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/light/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/text-button/tertiary/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/light/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "button/fill/inverse/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button fill inverse bg-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse border-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button fill inverse text-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/default",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse icon-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button outline inverse bg-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse border-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button outline inverse text-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/default",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse icon-default",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/hover",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button fill inverse bg-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse border-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button fill inverse text-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/hover",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse icon-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/hover",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button outline inverse bg-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse border-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/hover",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button outline inverse text-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/hover",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse icon-hover",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/pressed",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button fill inverse bg-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse border-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button fill inverse text-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/hard/pressed",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse icon-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/pressed",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button outline inverse bg-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse border-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/pressed",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button outline inverse text-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/pressed",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse icon-pressed",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/disabled",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button fill inverse bg-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse border-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button fill inverse text-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/fill/inverse/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/disabled",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button fill inverse icon-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/disabled",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "description": "Component token for button outline inverse bg-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse border-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Component token for button outline inverse text-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    },
+    {
+      "name": "button/outline/inverse/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/disabled",
+      "scopes": [
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "description": "Component token for button outline inverse icon-disabled",
+      "change": {
+        "was": null,
+        "approved": "2026-09-21, решение автора: инверсный вид кнопки для тёмных и насыщенных поверхностей"
+      }
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/action/button/xl",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/button/xl/size",
+        "lineHeight": "typography/button/xl/line-height",
+        "letterSpacing": "typography/button/xl/letter-spacing",
+        "fontWeight": "typography/button/xl/weight"
+      }
+    },
+    {
+      "name": "typography/action/button/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/button/l/size",
+        "lineHeight": "typography/button/l/line-height",
+        "letterSpacing": "typography/button/l/letter-spacing",
+        "fontWeight": "typography/button/l/weight"
+      }
+    },
+    {
+      "name": "typography/action/button/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/button/m/size",
+        "lineHeight": "typography/button/m/line-height",
+        "letterSpacing": "typography/button/m/letter-spacing",
+        "fontWeight": "typography/button/m/weight"
+      }
+    },
+    {
+      "name": "typography/action/button/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/button/s/size",
+        "lineHeight": "typography/button/s/line-height",
+        "letterSpacing": "typography/button/s/letter-spacing",
+        "fontWeight": "typography/button/s/weight"
+      }
+    }
+  ],
+  "exceptions": []
+}

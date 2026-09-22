@@ -1,0 +1,2357 @@
+{
+ "component": "button",
+ "title": "Button",
+ "page": "Components / Button",
+ "origin": "existing",
+ "notes": [
+  "Повтор текущей сборки: 6 наборов, оси, свойства, слои и привязки как в файле «Компоненты · Базовые».",
+  "Нормализовано: надпись «Отменить» использует стиль своего размера (в файле у всех размеров стоит XL).",
+  "Иконке задаются ширина и высота через `button/size/{s}/icon` (в файле привязана только высота).",
+  "Icon Only: типы Inverse-primary и Inverse-secondary стоят на тёмной правой части набора, как в файле.",
+  "Новое: тип Inverse у Filled, Icon - Filled, Outline, Icon - Outline и Text — кнопки для тёмных и насыщенных поверхностей (Filled — светлая заливка и тёмный текст, Outline — светлые рамка и текст, Text — светлый текст). Стоят на тёмной правой части набора. Компоненты с кнопками используют эти типы, а не свои кнопки."
+ ],
+ "sets": [
+  {
+   "name": "Button / Filled",
+   "description": "Кнопка инициирует действие пользователя. Это самый частый интерактивный элемент — критично использовать её последовательно по всему продукту, чтобы пользователь понимал приоритет и тип действия.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "XL",
+      "L",
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Primary",
+      "Secondary",
+      "Primary-soft",
+      "Ghost",
+      "Danger",
+      "Danger-soft",
+      "Inverse"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+     ]
+    },
+    {
+     "name": "Loading",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "State": "Disabled",
+     "Loading": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Size",
+    "rows": [
+     "Loading",
+     "State"
+    ],
+    "split": {
+     "axis": "Type",
+     "values": [
+      "Inverse"
+     ]
+    }
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "t": {
+     "from": "Type",
+     "case": "lower"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    }
+   },
+   "props": [
+    {
+     "name": "Label",
+     "type": "TEXT",
+     "default": "Действие"
+    },
+    {
+     "name": "Left Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Right Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Icon L",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "↳ Icon R",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "button/size/{s}/gap",
+     "px": "button/size/{s}/x",
+     "py": "button/size/{s}/y",
+     "align": "CENTER",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "HUG"
+    },
+    "radius": "button/size/{s}/radius",
+    "fill": "button/fill/{t}/bg/{st}",
+    "stroke": {
+     "color": "button/fill/{t}/border/{st}",
+     "weight": "button/size/{s}/border-fill",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": {
+       "by": "Size",
+       "map": {
+        "XL": 4,
+        "L": 4,
+        "M": 3,
+        "S": 3
+       }
+      },
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "button/size/{s}/radius-focus",
+      "stroke": {
+       "color": "button/focus-ring",
+       "weight": "button/size/{s}/border-focus",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Left Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/fill/{t}/icon/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon L",
+       "visible": "Left Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "text",
+      "name": "Действие",
+      "refs": {
+       "characters": "Label"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      },
+      "text": {
+       "chars": "Действие",
+       "style": "typography/action/button/{s}",
+       "fill": "button/fill/{t}/text/{st}",
+       "truncate": true
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Right Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/fill/{t}/icon/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon R",
+       "visible": "Right Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loading",
+      "when": {
+       "Loading": "True",
+       "State": "Default"
+      },
+      "abs": "center",
+      "icon": {
+       "name": "loader",
+       "size": "button/size/{s}/icon",
+       "color": "button/fill/{t}/icon/{st}"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Cancel",
+      "when": {
+       "Loading": "True",
+       "State": [
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "stretch-x",
+      "layout": {
+       "dir": "H",
+       "gap": "button/size/{s}/gap",
+       "pl": "button/size/{s}/x-icon-button",
+       "pr": "button/size/{s}/x-icon-button",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "FIXED",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "icon",
+        "name": "Cancel",
+        "icon": {
+         "name": "x",
+         "size": "button/size/{s}/icon",
+         "color": "button/fill/{t}/icon/{st}"
+        }
+       },
+       {
+        "type": "text",
+        "name": "Отменить",
+        "text": {
+         "chars": "Отменить",
+         "style": "typography/action/button/{s}",
+         "fill": "button/fill/{t}/text/{st}",
+         "truncate": true
+        }
+       }
+      ]
+     }
+    ],
+    "height": "button/size/{s}/box"
+   }
+  },
+  {
+   "name": "Button / Icon - Filled",
+   "description": "Кнопка инициирует действие пользователя. Это самый частый интерактивный элемент — критично использовать её последовательно по всему продукту, чтобы пользователь понимал приоритет и тип действия.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "XL",
+      "L",
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Primary",
+      "Secondary",
+      "Primary-soft",
+      "Ghost",
+      "Danger",
+      "Danger-soft",
+      "Inverse"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+     ]
+    },
+    {
+     "name": "Loading",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "State": "Disabled",
+     "Loading": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Size",
+    "rows": [
+     "Loading",
+     "State"
+    ],
+    "split": {
+     "axis": "Type",
+     "values": [
+      "Inverse"
+     ]
+    }
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "t": {
+     "from": "Type",
+     "case": "lower"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Icon",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "button/size/{s}/gap",
+     "px": "button/size/{s}/x-icon-button",
+     "py": "button/size/{s}/y",
+     "align": "CENTER",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "HUG"
+    },
+    "radius": "button/size/{s}/radius",
+    "fill": "button/fill/{t}/bg/{st}",
+    "stroke": {
+     "weight": "button/size/{s}/border-fill",
+     "align": "INSIDE",
+     "color": "button/fill/{t}/border/{st}"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": {
+       "by": "Size",
+       "map": {
+        "XL": 4,
+        "L": 4,
+        "M": 3,
+        "S": 3
+       }
+      },
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "button/size/{s}/radius-focus",
+      "stroke": {
+       "color": "button/focus-ring",
+       "weight": "button/size/{s}/border-focus",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/fill/{t}/icon/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loading",
+      "when": {
+       "Loading": "True",
+       "State": "Default"
+      },
+      "abs": "center",
+      "icon": {
+       "name": "loader",
+       "size": "button/size/{s}/icon",
+       "color": "button/fill/{t}/icon/{st}"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Cancel",
+      "when": {
+       "Loading": "True",
+       "State": [
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "center",
+      "icon": {
+       "name": "x",
+       "size": "button/size/{s}/icon",
+       "color": "button/fill/{t}/icon/{st}"
+      }
+     }
+    ],
+    "height": "button/size/{s}/box"
+   }
+  },
+  {
+   "name": "Button / Outline",
+   "description": "Кнопка инициирует действие пользователя. Это самый частый интерактивный элемент — критично использовать её последовательно по всему продукту, чтобы пользователь понимал приоритет и тип действия.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "XL",
+      "L",
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Primary",
+      "Secondary",
+      "Primary-soft",
+      "Ghost",
+      "Danger",
+      "Danger-soft",
+      "Inverse"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+     ]
+    },
+    {
+     "name": "Loading",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "State": "Disabled",
+     "Loading": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Size",
+    "rows": [
+     "Loading",
+     "State"
+    ],
+    "split": {
+     "axis": "Type",
+     "values": [
+      "Inverse"
+     ]
+    }
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "t": {
+     "from": "Type",
+     "case": "lower"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    }
+   },
+   "props": [
+    {
+     "name": "Label",
+     "type": "TEXT",
+     "default": "Действие"
+    },
+    {
+     "name": "Left Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Right Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Icon L",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "↳ Icon R",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "button/size/{s}/gap",
+     "px": "button/size/{s}/x",
+     "py": "button/size/{s}/y",
+     "align": "CENTER",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "HUG"
+    },
+    "radius": "button/size/{s}/radius",
+    "fill": "button/outline/{t}/bg/{st}",
+    "stroke": {
+     "color": "button/outline/{t}/border/{st}",
+     "weight": "button/size/{s}/border-outline",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": {
+       "by": "Size",
+       "map": {
+        "XL": 4,
+        "L": 4,
+        "M": 3,
+        "S": 3
+       }
+      },
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "button/size/{s}/radius-focus",
+      "stroke": {
+       "color": "button/focus-ring",
+       "weight": "button/size/{s}/border-focus",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Left Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/outline/{t}/icon/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon L",
+       "visible": "Left Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "text",
+      "name": "Действие",
+      "refs": {
+       "characters": "Label"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      },
+      "text": {
+       "chars": "Действие",
+       "style": "typography/action/button/{s}",
+       "fill": "button/outline/{t}/text/{st}",
+       "truncate": true
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Right Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/outline/{t}/icon/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon R",
+       "visible": "Right Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loading",
+      "when": {
+       "Loading": "True",
+       "State": "Default"
+      },
+      "abs": "center",
+      "icon": {
+       "name": "loader",
+       "size": "button/size/{s}/icon",
+       "color": "button/outline/{t}/icon/{st}"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Cancel",
+      "when": {
+       "Loading": "True",
+       "State": [
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "stretch-x",
+      "layout": {
+       "dir": "H",
+       "gap": "button/size/{s}/gap",
+       "pl": "button/size/{s}/x-icon-button",
+       "pr": "button/size/{s}/x-icon-button",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "FIXED",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "icon",
+        "name": "Cancel",
+        "icon": {
+         "name": "x",
+         "size": "button/size/{s}/icon",
+         "color": "button/outline/{t}/icon/{st}"
+        }
+       },
+       {
+        "type": "text",
+        "name": "Отменить",
+        "text": {
+         "chars": "Отменить",
+         "style": "typography/action/button/{s}",
+         "fill": "button/outline/{t}/text/{st}",
+         "truncate": true
+        }
+       }
+      ]
+     }
+    ],
+    "height": "button/size/{s}/box"
+   }
+  },
+  {
+   "name": "Button / Icon - Outline",
+   "description": "Кнопка инициирует действие пользователя. Это самый частый интерактивный элемент — критично использовать её последовательно по всему продукту, чтобы пользователь понимал приоритет и тип действия.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "XL",
+      "L",
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Primary",
+      "Secondary",
+      "Primary-soft",
+      "Ghost",
+      "Danger",
+      "Danger-soft",
+      "Inverse"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+     ]
+    },
+    {
+     "name": "Loading",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "State": "Disabled",
+     "Loading": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Size",
+    "rows": [
+     "Loading",
+     "State"
+    ],
+    "split": {
+     "axis": "Type",
+     "values": [
+      "Inverse"
+     ]
+    }
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "t": {
+     "from": "Type",
+     "case": "lower"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Icon",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "button/size/{s}/gap",
+     "px": "button/size/{s}/x-icon-button",
+     "py": "button/size/{s}/y",
+     "align": "CENTER",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "HUG"
+    },
+    "radius": "button/size/{s}/radius",
+    "fill": "button/outline/{t}/bg/{st}",
+    "stroke": {
+     "weight": "button/size/{s}/border-outline",
+     "align": "INSIDE",
+     "color": "button/outline/{t}/border/{st}"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": {
+       "by": "Size",
+       "map": {
+        "XL": 4,
+        "L": 4,
+        "M": 3,
+        "S": 3
+       }
+      },
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "button/size/{s}/radius-focus",
+      "stroke": {
+       "color": "button/focus-ring",
+       "weight": "button/size/{s}/border-focus",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/outline/{t}/icon/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loading",
+      "when": {
+       "Loading": "True",
+       "State": "Default"
+      },
+      "abs": "center",
+      "icon": {
+       "name": "loader",
+       "size": "button/size/{s}/icon",
+       "color": "button/outline/{t}/icon/{st}"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Cancel",
+      "when": {
+       "Loading": "True",
+       "State": [
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "center",
+      "icon": {
+       "name": "x",
+       "size": "button/size/{s}/icon",
+       "color": "button/outline/{t}/icon/{st}"
+      }
+     }
+    ],
+    "height": "button/size/{s}/box"
+   }
+  },
+  {
+   "name": "Button / Text",
+   "description": "Кнопка инициирует действие пользователя. Это самый частый интерактивный элемент — критично использовать её последовательно по всему продукту, чтобы пользователь понимал приоритет и тип действия.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "XL",
+      "L",
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Primary",
+      "Secondary",
+      "Danger",
+      "Inverse"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+     ]
+    },
+    {
+     "name": "Loading",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "State": "Disabled",
+     "Loading": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Size",
+    "rows": [
+     "Loading",
+     "State"
+    ],
+    "split": {
+     "axis": "Type",
+     "values": [
+      "Inverse"
+     ]
+    }
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "t": {
+     "from": "Type",
+     "case": "lower"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    },
+    "ti": {
+     "from": "Type",
+     "map": {
+      "Primary": "primary/icon",
+      "Secondary": "secondary/icon",
+      "Danger": "danger/icon",
+      "Inverse": "inverse/icon/primary"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Label",
+     "type": "TEXT",
+     "default": "Действие"
+    },
+    {
+     "name": "Left Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Right Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Icon L",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "↳ Icon R",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "button/size/{s}/gap-text",
+     "px": "button/size/{s}/x-text",
+     "py": "button/size/{s}/y-text",
+     "align": "CENTER",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "HUG"
+    },
+    "radius": "button/size/{s}/radius-text",
+    "fill": "button/text-button/{t}/bg/{st}",
+    "stroke": {
+     "color": "button/text-button/{t}/border/{st}",
+     "weight": "button/size/{s}/border-text",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": 3,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "button/size/{s}/radius-focus",
+      "stroke": {
+       "color": "button/focus-ring",
+       "weight": "button/size/{s}/border-focus",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Left Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/text-button/{ti}/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon L",
+       "visible": "Left Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "text",
+      "name": "Действие",
+      "refs": {
+       "characters": "Label"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      },
+      "text": {
+       "chars": "Действие",
+       "style": "typography/action/button/{s}",
+       "fill": "button/text-button/{t}/text/{st}",
+       "truncate": true
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Right Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/text-button/{ti}/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon R",
+       "visible": "Right Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loading",
+      "when": {
+       "Loading": "True",
+       "State": "Default"
+      },
+      "abs": "center",
+      "icon": {
+       "name": "loader",
+       "size": "button/size/{s}/icon",
+       "color": "button/text-button/{ti}/{st}"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Cancel",
+      "when": {
+       "Loading": "True",
+       "State": [
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "stretch-x",
+      "layout": {
+       "dir": "H",
+       "gap": "button/size/{s}/gap-text",
+       "pl": "button/size/{s}/x-icon-button",
+       "pr": "button/size/{s}/x-icon-button",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "FIXED",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "icon",
+        "name": "Cancel",
+        "icon": {
+         "name": "x",
+         "size": "button/size/{s}/icon",
+         "color": "button/text-button/{ti}/{st}"
+        }
+       },
+       {
+        "type": "text",
+        "name": "Отменить",
+        "text": {
+         "chars": "Отменить",
+         "style": "typography/action/button/{s}",
+         "fill": "button/text-button/{t}/text/{st}",
+         "truncate": true
+        }
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "Button / Icon Only",
+   "description": "Кнопка инициирует действие пользователя. Это самый частый интерактивный элемент — критично использовать её последовательно по всему продукту, чтобы пользователь понимал приоритет и тип действия.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "XL",
+      "L",
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Primary",
+      "Secondary",
+      "Tertiary",
+      "Danger",
+      "Inverse-primary",
+      "Inverse-secondary"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+     ]
+    },
+    {
+     "name": "Loading",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "State": "Disabled",
+     "Loading": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Size",
+    "rows": [
+     "Loading",
+     "State"
+    ],
+    "split": {
+     "axis": "Type",
+     "values": [
+      "Inverse-primary",
+      "Inverse-secondary"
+     ]
+    }
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "t": {
+     "from": "Type",
+     "map": {
+      "Primary": "primary",
+      "Secondary": "secondary",
+      "Tertiary": "tertiary",
+      "Danger": "danger",
+      "Inverse-primary": "inverse",
+      "Inverse-secondary": "inverse"
+     }
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    },
+    "ic": {
+     "from": "Type",
+     "map": {
+      "Primary": "primary/icon",
+      "Secondary": "secondary/icon",
+      "Tertiary": "tertiary/icon",
+      "Danger": "danger/icon",
+      "Inverse-primary": "inverse/icon/primary",
+      "Inverse-secondary": "inverse/icon/secondary"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Icon",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "button/size/{s}/gap-text",
+     "px": "button/size/{s}/x-text",
+     "py": "button/size/{s}/y-text",
+     "align": "CENTER",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "HUG"
+    },
+    "radius": "button/size/{s}/radius-text",
+    "fill": "button/text-button/{t}/bg/{st}",
+    "stroke": {
+     "weight": "button/size/{s}/border-text",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": 3,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "button/size/{s}/radius-focus",
+      "stroke": {
+       "color": "button/focus-ring",
+       "weight": "button/size/{s}/border-focus",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Icon",
+      "icon": {
+       "name": "circle",
+       "size": "button/size/{s}/icon",
+       "color": "button/text-button/{ic}/{st}"
+      },
+      "refs": {
+       "mainComponent": "↳ Icon"
+      },
+      "opacity": {
+       "by": "Loading",
+       "map": {
+        "False": 1,
+        "True": 0
+       }
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loading",
+      "when": {
+       "Loading": "True",
+       "State": "Default"
+      },
+      "abs": "center",
+      "icon": {
+       "name": "loader",
+       "size": "button/size/{s}/icon",
+       "color": "button/text-button/{ic}/{st}"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Cancel",
+      "when": {
+       "Loading": "True",
+       "State": [
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "center",
+      "icon": {
+       "name": "x",
+       "size": "button/size/{s}/icon",
+       "color": "button/text-button/{ic}/{st}"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "spec": {
+  "title": "Спецификация",
+  "description": "Технические характеристики компонента",
+  "columns": [
+   {
+    "title": "Вид",
+    "cards": [
+     {
+      "title": "Fill",
+      "description": "Главное действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Outline",
+      "description": "Важное, но не главное действие",
+      "items": [
+       {
+        "set": "Button / Outline",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Text",
+      "description": "Второстепенные действия",
+      "items": [
+       {
+        "set": "Button / Text",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Тип",
+    "cards": [
+     {
+      "title": "Primary",
+      "description": "Главное позитивное действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Primary Soft",
+      "description": "Важное позитивное действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary-soft",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Secondary",
+      "description": "Альтернативное действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Secondary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Ghost",
+      "description": "Дополнительное действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Ghost",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Danger",
+      "description": "Необратимое действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Danger",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Danger Soft",
+      "description": "Деструктивное действие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Danger-soft",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Размер",
+    "cards": [
+     {
+      "title": "XL",
+      "description": "Не перегруженные интерфейсы",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "L",
+      "description": "Основной вариант, для большинства интерфейсов",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "M",
+      "description": "Интерфейсы, где много информации и действий",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "M",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "S",
+      "description": "Для секций в интерфейсах, где недостаточно пространства и много информации",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "S",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Содержание",
+    "cards": [
+     {
+      "title": "Текст",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Текст + иконка слева",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": true,
+         "Right Icon": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Текст + иконка справа",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": true
+        }
+       }
+      ]
+     },
+     {
+      "title": "Только иконка",
+      "items": [
+       {
+        "set": "Button / Icon - Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Corner Case",
+    "cards": [
+     {
+      "title": "Default",
+      "description": "Длинная подпись обрезается многоточием",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "width": 140
+       }
+      ]
+     },
+     {
+      "title": "Loading",
+      "description": "Отмена действия при наведении",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Hover",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "width": 100
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Инверсия",
+    "cards": [
+     {
+      "title": "Inverse",
+      "inverse": true,
+      "description": "Тёмные и насыщенные поверхности: Filled — главное действие, Outline — альтернативное, Text — ссылки, «Назад», закрытие",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Inverse",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Filled"
+       },
+       {
+        "set": "Button / Outline",
+        "variant": {
+         "Size": "L",
+         "Type": "Inverse",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Outline"
+       },
+       {
+        "set": "Button / Text",
+        "variant": {
+         "Size": "L",
+         "Type": "Inverse",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Text"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Focus",
+    "grid": 2,
+    "cards": [
+     {
+      "title": "XL",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Fill"
+       },
+       {
+        "set": "Button / Outline",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Outline"
+       },
+       {
+        "set": "Button / Text",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Text"
+       }
+      ]
+     },
+     {
+      "title": "L",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Fill"
+       },
+       {
+        "set": "Button / Outline",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Outline"
+       },
+       {
+        "set": "Button / Text",
+        "variant": {
+         "Size": "L",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Text"
+       }
+      ]
+     },
+     {
+      "title": "M",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "M",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Fill"
+       },
+       {
+        "set": "Button / Outline",
+        "variant": {
+         "Size": "M",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Outline"
+       },
+       {
+        "set": "Button / Text",
+        "variant": {
+         "Size": "M",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Text"
+       }
+      ]
+     },
+     {
+      "title": "S",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "S",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Fill"
+       },
+       {
+        "set": "Button / Outline",
+        "variant": {
+         "Size": "S",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Outline"
+       },
+       {
+        "set": "Button / Text",
+        "variant": {
+         "Size": "S",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Text"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Взаимодействие",
+    "grid": 2,
+    "cards": [
+     {
+      "title": "Mouse",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Default"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Hover",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Hover"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Pressed",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Pressed"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Loading - Default"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Hover",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Loading - Hover"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Pressed",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Loading - Pressed"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Disabled",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false
+        },
+        "label": "Disabled"
+       }
+      ]
+     },
+     {
+      "title": "Keyboard",
+      "items": [
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Default"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Hover",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Hover"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Pressed",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Pressed"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Default",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Loading - Default"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Hover",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Loading - Hover"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Pressed",
+         "Loading": "True"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": true
+        },
+        "label": "Loading - Pressed"
+       },
+       {
+        "set": "Button / Filled",
+        "variant": {
+         "Size": "XL",
+         "Type": "Primary",
+         "State": "Disabled",
+         "Loading": "False"
+        },
+        "props": {
+         "Label": "Сохранить изменения",
+         "Left Icon": false,
+         "Right Icon": false,
+         "Focused": false
+        },
+        "label": "Disabled"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

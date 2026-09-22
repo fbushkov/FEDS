@@ -1,0 +1,2163 @@
+{
+ "component": "radiobutton",
+ "title": "Radiobutton",
+ "page": "Components / Radiobutton",
+ "origin": "existing",
+ "requires": [
+  "skeleton"
+ ],
+ "notes": [
+  "Повтор Radiobutton из файла «Компоненты · Базовые»: Left / Right × M / L и Card, оси и свойства как в файле, имена токенов — библиотеки.",
+  "Без вшитого Avatar (решение автора 22.09.2026): аватар рядом с выбором — композиция, а не часть контрола.",
+  "Loading — экземпляры Skeleton / Line вместо полос с числовыми размерами («Загрузка = Skeleton»).",
+  "Error / Mandatory — рамка ошибки поверх бокса и звёздочка (иконка asterisk), только у неотмеченного варианта, как в файле.",
+  "Тень карточки не собирается: эффект-стили не проработаны (решение автора)."
+ ],
+ "sets": [
+  {
+   "name": "Radio / Left / M",
+   "description": "Выбор одного варианта из группы взаимоисключающих. Если можно выбрать несколько — Checkbox.",
+   "axes": [
+    {
+     "name": "Checked",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Checked"
+    ],
+    "split": "Inverse"
+   },
+   "a11y": {
+    "exempt": {
+     "State": "Loading"
+    },
+    "reason": "Loading — скелетон вместо текста, читать нечего"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    },
+    "chk": {
+     "from": "Checked",
+     "map": {
+      "False": "unchecked",
+      "True": "checked"
+     }
+    },
+    "lb": {
+     "from": "Checked",
+     "map": {
+      "False": "uncheked",
+      "True": "checked"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Text",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Description",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Name",
+     "type": "TEXT",
+     "default": "Name"
+    },
+    {
+     "name": "↳ Description",
+     "type": "TEXT",
+     "default": "Description"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Error / Mandatory",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "radiobutton/size/main/m/radio-text-gap",
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 160,
+    "children": [
+     {
+      "type": "frame",
+      "name": "Container",
+      "layout": {
+       "dir": "H",
+       "px": "radiobutton/size/main/m/box-container-xy",
+       "py": "radiobutton/size/main/m/box-container-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "FIXED"
+      },
+      "height": "radiobutton/size/main/m/box-container",
+      "children": [
+       {
+        "type": "frame",
+        "name": "Radiobutton",
+        "layout": {
+         "dir": "V",
+         "pl": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "pr": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "pt": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "pb": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "FIXED",
+         "h": "FIXED"
+        },
+        "width": "radiobutton/size/main/m/box",
+        "height": "radiobutton/size/main/m/box",
+        "radius": "radiobutton/size/main/m/box-radius",
+        "fill": {
+         "by": "State",
+         "map": {
+          "Default": "radiobutton/{chk}/{i}bg/{st}",
+          "Hover": "radiobutton/{chk}/{i}bg/{st}",
+          "Pressed": "radiobutton/{chk}/{i}bg/{st}",
+          "Disabled": "radiobutton/{chk}/{i}bg/{st}",
+          "Loading": "radiobutton/loading/{i}box-{lb}"
+         }
+        },
+        "stroke": {
+         "color": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/{chk}/{i}border/{st}",
+           "Hover": "radiobutton/{chk}/{i}border/{st}",
+           "Pressed": "radiobutton/{chk}/{i}border/{st}",
+           "Disabled": "radiobutton/{chk}/{i}border/{st}",
+           "Loading": ""
+          }
+         },
+         "weight": "radiobutton/size/main/m/box-border",
+         "align": "INSIDE"
+        },
+        "children": [
+         {
+          "type": "rect",
+          "name": "Dot",
+          "when": {
+           "Checked": "True",
+           "State": [
+            "Default",
+            "Hover",
+            "Pressed",
+            "Disabled"
+           ]
+          },
+          "width": "radiobutton/size/main/m/icon",
+          "height": "radiobutton/size/main/m/icon",
+          "radius": "radiobutton/size/main/m/icon-radius",
+          "fill": "radiobutton/checked/{i}icon/{st}"
+         }
+        ]
+       },
+       {
+        "type": "rect",
+        "name": "Error",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "focus",
+        "offset": -2,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "radius": "radiobutton/size/main/m/box-radius",
+        "stroke": {
+         "color": "radiobutton/unchecked/{i}border/error",
+         "weight": "radiobutton/size/main/m/box-border",
+         "align": "INSIDE"
+        }
+       },
+       {
+        "type": "icon",
+        "name": "*",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "after",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "icon": {
+         "name": "asterisk",
+         "size": 6,
+         "color": "radiobutton/unchecked/error"
+        }
+       },
+       {
+        "type": "rect",
+        "name": "Focus Ring",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Loading"
+         ]
+        },
+        "abs": "focus",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Focused"
+        },
+        "radius": "radiobutton/size/main/m/focus-radius",
+        "stroke": {
+         "color": "radiobutton/focus-ring",
+         "weight": "radiobutton/size/main/m/focus-border",
+         "align": "INSIDE"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "refs": {
+       "visible": "Text"
+      },
+      "layout": {
+       "dir": "V",
+       "gap": "radiobutton/size/main/m/text-interline-gap",
+       "px": "radiobutton/size/main/m/text-container-x",
+       "py": "radiobutton/size/main/m/text-container-y",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "characters": "↳ Name"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Name",
+         "style": "typography/action/radiobutton/m/name",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}name",
+           "Hover": "radiobutton/text/{i}name",
+           "Pressed": "radiobutton/text/{i}name",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}name"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Description",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "visible": "Description",
+         "characters": "↳ Description"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Description",
+         "style": "typography/action/radiobutton/m/description",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}description",
+           "Hover": "radiobutton/text/{i}description",
+           "Pressed": "radiobutton/text/{i}description",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}description"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Name",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 48,
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "M",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Description",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 72,
+        "refs": {
+         "visible": "Description"
+        },
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "M",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "Radio / Left / L",
+   "description": "Выбор одного варианта из группы взаимоисключающих. Если можно выбрать несколько — Checkbox.",
+   "axes": [
+    {
+     "name": "Checked",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Checked"
+    ],
+    "split": "Inverse"
+   },
+   "a11y": {
+    "exempt": {
+     "State": "Loading"
+    },
+    "reason": "Loading — скелетон вместо текста, читать нечего"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    },
+    "chk": {
+     "from": "Checked",
+     "map": {
+      "False": "unchecked",
+      "True": "checked"
+     }
+    },
+    "lb": {
+     "from": "Checked",
+     "map": {
+      "False": "uncheked",
+      "True": "checked"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Text",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Description",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Name",
+     "type": "TEXT",
+     "default": "Name"
+    },
+    {
+     "name": "↳ Description",
+     "type": "TEXT",
+     "default": "Description"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Error / Mandatory",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "radiobutton/size/main/l/radio-text-gap",
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 160,
+    "children": [
+     {
+      "type": "frame",
+      "name": "Container",
+      "layout": {
+       "dir": "H",
+       "px": "radiobutton/size/main/l/box-container-xy",
+       "py": "radiobutton/size/main/l/box-container-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "FIXED"
+      },
+      "height": "radiobutton/size/main/l/box-container",
+      "children": [
+       {
+        "type": "frame",
+        "name": "Radiobutton",
+        "layout": {
+         "dir": "V",
+         "pl": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "pr": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "pt": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "pb": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "FIXED",
+         "h": "FIXED"
+        },
+        "width": "radiobutton/size/main/l/box",
+        "height": "radiobutton/size/main/l/box",
+        "radius": "radiobutton/size/main/l/box-radius",
+        "fill": {
+         "by": "State",
+         "map": {
+          "Default": "radiobutton/{chk}/{i}bg/{st}",
+          "Hover": "radiobutton/{chk}/{i}bg/{st}",
+          "Pressed": "radiobutton/{chk}/{i}bg/{st}",
+          "Disabled": "radiobutton/{chk}/{i}bg/{st}",
+          "Loading": "radiobutton/loading/{i}box-{lb}"
+         }
+        },
+        "stroke": {
+         "color": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/{chk}/{i}border/{st}",
+           "Hover": "radiobutton/{chk}/{i}border/{st}",
+           "Pressed": "radiobutton/{chk}/{i}border/{st}",
+           "Disabled": "radiobutton/{chk}/{i}border/{st}",
+           "Loading": ""
+          }
+         },
+         "weight": "radiobutton/size/main/l/box-border",
+         "align": "INSIDE"
+        },
+        "children": [
+         {
+          "type": "rect",
+          "name": "Dot",
+          "when": {
+           "Checked": "True",
+           "State": [
+            "Default",
+            "Hover",
+            "Pressed",
+            "Disabled"
+           ]
+          },
+          "width": "radiobutton/size/main/l/icon",
+          "height": "radiobutton/size/main/l/icon",
+          "radius": "radiobutton/size/main/l/icon-radius",
+          "fill": "radiobutton/checked/{i}icon/{st}"
+         }
+        ]
+       },
+       {
+        "type": "rect",
+        "name": "Error",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "focus",
+        "offset": -2,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "radius": "radiobutton/size/main/l/box-radius",
+        "stroke": {
+         "color": "radiobutton/unchecked/{i}border/error",
+         "weight": "radiobutton/size/main/l/box-border",
+         "align": "INSIDE"
+        }
+       },
+       {
+        "type": "icon",
+        "name": "*",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "after",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "icon": {
+         "name": "asterisk",
+         "size": 6,
+         "color": "radiobutton/unchecked/error"
+        }
+       },
+       {
+        "type": "rect",
+        "name": "Focus Ring",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Loading"
+         ]
+        },
+        "abs": "focus",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Focused"
+        },
+        "radius": "radiobutton/size/main/l/focus-radius",
+        "stroke": {
+         "color": "radiobutton/focus-ring",
+         "weight": "radiobutton/size/main/l/focus-border",
+         "align": "INSIDE"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "refs": {
+       "visible": "Text"
+      },
+      "layout": {
+       "dir": "V",
+       "gap": "radiobutton/size/main/l/text-interline-gap",
+       "px": "radiobutton/size/main/l/text-container-x",
+       "py": "radiobutton/size/main/l/text-container-y",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "characters": "↳ Name"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Name",
+         "style": "typography/action/radiobutton/l/name",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}name",
+           "Hover": "radiobutton/text/{i}name",
+           "Pressed": "radiobutton/text/{i}name",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}name"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Description",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "visible": "Description",
+         "characters": "↳ Description"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Description",
+         "style": "typography/action/radiobutton/l/description",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}description",
+           "Hover": "radiobutton/text/{i}description",
+           "Pressed": "radiobutton/text/{i}description",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}description"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Name",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 48,
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "L",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Description",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 72,
+        "refs": {
+         "visible": "Description"
+        },
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "M",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "Radio / Right / M",
+   "description": "Выбор одного варианта из группы взаимоисключающих. Если можно выбрать несколько — Checkbox.",
+   "axes": [
+    {
+     "name": "Checked",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Checked"
+    ],
+    "split": "Inverse"
+   },
+   "a11y": {
+    "exempt": {
+     "State": "Loading"
+    },
+    "reason": "Loading — скелетон вместо текста, читать нечего"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    },
+    "chk": {
+     "from": "Checked",
+     "map": {
+      "False": "unchecked",
+      "True": "checked"
+     }
+    },
+    "lb": {
+     "from": "Checked",
+     "map": {
+      "False": "uncheked",
+      "True": "checked"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Text",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Description",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Name",
+     "type": "TEXT",
+     "default": "Name"
+    },
+    {
+     "name": "↳ Description",
+     "type": "TEXT",
+     "default": "Description"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Error / Mandatory",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "radiobutton/size/main/m/radio-text-gap",
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 160,
+    "children": [
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "refs": {
+       "visible": "Text"
+      },
+      "layout": {
+       "dir": "V",
+       "gap": "radiobutton/size/main/m/text-interline-gap",
+       "px": "radiobutton/size/main/m/text-container-x",
+       "py": "radiobutton/size/main/m/text-container-y",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "characters": "↳ Name"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Name",
+         "style": "typography/action/radiobutton/m/name",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}name",
+           "Hover": "radiobutton/text/{i}name",
+           "Pressed": "radiobutton/text/{i}name",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}name"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Description",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "visible": "Description",
+         "characters": "↳ Description"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Description",
+         "style": "typography/action/radiobutton/m/description",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}description",
+           "Hover": "radiobutton/text/{i}description",
+           "Pressed": "radiobutton/text/{i}description",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}description"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Name",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 48,
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "M",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Description",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 72,
+        "refs": {
+         "visible": "Description"
+        },
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "M",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Container",
+      "layout": {
+       "dir": "H",
+       "px": "radiobutton/size/main/m/box-container-xy",
+       "py": "radiobutton/size/main/m/box-container-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "FIXED"
+      },
+      "height": "radiobutton/size/main/m/box-container",
+      "children": [
+       {
+        "type": "frame",
+        "name": "Radiobutton",
+        "layout": {
+         "dir": "V",
+         "pl": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "pr": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "pt": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "pb": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/m/box-xy",
+           "True": "radiobutton/size/main/m/box-xy"
+          }
+         },
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "FIXED",
+         "h": "FIXED"
+        },
+        "width": "radiobutton/size/main/m/box",
+        "height": "radiobutton/size/main/m/box",
+        "radius": "radiobutton/size/main/m/box-radius",
+        "fill": {
+         "by": "State",
+         "map": {
+          "Default": "radiobutton/{chk}/{i}bg/{st}",
+          "Hover": "radiobutton/{chk}/{i}bg/{st}",
+          "Pressed": "radiobutton/{chk}/{i}bg/{st}",
+          "Disabled": "radiobutton/{chk}/{i}bg/{st}",
+          "Loading": "radiobutton/loading/{i}box-{lb}"
+         }
+        },
+        "stroke": {
+         "color": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/{chk}/{i}border/{st}",
+           "Hover": "radiobutton/{chk}/{i}border/{st}",
+           "Pressed": "radiobutton/{chk}/{i}border/{st}",
+           "Disabled": "radiobutton/{chk}/{i}border/{st}",
+           "Loading": ""
+          }
+         },
+         "weight": "radiobutton/size/main/m/box-border",
+         "align": "INSIDE"
+        },
+        "children": [
+         {
+          "type": "rect",
+          "name": "Dot",
+          "when": {
+           "Checked": "True",
+           "State": [
+            "Default",
+            "Hover",
+            "Pressed",
+            "Disabled"
+           ]
+          },
+          "width": "radiobutton/size/main/m/icon",
+          "height": "radiobutton/size/main/m/icon",
+          "radius": "radiobutton/size/main/m/icon-radius",
+          "fill": "radiobutton/checked/{i}icon/{st}"
+         }
+        ]
+       },
+       {
+        "type": "rect",
+        "name": "Error",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "focus",
+        "offset": -2,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "radius": "radiobutton/size/main/m/box-radius",
+        "stroke": {
+         "color": "radiobutton/unchecked/{i}border/error",
+         "weight": "radiobutton/size/main/m/box-border",
+         "align": "INSIDE"
+        }
+       },
+       {
+        "type": "icon",
+        "name": "*",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "after",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "icon": {
+         "name": "asterisk",
+         "size": 6,
+         "color": "radiobutton/unchecked/error"
+        }
+       },
+       {
+        "type": "rect",
+        "name": "Focus Ring",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Loading"
+         ]
+        },
+        "abs": "focus",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Focused"
+        },
+        "radius": "radiobutton/size/main/m/focus-radius",
+        "stroke": {
+         "color": "radiobutton/focus-ring",
+         "weight": "radiobutton/size/main/m/focus-border",
+         "align": "INSIDE"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "Radio / Right / L",
+   "description": "Выбор одного варианта из группы взаимоисключающих. Если можно выбрать несколько — Checkbox.",
+   "axes": [
+    {
+     "name": "Checked",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Checked"
+    ],
+    "split": "Inverse"
+   },
+   "a11y": {
+    "exempt": {
+     "State": "Loading"
+    },
+    "reason": "Loading — скелетон вместо текста, читать нечего"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    },
+    "st": {
+     "from": "State",
+     "case": "lower"
+    },
+    "chk": {
+     "from": "Checked",
+     "map": {
+      "False": "unchecked",
+      "True": "checked"
+     }
+    },
+    "lb": {
+     "from": "Checked",
+     "map": {
+      "False": "uncheked",
+      "True": "checked"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Text",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Description",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Name",
+     "type": "TEXT",
+     "default": "Name"
+    },
+    {
+     "name": "↳ Description",
+     "type": "TEXT",
+     "default": "Description"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Error / Mandatory",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "radiobutton/size/main/l/radio-text-gap",
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 160,
+    "children": [
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "refs": {
+       "visible": "Text"
+      },
+      "layout": {
+       "dir": "V",
+       "gap": "radiobutton/size/main/l/text-interline-gap",
+       "px": "radiobutton/size/main/l/text-container-x",
+       "py": "radiobutton/size/main/l/text-container-y",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "characters": "↳ Name"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Name",
+         "style": "typography/action/radiobutton/l/name",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}name",
+           "Hover": "radiobutton/text/{i}name",
+           "Pressed": "radiobutton/text/{i}name",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}name"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Description",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Disabled"
+         ]
+        },
+        "refs": {
+         "visible": "Description",
+         "characters": "↳ Description"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Description",
+         "style": "typography/action/radiobutton/l/description",
+         "fontStyle": "Regular",
+         "fill": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/text/{i}description",
+           "Hover": "radiobutton/text/{i}description",
+           "Pressed": "radiobutton/text/{i}description",
+           "Disabled": "radiobutton/text/{i}disabled",
+           "Loading": "radiobutton/text/{i}description"
+          }
+         },
+         "wrap": true
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Name",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 48,
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "L",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Description",
+        "when": {
+         "State": "Loading"
+        },
+        "width": 72,
+        "refs": {
+         "visible": "Description"
+        },
+        "instance": {
+         "set": "Skeleton / Line",
+         "variant": {
+          "Size": "M",
+          "Inverse": "{I}"
+         },
+         "props": {}
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Container",
+      "layout": {
+       "dir": "H",
+       "px": "radiobutton/size/main/l/box-container-xy",
+       "py": "radiobutton/size/main/l/box-container-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "FIXED"
+      },
+      "height": "radiobutton/size/main/l/box-container",
+      "children": [
+       {
+        "type": "frame",
+        "name": "Radiobutton",
+        "layout": {
+         "dir": "V",
+         "pl": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "pr": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "pt": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "pb": {
+          "by": "Checked",
+          "map": {
+           "False": "radiobutton/size/main/l/box-xy",
+           "True": "radiobutton/size/main/l/box-xy"
+          }
+         },
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "FIXED",
+         "h": "FIXED"
+        },
+        "width": "radiobutton/size/main/l/box",
+        "height": "radiobutton/size/main/l/box",
+        "radius": "radiobutton/size/main/l/box-radius",
+        "fill": {
+         "by": "State",
+         "map": {
+          "Default": "radiobutton/{chk}/{i}bg/{st}",
+          "Hover": "radiobutton/{chk}/{i}bg/{st}",
+          "Pressed": "radiobutton/{chk}/{i}bg/{st}",
+          "Disabled": "radiobutton/{chk}/{i}bg/{st}",
+          "Loading": "radiobutton/loading/{i}box-{lb}"
+         }
+        },
+        "stroke": {
+         "color": {
+          "by": "State",
+          "map": {
+           "Default": "radiobutton/{chk}/{i}border/{st}",
+           "Hover": "radiobutton/{chk}/{i}border/{st}",
+           "Pressed": "radiobutton/{chk}/{i}border/{st}",
+           "Disabled": "radiobutton/{chk}/{i}border/{st}",
+           "Loading": ""
+          }
+         },
+         "weight": "radiobutton/size/main/l/box-border",
+         "align": "INSIDE"
+        },
+        "children": [
+         {
+          "type": "rect",
+          "name": "Dot",
+          "when": {
+           "Checked": "True",
+           "State": [
+            "Default",
+            "Hover",
+            "Pressed",
+            "Disabled"
+           ]
+          },
+          "width": "radiobutton/size/main/l/icon",
+          "height": "radiobutton/size/main/l/icon",
+          "radius": "radiobutton/size/main/l/icon-radius",
+          "fill": "radiobutton/checked/{i}icon/{st}"
+         }
+        ]
+       },
+       {
+        "type": "rect",
+        "name": "Error",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "focus",
+        "offset": -2,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "radius": "radiobutton/size/main/l/box-radius",
+        "stroke": {
+         "color": "radiobutton/unchecked/{i}border/error",
+         "weight": "radiobutton/size/main/l/box-border",
+         "align": "INSIDE"
+        }
+       },
+       {
+        "type": "icon",
+        "name": "*",
+        "when": {
+         "Checked": "False",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "abs": "after",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Error / Mandatory"
+        },
+        "icon": {
+         "name": "asterisk",
+         "size": 6,
+         "color": "radiobutton/unchecked/error"
+        }
+       },
+       {
+        "type": "rect",
+        "name": "Focus Ring",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Loading"
+         ]
+        },
+        "abs": "focus",
+        "offset": 1,
+        "visible": false,
+        "refs": {
+         "visible": "Focused"
+        },
+        "radius": "radiobutton/size/main/l/focus-radius",
+        "stroke": {
+         "color": "radiobutton/focus-ring",
+         "weight": "radiobutton/size/main/l/focus-border",
+         "align": "INSIDE"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "Radio / Card",
+   "description": "Radiobutton в карточке: вся карточка — активная область. Для выбора, которому нужна подробная подпись.",
+   "axes": [
+    {
+     "name": "Type",
+     "values": [
+      "Left",
+      "Right",
+      "Right+Icon"
+     ]
+    },
+    {
+     "name": "Size",
+     "values": [
+      "L",
+      "M"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "Type",
+    "rows": [
+     "Size"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "S": {
+     "from": "Size"
+    },
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    },
+    "side": {
+     "from": "Type",
+     "map": {
+      "Left": "Left",
+      "Right": "Right",
+      "Right+Icon": "Right"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Icon",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "V",
+     "px": "radiobutton/size/card/{s}/x",
+     "pt": "radiobutton/size/card/{s}/y-top",
+     "pb": "radiobutton/size/card/{s}/y-bottom",
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 240,
+    "radius": "radiobutton/size/card/radius",
+    "fill": "radiobutton/card/{i}bg",
+    "stroke": {
+     "color": "radiobutton/card/{i}border",
+     "weight": "radiobutton/size/card/border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "frame",
+      "name": "Icon",
+      "when": {
+       "Type": "Right+Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "HUG",
+       "h": "FIXED"
+      },
+      "height": "radiobutton/size/card/{s}/icon-text",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "refs": {
+         "mainComponent": "↳ Icon"
+        },
+        "icon": {
+         "name": "circle",
+         "size": "radiobutton/size/card/{s}/icon",
+         "color": "radiobutton/card/{i}icon"
+        }
+       }
+      ]
+     },
+     {
+      "type": "instance",
+      "name": "Radiobutton",
+      "expose": true,
+      "w": "FILL",
+      "instance": {
+       "set": "Radio / {side} / {S}",
+       "variant": {
+        "Checked": "False",
+        "State": "Default",
+        "Inverse": "{I}"
+       },
+       "props": {}
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "spec": {
+  "title": "Radiobutton",
+  "description": "Выбор одного варианта из группы взаимоисключающих. Если можно выбрать несколько — Checkbox.",
+  "columns": [
+   {
+    "title": "Логическое состояние",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Unchecked",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "False",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Checked",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Размер",
+    "width": 360,
+    "cards": [
+     {
+      "title": "M",
+      "description": "Стандартный: формы, таблицы, фильтры, плотные списки",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "L",
+      "description": "Крупная типографика, длинные подписи, увеличенная активная область",
+      "items": [
+       {
+        "set": "Radio / Left / L",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Направление",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Left",
+      "description": "Стандарт для форм, списков и фильтров",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Right",
+      "description": "Строки и списки с элементами управления справа",
+      "items": [
+       {
+        "set": "Radio / Right / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Конфигурация",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Текст",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Текст + описание",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Без видимого текста",
+      "description": "Только в таблицах, когда контекст задан строкой или колонкой",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Text": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Состояния",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Mouse",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        },
+        "label": "Default"
+       },
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Hover",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        },
+        "label": "Hover"
+       },
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Pressed",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        },
+        "label": "Pressed"
+       },
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Disabled",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false
+        },
+        "label": "Disabled"
+       }
+      ]
+     },
+     {
+      "title": "Keyboard",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false,
+         "Focused": true
+        },
+        "label": "Focused"
+       }
+      ]
+     },
+     {
+      "title": "Loading",
+      "description": "Значение загружается: Skeleton вместо подписи, взаимодействие недоступно",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "False",
+         "State": "Loading",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Error / Mandatory",
+      "description": "Обязательный выбор не сделан — после проверки формы",
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "False",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description": false,
+         "Error / Mandatory": true
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Карточка",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Left",
+      "items": [
+       {
+        "set": "Radio / Card",
+        "variant": {
+         "Type": "Left",
+         "Size": "M",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Right",
+      "items": [
+       {
+        "set": "Radio / Card",
+        "variant": {
+         "Type": "Right",
+         "Size": "M",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Right+Icon",
+      "items": [
+       {
+        "set": "Radio / Card",
+        "variant": {
+         "Type": "Right+Icon",
+         "Size": "M",
+         "Inverse": "False"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Инверсия",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Inverse",
+      "description": "На тёмных поверхностях — светлые inverse-токены",
+      "inverse": true,
+      "items": [
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "True",
+         "State": "Default",
+         "Inverse": "True"
+        }
+       },
+       {
+        "set": "Radio / Left / M",
+        "variant": {
+         "Checked": "False",
+         "State": "Default",
+         "Inverse": "True"
+        }
+       },
+       {
+        "set": "Radio / Card",
+        "variant": {
+         "Type": "Left",
+         "Size": "M",
+         "Inverse": "True"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

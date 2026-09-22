@@ -1,0 +1,2 @@
+// Заглушка фото для Avatar (Type=Photo): 64×64 PNG — мягкий фон и силуэт. Сгенерирована один раз, без внешних ресурсов.
+export const PHOTO_PLACEHOLDER = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAuklEQVR42u3YSxGAMAxF0edfABKQgQP2SEAGe2BRSD9Jemci4J5N21T7cYYeAQAAAAAAAAAAAABwn2XdnhMD8JrejqGe6S0YGlJf0aBR9bUMAAz1VQzTA4z1dgMAAAAAxAZwkW28hQBk2AcybGQZduIkvxJ8bAEAkAvQ6PBpBeh8i/EWir7QVKk3GuSh3mKQh3QLQ67qfxgmA3So/2qQw/pPBvmsLzfMARhSX2gA4B8wsL7EAAAAgOCAC5VeOdwhDsh7AAAAAElFTkSuQmCC';

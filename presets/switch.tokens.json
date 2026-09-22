@@ -1,0 +1,2037 @@
+{
+ "component": "switch",
+ "title": "Switch",
+ "kind": "component",
+ "origin": "existing",
+ "source": "input/tokens/variables.json",
+ "doc": "input/builds/switch/switchtoggle.md",
+ "roots": [
+  "switch"
+ ],
+ "prefixes": [
+  "switch/"
+ ],
+ "decisions": [
+  "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+ ],
+ "l2": [
+  {
+   "name": "border/switch/box/l",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/1",
+    "dark": "border/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "border/switch/box/m",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/1",
+    "dark": "border/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "border/switch/card",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/1",
+    "dark": "border/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "border/switch/focus/l",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/2",
+    "dark": "border/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "border/switch/focus/m",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/2",
+    "dark": "border/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/blur/l",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "radius/3",
+    "dark": "radius/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/blur/m",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "radius/2",
+    "dark": "radius/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/spread/l",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "radius/0",
+    "dark": "radius/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/spread/m",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "radius/0",
+    "dark": "radius/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/x/l",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "size/1",
+    "dark": "size/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/x/m",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "size/1",
+    "dark": "size/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/y/l",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "size/2",
+    "dark": "size/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "effects/switch/knob/y/m",
+   "type": "FLOAT",
+   "scopes": [
+    "EFFECT_FLOAT"
+   ],
+   "values": {
+    "light": "size/1",
+    "dark": "size/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/switch/control-text/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/12",
+    "dark": "space/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/switch/control-text/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/8",
+    "dark": "space/8"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/switch/text-interline/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/switch/text-interline/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "radius/switch/box",
+   "type": "FLOAT",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "values": {
+    "light": "radius/999",
+    "dark": "radius/999"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "radius/switch/card",
+   "type": "FLOAT",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "values": {
+    "light": "radius/12",
+    "dark": "radius/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "radius/switch/focus",
+   "type": "FLOAT",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "values": {
+    "light": "radius/999",
+    "dark": "radius/999"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "radius/switch/knob",
+   "type": "FLOAT",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "values": {
+    "light": "radius/999",
+    "dark": "radius/999"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/box/l-height",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/24",
+    "dark": "size/24"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/box/l-width",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/40",
+    "dark": "size/40"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/box/m-height",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/20",
+    "dark": "size/20"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/box/m-width",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/32",
+    "dark": "size/32"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/icon/card/l",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/24",
+    "dark": "size/24"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/icon/card/m",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/20",
+    "dark": "size/20"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/icon/status/l",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/14",
+    "dark": "size/14"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/icon/status/m",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/12",
+    "dark": "size/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/knob/l",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/18",
+    "dark": "size/18"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/knob/l-pending",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/24",
+    "dark": "size/24"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/knob/m",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/14",
+    "dark": "size/14"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/switch/knob/m-pending",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/18",
+    "dark": "size/18"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/box/x/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/3",
+    "dark": "space/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/box/x/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/3",
+    "dark": "space/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/box/y/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/3",
+    "dark": "space/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/box/y/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/3",
+    "dark": "space/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/x/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/16",
+    "dark": "space/16"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/x/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/12",
+    "dark": "space/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/y/l-bottom",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/16",
+    "dark": "space/16"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/y/l-icon-text",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/36",
+    "dark": "space/36"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/y/l-top",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/16",
+    "dark": "space/16"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/y/m-bottom",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/12",
+    "dark": "space/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/y/m-icon-text",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/28",
+    "dark": "space/28"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/card/y/m-top",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/12",
+    "dark": "space/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/knob/xy-l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/2",
+    "dark": "space/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/knob/xy-m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/2",
+    "dark": "space/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/text-container/x/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/text-container/x/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/text-container/y/l",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/switch/text-container/y/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/description/letter-spacing",
+   "type": "FLOAT",
+   "scopes": [
+    "LETTER_SPACING"
+   ],
+   "values": {
+    "light": "font/letter-spacing/10",
+    "dark": "font/letter-spacing/10"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/description/line-height",
+   "type": "FLOAT",
+   "scopes": [
+    "LINE_HEIGHT"
+   ],
+   "values": {
+    "light": "font/line-height/20",
+    "dark": "font/line-height/20"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/description/size",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_SIZE"
+   ],
+   "values": {
+    "light": "font/size/14",
+    "dark": "font/size/14"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/description/weight",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_WEIGHT"
+   ],
+   "values": {
+    "light": "font/weight/400",
+    "dark": "font/weight/400"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/name/letter-spacing",
+   "type": "FLOAT",
+   "scopes": [
+    "LETTER_SPACING"
+   ],
+   "values": {
+    "light": "font/letter-spacing/0",
+    "dark": "font/letter-spacing/0"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/name/line-height",
+   "type": "FLOAT",
+   "scopes": [
+    "LINE_HEIGHT"
+   ],
+   "values": {
+    "light": "font/line-height/24",
+    "dark": "font/line-height/24"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/name/size",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_SIZE"
+   ],
+   "values": {
+    "light": "font/size/16",
+    "dark": "font/size/16"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/l/name/weight",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_WEIGHT"
+   ],
+   "values": {
+    "light": "font/weight/400",
+    "dark": "font/weight/400"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/description/letter-spacing",
+   "type": "FLOAT",
+   "scopes": [
+    "LETTER_SPACING"
+   ],
+   "values": {
+    "light": "font/letter-spacing/10",
+    "dark": "font/letter-spacing/10"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/description/line-height",
+   "type": "FLOAT",
+   "scopes": [
+    "LINE_HEIGHT"
+   ],
+   "values": {
+    "light": "font/line-height/20",
+    "dark": "font/line-height/20"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/description/size",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_SIZE"
+   ],
+   "values": {
+    "light": "font/size/14",
+    "dark": "font/size/14"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/description/weight",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_WEIGHT"
+   ],
+   "values": {
+    "light": "font/weight/400",
+    "dark": "font/weight/400"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/name/letter-spacing",
+   "type": "FLOAT",
+   "scopes": [
+    "LETTER_SPACING"
+   ],
+   "values": {
+    "light": "font/letter-spacing/10",
+    "dark": "font/letter-spacing/10"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/name/line-height",
+   "type": "FLOAT",
+   "scopes": [
+    "LINE_HEIGHT"
+   ],
+   "values": {
+    "light": "font/line-height/20",
+    "dark": "font/line-height/20"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/name/size",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_SIZE"
+   ],
+   "values": {
+    "light": "font/size/14",
+    "dark": "font/size/14"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/switch/m/name/weight",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_WEIGHT"
+   ],
+   "values": {
+    "light": "font/weight/400",
+    "dark": "font/weight/400"
+   },
+   "hidden": true,
+   "description": ""
+  }
+ ],
+ "l3": [
+  {
+   "name": "switch/card/bg",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/ghost",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/card/border",
+   "type": "COLOR",
+   "alias": "color/static/border/base/soft",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/card/icon",
+   "type": "COLOR",
+   "alias": "color/static/indicator/base/hard",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/card/inverse-bg",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/ghost",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/card/inverse-border",
+   "type": "COLOR",
+   "alias": "color/static/border/base/inverse-light",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/card/inverse-icon",
+   "type": "COLOR",
+   "alias": "color/static/indicator/base/inverse-hard",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/focus-ring",
+   "type": "COLOR",
+   "alias": "color/static/focus/brand",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/box-off",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/light",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/box-on",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/accent/brand/medium",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/description",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/mild",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/inverse-box-off",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/inverse-light",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/inverse-box-on",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/inverse-light",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/inverse-description",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/inverse-mild",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/inverse-name",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/inverse-light",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/loading/name",
+   "type": "COLOR",
+   "alias": "color/static/bg/transparent/base/light",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/bg/default",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/quiet/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/bg/disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/quiet/disabled",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/bg/hover",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/quiet/hover",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/bg/pressed",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/quiet/pressed",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/border/default",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/border/disabled",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/border/error",
+   "type": "COLOR",
+   "alias": "color/static/border/danger/firm",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/border/hover",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/border/pressed",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/error",
+   "type": "COLOR",
+   "alias": "color/static/bg/solid/red/medium",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/icon/default",
+   "type": "COLOR",
+   "alias": "color/action/indicator/base/light/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/icon/disabled",
+   "type": "COLOR",
+   "alias": "color/action/indicator/base/light/disabled",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/icon/hover",
+   "type": "COLOR",
+   "alias": "color/action/indicator/base/light/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/icon/inverse-disabled",
+   "type": "COLOR",
+   "alias": "color/action/indicator/base/light/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/icon/pressed",
+   "type": "COLOR",
+   "alias": "color/action/indicator/base/light/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-bg/default",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/inverse-quiet/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-bg/disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/inverse-quiet/disabled",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-bg/hover",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/inverse-quiet/hover",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-bg/pressed",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/inverse-quiet/pressed",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-border/default",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-border/disabled",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-border/hover",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/inverse-border/pressed",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/knob/default",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/knob/disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/knob/hover",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/knob/inverse-disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/inverse/disabled",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/off/knob/pressed",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/bg/default",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/bg/disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/disabled",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/bg/hover",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/hover",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/bg/pressed",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/pressed",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/border/default",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/border/disabled",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/border/error",
+   "type": "COLOR",
+   "alias": "color/static/border/danger/firm",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/border/hover",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/border/pressed",
+   "type": "COLOR",
+   "alias": "color/action/border/base/ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/icon/default",
+   "type": "COLOR",
+   "alias": "color/action/indicator/brand/hard/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/icon/disabled",
+   "type": "COLOR",
+   "alias": "color/action/indicator/brand/hard/disabled",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/icon/hover",
+   "type": "COLOR",
+   "alias": "color/action/indicator/brand/hard/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/icon/inverse-disabled",
+   "type": "COLOR",
+   "alias": "color/action/indicator/brand/hard/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/icon/pressed",
+   "type": "COLOR",
+   "alias": "color/action/indicator/brand/hard/default",
+   "scopes": [
+    "SHAPE_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-bg/default",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-bg/disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/disabled",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-bg/hover",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/hover",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-bg/pressed",
+   "type": "COLOR",
+   "alias": "color/action/bg/brand/medium/pressed",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-border/default",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-border/disabled",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-border/hover",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/inverse-border/pressed",
+   "type": "COLOR",
+   "alias": "color/action/border/base/inverse-ghost/default",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/knob/default",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/knob/disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/knob/hover",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/knob/inverse-disabled",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/inverse/disabled",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/on/knob/pressed",
+   "type": "COLOR",
+   "alias": "color/action/bg/base/pure/default",
+   "scopes": [
+    "FRAME_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/border",
+   "type": "FLOAT",
+   "alias": "border/checkbox/card",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/l/icon",
+   "type": "FLOAT",
+   "alias": "size/switch/icon/card/l",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/l/icon-text",
+   "type": "FLOAT",
+   "alias": "space/switch/card/y/l-icon-text",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/l/x",
+   "type": "FLOAT",
+   "alias": "space/switch/card/x/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/l/y-bottom",
+   "type": "FLOAT",
+   "alias": "space/switch/card/y/l-bottom",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/l/y-top",
+   "type": "FLOAT",
+   "alias": "space/switch/card/y/l-top",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/m/icon",
+   "type": "FLOAT",
+   "alias": "size/switch/icon/card/m",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/m/icon-text",
+   "type": "FLOAT",
+   "alias": "space/switch/card/y/m-icon-text",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/m/x",
+   "type": "FLOAT",
+   "alias": "space/switch/card/x/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/m/y-bottom",
+   "type": "FLOAT",
+   "alias": "space/switch/card/y/m-bottom",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/m/y-top",
+   "type": "FLOAT",
+   "alias": "space/switch/card/y/m-top",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/card/radius",
+   "type": "FLOAT",
+   "alias": "radius/checkbox/card",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/box-border",
+   "type": "FLOAT",
+   "alias": "border/switch/box/l",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/box-height",
+   "type": "FLOAT",
+   "alias": "size/switch/box/l-height",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/box-radius",
+   "type": "FLOAT",
+   "alias": "radius/switch/box",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/box-width",
+   "type": "FLOAT",
+   "alias": "size/switch/box/l-width",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/box-x",
+   "type": "FLOAT",
+   "alias": "space/switch/box/x/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/box-y",
+   "type": "FLOAT",
+   "alias": "space/switch/box/y/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/control-text-gap",
+   "type": "FLOAT",
+   "alias": "gap/switch/control-text/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/focus-border",
+   "type": "FLOAT",
+   "alias": "border/switch/focus/l",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/focus-radius",
+   "type": "FLOAT",
+   "alias": "radius/switch/focus",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/icon",
+   "type": "FLOAT",
+   "alias": "size/switch/icon/status/l",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/knob",
+   "type": "FLOAT",
+   "alias": "size/switch/knob/l",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/knob-pending",
+   "type": "FLOAT",
+   "alias": "size/switch/knob/l-pending",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/knob-radius",
+   "type": "FLOAT",
+   "alias": "radius/switch/knob",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/knob-xy",
+   "type": "FLOAT",
+   "alias": "space/switch/knob/xy-l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/text-container-x",
+   "type": "FLOAT",
+   "alias": "space/switch/text-container/x/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/text-container-y",
+   "type": "FLOAT",
+   "alias": "space/switch/text-container/y/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/l/text-interline-gap",
+   "type": "FLOAT",
+   "alias": "gap/switch/text-interline/l",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/box-border",
+   "type": "FLOAT",
+   "alias": "border/switch/box/m",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/box-height",
+   "type": "FLOAT",
+   "alias": "size/switch/box/m-height",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/box-radius",
+   "type": "FLOAT",
+   "alias": "radius/switch/box",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/box-width",
+   "type": "FLOAT",
+   "alias": "size/switch/box/m-width",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/box-x",
+   "type": "FLOAT",
+   "alias": "space/switch/box/x/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/box-y",
+   "type": "FLOAT",
+   "alias": "space/switch/box/y/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/control-text-gap",
+   "type": "FLOAT",
+   "alias": "gap/switch/control-text/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/focus-border",
+   "type": "FLOAT",
+   "alias": "border/switch/focus/m",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/focus-radius",
+   "type": "FLOAT",
+   "alias": "radius/switch/focus",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/icon",
+   "type": "FLOAT",
+   "alias": "size/switch/icon/status/m",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/knob",
+   "type": "FLOAT",
+   "alias": "size/switch/knob/m",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/knob-pending",
+   "type": "FLOAT",
+   "alias": "size/switch/knob/m-pending",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/knob-radius",
+   "type": "FLOAT",
+   "alias": "radius/switch/knob",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/knob-xy",
+   "type": "FLOAT",
+   "alias": "space/switch/knob/xy-m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/text-container-x",
+   "type": "FLOAT",
+   "alias": "space/switch/text-container/x/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/text-container-y",
+   "type": "FLOAT",
+   "alias": "space/switch/text-container/y/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/size/main/m/text-interline-gap",
+   "type": "FLOAT",
+   "alias": "gap/switch/text-interline/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/text/description",
+   "type": "COLOR",
+   "alias": "color/static/text/base/medium",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/text/disabled",
+   "type": "COLOR",
+   "alias": "color/static/text/base/light",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/text/inverse-description",
+   "type": "COLOR",
+   "alias": "color/static/text/base/inverse-medium",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/text/inverse-disabled",
+   "type": "COLOR",
+   "alias": "color/static/text/base/inverse-light",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/text/inverse-name",
+   "type": "COLOR",
+   "alias": "color/static/text/base/inverse-hard",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "switch/text/name",
+   "type": "COLOR",
+   "alias": "color/static/text/base/hard",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  }
+ ],
+ "textStyles": [
+  {
+   "name": "typography/action/switch/l/name",
+   "fontFamily": "Roboto",
+   "fontStyle": "Regular",
+   "vars": {
+    "fontSize": "typography/switch/l/name/size",
+    "lineHeight": "typography/switch/l/name/line-height",
+    "letterSpacing": "typography/switch/l/name/letter-spacing",
+    "fontWeight": "typography/switch/l/name/weight"
+   }
+  },
+  {
+   "name": "typography/action/switch/l/description",
+   "fontFamily": "Roboto",
+   "fontStyle": "Regular",
+   "vars": {
+    "fontSize": "typography/switch/l/description/size",
+    "lineHeight": "typography/switch/l/description/line-height",
+    "letterSpacing": "typography/switch/l/description/letter-spacing",
+    "fontWeight": "typography/switch/l/description/weight"
+   }
+  },
+  {
+   "name": "typography/action/switch/m/name",
+   "fontFamily": "Roboto",
+   "fontStyle": "Regular",
+   "vars": {
+    "fontSize": "typography/switch/m/name/size",
+    "lineHeight": "typography/switch/m/name/line-height",
+    "letterSpacing": "typography/switch/m/name/letter-spacing",
+    "fontWeight": "typography/switch/m/name/weight"
+   }
+  },
+  {
+   "name": "typography/action/switch/m/description",
+   "fontFamily": "Roboto",
+   "fontStyle": "Regular",
+   "vars": {
+    "fontSize": "typography/switch/m/description/size",
+    "lineHeight": "typography/switch/m/description/line-height",
+    "letterSpacing": "typography/switch/m/description/letter-spacing",
+    "fontWeight": "typography/switch/m/description/weight"
+   }
+  }
+ ],
+ "exceptions": []
+}

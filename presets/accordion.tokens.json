@@ -1,0 +1,1204 @@
+{
+  "component": "accordion",
+  "roots": [
+    "accordion"
+  ],
+  "title": "Accordion",
+  "kind": "component",
+  "analog": "button",
+  "source": "input/backlog/accordion.md",
+  "axes": {
+    "Size": [
+      "M",
+      "S"
+    ],
+    "View": [
+      "Flush",
+      "Boxed",
+      "Cards"
+    ],
+    "Expanded": [
+      "False",
+      "True"
+    ],
+    "State": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "item",
+    "header",
+    "leading-icon",
+    "title",
+    "chevron",
+    "panel",
+    "divider"
+  ],
+  "l2": [
+    {
+      "name": "space/accordion/header/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Accordion — горизонтальный отступ строки заголовка, размер S"
+    },
+    {
+      "name": "space/accordion/header/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Accordion — вертикальный отступ строки заголовка, размер S"
+    },
+    {
+      "name": "gap/accordion/header/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Accordion — промежуток между элементами строки заголовка (иконка, название, стрелка), размер S"
+    },
+    {
+      "name": "size/accordion/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Accordion — размер стрелки и ведущей иконки заголовка, размер S"
+    },
+    {
+      "name": "space/accordion/panel/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Accordion — горизонтальный отступ панели содержимого, размер S"
+    },
+    {
+      "name": "space/accordion/panel/y/s-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Accordion — нижний отступ панели содержимого, размер S"
+    },
+    {
+      "name": "gap/accordion/cards/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Accordion — промежуток между секциями в виде Cards, размер S"
+    },
+    {
+      "name": "border/accordion/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "description": "Accordion — толщина кольца фокуса строки заголовка, размер S"
+    },
+    {
+      "name": "radius/accordion/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "description": "Accordion — скругление кольца фокуса строки заголовка, размер S"
+    },
+    {
+      "name": "space/accordion/header/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Accordion — горизонтальный отступ строки заголовка, размер M"
+    },
+    {
+      "name": "space/accordion/header/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Accordion — вертикальный отступ строки заголовка, размер M"
+    },
+    {
+      "name": "gap/accordion/header/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Accordion — промежуток между элементами строки заголовка (иконка, название, стрелка), размер M"
+    },
+    {
+      "name": "size/accordion/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Accordion — размер стрелки и ведущей иконки заголовка, размер M"
+    },
+    {
+      "name": "space/accordion/panel/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Accordion — горизонтальный отступ панели содержимого, размер M"
+    },
+    {
+      "name": "space/accordion/panel/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Accordion — нижний отступ панели содержимого, размер M"
+    },
+    {
+      "name": "gap/accordion/cards/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Accordion — промежуток между секциями в виде Cards, размер M"
+    },
+    {
+      "name": "border/accordion/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "description": "Accordion — толщина кольца фокуса строки заголовка, размер M"
+    },
+    {
+      "name": "radius/accordion/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "description": "Accordion — скругление кольца фокуса строки заголовка, размер M"
+    },
+    {
+      "name": "radius/accordion/container",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "description": "Accordion — скругление общей рамки (Boxed) и карточки секции (Cards)"
+    },
+    {
+      "name": "border/accordion/container",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Accordion — толщина общей рамки (Boxed) и обводки карточки (Cards)"
+    },
+    {
+      "name": "typography/accordion/s/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Accordion — заголовок секции, размер S: кегль"
+    },
+    {
+      "name": "typography/accordion/s/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Accordion — заголовок секции, размер S: интерлиньяж"
+    },
+    {
+      "name": "typography/accordion/s/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Accordion — заголовок секции, размер S: трекинг"
+    },
+    {
+      "name": "typography/accordion/s/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Accordion — заголовок секции, размер S: насыщенность"
+    },
+    {
+      "name": "typography/accordion/s/panel/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Accordion — текст панели, размер S: кегль"
+    },
+    {
+      "name": "typography/accordion/s/panel/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Accordion — текст панели, размер S: интерлиньяж"
+    },
+    {
+      "name": "typography/accordion/s/panel/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Accordion — текст панели, размер S: трекинг"
+    },
+    {
+      "name": "typography/accordion/s/panel/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Accordion — текст панели, размер S: насыщенность"
+    },
+    {
+      "name": "typography/accordion/m/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Accordion — заголовок секции, размер M: кегль"
+    },
+    {
+      "name": "typography/accordion/m/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Accordion — заголовок секции, размер M: интерлиньяж"
+    },
+    {
+      "name": "typography/accordion/m/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Accordion — заголовок секции, размер M: трекинг"
+    },
+    {
+      "name": "typography/accordion/m/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Accordion — заголовок секции, размер M: насыщенность"
+    },
+    {
+      "name": "typography/accordion/m/panel/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Accordion — текст панели, размер M: кегль"
+    },
+    {
+      "name": "typography/accordion/m/panel/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Accordion — текст панели, размер M: интерлиньяж"
+    },
+    {
+      "name": "typography/accordion/m/panel/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Accordion — текст панели, размер M: трекинг"
+    },
+    {
+      "name": "typography/accordion/m/panel/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Accordion — текст панели, размер M: насыщенность"
+    }
+  ],
+  "l3": [
+    {
+      "name": "accordion/header/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка: обычное состояние"
+    },
+    {
+      "name": "accordion/header/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка: наведение"
+    },
+    {
+      "name": "accordion/header/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка: нажатие"
+    },
+    {
+      "name": "accordion/header/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка: недоступно"
+    },
+    {
+      "name": "accordion/header/text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции: обычное состояние"
+    },
+    {
+      "name": "accordion/header/text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции: наведение"
+    },
+    {
+      "name": "accordion/header/text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции: нажатие"
+    },
+    {
+      "name": "accordion/header/text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции: недоступно"
+    },
+    {
+      "name": "accordion/header/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка: обычное состояние"
+    },
+    {
+      "name": "accordion/header/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка: наведение"
+    },
+    {
+      "name": "accordion/header/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка: нажатие"
+    },
+    {
+      "name": "accordion/header/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка: недоступно"
+    },
+    {
+      "name": "accordion/header/inverse-bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка на тёмной поверхности (Inverse): обычное состояние"
+    },
+    {
+      "name": "accordion/header/inverse-bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка на тёмной поверхности (Inverse): наведение"
+    },
+    {
+      "name": "accordion/header/inverse-bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка на тёмной поверхности (Inverse): нажатие"
+    },
+    {
+      "name": "accordion/header/inverse-bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-ghost/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон строки заголовка на тёмной поверхности (Inverse): недоступно"
+    },
+    {
+      "name": "accordion/header/inverse-text/default",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции на тёмной поверхности (Inverse): обычное состояние"
+    },
+    {
+      "name": "accordion/header/inverse-text/hover",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции на тёмной поверхности (Inverse): наведение"
+    },
+    {
+      "name": "accordion/header/inverse-text/pressed",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/default",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции на тёмной поверхности (Inverse): нажатие"
+    },
+    {
+      "name": "accordion/header/inverse-text/disabled",
+      "type": "COLOR",
+      "alias": "color/action/text/base/inverse-hard/disabled",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — название секции на тёмной поверхности (Inverse): недоступно"
+    },
+    {
+      "name": "accordion/header/inverse-icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-medium/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка на тёмной поверхности (Inverse): обычное состояние"
+    },
+    {
+      "name": "accordion/header/inverse-icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-medium/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка на тёмной поверхности (Inverse): наведение"
+    },
+    {
+      "name": "accordion/header/inverse-icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-medium/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка на тёмной поверхности (Inverse): нажатие"
+    },
+    {
+      "name": "accordion/header/inverse-icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-medium/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Accordion — стрелка и ведущая иконка на тёмной поверхности (Inverse): недоступно"
+    },
+    {
+      "name": "accordion/panel/text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — основной текст панели содержимого"
+    },
+    {
+      "name": "accordion/panel/inverse-text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Accordion — основной текст панели на тёмной поверхности (Inverse)"
+    },
+    {
+      "name": "accordion/boxed/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Accordion — общая рамка вокруг списка (вид Boxed)"
+    },
+    {
+      "name": "accordion/boxed/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Accordion — общая рамка вокруг списка на тёмной поверхности (Boxed, Inverse)"
+    },
+    {
+      "name": "accordion/cards/bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/weak",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон карточки секции (вид Cards)"
+    },
+    {
+      "name": "accordion/cards/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Accordion — обводка карточки секции (вид Cards)"
+    },
+    {
+      "name": "accordion/cards/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-weak",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Accordion — фон карточки секции на тёмной поверхности (Cards, Inverse)"
+    },
+    {
+      "name": "accordion/cards/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Accordion — обводка карточки секции на тёмной поверхности (Cards, Inverse)"
+    },
+    {
+      "name": "accordion/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Accordion — кольцо клавиатурного фокуса вокруг строки заголовка"
+    },
+    {
+      "name": "accordion/inverse-focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/inverse-brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Accordion — кольцо фокуса на тёмной поверхности (Inverse)"
+    },
+    {
+      "name": "accordion/size/s/x",
+      "type": "FLOAT",
+      "alias": "space/accordion/header/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion S — горизонтальный отступ строки заголовка"
+    },
+    {
+      "name": "accordion/size/s/y",
+      "type": "FLOAT",
+      "alias": "space/accordion/header/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion S — вертикальный отступ строки заголовка"
+    },
+    {
+      "name": "accordion/size/s/gap",
+      "type": "FLOAT",
+      "alias": "gap/accordion/header/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion S — промежуток между элементами строки заголовка"
+    },
+    {
+      "name": "accordion/size/s/icon",
+      "type": "FLOAT",
+      "alias": "size/accordion/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Accordion S — размер стрелки и ведущей иконки"
+    },
+    {
+      "name": "accordion/size/s/panel-x",
+      "type": "FLOAT",
+      "alias": "space/accordion/panel/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion S — горизонтальный отступ панели"
+    },
+    {
+      "name": "accordion/size/s/panel-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/accordion/panel/y/s-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion S — нижний отступ панели"
+    },
+    {
+      "name": "accordion/size/s/cards-gap",
+      "type": "FLOAT",
+      "alias": "gap/accordion/cards/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion S — промежуток между карточками (Cards)"
+    },
+    {
+      "name": "accordion/size/s/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/accordion/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Accordion S — скругление рамки Boxed и карточки Cards"
+    },
+    {
+      "name": "accordion/size/s/container-border",
+      "type": "FLOAT",
+      "alias": "border/accordion/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Accordion S — толщина рамки Boxed и обводки карточки Cards"
+    },
+    {
+      "name": "accordion/size/s/focus-border",
+      "type": "FLOAT",
+      "alias": "border/accordion/focus/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Accordion S — толщина кольца фокуса"
+    },
+    {
+      "name": "accordion/size/s/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/accordion/focus/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Accordion S — скругление кольца фокуса"
+    },
+    {
+      "name": "accordion/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/accordion/header/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion M — горизонтальный отступ строки заголовка"
+    },
+    {
+      "name": "accordion/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/accordion/header/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion M — вертикальный отступ строки заголовка"
+    },
+    {
+      "name": "accordion/size/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/accordion/header/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion M — промежуток между элементами строки заголовка"
+    },
+    {
+      "name": "accordion/size/m/icon",
+      "type": "FLOAT",
+      "alias": "size/accordion/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Accordion M — размер стрелки и ведущей иконки"
+    },
+    {
+      "name": "accordion/size/m/panel-x",
+      "type": "FLOAT",
+      "alias": "space/accordion/panel/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion M — горизонтальный отступ панели"
+    },
+    {
+      "name": "accordion/size/m/panel-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/accordion/panel/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion M — нижний отступ панели"
+    },
+    {
+      "name": "accordion/size/m/cards-gap",
+      "type": "FLOAT",
+      "alias": "gap/accordion/cards/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Accordion M — промежуток между карточками (Cards)"
+    },
+    {
+      "name": "accordion/size/m/container-radius",
+      "type": "FLOAT",
+      "alias": "radius/accordion/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Accordion M — скругление рамки Boxed и карточки Cards"
+    },
+    {
+      "name": "accordion/size/m/container-border",
+      "type": "FLOAT",
+      "alias": "border/accordion/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Accordion M — толщина рамки Boxed и обводки карточки Cards"
+    },
+    {
+      "name": "accordion/size/m/focus-border",
+      "type": "FLOAT",
+      "alias": "border/accordion/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Accordion M — толщина кольца фокуса"
+    },
+    {
+      "name": "accordion/size/m/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/accordion/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Accordion M — скругление кольца фокуса"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/action/accordion/s/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/accordion/s/title/size",
+        "lineHeight": "typography/accordion/s/title/line-height",
+        "letterSpacing": "typography/accordion/s/title/letter-spacing",
+        "fontWeight": "typography/accordion/s/title/weight"
+      }
+    },
+    {
+      "name": "typography/action/accordion/s/panel",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/accordion/s/panel/size",
+        "lineHeight": "typography/accordion/s/panel/line-height",
+        "letterSpacing": "typography/accordion/s/panel/letter-spacing",
+        "fontWeight": "typography/accordion/s/panel/weight"
+      }
+    },
+    {
+      "name": "typography/action/accordion/m/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/accordion/m/title/size",
+        "lineHeight": "typography/accordion/m/title/line-height",
+        "letterSpacing": "typography/accordion/m/title/letter-spacing",
+        "fontWeight": "typography/accordion/m/title/weight"
+      }
+    },
+    {
+      "name": "typography/action/accordion/m/panel",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/accordion/m/panel/size",
+        "lineHeight": "typography/accordion/m/panel/line-height",
+        "letterSpacing": "typography/accordion/m/panel/letter-spacing",
+        "fontWeight": "typography/accordion/m/panel/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "accordion/header/text/default",
+      "bg": "accordion/header/bg/default",
+      "kind": "text"
+    },
+    {
+      "fg": "accordion/header/icon/default",
+      "bg": "accordion/header/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "accordion/header/inverse-text/default",
+      "bg": "accordion/header/inverse-bg/default",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/inverse-icon/default",
+      "bg": "accordion/header/inverse-bg/default",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/text/hover",
+      "bg": "accordion/header/bg/hover",
+      "kind": "text"
+    },
+    {
+      "fg": "accordion/header/icon/hover",
+      "bg": "accordion/header/bg/hover",
+      "kind": "graphic"
+    },
+    {
+      "fg": "accordion/header/inverse-text/hover",
+      "bg": "accordion/header/inverse-bg/hover",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/inverse-icon/hover",
+      "bg": "accordion/header/inverse-bg/hover",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/text/pressed",
+      "bg": "accordion/header/bg/pressed",
+      "kind": "text"
+    },
+    {
+      "fg": "accordion/header/icon/pressed",
+      "bg": "accordion/header/bg/pressed",
+      "kind": "graphic"
+    },
+    {
+      "fg": "accordion/header/inverse-text/pressed",
+      "bg": "accordion/header/inverse-bg/pressed",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/inverse-icon/pressed",
+      "bg": "accordion/header/inverse-bg/pressed",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/text/disabled",
+      "bg": "accordion/header/bg/disabled",
+      "kind": "text",
+      "accepted": true,
+      "reason": "Disabled: WCAG 1.4.3 и 1.4.11 не распространяются на недоступные элементы; причина недоступности показывается рядом подписью или Tooltip"
+    },
+    {
+      "fg": "accordion/header/icon/disabled",
+      "bg": "accordion/header/bg/disabled",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "Disabled: WCAG 1.4.3 и 1.4.11 не распространяются на недоступные элементы; причина недоступности показывается рядом подписью или Tooltip"
+    },
+    {
+      "fg": "accordion/header/inverse-text/disabled",
+      "bg": "accordion/header/inverse-bg/disabled",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main",
+      "accepted": true,
+      "reason": "Disabled: WCAG 1.4.3 и 1.4.11 не распространяются на недоступные элементы; причина недоступности показывается рядом подписью или Tooltip"
+    },
+    {
+      "fg": "accordion/header/inverse-icon/disabled",
+      "bg": "accordion/header/inverse-bg/disabled",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main",
+      "accepted": true,
+      "reason": "Disabled: WCAG 1.4.3 и 1.4.11 не распространяются на недоступные элементы; причина недоступности показывается рядом подписью или Tooltip"
+    },
+    {
+      "fg": "accordion/panel/text",
+      "bg": "accordion/cards/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "accordion/header/text/default",
+      "bg": "accordion/cards/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "accordion/header/icon/default",
+      "bg": "accordion/cards/bg",
+      "kind": "graphic"
+    },
+    {
+      "fg": "accordion/panel/inverse-text",
+      "bg": "accordion/cards/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/header/inverse-text/default",
+      "bg": "accordion/cards/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "accordion/boxed/border",
+      "bg": "color/bg/page/main",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "Рамка Boxed, обводка Cards — декоративные границы группы, как линия Divider (divider/line/regular = та же прозрачность 10 %): секцию опознают по тексту заголовка и стрелке (≥ 3 : 1), поэтому WCAG 1.4.11 к рамке не применяется"
+    },
+    {
+      "fg": "accordion/cards/border",
+      "bg": "accordion/cards/bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "Рамка Boxed, обводка Cards — декоративные границы группы, как линия Divider (divider/line/regular = та же прозрачность 10 %): секцию опознают по тексту заголовка и стрелке (≥ 3 : 1), поэтому WCAG 1.4.11 к рамке не применяется"
+    },
+    {
+      "fg": "accordion/boxed/inverse-border",
+      "bg": "color/bg/page/inverse-main",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main",
+      "accepted": true,
+      "reason": "Рамка Boxed, обводка Cards — декоративные границы группы, как линия Divider (divider/line/regular = та же прозрачность 10 %): секцию опознают по тексту заголовка и стрелке (≥ 3 : 1), поэтому WCAG 1.4.11 к рамке не применяется"
+    },
+    {
+      "fg": "accordion/focus-ring",
+      "bg": "color/bg/page/main",
+      "kind": "graphic"
+    },
+    {
+      "fg": "accordion/inverse-focus-ring",
+      "bg": "color/bg/page/inverse-main",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Аналог — button (Button / Fill / Ghost): строка заголовка — кнопка без фона, поэтому фон состояний `color/action/bg/base/ghost/*`, название `color/action/text/base/hard/*` (на hover/pressed текст не меняется, меняется фон — как у button/fill/ghost), стрелка `color/action/indicator/base/medium/*` (вторичная, как link/secondary/icon). Имена документа `color/action/bg/neutral/ghost/*`, `color/static/text/neutral/primary`, `color/static/icon/neutral/secondary`, `color/static/focus-ring/brand/default` в FEroom не существуют — заменены ближайшей семантикой FEroom.",
+    "Порядок сегментов L3: `accordion/{part}/{state}` для строки заголовка (`accordion/header/{bg|text|icon}/{state}`), короткая форма `accordion/{view}/{part}` для неинтерактивных частей (`accordion/boxed/border`, `accordion/cards/bg`), фокус — `accordion/focus-ring` (как button, link, switch).",
+    "Инверсия: документ её не описывает, но в FEroom у компонентов, которые ставятся на тёмные поверхности (switch, checkbox, field/select), есть ось Inverse. Форма — часть `inverse-*` (как switch: `switch/off/inverse-bg/*`, `switch/card/inverse-border`), алиасы на `inverse-*` L2 (`inverse-ghost`, `inverse-hard`, `inverse-medium`, `color/static/focus/inverse-brand` — как field/select/inverse-focus-ring).",
+    "Разделитель между секциями — экземпляр Divider (Horizontal, Thickness XS, Color Regular: divider/line/regular → color/static/border/base/light, 1 px). Свои токены линии не заводятся. Рамка Boxed и обводка Cards взяты с той же семантикой (`color/static/border/base/light`), чтобы рамка и линии совпадали по тону.",
+    "Два размера S и M по документу. Числа документа: отступы строки 12·16, промежуток название↔стрелка 8·12, стрелка 16·20, скругление карточки 12, промежуток между карточками 8, линия 1. Имена `space/card/padding*`, `space/inline/default`, `space/control/gap/m`, `radius/card`, `space/stack/default`, `border/width/divider`, `size/icon/{m,l}` в FEroom не существуют — заведены свои L2 компонента по грамматике (`space/accordion/header/{x|y}/{s|m}`, `gap/accordion/header/{s|m}`, `size/accordion/icon/{s|m}`, `radius/accordion/container`, `gap/accordion/cards/{s|m}`, `border/accordion/container`).",
+    "Отступы панели документ не задаёт: принято, что горизонтальный отступ и нижний отступ панели равны отступам строки заголовка (12·16), верхний — 0 (панель продолжает строку заголовка). Если стрелка стоит слева, выравнивание текста панели по названию — правило сборки (отступ = x + icon + gap), отдельного токена нет.",
+    "Высота строки заголовка не фиксируется (документ): токена `box` нет, высота = интерлиньяж + 2·y (S: 20+24 = 44, M: 24+32 = 56), минимальная зона нажатия 24 × 24 выполняется.",
+    "Кольцо фокуса: документ задаёт только цвет. Толщина 2 (как у крупных контролов: border/button/focus-bold, border/badge/focus/m), скругление 4 — кольцо рисуется внутри строки заголовка (слой Focus Ring, absolute, FILL×FILL). Для Cards/Boxed скругление углов кольца у первой и последней секции — открытый вопрос.",
+    "Типографика: `typography/accordion/{s|m}/{title|panel}/*` — название 14/20 и 16/24, 600 (SemiBold), текст панели 14/20 и 16/24, 400; трекинг 0, как у button и link. Имена документа `typography/heading/{group,subsection}`, `typography/body/{ui,reading}` в FEroom отсутствуют. Текстовые стили — `typography/action/accordion/{s|m}/{title|panel}` (группа action: заголовок — интерактивный элемент; все стили компонента в одной группе, как у chip). L3 для типографики не создаётся.",
+    "Подсветка раскрытой секции (`…/ghost/selected`) не заведена: документ называет её необязательной, состояние передаёт стрелка. При необходимости — `accordion/header/bg/expanded` → `color/action/bg/base/ghost/selected`.",
+    "Анимация раскрытия (200 мс, поворот стрелки) и тени не создаются: motion-токенов в FEroom нет, эффект-стили автор не прорабатывал. Для Cards эффект-стиль не нужен (фон + обводка).",
+    "Badge и Status в строке заголовка — экземпляры своих компонентов, их токены не дублируются."
+  ]
+}

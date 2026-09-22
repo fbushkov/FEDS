@@ -1,0 +1,661 @@
+{
+  "component": "skeleton",
+  "roots": [
+    "skeleton"
+  ],
+  "title": "Skeleton",
+  "kind": "component",
+  "analog": "avatar",
+  "source": "input/backlog/skeleton.md",
+  "axes": {
+    "Shape": [
+      "Line",
+      "Circle",
+      "Block"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "shape",
+    "shimmer"
+  ],
+  "l2": [
+    {
+      "name": "size/skeleton/line/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Skeleton — высота строки-заглушки под текст 12/16, размер S"
+    },
+    {
+      "name": "size/skeleton/line/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Skeleton — высота строки-заглушки под текст 14/20, размер M"
+    },
+    {
+      "name": "size/skeleton/line/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Skeleton — высота строки-заглушки под текст 16/24, размер L"
+    },
+    {
+      "name": "size/skeleton/line/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Skeleton — высота строки-заглушки под текст 18/28, размер XL"
+    },
+    {
+      "name": "gap/skeleton/line",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Skeleton — промежуток между строками-заглушками абзаца"
+    },
+    {
+      "name": "radius/skeleton/line",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "description": "Skeleton — скругление строки-заглушки (полное)"
+    },
+    {
+      "name": "size/skeleton/circle/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Skeleton — диаметр круга-заглушки под Avatar S"
+    },
+    {
+      "name": "size/skeleton/circle/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Skeleton — диаметр круга-заглушки под Avatar M"
+    },
+    {
+      "name": "size/skeleton/circle/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "description": "Skeleton — диаметр круга-заглушки под Avatar L"
+    },
+    {
+      "name": "size/skeleton/circle/xl",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "description": "Skeleton — диаметр круга-заглушки под Avatar XL"
+    },
+    {
+      "name": "size/skeleton/circle/2xl",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/64",
+        "dark": "size/64"
+      },
+      "description": "Skeleton — диаметр круга-заглушки под Avatar 2XL"
+    },
+    {
+      "name": "radius/skeleton/circle",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "description": "Skeleton — скругление круга-заглушки (полное)"
+    },
+    {
+      "name": "radius/skeleton/block/image",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Skeleton — скругление блока-заглушки изображения, превью, графика"
+    },
+    {
+      "name": "radius/skeleton/block/card",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "description": "Skeleton — скругление блока-заглушки карточки, панели"
+    },
+    {
+      "name": "size/skeleton/block/control-s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Skeleton — высота блока-заглушки контрола размера S (как Button S)"
+    },
+    {
+      "name": "radius/skeleton/block/control-s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "description": "Skeleton — скругление блока-заглушки контрола размера S (как Button S)"
+    },
+    {
+      "name": "size/skeleton/block/control-m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "description": "Skeleton — высота блока-заглушки контрола размера M (как Button M)"
+    },
+    {
+      "name": "radius/skeleton/block/control-m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "description": "Skeleton — скругление блока-заглушки контрола размера M (как Button M)"
+    },
+    {
+      "name": "size/skeleton/block/control-l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "description": "Skeleton — высота блока-заглушки контрола размера L (как Button L)"
+    },
+    {
+      "name": "radius/skeleton/block/control-l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Skeleton — скругление блока-заглушки контрола размера L (как Button L)"
+    },
+    {
+      "name": "size/skeleton/block/control-xl",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "description": "Skeleton — высота блока-заглушки контрола размера XL (как Button XL)"
+    },
+    {
+      "name": "radius/skeleton/block/control-xl",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "description": "Skeleton — скругление блока-заглушки контрола размера XL (как Button XL)"
+    }
+  ],
+  "l3": [
+    {
+      "name": "skeleton/shape/bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Skeleton — заливка фигуры-заглушки"
+    },
+    {
+      "name": "skeleton/shape/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Skeleton — заливка фигуры-заглушки на тёмной поверхности (Inverse)"
+    },
+    {
+      "name": "skeleton/shimmer/bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Skeleton — полоса блика мерцания поверх фигуры"
+    },
+    {
+      "name": "skeleton/shimmer/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Skeleton — полоса блика мерцания на тёмной поверхности (Inverse)"
+    },
+    {
+      "name": "skeleton/size/line/s/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/line/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Line S — высота строки-заглушки"
+    },
+    {
+      "name": "skeleton/size/line/s/gap",
+      "type": "FLOAT",
+      "alias": "gap/skeleton/line",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Skeleton Line S — промежуток между строками абзаца"
+    },
+    {
+      "name": "skeleton/size/line/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/line",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Line S — скругление строки"
+    },
+    {
+      "name": "skeleton/size/line/m/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/line/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Line M — высота строки-заглушки"
+    },
+    {
+      "name": "skeleton/size/line/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/skeleton/line",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Skeleton Line M — промежуток между строками абзаца"
+    },
+    {
+      "name": "skeleton/size/line/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/line",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Line M — скругление строки"
+    },
+    {
+      "name": "skeleton/size/line/l/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/line/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Line L — высота строки-заглушки"
+    },
+    {
+      "name": "skeleton/size/line/l/gap",
+      "type": "FLOAT",
+      "alias": "gap/skeleton/line",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Skeleton Line L — промежуток между строками абзаца"
+    },
+    {
+      "name": "skeleton/size/line/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/line",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Line L — скругление строки"
+    },
+    {
+      "name": "skeleton/size/line/xl/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/line/xl",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Line XL — высота строки-заглушки"
+    },
+    {
+      "name": "skeleton/size/line/xl/gap",
+      "type": "FLOAT",
+      "alias": "gap/skeleton/line",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Skeleton Line XL — промежуток между строками абзаца"
+    },
+    {
+      "name": "skeleton/size/line/xl/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/line",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Line XL — скругление строки"
+    },
+    {
+      "name": "skeleton/size/circle/s/box",
+      "type": "FLOAT",
+      "alias": "size/skeleton/circle/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Circle S — диаметр круга"
+    },
+    {
+      "name": "skeleton/size/circle/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Circle S — скругление круга"
+    },
+    {
+      "name": "skeleton/size/circle/m/box",
+      "type": "FLOAT",
+      "alias": "size/skeleton/circle/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Circle M — диаметр круга"
+    },
+    {
+      "name": "skeleton/size/circle/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Circle M — скругление круга"
+    },
+    {
+      "name": "skeleton/size/circle/l/box",
+      "type": "FLOAT",
+      "alias": "size/skeleton/circle/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Circle L — диаметр круга"
+    },
+    {
+      "name": "skeleton/size/circle/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Circle L — скругление круга"
+    },
+    {
+      "name": "skeleton/size/circle/xl/box",
+      "type": "FLOAT",
+      "alias": "size/skeleton/circle/xl",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Circle XL — диаметр круга"
+    },
+    {
+      "name": "skeleton/size/circle/xl/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Circle XL — скругление круга"
+    },
+    {
+      "name": "skeleton/size/circle/2xl/box",
+      "type": "FLOAT",
+      "alias": "size/skeleton/circle/2xl",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Circle 2XL — диаметр круга"
+    },
+    {
+      "name": "skeleton/size/circle/2xl/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Circle 2XL — скругление круга"
+    },
+    {
+      "name": "skeleton/size/block/image/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/block/image",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Block Image — скругление блока изображения"
+    },
+    {
+      "name": "skeleton/size/block/card/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/block/card",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Block Card — скругление блока карточки"
+    },
+    {
+      "name": "skeleton/size/block/control-s/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/block/control-s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Block Control S — высота блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-s/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/block/control-s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Block Control S — скругление блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-m/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/block/control-m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Block Control M — высота блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-m/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/block/control-m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Block Control M — скругление блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-l/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/block/control-l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Block Control L — высота блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-l/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/block/control-l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Block Control L — скругление блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-xl/height",
+      "type": "FLOAT",
+      "alias": "size/skeleton/block/control-xl",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Skeleton Block Control XL — высота блока контрола"
+    },
+    {
+      "name": "skeleton/size/block/control-xl/radius",
+      "type": "FLOAT",
+      "alias": "radius/skeleton/block/control-xl",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Skeleton Block Control XL — скругление блока контрола"
+    }
+  ],
+  "textStyles": [],
+  "contrast": [
+    {
+      "fg": "skeleton/shape/bg",
+      "bg": "color/bg/page/main",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "Фигуры декоративны и скрыты от screen reader (aria-hidden), загрузку сообщает role=\"status\" и aria-busy; WCAG 1.4.11 к ним не применяется (решение 10 документа). Контраст взят как у заглушек Loading в switch/checkbox/status (color/static/bg/transparent/base/light) — единый вид загрузки в системе"
+    },
+    {
+      "fg": "skeleton/shape/bg",
+      "bg": "color/bg/page/tertiary",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "Фигуры декоративны и скрыты от screen reader (aria-hidden), загрузку сообщает role=\"status\" и aria-busy; WCAG 1.4.11 к ним не применяется (решение 10 документа). Контраст взят как у заглушек Loading в switch/checkbox/status (color/static/bg/transparent/base/light) — единый вид загрузки в системе"
+    },
+    {
+      "fg": "skeleton/shape/inverse-bg",
+      "bg": "color/bg/page/inverse-main",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main",
+      "accepted": true,
+      "reason": "Фигуры декоративны и скрыты от screen reader (aria-hidden), загрузку сообщает role=\"status\" и aria-busy; WCAG 1.4.11 к ним не применяется (решение 10 документа). Контраст взят как у заглушек Loading в switch/checkbox/status (color/static/bg/transparent/base/light) — единый вид загрузки в системе"
+    },
+    {
+      "fg": "skeleton/shimmer/bg",
+      "bg": "skeleton/shape/bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "Блик — мягкая анимационная подсветка фигуры, должен быть слабым (WCAG 2.3.1: без резких вспышек); контраст не нормируется"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Цвет фигуры — `color/static/bg/transparent/base/light` (10 %): ровно та же семантика, что у встроенных заглушек загрузки FEroom (switch/loading/name, checkbox/loading/icon, status/loading/name). Документ предлагает `color/static/bg/neutral/subtle` — такого имени в FEroom нет. Прозрачная семантика выбрана вместо solid (`color/static/bg/solid/base/soft`), потому что заглушка стоит и на page/main, и на page/tertiary, и в карточках — прозрачная работает на любом нейтральном фоне.",
+    "Блик мерцания — `color/static/bg/transparent/base/mild` (5 %): полоса слабее фигуры и в light, и в dark (одна прозрачная шкала, без ссылки на L1 `color/transparent-white/*`, о которой предупреждает документ). Исключение L3 → L1 не нужно. Сама анимация (shimmer, цикл 1000 мс, reduced-motion) не создаётся — motion-токенов в FEroom нет; `motion/duration/loop`, `motion/delay/loading-show|loading-min` из документа — вопрос к автору, не к токенам компонента.",
+    "Инверсия: документ говорит «в dark те же имена, отдельного варианта нет» — это про тему (light/dark), она приходит через L2. Для тёмных поверхностей в светлой теме FEroom использует части `inverse-*` (как switch/loading/inverse-name → color/static/bg/transparent/base/inverse-light) — заведены `skeleton/shape/inverse-bg` и `skeleton/shimmer/inverse-bg`, ось Inverse.",
+    "Оси размера у компонента нет (документ): размер — у каждой формы свой. В L3 форма — подраздел: `skeleton/size/{line|circle|block}/{size}/{prop}` (как divider/size/label/m/*). Line S/M/L/XL = 16/20/24/28 — интерлиньяжи текста 12/16, 14/20, 16/24, 18/28 (как typography/link/{s…xl}); Circle S…2XL = 16/24/32/48/64 — диаметры Avatar (size/avatar/box/*); Block Control S…XL = высоты и скругления Button S…XL (24/32/40/48 и 4/6/8/10); Block Image — 8, Block Card — 12 (высота блока свободная).",
+    "Скругление строки — полное 999 (документ: `radius/full`, альтернатива «кирпичики» 4 — меняется одно значение `radius/skeleton/line`). Промежуток строк абзаца 4 (`space/stack/tight` документа) — `gap/skeleton/line`.",
+    "Имена документа `typography/helper|body/*/line-height`, `size/entity/*`, `radius/image`, `radius/card`, `radius/control/*`, `size/control/*`, `radius/full` в FEroom отсутствуют — заведены свои L2 компонента по грамматике (правило 3 формата: даже при совпадении значений с аналогом создаётся свой L2).",
+    "Доли ширины строк (40 · 60 · 100 %) — не токены, правило сборки.",
+    "Текстовых стилей нет (в заглушке нет текста). Эффект-стилей и теней нет.",
+    "Контраст фигура/фон ≈ 1,2 : 1 — принят сознательно (accepted): фигуры декоративны, WCAG 1.4.11 не применяется (решение 10 документа)."
+  ]
+}

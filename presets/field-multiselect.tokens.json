@@ -1,0 +1,2698 @@
+{
+  "component": "field-multiselect",
+  "roots": [
+    "field"
+  ],
+  "title": "Multiselect",
+  "kind": "component",
+  "analog": "field/input",
+  "source": "input/backlog/multiselect.md",
+  "axes": {
+    "Size": [
+      "S",
+      "M",
+      "L"
+    ],
+    "View": [
+      "Chips",
+      "Summary"
+    ],
+    "State": [
+      "Default",
+      "Hover",
+      "Focused",
+      "Disabled",
+      "Read Only",
+      "Error",
+      "Warning",
+      "Success",
+      "Loading"
+    ],
+    "Filled": [
+      "False",
+      "True"
+    ],
+    "Open": [
+      "False",
+      "True"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "leading-icon",
+    "chips",
+    "chip-more",
+    "summary",
+    "search",
+    "placeholder",
+    "caret",
+    "clear",
+    "state-icon",
+    "spinner",
+    "chevron",
+    "dropdown"
+  ],
+  "l2": [
+    {
+      "name": "size/field/multiselect/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "description": "Multiselect S — высота контейнера"
+    },
+    {
+      "name": "space/field/multiselect/container/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Multiselect S — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/field/multiselect/container/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Multiselect S — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "border/field/multiselect/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Multiselect S — толщина обводки контейнера"
+    },
+    {
+      "name": "radius/field/multiselect/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "description": "Multiselect S — скругление контейнера"
+    },
+    {
+      "name": "gap/field/multiselect/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect S — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "gap/field/multiselect/leading/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect S — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "gap/field/multiselect/text/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect S — зазор внутри Content"
+    },
+    {
+      "name": "gap/field/multiselect/trailing/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect S — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "size/field/multiselect/leading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Multiselect S — размер иконки Leading Zone"
+    },
+    {
+      "name": "size/field/multiselect/leading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect S — рамка иконки Leading Zone"
+    },
+    {
+      "name": "space/field/multiselect/leading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect S — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "size/field/multiselect/loading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Multiselect S — размер Spinner"
+    },
+    {
+      "name": "size/field/multiselect/loading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect S — рамка Spinner"
+    },
+    {
+      "name": "space/field/multiselect/loading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect S — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/validation-markers/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Multiselect S — размер State Icon"
+    },
+    {
+      "name": "size/field/multiselect/validation-markers/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect S — рамка State Icon"
+    },
+    {
+      "name": "space/field/multiselect/validation-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect S — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect S — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "space/field/multiselect/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect S — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/caret/box/s-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect S — высота рамки каретки ввода"
+    },
+    {
+      "name": "size/field/multiselect/caret/box/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "description": "Multiselect S — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "size/field/multiselect/caret/icon/s-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Multiselect S — высота каретки ввода"
+    },
+    {
+      "name": "size/field/multiselect/caret/icon/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/1",
+        "dark": "size/1"
+      },
+      "description": "Multiselect S — толщина каретки ввода"
+    },
+    {
+      "name": "space/field/multiselect/text/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect S — отступ текста слева"
+    },
+    {
+      "name": "space/field/multiselect/text/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect S — отступ текста справа"
+    },
+    {
+      "name": "space/field/multiselect/text/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect S — вертикальный отступ текста"
+    },
+    {
+      "name": "gap/field/multiselect/container-dropdown/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect S — зазор между полем и Dropdown"
+    },
+    {
+      "name": "gap/field/multiselect/chips/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect S — зазор между Chips и между последним Chip и полем поиска"
+    },
+    {
+      "name": "gap/field/multiselect/dropdown-search/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect S — зазор между полем поиска вверху Dropdown (вид «Сводка») и списком"
+    },
+    {
+      "name": "size/field/multiselect/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "description": "Multiselect M — высота контейнера"
+    },
+    {
+      "name": "space/field/multiselect/container/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Multiselect M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/field/multiselect/container/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Multiselect M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "border/field/multiselect/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Multiselect M — толщина обводки контейнера"
+    },
+    {
+      "name": "radius/field/multiselect/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Multiselect M — скругление контейнера"
+    },
+    {
+      "name": "gap/field/multiselect/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect M — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "gap/field/multiselect/leading/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect M — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "gap/field/multiselect/text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect M — зазор внутри Content"
+    },
+    {
+      "name": "gap/field/multiselect/trailing/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Multiselect M — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "size/field/multiselect/leading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect M — размер иконки Leading Zone"
+    },
+    {
+      "name": "size/field/multiselect/leading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect M — рамка иконки Leading Zone"
+    },
+    {
+      "name": "space/field/multiselect/leading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect M — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "size/field/multiselect/loading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect M — размер Spinner"
+    },
+    {
+      "name": "size/field/multiselect/loading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect M — рамка Spinner"
+    },
+    {
+      "name": "space/field/multiselect/loading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect M — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/validation-markers/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect M — размер State Icon"
+    },
+    {
+      "name": "size/field/multiselect/validation-markers/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect M — рамка State Icon"
+    },
+    {
+      "name": "space/field/multiselect/validation-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect M — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect M — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "space/field/multiselect/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect M — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/caret/box/m-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect M — высота рамки каретки ввода"
+    },
+    {
+      "name": "size/field/multiselect/caret/box/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "description": "Multiselect M — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "size/field/multiselect/caret/icon/m-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Multiselect M — высота каретки ввода"
+    },
+    {
+      "name": "size/field/multiselect/caret/icon/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/1",
+        "dark": "size/1"
+      },
+      "description": "Multiselect M — толщина каретки ввода"
+    },
+    {
+      "name": "space/field/multiselect/text/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect M — отступ текста слева"
+    },
+    {
+      "name": "space/field/multiselect/text/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect M — отступ текста справа"
+    },
+    {
+      "name": "space/field/multiselect/text/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect M — вертикальный отступ текста"
+    },
+    {
+      "name": "gap/field/multiselect/container-dropdown/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect M — зазор между полем и Dropdown"
+    },
+    {
+      "name": "gap/field/multiselect/chips/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect M — зазор между Chips и между последним Chip и полем поиска"
+    },
+    {
+      "name": "gap/field/multiselect/dropdown-search/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect M — зазор между полем поиска вверху Dropdown (вид «Сводка») и списком"
+    },
+    {
+      "name": "size/field/multiselect/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "description": "Multiselect L — высота контейнера"
+    },
+    {
+      "name": "space/field/multiselect/container/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "description": "Multiselect L — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/field/multiselect/container/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "description": "Multiselect L — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "border/field/multiselect/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Multiselect L — толщина обводки контейнера"
+    },
+    {
+      "name": "radius/field/multiselect/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "description": "Multiselect L — скругление контейнера"
+    },
+    {
+      "name": "gap/field/multiselect/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect L — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "gap/field/multiselect/leading/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect L — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "gap/field/multiselect/text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect L — зазор внутри Content"
+    },
+    {
+      "name": "gap/field/multiselect/trailing/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Multiselect L — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "size/field/multiselect/leading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect L — размер иконки Leading Zone"
+    },
+    {
+      "name": "size/field/multiselect/leading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Multiselect L — рамка иконки Leading Zone"
+    },
+    {
+      "name": "space/field/multiselect/leading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect L — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "size/field/multiselect/loading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect L — размер Spinner"
+    },
+    {
+      "name": "size/field/multiselect/loading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Multiselect L — рамка Spinner"
+    },
+    {
+      "name": "space/field/multiselect/loading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect L — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/validation-markers/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect L — размер State Icon"
+    },
+    {
+      "name": "size/field/multiselect/validation-markers/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Multiselect L — рамка State Icon"
+    },
+    {
+      "name": "space/field/multiselect/validation-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect L — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/actions/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Multiselect L — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "space/field/multiselect/actions/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect L — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "size/field/multiselect/caret/box/l-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Multiselect L — высота рамки каретки ввода"
+    },
+    {
+      "name": "size/field/multiselect/caret/box/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "description": "Multiselect L — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "size/field/multiselect/caret/icon/l-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Multiselect L — высота каретки ввода"
+    },
+    {
+      "name": "size/field/multiselect/caret/icon/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/2",
+        "dark": "size/2"
+      },
+      "description": "Multiselect L — толщина каретки ввода"
+    },
+    {
+      "name": "space/field/multiselect/text/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect L — отступ текста слева"
+    },
+    {
+      "name": "space/field/multiselect/text/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Multiselect L — отступ текста справа"
+    },
+    {
+      "name": "space/field/multiselect/text/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Multiselect L — вертикальный отступ текста"
+    },
+    {
+      "name": "gap/field/multiselect/container-dropdown/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect L — зазор между полем и Dropdown"
+    },
+    {
+      "name": "gap/field/multiselect/chips/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect L — зазор между Chips и между последним Chip и полем поиска"
+    },
+    {
+      "name": "gap/field/multiselect/dropdown-search/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Multiselect L — зазор между полем поиска вверху Dropdown (вид «Сводка») и списком"
+    },
+    {
+      "name": "typography/field/multiselect/text/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер S — кегль"
+    },
+    {
+      "name": "typography/field/multiselect/text/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер S — интерлиньяж"
+    },
+    {
+      "name": "typography/field/multiselect/text/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер S — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/multiselect/text/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер S — начертание"
+    },
+    {
+      "name": "typography/field/multiselect/text/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер M — кегль"
+    },
+    {
+      "name": "typography/field/multiselect/text/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер M — интерлиньяж"
+    },
+    {
+      "name": "typography/field/multiselect/text/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер M — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/multiselect/text/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер M — начертание"
+    },
+    {
+      "name": "typography/field/multiselect/text/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер L — кегль"
+    },
+    {
+      "name": "typography/field/multiselect/text/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер L — интерлиньяж"
+    },
+    {
+      "name": "typography/field/multiselect/text/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер L — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/multiselect/text/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Multiselect — сводка «Выбрано: N», запрос поиска и Placeholder, размер L — начертание"
+    }
+  ],
+  "l3": [
+    {
+      "name": "field/multiselect/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — фон контейнера в покое"
+    },
+    {
+      "name": "field/multiselect/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — фон контейнера при наведении"
+    },
+    {
+      "name": "field/multiselect/bg/focused",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — фон контейнера в фокусе и при открытом Dropdown (Open)"
+    },
+    {
+      "name": "field/multiselect/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — фон контейнера в Disabled"
+    },
+    {
+      "name": "field/multiselect/bg/read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — фон контейнера в Read Only"
+    },
+    {
+      "name": "field/multiselect/bg/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — Inverse — фон контейнера в покое"
+    },
+    {
+      "name": "field/multiselect/bg/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — Inverse — фон контейнера при наведении"
+    },
+    {
+      "name": "field/multiselect/bg/inverse-focused",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — Inverse — фон контейнера в фокусе и Open"
+    },
+    {
+      "name": "field/multiselect/bg/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — Inverse — фон контейнера в Disabled"
+    },
+    {
+      "name": "field/multiselect/bg/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Multiselect — Inverse — фон контейнера в Read Only"
+    },
+    {
+      "name": "field/multiselect/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка контейнера в покое"
+    },
+    {
+      "name": "field/multiselect/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка контейнера при наведении"
+    },
+    {
+      "name": "field/multiselect/border/focused",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — акцентная обводка в фокусе и при открытом Dropdown (Open)"
+    },
+    {
+      "name": "field/multiselect/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка контейнера в Disabled"
+    },
+    {
+      "name": "field/multiselect/border/read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка контейнера в Read Only"
+    },
+    {
+      "name": "field/multiselect/border/error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка в состоянии Error"
+    },
+    {
+      "name": "field/multiselect/border/warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка в состоянии Warning"
+    },
+    {
+      "name": "field/multiselect/border/success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — обводка в состоянии Success"
+    },
+    {
+      "name": "field/multiselect/border/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка контейнера в покое"
+    },
+    {
+      "name": "field/multiselect/border/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка контейнера при наведении"
+    },
+    {
+      "name": "field/multiselect/border/inverse-focused",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, акцентная обводка в фокусе и при открытом Dropdown (Open)"
+    },
+    {
+      "name": "field/multiselect/border/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка контейнера в Disabled"
+    },
+    {
+      "name": "field/multiselect/border/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка контейнера в Read Only"
+    },
+    {
+      "name": "field/multiselect/border/inverse-error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка в состоянии Error"
+    },
+    {
+      "name": "field/multiselect/border/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка в состоянии Warning"
+    },
+    {
+      "name": "field/multiselect/border/inverse-success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Multiselect — Inverse, обводка в состоянии Success"
+    },
+    {
+      "name": "field/multiselect/text/value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — значение и вводимый запрос"
+    },
+    {
+      "name": "field/multiselect/text/placeholder",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — Placeholder в Empty"
+    },
+    {
+      "name": "field/multiselect/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — текст в Disabled"
+    },
+    {
+      "name": "field/multiselect/text/read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — текст в Read Only"
+    },
+    {
+      "name": "field/multiselect/text/inverse-value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — Inverse, значение и вводимый запрос"
+    },
+    {
+      "name": "field/multiselect/text/inverse-placeholder",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — Inverse, Placeholder в Empty"
+    },
+    {
+      "name": "field/multiselect/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — Inverse, текст в Disabled"
+    },
+    {
+      "name": "field/multiselect/text/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Multiselect — Inverse, текст в Read Only"
+    },
+    {
+      "name": "field/multiselect/icon/caret",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — каретка ввода в фокусе"
+    },
+    {
+      "name": "field/multiselect/icon/inverse-caret",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Inverse, каретка ввода в фокусе"
+    },
+    {
+      "name": "field/multiselect/leading/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — иконка в Leading Zone"
+    },
+    {
+      "name": "field/multiselect/leading/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Inverse, иконка в Leading Zone"
+    },
+    {
+      "name": "field/multiselect/loading/loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Spinner асинхронной проверки значения"
+    },
+    {
+      "name": "field/multiselect/loading/inverse-loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Inverse, Spinner асинхронной проверки значения"
+    },
+    {
+      "name": "field/multiselect/validation-icons/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — State Icon в состоянии Error"
+    },
+    {
+      "name": "field/multiselect/validation-icons/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — State Icon в состоянии Warning"
+    },
+    {
+      "name": "field/multiselect/validation-icons/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — State Icon в состоянии Success"
+    },
+    {
+      "name": "field/multiselect/validation-icons/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Inverse, State Icon в состоянии Error"
+    },
+    {
+      "name": "field/multiselect/validation-icons/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Inverse, State Icon в состоянии Warning"
+    },
+    {
+      "name": "field/multiselect/validation-icons/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Multiselect — Inverse, State Icon в состоянии Success"
+    },
+    {
+      "name": "field/size/multiselect/s/container",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/container/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — высота контейнера"
+    },
+    {
+      "name": "field/size/multiselect/s/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/container/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/multiselect/s/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/container/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/multiselect/s/border",
+      "type": "FLOAT",
+      "alias": "border/field/multiselect/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Multiselect S — толщина обводки контейнера"
+    },
+    {
+      "name": "field/size/multiselect/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/multiselect/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Multiselect S — скругление контейнера"
+    },
+    {
+      "name": "field/size/multiselect/s/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/container/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "field/size/multiselect/s/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/leading/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/s/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/text/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор внутри Content"
+    },
+    {
+      "name": "field/size/multiselect/s/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/trailing/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "field/size/multiselect/s/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/leading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — размер иконки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/s/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/leading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — рамка иконки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/s/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/leading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/s/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/loading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — размер Spinner"
+    },
+    {
+      "name": "field/size/multiselect/s/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/loading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — рамка Spinner"
+    },
+    {
+      "name": "field/size/multiselect/s/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/loading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/s/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/validation-markers/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — размер State Icon"
+    },
+    {
+      "name": "field/size/multiselect/s/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/validation-markers/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — рамка State Icon"
+    },
+    {
+      "name": "field/size/multiselect/s/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/validation-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/s/actions",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/actions/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/multiselect/s/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/actions/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/s/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/box/s-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — высота рамки каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/s/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/box/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "field/size/multiselect/s/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/icon/s-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — высота каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/s/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/icon/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect S — толщина каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/s/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — отступ текста слева"
+    },
+    {
+      "name": "field/size/multiselect/s/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — отступ текста справа"
+    },
+    {
+      "name": "field/size/multiselect/s/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — вертикальный отступ текста"
+    },
+    {
+      "name": "field/size/multiselect/s/container-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/container-dropdown/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор между полем и Dropdown"
+    },
+    {
+      "name": "field/size/multiselect/s/chips-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/chips/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор между Chips и между последним Chip и полем поиска"
+    },
+    {
+      "name": "field/size/multiselect/s/dropdown-search-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/dropdown-search/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect S — зазор между полем поиска вверху Dropdown (вид «Сводка») и списком"
+    },
+    {
+      "name": "field/size/multiselect/s/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Multiselect S — скругление каретки ввода (общий L2 семейства)"
+    },
+    {
+      "name": "field/size/multiselect/m/container",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/container/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — высота контейнера"
+    },
+    {
+      "name": "field/size/multiselect/m/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/container/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/multiselect/m/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/container/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/multiselect/m/border",
+      "type": "FLOAT",
+      "alias": "border/field/multiselect/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Multiselect M — толщина обводки контейнера"
+    },
+    {
+      "name": "field/size/multiselect/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/multiselect/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Multiselect M — скругление контейнера"
+    },
+    {
+      "name": "field/size/multiselect/m/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/container/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "field/size/multiselect/m/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/leading/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/m/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор внутри Content"
+    },
+    {
+      "name": "field/size/multiselect/m/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/trailing/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "field/size/multiselect/m/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/leading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — размер иконки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/m/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/leading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — рамка иконки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/m/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/leading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/m/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/loading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — размер Spinner"
+    },
+    {
+      "name": "field/size/multiselect/m/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/loading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — рамка Spinner"
+    },
+    {
+      "name": "field/size/multiselect/m/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/loading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/m/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/validation-markers/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — размер State Icon"
+    },
+    {
+      "name": "field/size/multiselect/m/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/validation-markers/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — рамка State Icon"
+    },
+    {
+      "name": "field/size/multiselect/m/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/validation-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/m/actions",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/actions/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/multiselect/m/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/actions/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/m/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/box/m-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — высота рамки каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/m/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/box/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "field/size/multiselect/m/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/icon/m-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — высота каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/m/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/icon/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect M — толщина каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/m/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — отступ текста слева"
+    },
+    {
+      "name": "field/size/multiselect/m/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — отступ текста справа"
+    },
+    {
+      "name": "field/size/multiselect/m/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — вертикальный отступ текста"
+    },
+    {
+      "name": "field/size/multiselect/m/container-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/container-dropdown/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор между полем и Dropdown"
+    },
+    {
+      "name": "field/size/multiselect/m/chips-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/chips/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор между Chips и между последним Chip и полем поиска"
+    },
+    {
+      "name": "field/size/multiselect/m/dropdown-search-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/dropdown-search/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect M — зазор между полем поиска вверху Dropdown (вид «Сводка») и списком"
+    },
+    {
+      "name": "field/size/multiselect/m/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Multiselect M — скругление каретки ввода (общий L2 семейства)"
+    },
+    {
+      "name": "field/size/multiselect/l/container",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/container/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — высота контейнера"
+    },
+    {
+      "name": "field/size/multiselect/l/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/container/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/multiselect/l/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/container/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/multiselect/l/border",
+      "type": "FLOAT",
+      "alias": "border/field/multiselect/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Multiselect L — толщина обводки контейнера"
+    },
+    {
+      "name": "field/size/multiselect/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/multiselect/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Multiselect L — скругление контейнера"
+    },
+    {
+      "name": "field/size/multiselect/l/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/container/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "field/size/multiselect/l/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/leading/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/l/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор внутри Content"
+    },
+    {
+      "name": "field/size/multiselect/l/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/trailing/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "field/size/multiselect/l/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/leading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — размер иконки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/l/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/leading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — рамка иконки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/l/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/leading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "field/size/multiselect/l/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/loading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — размер Spinner"
+    },
+    {
+      "name": "field/size/multiselect/l/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/loading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — рамка Spinner"
+    },
+    {
+      "name": "field/size/multiselect/l/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/loading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/l/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/validation-markers/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — размер State Icon"
+    },
+    {
+      "name": "field/size/multiselect/l/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/validation-markers/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — рамка State Icon"
+    },
+    {
+      "name": "field/size/multiselect/l/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/validation-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/l/actions",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/actions/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/multiselect/l/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/actions/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "field/size/multiselect/l/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/box/l-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — высота рамки каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/l/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/box/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "field/size/multiselect/l/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/icon/l-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — высота каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/l/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/multiselect/caret/icon/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Multiselect L — толщина каретки ввода"
+    },
+    {
+      "name": "field/size/multiselect/l/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — отступ текста слева"
+    },
+    {
+      "name": "field/size/multiselect/l/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — отступ текста справа"
+    },
+    {
+      "name": "field/size/multiselect/l/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/multiselect/text/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — вертикальный отступ текста"
+    },
+    {
+      "name": "field/size/multiselect/l/container-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/container-dropdown/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор между полем и Dropdown"
+    },
+    {
+      "name": "field/size/multiselect/l/chips-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/chips/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор между Chips и между последним Chip и полем поиска"
+    },
+    {
+      "name": "field/size/multiselect/l/dropdown-search-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/multiselect/dropdown-search/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Multiselect L — зазор между полем поиска вверху Dropdown (вид «Сводка») и списком"
+    },
+    {
+      "name": "field/size/multiselect/l/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Multiselect L — скругление каретки ввода (общий L2 семейства)"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/field/multiselect/text/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/multiselect/text/s/size",
+        "lineHeight": "typography/field/multiselect/text/s/line-height",
+        "letterSpacing": "typography/field/multiselect/text/s/letter-spacing",
+        "fontWeight": "typography/field/multiselect/text/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/multiselect/text/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/multiselect/text/m/size",
+        "lineHeight": "typography/field/multiselect/text/m/line-height",
+        "letterSpacing": "typography/field/multiselect/text/m/letter-spacing",
+        "fontWeight": "typography/field/multiselect/text/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/multiselect/text/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/multiselect/text/l/size",
+        "lineHeight": "typography/field/multiselect/text/l/line-height",
+        "letterSpacing": "typography/field/multiselect/text/l/letter-spacing",
+        "fontWeight": "typography/field/multiselect/text/l/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "field/multiselect/text/value",
+      "bg": "field/multiselect/bg/default",
+      "kind": "text"
+    },
+    {
+      "fg": "field/multiselect/text/value",
+      "bg": "field/multiselect/bg/hover",
+      "kind": "text"
+    },
+    {
+      "fg": "field/multiselect/text/read-only",
+      "bg": "field/multiselect/bg/read-only",
+      "kind": "text"
+    },
+    {
+      "fg": "field/multiselect/text/placeholder",
+      "bg": "field/multiselect/bg/default",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/multiselect/text/disabled",
+      "bg": "field/multiselect/bg/disabled",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/multiselect/text/inverse-value",
+      "bg": "field/multiselect/bg/inverse-default",
+      "kind": "text"
+    },
+    {
+      "fg": "field/multiselect/text/inverse-read-only",
+      "bg": "field/multiselect/bg/inverse-read-only",
+      "kind": "text"
+    },
+    {
+      "fg": "field/multiselect/text/inverse-placeholder",
+      "bg": "field/multiselect/bg/inverse-default",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/multiselect/border/default",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic",
+      "accepted": true
+    },
+    {
+      "fg": "field/multiselect/border/focused",
+      "bg": "field/multiselect/bg/focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/border/error",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/border/warning",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic",
+      "accepted": true
+    },
+    {
+      "fg": "field/multiselect/border/success",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/border/inverse-focused",
+      "bg": "field/multiselect/bg/inverse-focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/border/inverse-error",
+      "bg": "field/multiselect/bg/inverse-default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/validation-icons/error",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/validation-icons/warning",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic",
+      "accepted": true
+    },
+    {
+      "fg": "field/multiselect/validation-icons/success",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/icon/caret",
+      "bg": "field/multiselect/bg/focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/multiselect/loading/loading",
+      "bg": "field/multiselect/bg/default",
+      "kind": "graphic"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Поле Multiselect наследует оболочку Input (без Pressed), цвета — свои L3 `field/multiselect/*` на ту же семантику, что field/input; инверсия — состояния `inverse-*`. Open использует `bg/focused` и `border/focused`, как в Combobox.",
+    "Chips и «+N» — экземпляры Chip (Removable, Soft, Neutral; форма по смыслу). Токены Chip не дублируются. Соответствие размеров по документу: поле S и M → Chip S (20), поле L → Chip M (24). Chip помещается в контентную зону без роста поля: 32−2×6 = 20, 40−2×8 = 24, 48−2×10 = 28.",
+    "Новые размеры сверх оболочки: `chips-gap` = 4 (между Chips и перед полем поиска) и `dropdown-search-gap` = 4 (поиск вверху Dropdown в виде «Сводка» — экземпляр Search Input того же размера). Отступ слева у ряда Chips — `container-x`, отдельного токена нет.",
+    "Сводка «Выбрано: N» и запрос поиска — `text/value` и стиль `typography/field/multiselect/text/{s}` (значения как у Input); Placeholder — тот же стиль, цвет `text/placeholder`. Каретка — только при поиске в поле (вид Chips).",
+    "Dropdown в режиме multi — экземпляр `_ Select / Dropdown` с Checkbox в пунктах (токены пресета field-dropdown: `option/checkbox-box|checkbox-xy`). Select All и Divider — пункты того же Dropdown.",
+    "Chevron и Clear («Очистить всё») — экземпляры Icon Button, рамка `actions` 20/24/28, как у Input и Select.",
+    "Ошибка отдельного Chip — тон Danger самого Chip, токенов поля не требует.",
+    "Контраст, accepted: Placeholder (`color/static/text/base/soft`, 0.35) и обводка Default (`color/action/border/base/soft/default`, 0.15) ниже норм 4.5 и 3 — это общая семантика оболочки всего семейства (field/input, field/select). Замена только в одном поле сломала бы единообразие формы; вопрос вынесен автору для всего семейства сразу.",
+    "Контраст, accepted: Warning (обводка `color/action/border/warning/calm/selected` и State Icon `color/static/indicator/warning/firm`) ниже 3 в light — как у field/input и field/select; состояние дублируется текстом Validation Message в Field. Кандидат на замену для всего семейства — `color/action/border/warning/firm/selected`.",
+    "Контраст, accepted: текст Disabled — исключение WCAG 1.4.3 для неактивных элементов.",
+    "Эффекты не нужны."
+  ],
+  "includes": [
+    "field-dropdown"
+  ]
+}

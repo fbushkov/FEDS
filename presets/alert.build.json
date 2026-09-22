@@ -1,0 +1,1166 @@
+{
+ "component": "alert",
+ "title": "Alert",
+ "page": "Components / Alert",
+ "origin": "new",
+ "requires": [
+  "button"
+ ],
+ "notes": [
+  "Композиция по Atlassian Flag и Section message: Appearance Subtle (в потоке), Default (карточка-уведомление, закрывается), Bold (насыщенная, не закрывается, сворачивается).",
+  "Alert неинтерактивен: у него нет Hover, Pressed, Focus и своей загрузки — состояния у кнопок внутри. Skeleton в Alert не входит.",
+  "Действия — кнопки системы (Subtle: Outline + Text; Default: ссылки Text Primary и Secondary). На тёмной поверхности и на заливке Bold — тип Inverse (Outline Inverse, Text Inverse, шеврон Icon Only Inverse-primary); на жёлтой заливке Warning Bold белое не проходит WCAG, там тёмные Secondary. Своих кнопок у Alert нет.",
+  "Bold закрепляет светлую тему `2. General` (explicit mode): заливка роли одинакова в обеих темах, поэтому инверсные кнопки внутри всегда светлые. В коде — `data-theme=\"light\"` на плашке Bold.",
+  "Bold использует новые L2 `color/status/{hue}/bold/*`: текст ≥ 4.5:1 в обеих темах; жёлтый — тёмный текст.",
+  "Тень карточки Default не собирается: эффект-стили не проработаны (решение автора); вместо неё рамка `alert/default/border`.",
+  "Аватар вместо иконки в Default (уведомления о действиях людей) — следующий шаг: нужен собранный Avatar."
+ ],
+ "sets": [
+  {
+   "name": "Alert",
+   "description": "Сообщение о результате или состоянии: Subtle — в потоке блока, Default — карточка-уведомление, Bold — насыщенная для важного.",
+   "axes": [
+    {
+     "name": "Appearance",
+     "values": [
+      "Subtle",
+      "Default",
+      "Bold"
+     ]
+    },
+    {
+     "name": "Role",
+     "values": [
+      "Info",
+      "Success",
+      "Warning",
+      "Error"
+     ]
+    },
+    {
+     "name": "Size",
+     "values": [
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "Expanded",
+     "values": [
+      "True",
+      "False"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "Appearance": [
+      "Subtle",
+      "Default"
+     ],
+     "Expanded": "False"
+    },
+    {
+     "Appearance": "Bold",
+     "Inverse": "True"
+    }
+   ],
+   "grid": {
+    "columns": "Size",
+    "blocks": "Appearance",
+    "rows": [
+     "Role",
+     "Expanded"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "S": {
+     "from": "Size"
+    },
+    "ico": {
+     "from": "Role",
+     "map": {
+      "Info": "info",
+      "Success": "circle-check",
+      "Warning": "triangle-alert",
+      "Error": "circle-alert"
+     }
+    },
+    "bg": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "alert/bg/info",
+      "Subtle|False|Success": "alert/bg/success",
+      "Subtle|False|Warning": "alert/bg/warning",
+      "Subtle|False|Error": "alert/bg/error",
+      "Subtle|True|Info": "alert/bg/inverse-info",
+      "Subtle|True|Success": "alert/bg/inverse-success",
+      "Subtle|True|Warning": "alert/bg/inverse-warning",
+      "Subtle|True|Error": "alert/bg/inverse-error",
+      "Default|False|Info": "alert/default/bg",
+      "Default|False|Success": "alert/default/bg",
+      "Default|False|Warning": "alert/default/bg",
+      "Default|False|Error": "alert/default/bg",
+      "Default|True|Info": "alert/default/inverse-bg",
+      "Default|True|Success": "alert/default/inverse-bg",
+      "Default|True|Warning": "alert/default/inverse-bg",
+      "Default|True|Error": "alert/default/inverse-bg",
+      "Bold|False|Info": "alert/bold/bg/info",
+      "Bold|False|Success": "alert/bold/bg/success",
+      "Bold|False|Warning": "alert/bold/bg/warning",
+      "Bold|False|Error": "alert/bold/bg/error",
+      "Bold|True|Info": "alert/bold/bg/info",
+      "Bold|True|Success": "alert/bold/bg/success",
+      "Bold|True|Warning": "alert/bold/bg/warning",
+      "Bold|True|Error": "alert/bold/bg/error"
+     }
+    },
+    "bd": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "alert/border/info",
+      "Subtle|False|Success": "alert/border/success",
+      "Subtle|False|Warning": "alert/border/warning",
+      "Subtle|False|Error": "alert/border/error",
+      "Subtle|True|Info": "alert/border/inverse-info",
+      "Subtle|True|Success": "alert/border/inverse-success",
+      "Subtle|True|Warning": "alert/border/inverse-warning",
+      "Subtle|True|Error": "alert/border/inverse-error",
+      "Default|False|Info": "alert/default/border",
+      "Default|False|Success": "alert/default/border",
+      "Default|False|Warning": "alert/default/border",
+      "Default|False|Error": "alert/default/border",
+      "Default|True|Info": "alert/default/inverse-border",
+      "Default|True|Success": "alert/default/inverse-border",
+      "Default|True|Warning": "alert/default/inverse-border",
+      "Default|True|Error": "alert/default/inverse-border",
+      "Bold|False|Info": "alert/bold/bg/info",
+      "Bold|False|Success": "alert/bold/bg/success",
+      "Bold|False|Warning": "alert/bold/bg/warning",
+      "Bold|False|Error": "alert/bold/bg/error",
+      "Bold|True|Info": "alert/bold/bg/info",
+      "Bold|True|Success": "alert/bold/bg/success",
+      "Bold|True|Warning": "alert/bold/bg/warning",
+      "Bold|True|Error": "alert/bold/bg/error"
+     }
+    },
+    "ic": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "alert/icon/info",
+      "Subtle|False|Success": "alert/icon/success",
+      "Subtle|False|Warning": "alert/icon/warning",
+      "Subtle|False|Error": "alert/icon/error",
+      "Subtle|True|Info": "alert/icon/inverse-info",
+      "Subtle|True|Success": "alert/icon/inverse-success",
+      "Subtle|True|Warning": "alert/icon/inverse-warning",
+      "Subtle|True|Error": "alert/icon/inverse-error",
+      "Default|False|Info": "alert/icon/info",
+      "Default|False|Success": "alert/icon/success",
+      "Default|False|Warning": "alert/icon/warning",
+      "Default|False|Error": "alert/icon/error",
+      "Default|True|Info": "alert/icon/inverse-info",
+      "Default|True|Success": "alert/icon/inverse-success",
+      "Default|True|Warning": "alert/icon/inverse-warning",
+      "Default|True|Error": "alert/icon/inverse-error",
+      "Bold|False|Info": "alert/bold/icon/info",
+      "Bold|False|Success": "alert/bold/icon/success",
+      "Bold|False|Warning": "alert/bold/icon/warning",
+      "Bold|False|Error": "alert/bold/icon/error",
+      "Bold|True|Info": "alert/bold/icon/info",
+      "Bold|True|Success": "alert/bold/icon/success",
+      "Bold|True|Warning": "alert/bold/icon/warning",
+      "Bold|True|Error": "alert/bold/icon/error"
+     }
+    },
+    "tt": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "alert/text/title",
+      "Subtle|False|Success": "alert/text/title",
+      "Subtle|False|Warning": "alert/text/title",
+      "Subtle|False|Error": "alert/text/title",
+      "Subtle|True|Info": "alert/text/inverse-title",
+      "Subtle|True|Success": "alert/text/inverse-title",
+      "Subtle|True|Warning": "alert/text/inverse-title",
+      "Subtle|True|Error": "alert/text/inverse-title",
+      "Default|False|Info": "alert/text/title",
+      "Default|False|Success": "alert/text/title",
+      "Default|False|Warning": "alert/text/title",
+      "Default|False|Error": "alert/text/title",
+      "Default|True|Info": "alert/text/inverse-title",
+      "Default|True|Success": "alert/text/inverse-title",
+      "Default|True|Warning": "alert/text/inverse-title",
+      "Default|True|Error": "alert/text/inverse-title",
+      "Bold|False|Info": "alert/bold/text/info",
+      "Bold|False|Success": "alert/bold/text/success",
+      "Bold|False|Warning": "alert/bold/text/warning",
+      "Bold|False|Error": "alert/bold/text/error",
+      "Bold|True|Info": "alert/bold/text/info",
+      "Bold|True|Success": "alert/bold/text/success",
+      "Bold|True|Warning": "alert/bold/text/warning",
+      "Bold|True|Error": "alert/bold/text/error"
+     }
+    },
+    "td": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "alert/text/description",
+      "Subtle|False|Success": "alert/text/description",
+      "Subtle|False|Warning": "alert/text/description",
+      "Subtle|False|Error": "alert/text/description",
+      "Subtle|True|Info": "alert/text/inverse-description",
+      "Subtle|True|Success": "alert/text/inverse-description",
+      "Subtle|True|Warning": "alert/text/inverse-description",
+      "Subtle|True|Error": "alert/text/inverse-description",
+      "Default|False|Info": "alert/text/description",
+      "Default|False|Success": "alert/text/description",
+      "Default|False|Warning": "alert/text/description",
+      "Default|False|Error": "alert/text/description",
+      "Default|True|Info": "alert/text/inverse-description",
+      "Default|True|Success": "alert/text/inverse-description",
+      "Default|True|Warning": "alert/text/inverse-description",
+      "Default|True|Error": "alert/text/inverse-description",
+      "Bold|False|Info": "alert/bold/description/info",
+      "Bold|False|Success": "alert/bold/description/success",
+      "Bold|False|Warning": "alert/bold/description/warning",
+      "Bold|False|Error": "alert/bold/description/error",
+      "Bold|True|Info": "alert/bold/description/info",
+      "Bold|True|Success": "alert/bold/description/success",
+      "Bold|True|Warning": "alert/bold/description/warning",
+      "Bold|True|Error": "alert/bold/description/error"
+     }
+    },
+    "aset": {
+     "from": "Appearance",
+     "map": {
+      "Subtle": "Outline",
+      "Default": "Text",
+      "Bold": "Text"
+     }
+    },
+    "a1": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "Secondary",
+      "Subtle|False|Success": "Secondary",
+      "Subtle|False|Warning": "Secondary",
+      "Subtle|False|Error": "Secondary",
+      "Subtle|True|Info": "Inverse",
+      "Subtle|True|Success": "Inverse",
+      "Subtle|True|Warning": "Inverse",
+      "Subtle|True|Error": "Inverse",
+      "Default|False|Info": "Primary",
+      "Default|False|Success": "Primary",
+      "Default|False|Warning": "Primary",
+      "Default|False|Error": "Primary",
+      "Default|True|Info": "Inverse",
+      "Default|True|Success": "Inverse",
+      "Default|True|Warning": "Inverse",
+      "Default|True|Error": "Inverse",
+      "Bold|False|Info": "Inverse",
+      "Bold|False|Success": "Inverse",
+      "Bold|False|Warning": "Secondary",
+      "Bold|False|Error": "Inverse",
+      "Bold|True|Info": "Inverse",
+      "Bold|True|Success": "Inverse",
+      "Bold|True|Warning": "Secondary",
+      "Bold|True|Error": "Inverse"
+     }
+    },
+    "a2": {
+     "from": [
+      "Appearance",
+      "Inverse",
+      "Role"
+     ],
+     "map": {
+      "Subtle|False|Info": "Secondary",
+      "Subtle|False|Success": "Secondary",
+      "Subtle|False|Warning": "Secondary",
+      "Subtle|False|Error": "Secondary",
+      "Subtle|True|Info": "Inverse",
+      "Subtle|True|Success": "Inverse",
+      "Subtle|True|Warning": "Inverse",
+      "Subtle|True|Error": "Inverse",
+      "Default|False|Info": "Secondary",
+      "Default|False|Success": "Secondary",
+      "Default|False|Warning": "Secondary",
+      "Default|False|Error": "Secondary",
+      "Default|True|Info": "Inverse",
+      "Default|True|Success": "Inverse",
+      "Default|True|Warning": "Inverse",
+      "Default|True|Error": "Inverse",
+      "Bold|False|Info": "Inverse",
+      "Bold|False|Success": "Inverse",
+      "Bold|False|Warning": "Secondary",
+      "Bold|False|Error": "Inverse",
+      "Bold|True|Info": "Inverse",
+      "Bold|True|Success": "Inverse",
+      "Bold|True|Warning": "Secondary",
+      "Bold|True|Error": "Inverse"
+     }
+    },
+    "exp": {
+     "from": "Role",
+     "map": {
+      "Info": "Inverse-primary",
+      "Success": "Inverse-primary",
+      "Warning": "Secondary",
+      "Error": "Inverse-primary"
+     }
+    },
+    "chev": {
+     "from": "Expanded",
+     "map": {
+      "True": "chevron-up",
+      "False": "chevron-down"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Title",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Title",
+     "type": "TEXT",
+     "default": "Заголовок сообщения"
+    },
+    {
+     "name": "↳ Description",
+     "type": "TEXT",
+     "default": "Текст сообщения: что произошло и что сделать дальше."
+    },
+    {
+     "name": "Actions",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Second Action",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Close",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "alert/size/{s}/icon-gap",
+     "px": "alert/size/{s}/x",
+     "py": "alert/size/{s}/y",
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 480,
+    "radius": "alert/size/{s}/radius",
+    "fill": "{bg}",
+    "theme": {
+     "by": "Appearance",
+     "map": {
+      "Subtle": "",
+      "Default": "",
+      "Bold": "light"
+     }
+    },
+    "stroke": {
+     "color": "{bd}",
+     "weight": "alert/size/{s}/border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "icon",
+      "name": "Icon",
+      "icon": {
+       "name": "{ico}",
+       "size": "alert/size/{s}/icon",
+       "color": "{ic}"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Body",
+      "layout": {
+       "dir": "H",
+       "gap": "alert/size/{s}/close-gap",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "frame",
+        "name": "Content",
+        "layout": {
+         "dir": "V",
+         "gap": "alert/size/{s}/actions-gap",
+         "align": "MIN",
+         "counter": "MIN",
+         "w": "FILL",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "frame",
+          "name": "Text",
+          "layout": {
+           "dir": "V",
+           "gap": "alert/size/{s}/title-gap",
+           "align": "MIN",
+           "counter": "MIN",
+           "w": "FILL",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "text",
+            "name": "Title",
+            "refs": {
+             "visible": "Title",
+             "characters": "↳ Title"
+            },
+            "w": "FILL",
+            "text": {
+             "chars": "Заголовок сообщения",
+             "typography": "typography/alert/{s}/title",
+             "fontStyle": "SemiBold",
+             "fill": "{tt}",
+             "wrap": true
+            }
+           },
+           {
+            "type": "text",
+            "name": "Description",
+            "when": {
+             "Expanded": "True"
+            },
+            "refs": {
+             "characters": "↳ Description"
+            },
+            "w": "FILL",
+            "text": {
+             "chars": "Текст сообщения: что произошло и что сделать дальше.",
+             "typography": "typography/alert/{s}/description",
+             "fontStyle": "Regular",
+             "fill": "{td}",
+             "wrap": true
+            }
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "name": "Actions",
+          "when": {
+           "Expanded": "True"
+          },
+          "refs": {
+           "visible": "Actions"
+          },
+          "layout": {
+           "dir": "H",
+           "gap": "alert/size/{s}/action-gap",
+           "align": "MIN",
+           "counter": "CENTER",
+           "w": "HUG",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "instance",
+            "name": "Action",
+            "expose": true,
+            "instance": {
+             "set": "Button / {aset}",
+             "variant": {
+              "Size": {
+               "by": "Size",
+               "map": {
+                "M": "M",
+                "S": "S"
+               }
+              },
+              "Type": "{a1}",
+              "State": "Default",
+              "Loading": "False"
+             },
+             "props": {
+              "Label": "Действие",
+              "Left Icon": false,
+              "Right Icon": false
+             }
+            }
+           },
+           {
+            "type": "instance",
+            "name": "Second Action",
+            "expose": true,
+            "refs": {
+             "visible": "Second Action"
+            },
+            "instance": {
+             "set": "Button / Text",
+             "variant": {
+              "Size": {
+               "by": "Size",
+               "map": {
+                "M": "M",
+                "S": "S"
+               }
+              },
+              "Type": "{a2}",
+              "State": "Default",
+              "Loading": "False"
+             },
+             "props": {
+              "Label": "Подробнее",
+              "Left Icon": false,
+              "Right Icon": false
+             }
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "instance",
+        "name": "Close",
+        "when": {
+         "Appearance": [
+          "Subtle",
+          "Default"
+         ]
+        },
+        "refs": {
+         "visible": "Close"
+        },
+        "instance": {
+         "set": "Button / Icon Only",
+         "variant": {
+          "Size": {
+           "by": "Size",
+           "map": {
+            "M": "M",
+            "S": "S"
+           }
+          },
+          "Type": {
+           "by": "Inverse",
+           "map": {
+            "False": "Secondary",
+            "True": "Inverse-secondary"
+           }
+          },
+          "State": "Default",
+          "Loading": "False"
+         },
+         "props": {
+          "↳ Icon": "icon:x"
+         }
+        }
+       },
+       {
+        "type": "instance",
+        "name": "Expand",
+        "when": {
+         "Appearance": "Bold"
+        },
+        "instance": {
+         "set": "Button / Icon Only",
+         "variant": {
+          "Size": {
+           "by": "Size",
+           "map": {
+            "M": "M",
+            "S": "S"
+           }
+          },
+          "Type": "{exp}",
+          "State": "Default",
+          "Loading": "False"
+         },
+         "props": {
+          "↳ Icon": "icon:{chev}"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "spec": {
+  "title": "Alert",
+  "description": "Сообщение о результате или состоянии: в потоке блока (Subtle), карточкой-уведомлением (Default) или насыщенной плашкой для важного (Bold). Роль передаётся иконкой, цветом и текстом — не только цветом.",
+  "columns": [
+   {
+    "title": "Вид",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Subtle",
+      "description": "В потоке блока: форма, карточка, панель. Остаётся, пока причина не исчезла. Закрывается, если сообщение не критично",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Default",
+      "description": "Уведомление о событии поверх интерфейса, в группе справа или слева снизу. Нейтральная карточка, иконка роли, закрытие, действия — ссылки",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Success",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Bold",
+      "description": "Важное: успех, предупреждение, ошибка, загрузка. Не закрывается, пока причина не устранена; дополнительный текст раскрывается",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Error",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Роль",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Info",
+      "description": "Дополнительная информация, не требующая действия; также загрузка",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Success",
+      "description": "Действие завершено; предложите открыть созданное",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Success",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Warning",
+      "description": "До действия со значительными последствиями. Не скрывается сам. Текст тёмный: белый на жёлтом не читается",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Warning",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Error",
+      "description": "Что-то пошло не так: объясните, что случилось и что сделать. Не скрывается сам",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Error",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Раскрытие",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Свёрнут",
+      "description": "Только заголовок и шеврон: не перегружает экран",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Warning",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "False"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Раскрыт",
+      "description": "Текст и до двух действий",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Warning",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Размер",
+    "width": 560,
+    "cards": [
+     {
+      "title": "M",
+      "description": "Стандартный: форма, основная колонка, уведомления",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "S",
+      "description": "Плотное окружение: карточка, строка таблицы, popover",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Info",
+         "Size": "S",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 400
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Содержание",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Только заголовок",
+      "description": "Заголовок обязателен и кратко называет причину",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Actions": false,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "Заголовок + текст",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": false,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     },
+     {
+      "title": "С действиями",
+      "description": "Не больше двух действий; подпись говорит, куда ведёт («Права доступа», а не «Подробнее»)",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Second Action": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Группа",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Стопка уведомлений",
+      "description": "Новое сверху; после закрытия поднимается следующее. Закрываемые и незакрываемые в одной стопке не смешиваются",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Success",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Actions": false,
+         "Close": true
+        },
+        "width": 480
+       },
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Actions": false,
+         "Close": true
+        },
+        "width": 480
+       },
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Actions": false,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Инверсия",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Inverse",
+      "description": "Subtle и Default на тёмных поверхностях. Bold — насыщенный на любой поверхности",
+      "inverse": true,
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "True",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       },
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Error",
+         "Size": "M",
+         "Inverse": "True",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       },
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Default",
+         "Role": "Success",
+         "Size": "M",
+         "Inverse": "True",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Загрузка",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Загрузка действия",
+      "description": "После нажатия в Loading переходит только кнопка действия; иконка роли, текст и закрытие статичны",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Subtle",
+         "Role": "Info",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true
+        },
+        "width": 480,
+        "nested": {
+         "Action": {
+          "Loading": "True"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Corner Case",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Длинный текст",
+      "description": "Заголовок и текст переносятся; очень длинное сообщение — ссылка на страницу, Banner или Modal",
+      "items": [
+       {
+        "set": "Alert",
+        "variant": {
+         "Appearance": "Bold",
+         "Role": "Warning",
+         "Size": "M",
+         "Inverse": "False",
+         "Expanded": "True"
+        },
+        "props": {
+         "Title": true,
+         "Actions": true,
+         "Close": true,
+         "↳ Description": "У двух участников нет доступа к проекту. Они не увидят изменения, пока администратор не выдаст права. Запросите доступ или удалите участников из списка."
+        },
+        "width": 480
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

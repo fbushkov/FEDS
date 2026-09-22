@@ -1,0 +1,1850 @@
+{
+  "component": "checkbox",
+  "title": "Checkbox",
+  "kind": "component",
+  "origin": "existing",
+  "source": "input/tokens/variables.json",
+  "doc": "input/builds/checkbox/checkboxcheckboxcard.md",
+  "roots": [
+    "checkbox"
+  ],
+  "prefixes": [
+    "checkbox/"
+  ],
+  "decisions": [
+    "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+  ],
+  "l2": [
+    {
+      "name": "border/checkbox/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/checkbox/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/checkbox/card",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/checkbox/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/checkbox/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/checkbox/checkbox-text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/checkbox/checkbox-text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/checkbox/text-interline/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/checkbox/text-interline/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/checkbox/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/5",
+        "dark": "radius/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/checkbox/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/checkbox/card",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/checkbox/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/checkbox/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/box-container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/box-container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/icon/card/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/icon/card/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/icon/check/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/checkbox/icon/check/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/13",
+        "dark": "size/13"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/y/l-check-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/y/l-check-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/y/m-check-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/box/y/m-check-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/y/l-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/y/l-icon-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/36",
+        "dark": "space/36"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/y/l-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/y/m-icon-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/28",
+        "dark": "space/28"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/card/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/container/xy-l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/container/xy-m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/text-container/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/text-container/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/text-container/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/checkbox/text-container/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/name/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/name/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/name/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/l/name/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/name/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/name/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/name/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/checkbox/m/name/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    }
+  ],
+  "l3": [
+    {
+      "name": "checkbox/card/bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/ghost",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/card/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/soft",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/card/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/card/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/ghost",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/card/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/card/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "checkbox/checked/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "checkbox/checked/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "checkbox/checked/inverse-bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/checked/inverse-icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/box-checked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/brand/medium",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/box-uncheked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/description",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/icon",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/inverse-box-checked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/inverse-box-uncheked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/inverse-name",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/loading/name",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/border",
+      "type": "FLOAT",
+      "alias": "border/checkbox/card",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/l/icon",
+      "type": "FLOAT",
+      "alias": "size/checkbox/icon/card/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/l/icon-text",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/y/l-icon-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/l/x",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/l/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/y/l-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/l/y-top",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/y/l-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/m/icon",
+      "type": "FLOAT",
+      "alias": "size/checkbox/icon/card/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/m/icon-text",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/y/m-icon-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/m/x",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/m/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/m/y-top",
+      "type": "FLOAT",
+      "alias": "space/checkbox/card/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/card/radius",
+      "type": "FLOAT",
+      "alias": "radius/checkbox/card",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box",
+      "type": "FLOAT",
+      "alias": "size/checkbox/box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-border",
+      "type": "FLOAT",
+      "alias": "border/checkbox/box/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-check-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/y/l-check-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-check-y-top",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/y/l-check-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-container",
+      "type": "FLOAT",
+      "alias": "size/checkbox/box-container/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-container-xy",
+      "type": "FLOAT",
+      "alias": "space/checkbox/container/xy-l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-icon-x",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-icon-y",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/box-radius",
+      "type": "FLOAT",
+      "alias": "radius/checkbox/box/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/checkbox-text-gap",
+      "type": "FLOAT",
+      "alias": "gap/checkbox/checkbox-text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/focus-border",
+      "type": "FLOAT",
+      "alias": "border/checkbox/focus/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/checkbox/focus/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/icon",
+      "type": "FLOAT",
+      "alias": "size/checkbox/icon/check/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/text-container-x",
+      "type": "FLOAT",
+      "alias": "space/checkbox/text-container/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/text-container-y",
+      "type": "FLOAT",
+      "alias": "space/checkbox/text-container/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/l/text-interline-gap",
+      "type": "FLOAT",
+      "alias": "gap/checkbox/text-interline/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box",
+      "type": "FLOAT",
+      "alias": "size/checkbox/box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-border",
+      "type": "FLOAT",
+      "alias": "border/checkbox/box/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-check-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/y/m-check-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-check-y-top",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/y/m-check-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-container",
+      "type": "FLOAT",
+      "alias": "size/checkbox/box-container/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-container-xy",
+      "type": "FLOAT",
+      "alias": "space/checkbox/container/xy-m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-icon-x",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-icon-y",
+      "type": "FLOAT",
+      "alias": "space/checkbox/box/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/box-radius",
+      "type": "FLOAT",
+      "alias": "radius/checkbox/box/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/checkbox-text-gap",
+      "type": "FLOAT",
+      "alias": "gap/checkbox/checkbox-text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/focus-border",
+      "type": "FLOAT",
+      "alias": "border/checkbox/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/checkbox/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/icon",
+      "type": "FLOAT",
+      "alias": "size/checkbox/icon/check/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/text-container-x",
+      "type": "FLOAT",
+      "alias": "space/checkbox/text-container/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/text-container-y",
+      "type": "FLOAT",
+      "alias": "space/checkbox/text-container/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/size/main/m/text-interline-gap",
+      "type": "FLOAT",
+      "alias": "gap/checkbox/text-interline/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/text/description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/light",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/text/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-light",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/text/inverse-name",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/text/name",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/border/error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/error",
+      "type": "COLOR",
+      "alias": "color/static/bg/solid/red/medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-border/error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/inverse-firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "checkbox/unchecked/inverse-border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/action/checkbox/l/name",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/checkbox/l/name/size",
+        "lineHeight": "typography/checkbox/l/name/line-height",
+        "letterSpacing": "typography/checkbox/l/name/letter-spacing",
+        "fontWeight": "typography/checkbox/l/name/weight"
+      }
+    },
+    {
+      "name": "typography/action/checkbox/l/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/checkbox/l/description/size",
+        "lineHeight": "typography/checkbox/l/description/line-height",
+        "letterSpacing": "typography/checkbox/l/description/letter-spacing",
+        "fontWeight": "typography/checkbox/l/description/weight"
+      }
+    },
+    {
+      "name": "typography/action/checkbox/m/name",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/checkbox/m/name/size",
+        "lineHeight": "typography/checkbox/m/name/line-height",
+        "letterSpacing": "typography/checkbox/m/name/letter-spacing",
+        "fontWeight": "typography/checkbox/m/name/weight"
+      }
+    },
+    {
+      "name": "typography/action/checkbox/m/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/checkbox/m/description/size",
+        "lineHeight": "typography/checkbox/m/description/line-height",
+        "letterSpacing": "typography/checkbox/m/description/letter-spacing",
+        "fontWeight": "typography/checkbox/m/description/weight"
+      }
+    }
+  ],
+  "exceptions": []
+}

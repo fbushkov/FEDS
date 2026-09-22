@@ -1,0 +1,2596 @@
+{
+  "component": "field-combobox",
+  "roots": [
+    "field"
+  ],
+  "title": "Combobox",
+  "kind": "component",
+  "analog": "field/input",
+  "source": "input/backlog/combobox.md",
+  "axes": {
+    "Size": [
+      "S",
+      "M",
+      "L"
+    ],
+    "State": [
+      "Default",
+      "Hover",
+      "Focused",
+      "Disabled",
+      "Read Only",
+      "Error",
+      "Warning",
+      "Success",
+      "Loading"
+    ],
+    "Filled": [
+      "False",
+      "True"
+    ],
+    "Open": [
+      "False",
+      "True"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "leading-icon",
+    "value",
+    "placeholder",
+    "selection",
+    "caret",
+    "clear",
+    "state-icon",
+    "spinner",
+    "chevron",
+    "dropdown"
+  ],
+  "l2": [
+    {
+      "name": "size/field/combobox/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "description": "Combobox S — высота контейнера"
+    },
+    {
+      "name": "space/field/combobox/container/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Combobox S — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/field/combobox/container/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Combobox S — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "border/field/combobox/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Combobox S — толщина обводки контейнера"
+    },
+    {
+      "name": "radius/field/combobox/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "description": "Combobox S — скругление контейнера"
+    },
+    {
+      "name": "gap/field/combobox/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox S — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "gap/field/combobox/leading/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox S — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "gap/field/combobox/text/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox S — зазор внутри Content"
+    },
+    {
+      "name": "gap/field/combobox/trailing/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox S — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "size/field/combobox/leading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Combobox S — размер иконки Leading Zone"
+    },
+    {
+      "name": "size/field/combobox/leading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox S — рамка иконки Leading Zone"
+    },
+    {
+      "name": "space/field/combobox/leading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox S — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "size/field/combobox/loading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Combobox S — размер Spinner"
+    },
+    {
+      "name": "size/field/combobox/loading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox S — рамка Spinner"
+    },
+    {
+      "name": "space/field/combobox/loading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox S — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/validation-markers/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Combobox S — размер State Icon"
+    },
+    {
+      "name": "size/field/combobox/validation-markers/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox S — рамка State Icon"
+    },
+    {
+      "name": "space/field/combobox/validation-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox S — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox S — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "space/field/combobox/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox S — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/caret/box/s-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox S — высота рамки каретки ввода"
+    },
+    {
+      "name": "size/field/combobox/caret/box/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "description": "Combobox S — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "size/field/combobox/caret/icon/s-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Combobox S — высота каретки ввода"
+    },
+    {
+      "name": "size/field/combobox/caret/icon/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/1",
+        "dark": "size/1"
+      },
+      "description": "Combobox S — толщина каретки ввода"
+    },
+    {
+      "name": "space/field/combobox/text/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox S — отступ текста слева"
+    },
+    {
+      "name": "space/field/combobox/text/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox S — отступ текста справа"
+    },
+    {
+      "name": "space/field/combobox/text/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox S — вертикальный отступ текста"
+    },
+    {
+      "name": "gap/field/combobox/container-dropdown/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox S — зазор между полем и Dropdown"
+    },
+    {
+      "name": "size/field/combobox/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "description": "Combobox M — высота контейнера"
+    },
+    {
+      "name": "space/field/combobox/container/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Combobox M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/field/combobox/container/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Combobox M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "border/field/combobox/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Combobox M — толщина обводки контейнера"
+    },
+    {
+      "name": "radius/field/combobox/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Combobox M — скругление контейнера"
+    },
+    {
+      "name": "gap/field/combobox/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox M — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "gap/field/combobox/leading/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox M — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "gap/field/combobox/text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox M — зазор внутри Content"
+    },
+    {
+      "name": "gap/field/combobox/trailing/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Combobox M — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "size/field/combobox/leading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox M — размер иконки Leading Zone"
+    },
+    {
+      "name": "size/field/combobox/leading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox M — рамка иконки Leading Zone"
+    },
+    {
+      "name": "space/field/combobox/leading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox M — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "size/field/combobox/loading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox M — размер Spinner"
+    },
+    {
+      "name": "size/field/combobox/loading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox M — рамка Spinner"
+    },
+    {
+      "name": "space/field/combobox/loading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox M — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/validation-markers/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox M — размер State Icon"
+    },
+    {
+      "name": "size/field/combobox/validation-markers/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox M — рамка State Icon"
+    },
+    {
+      "name": "space/field/combobox/validation-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox M — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox M — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "space/field/combobox/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox M — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/caret/box/m-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox M — высота рамки каретки ввода"
+    },
+    {
+      "name": "size/field/combobox/caret/box/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "description": "Combobox M — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "size/field/combobox/caret/icon/m-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Combobox M — высота каретки ввода"
+    },
+    {
+      "name": "size/field/combobox/caret/icon/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/1",
+        "dark": "size/1"
+      },
+      "description": "Combobox M — толщина каретки ввода"
+    },
+    {
+      "name": "space/field/combobox/text/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox M — отступ текста слева"
+    },
+    {
+      "name": "space/field/combobox/text/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox M — отступ текста справа"
+    },
+    {
+      "name": "space/field/combobox/text/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox M — вертикальный отступ текста"
+    },
+    {
+      "name": "gap/field/combobox/container-dropdown/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox M — зазор между полем и Dropdown"
+    },
+    {
+      "name": "size/field/combobox/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "description": "Combobox L — высота контейнера"
+    },
+    {
+      "name": "space/field/combobox/container/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "description": "Combobox L — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/field/combobox/container/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "description": "Combobox L — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "border/field/combobox/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Combobox L — толщина обводки контейнера"
+    },
+    {
+      "name": "radius/field/combobox/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "description": "Combobox L — скругление контейнера"
+    },
+    {
+      "name": "gap/field/combobox/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox L — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "gap/field/combobox/leading/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox L — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "gap/field/combobox/text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox L — зазор внутри Content"
+    },
+    {
+      "name": "gap/field/combobox/trailing/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Combobox L — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "size/field/combobox/leading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox L — размер иконки Leading Zone"
+    },
+    {
+      "name": "size/field/combobox/leading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Combobox L — рамка иконки Leading Zone"
+    },
+    {
+      "name": "space/field/combobox/leading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox L — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "size/field/combobox/loading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox L — размер Spinner"
+    },
+    {
+      "name": "size/field/combobox/loading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Combobox L — рамка Spinner"
+    },
+    {
+      "name": "space/field/combobox/loading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox L — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/validation-markers/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox L — размер State Icon"
+    },
+    {
+      "name": "size/field/combobox/validation-markers/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Combobox L — рамка State Icon"
+    },
+    {
+      "name": "space/field/combobox/validation-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox L — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/actions/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Combobox L — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "space/field/combobox/actions/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox L — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "size/field/combobox/caret/box/l-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Combobox L — высота рамки каретки ввода"
+    },
+    {
+      "name": "size/field/combobox/caret/box/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "description": "Combobox L — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "size/field/combobox/caret/icon/l-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Combobox L — высота каретки ввода"
+    },
+    {
+      "name": "size/field/combobox/caret/icon/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/2",
+        "dark": "size/2"
+      },
+      "description": "Combobox L — толщина каретки ввода"
+    },
+    {
+      "name": "space/field/combobox/text/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox L — отступ текста слева"
+    },
+    {
+      "name": "space/field/combobox/text/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Combobox L — отступ текста справа"
+    },
+    {
+      "name": "space/field/combobox/text/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Combobox L — вертикальный отступ текста"
+    },
+    {
+      "name": "gap/field/combobox/container-dropdown/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Combobox L — зазор между полем и Dropdown"
+    },
+    {
+      "name": "typography/field/combobox/text/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер S — кегль"
+    },
+    {
+      "name": "typography/field/combobox/text/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер S — интерлиньяж"
+    },
+    {
+      "name": "typography/field/combobox/text/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер S — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/combobox/text/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер S — начертание"
+    },
+    {
+      "name": "typography/field/combobox/text/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер M — кегль"
+    },
+    {
+      "name": "typography/field/combobox/text/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер M — интерлиньяж"
+    },
+    {
+      "name": "typography/field/combobox/text/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер M — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/combobox/text/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер M — начертание"
+    },
+    {
+      "name": "typography/field/combobox/text/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер L — кегль"
+    },
+    {
+      "name": "typography/field/combobox/text/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер L — интерлиньяж"
+    },
+    {
+      "name": "typography/field/combobox/text/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер L — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/combobox/text/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Combobox — значение, запрос и Placeholder, размер L — начертание"
+    }
+  ],
+  "l3": [
+    {
+      "name": "field/combobox/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — фон контейнера в покое"
+    },
+    {
+      "name": "field/combobox/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — фон контейнера при наведении"
+    },
+    {
+      "name": "field/combobox/bg/focused",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — фон контейнера в фокусе и при открытом Dropdown (Open)"
+    },
+    {
+      "name": "field/combobox/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — фон контейнера в Disabled"
+    },
+    {
+      "name": "field/combobox/bg/read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — фон контейнера в Read Only"
+    },
+    {
+      "name": "field/combobox/bg/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — Inverse — фон контейнера в покое"
+    },
+    {
+      "name": "field/combobox/bg/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — Inverse — фон контейнера при наведении"
+    },
+    {
+      "name": "field/combobox/bg/inverse-focused",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — Inverse — фон контейнера в фокусе и Open"
+    },
+    {
+      "name": "field/combobox/bg/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — Inverse — фон контейнера в Disabled"
+    },
+    {
+      "name": "field/combobox/bg/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — Inverse — фон контейнера в Read Only"
+    },
+    {
+      "name": "field/combobox/bg/selection",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/brand/low",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — подложка дописанной части значения в режиме List + inline"
+    },
+    {
+      "name": "field/combobox/bg/inverse-selection",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/brand/low",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Combobox — Inverse, подложка дописанной части значения в режиме List + inline"
+    },
+    {
+      "name": "field/combobox/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка контейнера в покое"
+    },
+    {
+      "name": "field/combobox/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка контейнера при наведении"
+    },
+    {
+      "name": "field/combobox/border/focused",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — акцентная обводка в фокусе и при открытом Dropdown (Open)"
+    },
+    {
+      "name": "field/combobox/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка контейнера в Disabled"
+    },
+    {
+      "name": "field/combobox/border/read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка контейнера в Read Only"
+    },
+    {
+      "name": "field/combobox/border/error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка в состоянии Error"
+    },
+    {
+      "name": "field/combobox/border/warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка в состоянии Warning"
+    },
+    {
+      "name": "field/combobox/border/success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — обводка в состоянии Success"
+    },
+    {
+      "name": "field/combobox/border/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка контейнера в покое"
+    },
+    {
+      "name": "field/combobox/border/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка контейнера при наведении"
+    },
+    {
+      "name": "field/combobox/border/inverse-focused",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, акцентная обводка в фокусе и при открытом Dropdown (Open)"
+    },
+    {
+      "name": "field/combobox/border/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка контейнера в Disabled"
+    },
+    {
+      "name": "field/combobox/border/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка контейнера в Read Only"
+    },
+    {
+      "name": "field/combobox/border/inverse-error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка в состоянии Error"
+    },
+    {
+      "name": "field/combobox/border/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка в состоянии Warning"
+    },
+    {
+      "name": "field/combobox/border/inverse-success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Combobox — Inverse, обводка в состоянии Success"
+    },
+    {
+      "name": "field/combobox/text/value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — значение и вводимый запрос"
+    },
+    {
+      "name": "field/combobox/text/placeholder",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — Placeholder в Empty"
+    },
+    {
+      "name": "field/combobox/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — текст в Disabled"
+    },
+    {
+      "name": "field/combobox/text/read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — текст в Read Only"
+    },
+    {
+      "name": "field/combobox/text/inverse-value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — Inverse, значение и вводимый запрос"
+    },
+    {
+      "name": "field/combobox/text/inverse-placeholder",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — Inverse, Placeholder в Empty"
+    },
+    {
+      "name": "field/combobox/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — Inverse, текст в Disabled"
+    },
+    {
+      "name": "field/combobox/text/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Combobox — Inverse, текст в Read Only"
+    },
+    {
+      "name": "field/combobox/icon/caret",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — каретка ввода в фокусе"
+    },
+    {
+      "name": "field/combobox/icon/inverse-caret",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Inverse, каретка ввода в фокусе"
+    },
+    {
+      "name": "field/combobox/leading/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — иконка в Leading Zone"
+    },
+    {
+      "name": "field/combobox/leading/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Inverse, иконка в Leading Zone"
+    },
+    {
+      "name": "field/combobox/loading/loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Spinner асинхронной проверки значения"
+    },
+    {
+      "name": "field/combobox/loading/inverse-loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Inverse, Spinner асинхронной проверки значения"
+    },
+    {
+      "name": "field/combobox/validation-icons/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — State Icon в состоянии Error"
+    },
+    {
+      "name": "field/combobox/validation-icons/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — State Icon в состоянии Warning"
+    },
+    {
+      "name": "field/combobox/validation-icons/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — State Icon в состоянии Success"
+    },
+    {
+      "name": "field/combobox/validation-icons/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Inverse, State Icon в состоянии Error"
+    },
+    {
+      "name": "field/combobox/validation-icons/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Inverse, State Icon в состоянии Warning"
+    },
+    {
+      "name": "field/combobox/validation-icons/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Combobox — Inverse, State Icon в состоянии Success"
+    },
+    {
+      "name": "field/size/combobox/s/container",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/container/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — высота контейнера"
+    },
+    {
+      "name": "field/size/combobox/s/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/container/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/combobox/s/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/container/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/combobox/s/border",
+      "type": "FLOAT",
+      "alias": "border/field/combobox/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Combobox S — толщина обводки контейнера"
+    },
+    {
+      "name": "field/size/combobox/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/combobox/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Combobox S — скругление контейнера"
+    },
+    {
+      "name": "field/size/combobox/s/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/container/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "field/size/combobox/s/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/leading/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/s/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/text/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — зазор внутри Content"
+    },
+    {
+      "name": "field/size/combobox/s/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/trailing/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "field/size/combobox/s/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/leading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — размер иконки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/s/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/leading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — рамка иконки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/s/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/leading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/s/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/loading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — размер Spinner"
+    },
+    {
+      "name": "field/size/combobox/s/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/loading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — рамка Spinner"
+    },
+    {
+      "name": "field/size/combobox/s/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/loading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/s/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/validation-markers/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — размер State Icon"
+    },
+    {
+      "name": "field/size/combobox/s/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/validation-markers/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — рамка State Icon"
+    },
+    {
+      "name": "field/size/combobox/s/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/validation-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/s/actions",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/actions/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/combobox/s/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/actions/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/s/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/box/s-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — высота рамки каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/s/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/box/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "field/size/combobox/s/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/icon/s-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — высота каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/s/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/icon/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox S — толщина каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/s/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — отступ текста слева"
+    },
+    {
+      "name": "field/size/combobox/s/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — отступ текста справа"
+    },
+    {
+      "name": "field/size/combobox/s/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — вертикальный отступ текста"
+    },
+    {
+      "name": "field/size/combobox/s/container-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/container-dropdown/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox S — зазор между полем и Dropdown"
+    },
+    {
+      "name": "field/size/combobox/s/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Combobox S — скругление каретки ввода (общий L2 семейства)"
+    },
+    {
+      "name": "field/size/combobox/m/container",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/container/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — высота контейнера"
+    },
+    {
+      "name": "field/size/combobox/m/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/container/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/combobox/m/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/container/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/combobox/m/border",
+      "type": "FLOAT",
+      "alias": "border/field/combobox/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Combobox M — толщина обводки контейнера"
+    },
+    {
+      "name": "field/size/combobox/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/combobox/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Combobox M — скругление контейнера"
+    },
+    {
+      "name": "field/size/combobox/m/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/container/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "field/size/combobox/m/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/leading/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/m/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — зазор внутри Content"
+    },
+    {
+      "name": "field/size/combobox/m/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/trailing/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "field/size/combobox/m/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/leading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — размер иконки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/m/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/leading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — рамка иконки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/m/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/leading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/m/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/loading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — размер Spinner"
+    },
+    {
+      "name": "field/size/combobox/m/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/loading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — рамка Spinner"
+    },
+    {
+      "name": "field/size/combobox/m/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/loading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/m/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/validation-markers/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — размер State Icon"
+    },
+    {
+      "name": "field/size/combobox/m/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/validation-markers/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — рамка State Icon"
+    },
+    {
+      "name": "field/size/combobox/m/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/validation-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/m/actions",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/actions/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/combobox/m/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/actions/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/m/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/box/m-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — высота рамки каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/m/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/box/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "field/size/combobox/m/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/icon/m-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — высота каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/m/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/icon/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox M — толщина каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/m/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — отступ текста слева"
+    },
+    {
+      "name": "field/size/combobox/m/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — отступ текста справа"
+    },
+    {
+      "name": "field/size/combobox/m/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — вертикальный отступ текста"
+    },
+    {
+      "name": "field/size/combobox/m/container-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/container-dropdown/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox M — зазор между полем и Dropdown"
+    },
+    {
+      "name": "field/size/combobox/m/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Combobox M — скругление каретки ввода (общий L2 семейства)"
+    },
+    {
+      "name": "field/size/combobox/l/container",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/container/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — высота контейнера"
+    },
+    {
+      "name": "field/size/combobox/l/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/container/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/combobox/l/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/container/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "field/size/combobox/l/border",
+      "type": "FLOAT",
+      "alias": "border/field/combobox/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Combobox L — толщина обводки контейнера"
+    },
+    {
+      "name": "field/size/combobox/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/combobox/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Combobox L — скругление контейнера"
+    },
+    {
+      "name": "field/size/combobox/l/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/container/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — зазор между Leading Zone, Content и Trailing Zone"
+    },
+    {
+      "name": "field/size/combobox/l/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/leading/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — зазор между элементами Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/l/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — зазор внутри Content"
+    },
+    {
+      "name": "field/size/combobox/l/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/trailing/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — зазор между элементами Trailing Zone (Clear, State Icon, Chevron)"
+    },
+    {
+      "name": "field/size/combobox/l/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/leading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — размер иконки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/l/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/leading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — рамка иконки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/l/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/leading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — отступ иконки внутри рамки Leading Zone"
+    },
+    {
+      "name": "field/size/combobox/l/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/loading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — размер Spinner"
+    },
+    {
+      "name": "field/size/combobox/l/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/loading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — рамка Spinner"
+    },
+    {
+      "name": "field/size/combobox/l/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/loading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — отступ Spinner внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/l/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/validation-markers/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — размер State Icon"
+    },
+    {
+      "name": "field/size/combobox/l/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/validation-markers/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — рамка State Icon"
+    },
+    {
+      "name": "field/size/combobox/l/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/validation-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — отступ State Icon внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/l/actions",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/actions/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — рамка кнопок Clear и Chevron (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/combobox/l/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/actions/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — отступ кнопок Clear и Chevron внутри рамки"
+    },
+    {
+      "name": "field/size/combobox/l/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/box/l-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — высота рамки каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/l/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/box/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — ширина рамки каретки ввода (не занимает места в строке)"
+    },
+    {
+      "name": "field/size/combobox/l/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/icon/l-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — высота каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/l/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/combobox/caret/icon/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Combobox L — толщина каретки ввода"
+    },
+    {
+      "name": "field/size/combobox/l/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — отступ текста слева"
+    },
+    {
+      "name": "field/size/combobox/l/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — отступ текста справа"
+    },
+    {
+      "name": "field/size/combobox/l/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/combobox/text/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — вертикальный отступ текста"
+    },
+    {
+      "name": "field/size/combobox/l/container-dropdown-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/combobox/container-dropdown/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Combobox L — зазор между полем и Dropdown"
+    },
+    {
+      "name": "field/size/combobox/l/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Combobox L — скругление каретки ввода (общий L2 семейства)"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/field/combobox/text/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/combobox/text/s/size",
+        "lineHeight": "typography/field/combobox/text/s/line-height",
+        "letterSpacing": "typography/field/combobox/text/s/letter-spacing",
+        "fontWeight": "typography/field/combobox/text/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/combobox/text/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/combobox/text/m/size",
+        "lineHeight": "typography/field/combobox/text/m/line-height",
+        "letterSpacing": "typography/field/combobox/text/m/letter-spacing",
+        "fontWeight": "typography/field/combobox/text/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/combobox/text/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/combobox/text/l/size",
+        "lineHeight": "typography/field/combobox/text/l/line-height",
+        "letterSpacing": "typography/field/combobox/text/l/letter-spacing",
+        "fontWeight": "typography/field/combobox/text/l/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "field/combobox/text/value",
+      "bg": "field/combobox/bg/default",
+      "kind": "text"
+    },
+    {
+      "fg": "field/combobox/text/value",
+      "bg": "field/combobox/bg/hover",
+      "kind": "text"
+    },
+    {
+      "fg": "field/combobox/text/read-only",
+      "bg": "field/combobox/bg/read-only",
+      "kind": "text"
+    },
+    {
+      "fg": "field/combobox/text/placeholder",
+      "bg": "field/combobox/bg/default",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/combobox/text/disabled",
+      "bg": "field/combobox/bg/disabled",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/combobox/text/inverse-value",
+      "bg": "field/combobox/bg/inverse-default",
+      "kind": "text"
+    },
+    {
+      "fg": "field/combobox/text/inverse-read-only",
+      "bg": "field/combobox/bg/inverse-read-only",
+      "kind": "text"
+    },
+    {
+      "fg": "field/combobox/text/inverse-placeholder",
+      "bg": "field/combobox/bg/inverse-default",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/combobox/border/default",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic",
+      "accepted": true
+    },
+    {
+      "fg": "field/combobox/border/focused",
+      "bg": "field/combobox/bg/focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/border/error",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/border/warning",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic",
+      "accepted": true
+    },
+    {
+      "fg": "field/combobox/border/success",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/border/inverse-focused",
+      "bg": "field/combobox/bg/inverse-focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/border/inverse-error",
+      "bg": "field/combobox/bg/inverse-default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/validation-icons/error",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/validation-icons/warning",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic",
+      "accepted": true
+    },
+    {
+      "fg": "field/combobox/validation-icons/success",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/icon/caret",
+      "bg": "field/combobox/bg/focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/loading/loading",
+      "bg": "field/combobox/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/combobox/text/value",
+      "bg": "field/combobox/bg/selection",
+      "kind": "text"
+    },
+    {
+      "fg": "field/combobox/text/inverse-value",
+      "bg": "field/combobox/bg/inverse-selection",
+      "kind": "text",
+      "over": "color/action/bg/base/inverse-pure/default"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Поле Combobox — текстовое поле (ввод, каретка, Focused без Pressed), поэтому цвета повторяют field/input один в один через свои L3 `field/combobox/*` (как field/select повторяет семантику Input). Состояния и инверсия — сегменты `inverse-*` в состоянии, как у field/input.",
+    "Open отдельных токенов не получает: по select.md «Open может использовать ту же активную обводку, что и Focused» — используются `bg/focused` и `border/focused`. Признак Open меняет только направление Chevron.",
+    "Фокус — акцентная обводка `border/focused`, как у Input (отдельного Focus Ring у field/input нет). Если автор решит показывать кольцо фокуса как у Select — добавить `field/combobox/focus-ring` → `color/static/focus/brand` и размеры `focus-border|focus-radius`.",
+    "Размеры — свои L2 `*/field/combobox/*` (правило 3) со значениями оболочки Input: 32/40/48, отступы 6/8/10, скругление 6/8/10, иконки 16/20/24 в рамках 20/24/28. Скругление каретки — общий L2 семейства `radius/field/caret/{s}` (у Input он тоже общий).",
+    "Chevron и Clear — экземпляры Icon Button (как `Select › Open-Close` и `Input › Clear`), своих цветов нет; рамка — `actions` 20/24/28, как у Input и Select. S = 20 меньше 24 px WCAG 2.5.8 — общий вопрос семейства (input.md, решение 5).",
+    "Новое по сравнению с Input: `bg/selection` (подложка дописанной части в режиме List + inline, `color/static/bg/transparent/accent/brand/low`; прозрачный бренд работает в обеих темах, поэтому и `inverse-selection` ссылается на него же) и зазор поле–Dropdown `container-dropdown-gap` = 4 (как `gap/field/select/button-dropdown`).",
+    "Dropdown — экземпляр `_ Select / Dropdown` (токены `field/select/dropdown/*` и дополнение из пресета field-dropdown: подсветка совпадения, Create, Empty/Loading). Своих токенов списка у Combobox нет.",
+    "Типографика — свои L2 `typography/field/combobox/text/{s}/*` со значениями `typography/field/input/text` (14/20, 16/24, 18/28, Regular) и стили `typography/field/combobox/text/{s}`; Placeholder использует тот же стиль.",
+    "Контраст, accepted: Placeholder (`color/static/text/base/soft`, 0.35) и обводка Default (`color/action/border/base/soft/default`, 0.15) ниже норм 4.5 и 3 — это общая семантика оболочки всего семейства (field/input, field/select). Замена только в одном поле сломала бы единообразие формы; вопрос вынесен автору для всего семейства сразу.",
+    "Контраст, accepted: Warning (обводка `color/action/border/warning/calm/selected` и State Icon `color/static/indicator/warning/firm`) ниже 3 в light — как у field/input и field/select; состояние дублируется текстом Validation Message в Field. Кандидат на замену для всего семейства — `color/action/border/warning/firm/selected`.",
+    "Контраст, accepted: текст Disabled — исключение WCAG 1.4.3 для неактивных элементов.",
+    "Эффекты не нужны."
+  ],
+  "includes": [
+    "field-dropdown"
+  ]
+}

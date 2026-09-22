@@ -1,0 +1,21 @@
+{
+  "_comment": "Расхождения файла «Элементы · Основа стилей» с правилом tools/scope_rules.py (сверено 2026-09-21). Имеют приоритет над правилом.",
+  "scopes": {
+    "font/line-height/24": ["LINE_HEIGHT", "PARAGRAPH_SPACING"],
+    "color/transparent-black/400": [],
+    "color/transparent-white/400": [],
+    "avatar/size/m/button-x": ["WIDTH_HEIGHT"],
+    "avatar/size/l/button-x": ["WIDTH_HEIGHT"],
+    "avatar/size/xl/button-x": ["WIDTH_HEIGHT"],
+    "avatar/size/2xl/button-x": ["WIDTH_HEIGHT"],
+    "status/loading/icon": ["SHAPE_FILL"],
+    "status/loading/inverse-icon": ["SHAPE_FILL"],
+    "field/counter/regular": ["TEXT_FILL"],
+    "field/counter/inverse-regular": ["TEXT_FILL"],
+    "field/counter/over-limit": ["TEXT_FILL"],
+    "field/counter/inverse-over-limit": ["TEXT_FILL"],
+    "field/description/icon/hint": ["SHAPE_FILL"],
+    "field/description/icon/inverse-hint": ["SHAPE_FILL"]
+  },
+  "hidden": {}
+}

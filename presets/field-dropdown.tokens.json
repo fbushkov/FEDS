@@ -1,0 +1,1012 @@
+{
+  "component": "field-dropdown",
+  "roots": [
+    "field"
+  ],
+  "title": "Dropdown — часть Select, Combobox, Multiselect",
+  "kind": "part",
+  "analog": "field/select",
+  "source": "input/backlog/dropdown.md",
+  "axes": {
+    "Size": [
+      "S",
+      "M",
+      "L"
+    ],
+    "Dropdown State": [
+      "Default",
+      "Empty",
+      "Loading"
+    ],
+    "Item Type": [
+      "Value",
+      "Group Title",
+      "Divider",
+      "Create",
+      "Select All"
+    ],
+    "Mode": [
+      "Single",
+      "Multi"
+    ],
+    "State": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Active",
+      "Read Only"
+    ],
+    "Selected": [
+      "False",
+      "True"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "scroll",
+    "option",
+    "checkbox",
+    "leading-icon",
+    "label",
+    "description",
+    "indicator",
+    "group-title",
+    "divider",
+    "focus-ring",
+    "loader",
+    "hint"
+  ],
+  "l2": [
+    {
+      "name": "border/field/select/option/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Dropdown Item S — толщина индикатора Active"
+    },
+    {
+      "name": "radius/field/select/option/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "description": "Dropdown Item S — скругление индикатора Active (равно скруглению пункта, обводка внутрь)"
+    },
+    {
+      "name": "gap/field/select/option/text/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Dropdown Item S — зазор между Label и Description"
+    },
+    {
+      "name": "size/field/select/option/checkbox/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Dropdown Item S — рамка Checkbox в режиме multi"
+    },
+    {
+      "name": "space/field/select/option/checkbox/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Dropdown Item S — отступ Checkbox внутри рамки"
+    },
+    {
+      "name": "gap/field/select/dropdown/loader/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Dropdown S — зазор между Spinner и текстом «Загрузка…»"
+    },
+    {
+      "name": "border/field/select/option/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "description": "Dropdown Item M — толщина индикатора Active"
+    },
+    {
+      "name": "radius/field/select/option/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Dropdown Item M — скругление индикатора Active (равно скруглению пункта, обводка внутрь)"
+    },
+    {
+      "name": "gap/field/select/option/text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Dropdown Item M — зазор между Label и Description"
+    },
+    {
+      "name": "size/field/select/option/checkbox/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Dropdown Item M — рамка Checkbox в режиме multi"
+    },
+    {
+      "name": "space/field/select/option/checkbox/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Dropdown Item M — отступ Checkbox внутри рамки"
+    },
+    {
+      "name": "gap/field/select/dropdown/loader/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "description": "Dropdown M — зазор между Spinner и текстом «Загрузка…»"
+    },
+    {
+      "name": "border/field/select/option/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "description": "Dropdown Item L — толщина индикатора Active"
+    },
+    {
+      "name": "radius/field/select/option/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "description": "Dropdown Item L — скругление индикатора Active (равно скруглению пункта, обводка внутрь)"
+    },
+    {
+      "name": "gap/field/select/option/text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "description": "Dropdown Item L — зазор между Label и Description"
+    },
+    {
+      "name": "size/field/select/option/checkbox/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Dropdown Item L — рамка Checkbox в режиме multi"
+    },
+    {
+      "name": "space/field/select/option/checkbox/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Dropdown Item L — отступ Checkbox внутри рамки"
+    },
+    {
+      "name": "gap/field/select/dropdown/loader/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Dropdown L — зазор между Spinner и текстом «Загрузка…»"
+    },
+    {
+      "name": "typography/field/select/option-description/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "description": "Dropdown Item — Description, размер S — кегль"
+    },
+    {
+      "name": "typography/field/select/option-description/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "description": "Dropdown Item — Description, размер S — интерлиньяж"
+    },
+    {
+      "name": "typography/field/select/option-description/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "description": "Dropdown Item — Description, размер S — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/select/option-description/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Dropdown Item — Description, размер S — начертание"
+    },
+    {
+      "name": "typography/field/select/option-description/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Dropdown Item — Description, размер M — кегль"
+    },
+    {
+      "name": "typography/field/select/option-description/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Dropdown Item — Description, размер M — интерлиньяж"
+    },
+    {
+      "name": "typography/field/select/option-description/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Dropdown Item — Description, размер M — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/select/option-description/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Dropdown Item — Description, размер M — начертание"
+    },
+    {
+      "name": "typography/field/select/option-description/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Dropdown Item — Description, размер L — кегль"
+    },
+    {
+      "name": "typography/field/select/option-description/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Dropdown Item — Description, размер L — интерлиньяж"
+    },
+    {
+      "name": "typography/field/select/option-description/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Dropdown Item — Description, размер L — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/select/option-description/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Dropdown Item — Description, размер L — начертание"
+    },
+    {
+      "name": "typography/field/select/option-match/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер S — кегль"
+    },
+    {
+      "name": "typography/field/select/option-match/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер S — интерлиньяж"
+    },
+    {
+      "name": "typography/field/select/option-match/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер S — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/select/option-match/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер S — начертание"
+    },
+    {
+      "name": "typography/field/select/option-match/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер M — кегль"
+    },
+    {
+      "name": "typography/field/select/option-match/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер M — интерлиньяж"
+    },
+    {
+      "name": "typography/field/select/option-match/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер M — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/select/option-match/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер M — начертание"
+    },
+    {
+      "name": "typography/field/select/option-match/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер L — кегль"
+    },
+    {
+      "name": "typography/field/select/option-match/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер L — интерлиньяж"
+    },
+    {
+      "name": "typography/field/select/option-match/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер L — межбуквенный интервал"
+    },
+    {
+      "name": "typography/field/select/option-match/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Dropdown Item — подсветка совпадения с запросом в Label, размер L — начертание"
+    },
+    {
+      "name": "size/field/select/dropdown/empty/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/192",
+        "dark": "size/192"
+      },
+      "description": "Dropdown S — высота панели «Ничего не найдено» и загрузки"
+    },
+    {
+      "name": "size/field/select/dropdown/empty/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/240",
+        "dark": "size/240"
+      },
+      "description": "Dropdown M — высота панели «Ничего не найдено» и загрузки"
+    },
+    {
+      "name": "size/field/select/dropdown/empty/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/256",
+        "dark": "size/256"
+      },
+      "description": "Dropdown L — высота панели «Ничего не найдено» и загрузки"
+    }
+  ],
+  "l3": [
+    {
+      "name": "field/select/dropdown/option/text/description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Dropdown Item — Description, вторая строка под Label"
+    },
+    {
+      "name": "field/select/dropdown/option/text/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Dropdown Item — Inverse, Description, вторая строка под Label"
+    },
+    {
+      "name": "field/select/dropdown/option/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Dropdown Item — индикатор Active (клавиатурная навигация), внутренняя обводка пункта"
+    },
+    {
+      "name": "field/select/dropdown/option/inverse-focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/inverse-brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Dropdown Item — Inverse, индикатор Active (клавиатурная навигация)"
+    },
+    {
+      "name": "field/size/select/s/option/focus-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/option/focus/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Dropdown Item S — толщина индикатора Active"
+    },
+    {
+      "name": "field/size/select/s/option/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/option/focus/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Dropdown Item S — скругление индикатора Active (равно скруглению пункта, обводка внутрь)"
+    },
+    {
+      "name": "field/size/select/s/option/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/option/text/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown Item S — зазор между Label и Description"
+    },
+    {
+      "name": "field/size/select/s/option/checkbox-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/checkbox/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Dropdown Item S — рамка Checkbox в режиме multi"
+    },
+    {
+      "name": "field/size/select/s/option/checkbox-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/checkbox/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown Item S — отступ Checkbox внутри рамки"
+    },
+    {
+      "name": "field/size/select/s/dropdown-box/loader-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/dropdown/loader/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown S — зазор между Spinner и текстом «Загрузка…»"
+    },
+    {
+      "name": "field/size/select/m/option/focus-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/option/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Dropdown Item M — толщина индикатора Active"
+    },
+    {
+      "name": "field/size/select/m/option/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/option/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Dropdown Item M — скругление индикатора Active (равно скруглению пункта, обводка внутрь)"
+    },
+    {
+      "name": "field/size/select/m/option/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/option/text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown Item M — зазор между Label и Description"
+    },
+    {
+      "name": "field/size/select/m/option/checkbox-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/checkbox/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Dropdown Item M — рамка Checkbox в режиме multi"
+    },
+    {
+      "name": "field/size/select/m/option/checkbox-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/checkbox/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown Item M — отступ Checkbox внутри рамки"
+    },
+    {
+      "name": "field/size/select/m/dropdown-box/loader-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/dropdown/loader/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown M — зазор между Spinner и текстом «Загрузка…»"
+    },
+    {
+      "name": "field/size/select/l/option/focus-border",
+      "type": "FLOAT",
+      "alias": "border/field/select/option/focus/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Dropdown Item L — толщина индикатора Active"
+    },
+    {
+      "name": "field/size/select/l/option/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/select/option/focus/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Dropdown Item L — скругление индикатора Active (равно скруглению пункта, обводка внутрь)"
+    },
+    {
+      "name": "field/size/select/l/option/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/option/text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown Item L — зазор между Label и Description"
+    },
+    {
+      "name": "field/size/select/l/option/checkbox-box",
+      "type": "FLOAT",
+      "alias": "size/field/select/option/checkbox/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Dropdown Item L — рамка Checkbox в режиме multi"
+    },
+    {
+      "name": "field/size/select/l/option/checkbox-xy",
+      "type": "FLOAT",
+      "alias": "space/field/select/option/checkbox/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown Item L — отступ Checkbox внутри рамки"
+    },
+    {
+      "name": "field/size/select/l/dropdown-box/loader-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/select/dropdown/loader/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Dropdown L — зазор между Spinner и текстом «Загрузка…»"
+    },
+    {
+      "name": "field/size/select/s/dropdown-box/empty-height",
+      "type": "FLOAT",
+      "alias": "size/field/select/dropdown/empty/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Dropdown S — высота панели «Ничего не найдено» и загрузки"
+    },
+    {
+      "name": "field/size/select/m/dropdown-box/empty-height",
+      "type": "FLOAT",
+      "alias": "size/field/select/dropdown/empty/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Dropdown M — высота панели «Ничего не найдено» и загрузки"
+    },
+    {
+      "name": "field/size/select/l/dropdown-box/empty-height",
+      "type": "FLOAT",
+      "alias": "size/field/select/dropdown/empty/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Dropdown L — высота панели «Ничего не найдено» и загрузки"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/field/select/option-description/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/option-description/s/size",
+        "lineHeight": "typography/field/select/option-description/s/line-height",
+        "letterSpacing": "typography/field/select/option-description/s/letter-spacing",
+        "fontWeight": "typography/field/select/option-description/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option-description/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/option-description/m/size",
+        "lineHeight": "typography/field/select/option-description/m/line-height",
+        "letterSpacing": "typography/field/select/option-description/m/letter-spacing",
+        "fontWeight": "typography/field/select/option-description/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option-description/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/select/option-description/l/size",
+        "lineHeight": "typography/field/select/option-description/l/line-height",
+        "letterSpacing": "typography/field/select/option-description/l/letter-spacing",
+        "fontWeight": "typography/field/select/option-description/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option-match/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/field/select/option-match/s/size",
+        "lineHeight": "typography/field/select/option-match/s/line-height",
+        "letterSpacing": "typography/field/select/option-match/s/letter-spacing",
+        "fontWeight": "typography/field/select/option-match/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option-match/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/field/select/option-match/m/size",
+        "lineHeight": "typography/field/select/option-match/m/line-height",
+        "letterSpacing": "typography/field/select/option-match/m/letter-spacing",
+        "fontWeight": "typography/field/select/option-match/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/select/option-match/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/field/select/option-match/l/size",
+        "lineHeight": "typography/field/select/option-match/l/line-height",
+        "letterSpacing": "typography/field/select/option-match/l/letter-spacing",
+        "fontWeight": "typography/field/select/option-match/l/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "field/select/dropdown/option/text/description",
+      "bg": "field/select/dropdown/container/base",
+      "kind": "text"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/description",
+      "bg": "field/select/dropdown/option/bg/active",
+      "kind": "text",
+      "over": "color/static/bg/solid/base/pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/description",
+      "bg": "field/select/dropdown/option/bg/hover",
+      "kind": "text",
+      "over": "color/static/bg/solid/base/pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/inverse-description",
+      "bg": "field/select/dropdown/container/inverse-base",
+      "kind": "text"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/inverse-description",
+      "bg": "field/select/dropdown/option/bg/inverse-active",
+      "kind": "text",
+      "over": "color/static/bg/solid/base/inverse-pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/value",
+      "bg": "field/select/dropdown/option/bg/active",
+      "kind": "text",
+      "over": "color/static/bg/solid/base/pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/value",
+      "bg": "field/select/dropdown/option/bg/active-hover",
+      "kind": "text",
+      "over": "color/static/bg/solid/base/pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/text/inverse-value",
+      "bg": "field/select/dropdown/option/bg/inverse-active",
+      "kind": "text",
+      "over": "color/static/bg/solid/base/inverse-pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/focus-ring",
+      "bg": "field/select/dropdown/container/base",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/select/dropdown/option/focus-ring",
+      "bg": "field/select/dropdown/option/bg/active",
+      "kind": "graphic",
+      "over": "color/static/bg/solid/base/pure"
+    },
+    {
+      "fg": "field/select/dropdown/option/inverse-focus-ring",
+      "bg": "field/select/dropdown/container/inverse-base",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/select/dropdown/option/inverse-focus-ring",
+      "bg": "field/select/dropdown/option/bg/inverse-active",
+      "kind": "graphic",
+      "over": "color/static/bg/solid/base/inverse-pure",
+      "accepted": true
+    },
+    {
+      "fg": "field/select/dropdown/option/indicator/icon",
+      "bg": "field/select/dropdown/option/bg/active",
+      "kind": "graphic",
+      "over": "color/static/bg/solid/base/pure",
+      "accepted": true
+    },
+    {
+      "fg": "field/select/dropdown/container/hint",
+      "bg": "field/select/dropdown/container/base",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/select/dropdown/container/inverse-hint",
+      "bg": "field/select/dropdown/container/inverse-base",
+      "kind": "text",
+      "accepted": true
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Покрытие: существующие токены SimpleSelect (`field/select/dropdown/*`, `field/size/select/{s}/dropdown-box/*`, `field/size/select/{s}/option/*`, типографика `typography/field/select/option|option-title/{s}`) покрывают контейнер, Empty/Loading (hint, loader), фон пунктов по состояниям, Selected (`active*`), Check Indicator, Leading Icon, Label, Group Title и Read Only. Пресет содержит только недостающее для dropdown.md.",
+    "Отдельный корень `field/dropdown` не заводим: Dropdown уже живёт в `field/select/dropdown` и собран приватными наборами `_ Select / Dropdown` и `_ Select / Dropdown Items`. Новые токены дописываются в те же ветки (`field/select/dropdown/option/*`, `field/size/select/{s}/option|dropdown-box/*`, L2 `*/field/select/option|dropdown/*`). Combobox и Multiselect используют этот Dropdown экземпляром и своих токенов списка не имеют. Переименование в `field/dropdown` — только по запросу автора.",
+    "Словарь: в токенах FEroom `active` = Selected (выбранный пункт: `option/bg/active`, `active-hover`, `active-disabled`). Active из документа (клавиатурная навигация) — новый индикатор `option/focus-ring` (внутренняя обводка) с размерами `option/focus-border|focus-radius`; так Selected + Active = фон `active` + обводка, как требует документ.",
+    "Read Only пункта = существующие `option/bg/disabled`, `option/text/disabled`, `option/leading-icon/read-only`, для выбранного — `option/bg/active-disabled` и `option/indicator/icon-disabled`.",
+    "Description: цвет `color/static/text/base/medium` (вторичный, контраст ≥ 4.5 на фоне списка и на Selected), кегль на ступень меньше Label (значения как у `typography/field/hint/{s}`): S 12/16, M 14/20, L 16/24. Новые L2 `typography/field/select/option-description/{s}/*` и стили.",
+    "Подсветка совпадения — полужирным начертанием (SemiBold 600), цвет Label не меняется (WCAG 1.4.1). Новые L2 `typography/field/select/option-match/{s}/*` и стили; применяются к диапазону текста в Label.",
+    "Multi: Checkbox — экземпляр компонента Checkbox (S-пункт → Checkbox M, M и L → Checkbox L), своих цветов нет. Рамка `option/checkbox-box` = 20/24/28 выровнена с `leading-icon-box`, чтобы Checkbox и Leading Icon стояли на одной сетке.",
+    "Loading: Spinner (`dropdown-box/loader`, существующий) + текст «Загрузка…» цветом `container/hint` и стилем option; новый только зазор `dropdown-box/loader-gap` 4/6/8 (как `gap-trailing` поля).",
+    "Divider, Scroll, Tooltip — экземпляры своих компонентов, токенов не требуют. Пункты Create и Select All — вариант Value (Leading Icon «+» и Checkbox соответственно), новых цветов нет.",
+    "Максимальная высота (10 пунктов + отступы контейнера) — вычисляемая величина: S 10×32+2×2, M 10×40+2×3, L 10×48+2×4. Отдельный L2 не заводим, в L1 нет подходящих значений.",
+    "Эффекты не создаём: тень контейнера — существующий эффект-стиль `effect/select/{regular|inverse}/{S|M|L}`. Скругление и обводка контейнера Dropdown в токенах select отсутствуют — вопрос автору.",
+    "Контраст, accepted: `option/inverse-focus-ring` на `option/bg/inverse-active` в dark = 2.99 (граница 3.0). Другой семантики фокуса бренда в шкале `color/static/focus` нет (brand / inverse-brand — единственная пара); на фоне контейнера без Selected норма выполняется.",
+    "Контраст, accepted: Check Indicator `option/indicator/icon` (существующий токен select, `color/static/indicator/brand/medium`, 0.8) на Selected-фоне `option/bg/active` = 2.62 light / 2.98 dark < 3. Токен не меняем; Selected дополнительно передаётся фоном и `aria-selected`. Кандидат на замену — непрозрачный бренд (`color/static/indicator/brand/firm`); вопрос автору.",
+    "Контраст, accepted: `field/select/dropdown/container/hint` («Ничего не найдено», «Загрузка…») — существующий токен select (`color/static/text/base/light`), не меняем; вопрос автору."
+  ],
+  "partOf": [
+    "field-select",
+    "field-combobox",
+    "field-multiselect"
+  ]
+}

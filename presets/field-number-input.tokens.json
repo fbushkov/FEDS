@@ -1,0 +1,246 @@
+{
+  "component": "field-number-input",
+  "roots": [
+    "field"
+  ],
+  "title": "Number Input",
+  "kind": "component",
+  "analog": "field/input",
+  "source": "input/builds/number-input.md",
+  "axes": {
+    "Size": [
+      "S",
+      "M",
+      "L"
+    ],
+    "Type": [
+      "Number",
+      "Stepper",
+      "Currency"
+    ],
+    "State": [
+      "Default",
+      "Hover",
+      "Focused",
+      "Disabled",
+      "Read Only",
+      "Error",
+      "Warning",
+      "Success",
+      "Loading"
+    ],
+    "Filled": [
+      "False",
+      "True"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "leading-icon",
+    "prefix",
+    "value",
+    "placeholder",
+    "suffix",
+    "decrement",
+    "increment",
+    "state-icon",
+    "spinner",
+    "caret"
+  ],
+  "l2": [
+    {
+      "name": "size/field/number-input/stepper/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Number Input S — рамка кнопок − / + (область нажатия ≥ 24 px)"
+    },
+    {
+      "name": "size/field/number-input/stepper/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "description": "Number Input M — рамка кнопок − / + (область нажатия ≥ 24 px)"
+    },
+    {
+      "name": "size/field/number-input/stepper/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "description": "Number Input L — рамка кнопок − / + (область нажатия ≥ 24 px)"
+    },
+    {
+      "name": "gap/field/number-input/stepper/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Number Input S — зазор между кнопками − и +"
+    },
+    {
+      "name": "gap/field/number-input/stepper/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Number Input M — зазор между кнопками − и +"
+    },
+    {
+      "name": "gap/field/number-input/stepper/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "description": "Number Input L — зазор между кнопками − и +"
+    }
+  ],
+  "l3": [
+    {
+      "name": "field/size/number-input/s/stepper-box",
+      "type": "FLOAT",
+      "alias": "size/field/number-input/stepper/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Number Input S — рамка кнопок − / + (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/number-input/m/stepper-box",
+      "type": "FLOAT",
+      "alias": "size/field/number-input/stepper/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Number Input M — рамка кнопок − / + (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/number-input/l/stepper-box",
+      "type": "FLOAT",
+      "alias": "size/field/number-input/stepper/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Number Input L — рамка кнопок − / + (экземпляры Icon Button)"
+    },
+    {
+      "name": "field/size/number-input/s/stepper-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/number-input/stepper/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Number Input S — зазор между кнопками − и +"
+    },
+    {
+      "name": "field/size/number-input/m/stepper-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/number-input/stepper/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Number Input M — зазор между кнопками − и +"
+    },
+    {
+      "name": "field/size/number-input/l/stepper-gap",
+      "type": "FLOAT",
+      "alias": "gap/field/number-input/stepper/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Number Input L — зазор между кнопками − и +"
+    }
+  ],
+  "textStyles": [],
+  "contrast": [
+    {
+      "fg": "field/input/text/value",
+      "bg": "field/input/bg/default",
+      "kind": "text"
+    },
+    {
+      "fg": "field/input/text/read-only",
+      "bg": "field/input/bg/read-only",
+      "kind": "text"
+    },
+    {
+      "fg": "field/input/text/inverse-value",
+      "bg": "field/input/bg/inverse-default",
+      "kind": "text"
+    },
+    {
+      "fg": "field/input/leading/text",
+      "bg": "field/input/bg/default",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/input/text/placeholder",
+      "bg": "field/input/bg/default",
+      "kind": "text",
+      "accepted": true
+    },
+    {
+      "fg": "field/input/border/focused",
+      "bg": "field/input/bg/focused",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/input/border/error",
+      "bg": "field/input/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/input/border/inverse-error",
+      "bg": "field/input/bg/inverse-default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "field/input/validation-icons/error",
+      "bg": "field/input/bg/default",
+      "kind": "graphic"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Number Input — наследник оболочки Input, как Password, Search, Email и Currency (они живут на field/input/* и field/size/input/* без своих копий). Поэтому цвета (фон, обводка, текст, Prefix/Suffix, каретка, State Icon, Spinner), высоты, отступы и типографика (стили typography/field/input/text|prefix|suffix/{s}) берутся из существующих токенов field/input, новых нет. Документ: «Высоты и отступы — как у Input того же размера».",
+    "Новое — только группа кнопок − / + (Stepper): `field/size/number-input/{s}/stepper-box` и `stepper-gap`, по образцу `field/size/text-area/{s}/resizer*` (у Text Area свои токены есть только у уникальной части).",
+    "Рамка − / + = 24 / 28 / 32 (S/M/L): требование документа (≥ 24 × 24, WCAG 2.2 2.5.8) и подписи макета Input для Clear (input.md, решение 5). Существующая `size/field/input/actions/s` = 20 меньше нормы, поэтому своя L2. В S кнопка 24 выше контентной зоны (32 − 2×6 = 20), но центрируется в контейнере фиксированной высоты 32 и не увеличивает поле.",
+    "Кнопки − / + — экземпляры Icon Button (Type = Tertiary, как Clear): своих цветов у них нет, Disabled на границе min/max — состояние самого Icon Button. Clear у Number Input не используется.",
+    "Порядок Trailing Zone: Suffix → − → + → State Icon / Spinner; зазор между элементами зоны — существующий `field/size/input/{s}/gap-trailing`, внутри пары − / + — `stepper-gap` (2).",
+    "Currency: символ валюты — существующие Prefix/Suffix Input (`field/input/leading/text`, `field/size/input/{s}/prefix-*|suffix-*`, стили typography/field/input/prefix|suffix/{s}).",
+    "Выравнивание по правому краю в таблице и табличные цифры (OpenType tnum) — свойства текстового слоя, переменными не задаются; решается при сборке.",
+    "Контраст, accepted: Placeholder и Prefix/Suffix (`color/static/text/base/soft`) ниже 4.5 — существующие токены field/input, не меняем; вопрос к автору для всего семейства.",
+    "Эффекты не нужны. Inverse — токены `inverse-*` field/input (как у Input)."
+  ]
+}

@@ -1,0 +1,956 @@
+{
+  "component": "hint",
+  "roots": [
+    "hint"
+  ],
+  "title": "Hint",
+  "kind": "component",
+  "analog": "simple-select",
+  "source": "input/backlog/hint.md",
+  "axes": {
+    "Size": [
+      "S",
+      "M"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ],
+    "Tail": [
+      "None",
+      "Top",
+      "Bottom",
+      "Left",
+      "Right"
+    ]
+  },
+  "parts": [
+    "container",
+    "media",
+    "header",
+    "title",
+    "close-button",
+    "text",
+    "footer",
+    "step-counter",
+    "step-indicator",
+    "actions",
+    "tail"
+  ],
+  "l2": [
+    {
+      "name": "size/hint/width/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/240",
+        "dark": "size/240"
+      },
+      "description": "Hint — ширина панели S (240)"
+    },
+    {
+      "name": "size/hint/width/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": 320,
+        "dark": 320
+      },
+      "description": "Hint — ширина панели M (320)"
+    },
+    {
+      "name": "space/hint/x",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Hint — горизонтальный отступ панели"
+    },
+    {
+      "name": "space/hint/y",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Hint — вертикальный отступ панели"
+    },
+    {
+      "name": "space/hint/offset",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Hint — зазор от якоря до острия хвостика"
+    },
+    {
+      "name": "gap/hint/container",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Hint — расстояние между медиа, текстовым блоком и футером"
+    },
+    {
+      "name": "gap/hint/content",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Hint — расстояние между заголовком и текстом"
+    },
+    {
+      "name": "gap/hint/header",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Hint — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "gap/hint/footer",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Hint — расстояние между счётчиком шагов и кнопками, между кнопками"
+    },
+    {
+      "name": "gap/hint/indicator",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Hint — расстояние между точками-индикаторами шагов"
+    },
+    {
+      "name": "radius/hint/container",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "description": "Hint — скругление панели"
+    },
+    {
+      "name": "radius/hint/media",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "description": "Hint — скругление медиа (картинка, gif)"
+    },
+    {
+      "name": "border/hint/container",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Hint — толщина обводки панели"
+    },
+    {
+      "name": "size/hint/close/box",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Hint — зона кнопки закрытия, не меньше 24 × 24 (WCAG 2.5.8)"
+    },
+    {
+      "name": "size/hint/indicator/dot",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/6",
+        "dark": "size/6"
+      },
+      "description": "Hint — диаметр точки-индикатора шага"
+    },
+    {
+      "name": "size/hint/tail/width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/8",
+        "dark": "size/8"
+      },
+      "description": "Hint — ширина основания хвостика"
+    },
+    {
+      "name": "size/hint/tail/height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/4",
+        "dark": "size/4"
+      },
+      "description": "Hint — вылет хвостика от панели"
+    },
+    {
+      "name": "typography/hint/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "description": "Hint — заголовок шага: кегль 16"
+    },
+    {
+      "name": "typography/hint/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "description": "Hint — заголовок шага: интерлиньяж 24"
+    },
+    {
+      "name": "typography/hint/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Hint — заголовок шага: межбуквенный интервал 0"
+    },
+    {
+      "name": "typography/hint/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Hint — заголовок шага: начертание 600"
+    },
+    {
+      "name": "typography/hint/text/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Hint — текст шага: кегль 14"
+    },
+    {
+      "name": "typography/hint/text/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Hint — текст шага: интерлиньяж 20"
+    },
+    {
+      "name": "typography/hint/text/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Hint — текст шага: межбуквенный интервал 0.1"
+    },
+    {
+      "name": "typography/hint/text/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Hint — текст шага: начертание 400"
+    },
+    {
+      "name": "typography/hint/counter/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "description": "Hint — счётчик шагов: кегль 12"
+    },
+    {
+      "name": "typography/hint/counter/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "description": "Hint — счётчик шагов: интерлиньяж 16"
+    },
+    {
+      "name": "typography/hint/counter/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "description": "Hint — счётчик шагов: межбуквенный интервал 0.25"
+    },
+    {
+      "name": "typography/hint/counter/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Hint — счётчик шагов: начертание 400"
+    }
+  ],
+  "l3": [
+    {
+      "name": "hint/bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Hint — фон контейнера"
+    },
+    {
+      "name": "hint/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Hint — фон контейнера на инверсной (тёмной) поверхности"
+    },
+    {
+      "name": "hint/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Hint — обводка контейнера и хвостика"
+    },
+    {
+      "name": "hint/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Hint — обводка контейнера и хвостика на инверсной поверхности"
+    },
+    {
+      "name": "hint/tail",
+      "type": "COLOR",
+      "alias": "color/bg/raised/main",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Hint — заливка хвостика, совпадает с фоном контейнера"
+    },
+    {
+      "name": "hint/inverse-tail",
+      "type": "COLOR",
+      "alias": "color/bg/raised/inverse-main",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Hint — заливка хвостика на инверсной поверхности, совпадает с фоном контейнера"
+    },
+    {
+      "name": "hint/text/title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Hint — цвет текста: заголовок шага"
+    },
+    {
+      "name": "hint/inverse-text/title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Hint — цвет текста на инверсной поверхности: заголовок шага"
+    },
+    {
+      "name": "hint/text/body",
+      "type": "COLOR",
+      "alias": "color/static/text/base/firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Hint — цвет текста: текст шага"
+    },
+    {
+      "name": "hint/inverse-text/body",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Hint — цвет текста на инверсной поверхности: текст шага"
+    },
+    {
+      "name": "hint/text/counter",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Hint — цвет текста: счётчик «Шаг 1 из 3»"
+    },
+    {
+      "name": "hint/inverse-text/counter",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Hint — цвет текста на инверсной поверхности: счётчик «Шаг 1 из 3»"
+    },
+    {
+      "name": "hint/indicator/active",
+      "type": "COLOR",
+      "alias": "color/static/indicator/brand/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Hint — точка текущего шага"
+    },
+    {
+      "name": "hint/indicator/default",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Hint — точка непройденного или пройденного шага"
+    },
+    {
+      "name": "hint/inverse-indicator/active",
+      "type": "COLOR",
+      "alias": "color/static/indicator/brand/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Hint — точка текущего шага на инверсной поверхности"
+    },
+    {
+      "name": "hint/inverse-indicator/default",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Hint — точка остальных шагов на инверсной поверхности"
+    },
+    {
+      "name": "hint/size/s/width",
+      "type": "FLOAT",
+      "alias": "size/hint/width/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint S — ширина панели"
+    },
+    {
+      "name": "hint/size/s/x",
+      "type": "FLOAT",
+      "alias": "space/hint/x",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — горизонтальный отступ панели"
+    },
+    {
+      "name": "hint/size/s/y",
+      "type": "FLOAT",
+      "alias": "space/hint/y",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — вертикальный отступ панели"
+    },
+    {
+      "name": "hint/size/s/gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/container",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — расстояние между медиа, текстовым блоком и футером"
+    },
+    {
+      "name": "hint/size/s/content-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/content",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — расстояние между заголовком и текстом"
+    },
+    {
+      "name": "hint/size/s/header-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/header",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "hint/size/s/footer-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/footer",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — расстояние между элементами футера"
+    },
+    {
+      "name": "hint/size/s/indicator-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/indicator",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — расстояние между точками-индикаторами"
+    },
+    {
+      "name": "hint/size/s/indicator",
+      "type": "FLOAT",
+      "alias": "size/hint/indicator/dot",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint S — диаметр точки-индикатора"
+    },
+    {
+      "name": "hint/size/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/hint/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Hint S — скругление панели"
+    },
+    {
+      "name": "hint/size/s/media-radius",
+      "type": "FLOAT",
+      "alias": "radius/hint/media",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Hint S — скругление медиа"
+    },
+    {
+      "name": "hint/size/s/border",
+      "type": "FLOAT",
+      "alias": "border/hint/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Hint S — толщина обводки панели"
+    },
+    {
+      "name": "hint/size/s/close-box",
+      "type": "FLOAT",
+      "alias": "size/hint/close/box",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint S — зона кнопки закрытия"
+    },
+    {
+      "name": "hint/size/s/tail-width",
+      "type": "FLOAT",
+      "alias": "size/hint/tail/width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint S — ширина основания хвостика"
+    },
+    {
+      "name": "hint/size/s/tail-height",
+      "type": "FLOAT",
+      "alias": "size/hint/tail/height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint S — вылет хвостика"
+    },
+    {
+      "name": "hint/size/s/offset",
+      "type": "FLOAT",
+      "alias": "space/hint/offset",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint S — зазор от якоря до острия хвостика"
+    },
+    {
+      "name": "hint/size/m/width",
+      "type": "FLOAT",
+      "alias": "size/hint/width/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint M — ширина панели"
+    },
+    {
+      "name": "hint/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/hint/x",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — горизонтальный отступ панели"
+    },
+    {
+      "name": "hint/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/hint/y",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — вертикальный отступ панели"
+    },
+    {
+      "name": "hint/size/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/container",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — расстояние между медиа, текстовым блоком и футером"
+    },
+    {
+      "name": "hint/size/m/content-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/content",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — расстояние между заголовком и текстом"
+    },
+    {
+      "name": "hint/size/m/header-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/header",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — расстояние между заголовком и кнопкой закрытия"
+    },
+    {
+      "name": "hint/size/m/footer-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/footer",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — расстояние между элементами футера"
+    },
+    {
+      "name": "hint/size/m/indicator-gap",
+      "type": "FLOAT",
+      "alias": "gap/hint/indicator",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — расстояние между точками-индикаторами"
+    },
+    {
+      "name": "hint/size/m/indicator",
+      "type": "FLOAT",
+      "alias": "size/hint/indicator/dot",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint M — диаметр точки-индикатора"
+    },
+    {
+      "name": "hint/size/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/hint/container",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Hint M — скругление панели"
+    },
+    {
+      "name": "hint/size/m/media-radius",
+      "type": "FLOAT",
+      "alias": "radius/hint/media",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Hint M — скругление медиа"
+    },
+    {
+      "name": "hint/size/m/border",
+      "type": "FLOAT",
+      "alias": "border/hint/container",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Hint M — толщина обводки панели"
+    },
+    {
+      "name": "hint/size/m/close-box",
+      "type": "FLOAT",
+      "alias": "size/hint/close/box",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint M — зона кнопки закрытия"
+    },
+    {
+      "name": "hint/size/m/tail-width",
+      "type": "FLOAT",
+      "alias": "size/hint/tail/width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint M — ширина основания хвостика"
+    },
+    {
+      "name": "hint/size/m/tail-height",
+      "type": "FLOAT",
+      "alias": "size/hint/tail/height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Hint M — вылет хвостика"
+    },
+    {
+      "name": "hint/size/m/offset",
+      "type": "FLOAT",
+      "alias": "space/hint/offset",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Hint M — зазор от якоря до острия хвостика"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/hint/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/hint/title/size",
+        "lineHeight": "typography/hint/title/line-height",
+        "letterSpacing": "typography/hint/title/letter-spacing",
+        "fontWeight": "typography/hint/title/weight"
+      }
+    },
+    {
+      "name": "typography/hint/text",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/hint/text/size",
+        "lineHeight": "typography/hint/text/line-height",
+        "letterSpacing": "typography/hint/text/letter-spacing",
+        "fontWeight": "typography/hint/text/weight"
+      }
+    },
+    {
+      "name": "typography/hint/counter",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/hint/counter/size",
+        "lineHeight": "typography/hint/counter/line-height",
+        "letterSpacing": "typography/hint/counter/letter-spacing",
+        "fontWeight": "typography/hint/counter/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "hint/text/title",
+      "bg": "hint/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "hint/text/body",
+      "bg": "hint/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "hint/text/counter",
+      "bg": "hint/bg",
+      "kind": "text"
+    },
+    {
+      "fg": "hint/indicator/active",
+      "bg": "hint/bg",
+      "kind": "graphic"
+    },
+    {
+      "fg": "hint/indicator/default",
+      "bg": "hint/bg",
+      "kind": "graphic"
+    },
+    {
+      "fg": "hint/inverse-text/title",
+      "bg": "hint/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "hint/inverse-text/body",
+      "bg": "hint/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "hint/inverse-text/counter",
+      "bg": "hint/inverse-bg",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "hint/inverse-indicator/active",
+      "bg": "hint/inverse-bg",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "hint/inverse-indicator/default",
+      "bg": "hint/inverse-bg",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "hint/border",
+      "bg": "hint/bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "обводка контейнера декоративная: границу оверлея задают тень и контраст содержимого; WCAG 1.4.11 не требует 3:1 для границ контейнеров, текст внутри проходит 4.5:1. Шкала color/static/border/base до 3:1 доходит только на `hard` (0.9) — это визуально тяжёлая рамка"
+    },
+    {
+      "fg": "hint/inverse-border",
+      "bg": "hint/inverse-bg",
+      "kind": "graphic",
+      "accepted": true,
+      "reason": "обводка контейнера декоративная: границу оверлея задают тень и контраст содержимого; WCAG 1.4.11 не требует 3:1 для границ контейнеров, текст внутри проходит 4.5:1. Шкала color/static/border/base до 3:1 доходит только на `hard` (0.9) — это визуально тяжёлая рамка",
+      "over": "color/bg/page/inverse-main"
+    }
+  ],
+  "exceptions": [
+    {
+      "token": "size/hint/width/m",
+      "reason": "в L1 нет size/320; ближайший size/256 расходится с шириной M у Popover и максимальной шириной Tooltip"
+    }
+  ],
+  "decisions": [
+    "Имена из backlog-документа (`space/overlay/*`, `size/overlay/*`, `radius/{c}` без размера, `typography/body/*`, `typography/heading/*`, `shadow/*`, `color/layer/*`) в FEroom отсутствуют — взяты только значения. Имена построены по грамматике FEroom: корень L3 компонента и собственные L2 `{size|space|gap|radius|border}/{component}/…`, `typography/{component}/…`.",
+    "Инверсия — токенами, а не режимом dark на фрейме (расхождение с документом: «инверсия через dark-режим, inverse-токенов нет»). В FEroom инверсия — сегменты `inverse-*` (CLAUDE.md). Форма — часть `inverse-*` (`inverse-bg`, `inverse-text`, `inverse-border`) как у checkbox/switch и Dropdown у Select (`field/select/dropdown/container/inverse-base`); неинтерактивным оверлеям состояния не нужны, поэтому сегмента state нет. Алиасы — на `inverse-*` L2.",
+    "Поверхность — `color/bg/raised/main` / `inverse-main`: в описании L2 автора `color/bg/raised/*` — «Панель, карточка, popover, tooltip». Dropdown у Select использует `color/static/bg/solid/base/pure` / `inverse-pure`: в light/dark `pure` = `raised/main` (neutral/0 · neutral/900), `inverse-pure` темнее на шаг (neutral/925 против 900).",
+    "Хвостик — отдельная часть с отдельным цветом `tail` (scope SHAPE_FILL, т.к. это вектор) и размерами `tail-width` (основание 8) и `tail-height` (вылет 4). Обводка хвостика — тот же `{c}/border`. Правило «хвостик не ближе к углу, чем длина основания» — поведение, отдельного токена нет (равно `tail-width`).",
+    "Размеры, не зависящие от размера компонента, заведены в L2 без суффикса размера (прецедент: `radius/divider/circle`, `radius/badge/box/circle` на все размеры); в L3 каждый размер получает полный набор `{c}/size/{s}/{prop}`.",
+    "Зазор до триггера (4) заведён как `offset` (GAP): в сборке он нужен только в спецификации и примерах позиционирования.",
+    "Тени не создаём (эффект-стили отложены автором). z-index (`z-index/tooltip` 1700, `z-index/popover` 1500 — есть в L1) и задержки анимации — не переменные сборки Figma, в пресет не входят.",
+    "Размеры L1: 320 и 400 в `1. Primitives` нет (`size/*`: …240, 256 — дальше нет). Ближайший 256 меняет ширину на 20% и ломает шкалу 240 · 320 · 400 — поэтому сырое значение в L2 с записью в exceptions. L1 не трогаем.",
+    "codeSyntax не заполняется (решение автора 2026-09-21). L3 публикуются (как все L3); публикацию новых L2 решает плагин по правилу соседей: размеры и типографика компонентов в основном скрыты.",
+    "Ось Size = ширина панели S 240 · M 320 (L не предлагается документом). Как у Popover, от размера зависит только `width`.",
+    "Раскладка: контейнер (отступ 16, gap 16) → [медиа] → текстовый блок (заголовок + закрытие в строке `header-gap` 8; заголовок ↔ текст `content-gap` 4) → футер (счётчик или точки + кнопки, `footer-gap` 8). Значения 4 и 16 — из документа (`space/stack/tight`, `space/stack/loose`); `header-gap`, `footer-gap`, `indicator-gap` = 4 и `media-radius` = 4 документом не заданы — предложены.",
+    "Кнопки «Далее» / «Назад» / «Пропустить» / «Готово» и закрытие — экземпляры Button (Filled / Outline / Text / Icon Only) и Link; свои токены только у зоны закрытия `close-box` = 24.",
+    "Текстовые стили `typography/hint/{title|text|counter}` без группы `action` — по аналогии с Popover: текстовые слоты неинтерактивны, действия несут стили Button/Link. Отдельный стиль для счётчика заведён, т.к. в FEroom стиль привязан к L2 компонента, а `typography/helper/default` из документа не существует.",
+    "Счётчик — `color/static/text/base/medium` (5.7 / 8.7 : 1), по документу «secondary, не tertiary». Точки: текущая `color/static/indicator/brand/firm` (3.8 / 5.0 : 1), остальные `color/static/indicator/base/light` (3.35 / 5.1 : 1); диаметр 6 (значение `size/indicator/dot` из документа — в FEroom такого L2 нет).",
+    "Роль у Hint нейтральная — та же поверхность `color/bg/raised/*`, что у Popover (документ: «обучение нейтрально»).",
+    "Не входят в компонент (слои сценария тура): подсветка якоря (spotlight), затемнение (scrim — есть `color/bg/overlay/*`), маячок (beacon — отдельный компонент). Их токены не создаются.",
+    "Эффект-стиль понадобится: `effect/hint/{regular|inverse}` — тень 0 · 8 · 16 · −2, как у Popover (можно переиспользовать `effect/popover/*`). Не создаётся до решения автора. z-index 1500/1400 и `motion/duration/*` — не переменные сборки."
+  ]
+}

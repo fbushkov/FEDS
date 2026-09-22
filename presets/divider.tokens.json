@@ -1,0 +1,975 @@
+{
+ "component": "divider",
+ "title": "Divider",
+ "kind": "component",
+ "origin": "existing",
+ "source": "input/tokens/variables.json",
+ "doc": "input/builds/divider/divider.md",
+ "roots": [
+  "divider"
+ ],
+ "prefixes": [
+  "divider/"
+ ],
+ "decisions": [
+  "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+ ],
+ "l2": [
+  {
+   "name": "border/divider/l",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/3",
+    "dark": "border/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "border/divider/m",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/2",
+    "dark": "border/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "border/divider/s",
+   "type": "FLOAT",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "values": {
+    "light": "border/1",
+    "dark": "border/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/divider/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/divider/s",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "gap/divider/xs",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "radius/divider/circle",
+   "type": "FLOAT",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "values": {
+    "light": "radius/999",
+    "dark": "radius/999"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "radius/divider/none",
+   "type": "FLOAT",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "values": {
+    "light": "radius/0",
+    "dark": "radius/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/label/m",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/20",
+    "dark": "size/20"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/label/s",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/16",
+    "dark": "size/16"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/12",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/12",
+    "dark": "size/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/16",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/16",
+    "dark": "size/16"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/20",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/20",
+    "dark": "size/20"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/24",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/24",
+    "dark": "size/24"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/32",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/32",
+    "dark": "size/32"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/4",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/4",
+    "dark": "size/4"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/40",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/40",
+    "dark": "size/40"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/padding/8",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/8",
+    "dark": "size/8"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/thickness/l",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/3",
+    "dark": "size/3"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/thickness/m",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/2",
+    "dark": "size/2"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "size/divider/thickness/s",
+   "type": "FLOAT",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "values": {
+    "light": "size/1",
+    "dark": "size/1"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/box/x/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/box/x/s",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/box/x/xs",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/box/y/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/box/y/s",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/box/y/xs",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/label/x/m",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/12",
+    "dark": "space/12"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/label/x/s",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/8",
+    "dark": "space/8"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/label/y/m-bottom",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/label/y/m-top",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/label/y/s-bottom",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "space/divider/label/y/s-top",
+   "type": "FLOAT",
+   "scopes": [
+    "GAP"
+   ],
+   "values": {
+    "light": "space/0",
+    "dark": "space/0"
+   },
+   "hidden": false,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/m/letter-spacing",
+   "type": "FLOAT",
+   "scopes": [
+    "LETTER_SPACING"
+   ],
+   "values": {
+    "light": "font/letter-spacing/10",
+    "dark": "font/letter-spacing/10"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/m/line-height",
+   "type": "FLOAT",
+   "scopes": [
+    "LINE_HEIGHT"
+   ],
+   "values": {
+    "light": "font/line-height/20",
+    "dark": "font/line-height/20"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/m/size",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_SIZE"
+   ],
+   "values": {
+    "light": "font/size/14",
+    "dark": "font/size/14"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/m/weight",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_WEIGHT"
+   ],
+   "values": {
+    "light": "font/weight/400",
+    "dark": "font/weight/400"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/s/letter-spacing",
+   "type": "FLOAT",
+   "scopes": [
+    "LETTER_SPACING"
+   ],
+   "values": {
+    "light": "font/letter-spacing/25",
+    "dark": "font/letter-spacing/25"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/s/line-height",
+   "type": "FLOAT",
+   "scopes": [
+    "LINE_HEIGHT"
+   ],
+   "values": {
+    "light": "font/line-height/16",
+    "dark": "font/line-height/16"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/s/size",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_SIZE"
+   ],
+   "values": {
+    "light": "font/size/12",
+    "dark": "font/size/12"
+   },
+   "hidden": true,
+   "description": ""
+  },
+  {
+   "name": "typography/divider/s/weight",
+   "type": "FLOAT",
+   "scopes": [
+    "FONT_WEIGHT"
+   ],
+   "values": {
+    "light": "font/weight/400",
+    "dark": "font/weight/400"
+   },
+   "hidden": true,
+   "description": ""
+  }
+ ],
+ "l3": [
+  {
+   "name": "divider/label/dark",
+   "type": "COLOR",
+   "alias": "color/static/text/base/hard",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/label/light",
+   "type": "COLOR",
+   "alias": "color/static/text/base/light",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/label/middle",
+   "type": "COLOR",
+   "alias": "color/static/text/base/medium",
+   "scopes": [
+    "TEXT_FILL"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/line/intense",
+   "type": "COLOR",
+   "alias": "color/static/border/base/low",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/line/regular",
+   "type": "COLOR",
+   "alias": "color/static/border/base/light",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/line/strong",
+   "type": "COLOR",
+   "alias": "color/static/border/base/quiet",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/line/subtle",
+   "type": "COLOR",
+   "alias": "color/static/border/base/mild",
+   "scopes": [
+    "STROKE_COLOR"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/m/box",
+   "type": "FLOAT",
+   "alias": "size/divider/label/m",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/m/x",
+   "type": "FLOAT",
+   "alias": "space/divider/label/x/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/m/y-bottom",
+   "type": "FLOAT",
+   "alias": "space/divider/label/y/m-bottom",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/m/y-top",
+   "type": "FLOAT",
+   "alias": "space/divider/label/y/m-top",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/s/box",
+   "type": "FLOAT",
+   "alias": "size/divider/label/s",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/s/x",
+   "type": "FLOAT",
+   "alias": "space/divider/label/x/s",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/s/y-bottom",
+   "type": "FLOAT",
+   "alias": "space/divider/label/y/s-bottom",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/label/s/y-top",
+   "type": "FLOAT",
+   "alias": "space/divider/label/y/s-top",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/border",
+   "type": "FLOAT",
+   "alias": "border/divider/l",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/box",
+   "type": "FLOAT",
+   "alias": "size/divider/thickness/l",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/gap",
+   "type": "FLOAT",
+   "alias": "gap/divider/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/radius-circle",
+   "type": "FLOAT",
+   "alias": "radius/divider/circle",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/radius-none",
+   "type": "FLOAT",
+   "alias": "radius/divider/none",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/x",
+   "type": "FLOAT",
+   "alias": "space/divider/box/x/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/m/y",
+   "type": "FLOAT",
+   "alias": "space/divider/box/y/m",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/12",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/12",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/16",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/16",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/20",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/20",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/24",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/24",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/32",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/32",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/4",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/4",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/40",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/40",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/padding/8",
+   "type": "FLOAT",
+   "alias": "size/divider/padding/8",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/border",
+   "type": "FLOAT",
+   "alias": "border/divider/m",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/box",
+   "type": "FLOAT",
+   "alias": "size/divider/thickness/m",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/gap",
+   "type": "FLOAT",
+   "alias": "gap/divider/s",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/radius-circle",
+   "type": "FLOAT",
+   "alias": "radius/divider/circle",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/radius-none",
+   "type": "FLOAT",
+   "alias": "radius/divider/none",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/x",
+   "type": "FLOAT",
+   "alias": "space/divider/box/x/s",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/s/y",
+   "type": "FLOAT",
+   "alias": "space/divider/box/y/s",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/border",
+   "type": "FLOAT",
+   "alias": "border/divider/s",
+   "scopes": [
+    "STROKE_FLOAT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/box",
+   "type": "FLOAT",
+   "alias": "size/divider/thickness/s",
+   "scopes": [
+    "WIDTH_HEIGHT"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/gap",
+   "type": "FLOAT",
+   "alias": "gap/divider/xs",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/radius-circle",
+   "type": "FLOAT",
+   "alias": "radius/divider/circle",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/radius-none",
+   "type": "FLOAT",
+   "alias": "radius/divider/none",
+   "scopes": [
+    "CORNER_RADIUS"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/x",
+   "type": "FLOAT",
+   "alias": "space/divider/box/x/xs",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  },
+  {
+   "name": "divider/size/xs/y",
+   "type": "FLOAT",
+   "alias": "space/divider/box/y/xs",
+   "scopes": [
+    "GAP"
+   ],
+   "description": ""
+  }
+ ],
+ "textStyles": [
+  {
+   "name": "typography/divider/m",
+   "fontFamily": "Roboto",
+   "fontStyle": "Regular",
+   "vars": {
+    "fontSize": "typography/divider/m/size",
+    "lineHeight": "typography/divider/m/line-height",
+    "letterSpacing": "typography/divider/m/letter-spacing",
+    "fontWeight": "typography/divider/m/weight"
+   }
+  },
+  {
+   "name": "typography/divider/s",
+   "fontFamily": "Roboto",
+   "fontStyle": "Regular",
+   "vars": {
+    "fontSize": "typography/divider/s/size",
+    "lineHeight": "typography/divider/s/line-height",
+    "letterSpacing": "typography/divider/s/letter-spacing",
+    "fontWeight": "typography/divider/s/weight"
+   }
+  }
+ ],
+ "exceptions": []
+}

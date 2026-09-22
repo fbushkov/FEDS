@@ -1,0 +1,1723 @@
+{
+  "component": "radiobutton",
+  "title": "Radiobutton",
+  "kind": "component",
+  "origin": "existing",
+  "source": "input/tokens/variables.json",
+  "doc": "input/builds/radiobutton/radiobuttonradiobuttoncard.md",
+  "roots": [
+    "radiobutton"
+  ],
+  "prefixes": [
+    "radiobutton/"
+  ],
+  "decisions": [
+    "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+  ],
+  "l2": [
+    {
+      "name": "border/radiobutton/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/radiobutton/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/radiobutton/card",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/radiobutton/focus/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/radiobutton/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/radiobutton/radio-text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/radiobutton/radio-text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/radiobutton/text-interline/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/radiobutton/text-interline/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/radiobutton/box",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/radiobutton/card",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/radiobutton/focus",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/radiobutton/icon",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/box-container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/box-container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/icon/card/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/icon/card/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/icon/radio/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/10",
+        "dark": "size/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/radiobutton/icon/radio/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/8",
+        "dark": "size/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/box/xy-l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/box/xy-m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/y/l-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/y/l-icon-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/36",
+        "dark": "space/36"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/y/l-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/y/m-icon-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/28",
+        "dark": "space/28"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/card/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/container/xy-l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/container/xy-m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/text-container/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/text-container/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/text-container/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/radiobutton/text-container/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/name/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/name/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/name/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/l/name/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/name/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/name/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/name/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/radiobutton/m/name/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    }
+  ],
+  "l3": [
+    {
+      "name": "radiobutton/card/bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/ghost",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/card/border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/soft",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/card/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/card/inverse-bg",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/ghost",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/card/inverse-border",
+      "type": "COLOR",
+      "alias": "color/static/border/base/inverse-light",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/card/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/brand/medium/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "radiobutton/checked/icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "radiobutton/checked/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/on-bold/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/action/indicator/base/inverse-hard/default",
+        "approved": "2026-09-21, тёмная тема: контраст WCAG AA"
+      }
+    },
+    {
+      "name": "radiobutton/checked/inverse-bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-ghost/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-icon/disabled",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/inverse-hard/disabled",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/checked/inverse-icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/brand/hard/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/box-checked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/brand/medium",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/box-uncheked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/description",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/icon",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/inverse-box-checked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/inverse-box-uncheked",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/inverse-name",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/inverse-light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/loading/name",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/base/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/border",
+      "type": "FLOAT",
+      "alias": "border/checkbox/card",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/l/icon",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/icon/card/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/l/icon-text",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/y/l-icon-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/l/x",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/l/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/y/l-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/l/y-top",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/y/l-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/m/icon",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/icon/card/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/m/icon-text",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/y/m-icon-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/m/x",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/m/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/m/y-top",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/card/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/card/radius",
+      "type": "FLOAT",
+      "alias": "radius/checkbox/card",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/box",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/box-border",
+      "type": "FLOAT",
+      "alias": "border/radiobutton/box/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/box-container",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/box-container/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/box-container-xy",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/container/xy-l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/box-radius",
+      "type": "FLOAT",
+      "alias": "radius/radiobutton/box",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/box-xy",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/box/xy-l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/focus-border",
+      "type": "FLOAT",
+      "alias": "border/radiobutton/focus/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/radiobutton/focus",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/icon",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/icon/radio/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/icon-radius",
+      "type": "FLOAT",
+      "alias": "radius/radiobutton/icon",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/radio-text-gap",
+      "type": "FLOAT",
+      "alias": "gap/radiobutton/radio-text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/text-container-x",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/text-container/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/text-container-y",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/text-container/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/l/text-interline-gap",
+      "type": "FLOAT",
+      "alias": "gap/radiobutton/text-interline/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/box",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/box-border",
+      "type": "FLOAT",
+      "alias": "border/radiobutton/box/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/box-container",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/box-container/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/box-container-xy",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/container/xy-m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/box-radius",
+      "type": "FLOAT",
+      "alias": "radius/radiobutton/box",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/box-xy",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/box/xy-m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/focus-border",
+      "type": "FLOAT",
+      "alias": "border/radiobutton/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/radiobutton/focus",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/icon",
+      "type": "FLOAT",
+      "alias": "size/radiobutton/icon/radio/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/icon-radius",
+      "type": "FLOAT",
+      "alias": "radius/radiobutton/icon",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/radio-text-gap",
+      "type": "FLOAT",
+      "alias": "gap/radiobutton/radio-text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/text-container-x",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/text-container/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/text-container-y",
+      "type": "FLOAT",
+      "alias": "space/radiobutton/text-container/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/size/main/m/text-interline-gap",
+      "type": "FLOAT",
+      "alias": "gap/radiobutton/text-interline/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/text/description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/light",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/text/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-light",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/text/inverse-name",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/text/name",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/controls/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/border/error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/controls/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/error",
+      "type": "COLOR",
+      "alias": "color/static/bg/solid/red/medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-controls/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-border/error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/inverse-firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "radiobutton/unchecked/inverse-border/pressed",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-controls/pressed",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/action/radiobutton/l/name",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/radiobutton/l/name/size",
+        "lineHeight": "typography/radiobutton/l/name/line-height",
+        "letterSpacing": "typography/radiobutton/l/name/letter-spacing",
+        "fontWeight": "typography/radiobutton/l/name/weight"
+      }
+    },
+    {
+      "name": "typography/action/radiobutton/l/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/radiobutton/l/description/size",
+        "lineHeight": "typography/radiobutton/l/description/line-height",
+        "letterSpacing": "typography/radiobutton/l/description/letter-spacing",
+        "fontWeight": "typography/radiobutton/l/description/weight"
+      }
+    },
+    {
+      "name": "typography/action/radiobutton/m/name",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/radiobutton/m/name/size",
+        "lineHeight": "typography/radiobutton/m/name/line-height",
+        "letterSpacing": "typography/radiobutton/m/name/letter-spacing",
+        "fontWeight": "typography/radiobutton/m/name/weight"
+      }
+    },
+    {
+      "name": "typography/action/radiobutton/m/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/radiobutton/m/description/size",
+        "lineHeight": "typography/radiobutton/m/description/line-height",
+        "letterSpacing": "typography/radiobutton/m/description/letter-spacing",
+        "fontWeight": "typography/radiobutton/m/description/weight"
+      }
+    }
+  ],
+  "exceptions": []
+}

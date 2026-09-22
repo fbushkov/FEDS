@@ -1,0 +1,2921 @@
+{
+  "component": "chip",
+  "title": "Chip",
+  "kind": "component",
+  "origin": "existing",
+  "source": "input/tokens/variables.json",
+  "doc": "input/builds/chip/chip.md",
+  "roots": [
+    "chip"
+  ],
+  "prefixes": [
+    "chip/"
+  ],
+  "decisions": [
+    "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+  ],
+  "l2": [
+    {
+      "name": "border/chip/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/chip/box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/chip/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/chip/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/2",
+        "dark": "border/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/chip/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/chip/m-counter",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/chip/m-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/chip/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/chip/s-counter",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/chip/s-text",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/chip/box/circle",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/chip/box/m-square",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/chip/box/s-square",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/chip/focus/circle",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/999",
+        "dark": "radius/999"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/chip/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/chip/focus/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/chip/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/chip/box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/chip/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/chip/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/12",
+        "dark": "size/12"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/x/m-avatar",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/x/s-avatar",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/y/m-avatar",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/box/y/s-avatar",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/counter/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/counter/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/counter/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/counter/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/counter/y/s-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/counter/y/s-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/x/m-avatar",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/x/s-avatar",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/y/s-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/chip/text/y/s-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "typography/chip/m/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Primary button - Letter spacing"
+    },
+    {
+      "name": "typography/chip/m/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": "Primary button - Line height"
+    },
+    {
+      "name": "typography/chip/m/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": "Primary button - Font size"
+    },
+    {
+      "name": "typography/chip/m/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Primary button - Font weight"
+    },
+    {
+      "name": "typography/chip/m/head/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Primary button - Letter spacing"
+    },
+    {
+      "name": "typography/chip/m/head/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": "Primary button - Line height"
+    },
+    {
+      "name": "typography/chip/m/head/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": "Primary button - Font size"
+    },
+    {
+      "name": "typography/chip/m/head/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Primary button - Font weight"
+    },
+    {
+      "name": "typography/chip/m/name/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Primary button - Letter spacing"
+    },
+    {
+      "name": "typography/chip/m/name/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": "Primary button - Line height"
+    },
+    {
+      "name": "typography/chip/m/name/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": "Primary button - Font size"
+    },
+    {
+      "name": "typography/chip/m/name/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Primary button - Font weight"
+    },
+    {
+      "name": "typography/chip/s/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Letter spacing"
+    },
+    {
+      "name": "typography/chip/s/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/14",
+        "dark": "font/line-height/14"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Line height"
+    },
+    {
+      "name": "typography/chip/s/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font size"
+    },
+    {
+      "name": "typography/chip/s/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font weight"
+    },
+    {
+      "name": "typography/chip/s/head/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Letter spacing"
+    },
+    {
+      "name": "typography/chip/s/head/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/14",
+        "dark": "font/line-height/14"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Line height"
+    },
+    {
+      "name": "typography/chip/s/head/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font size"
+    },
+    {
+      "name": "typography/chip/s/head/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font weight"
+    },
+    {
+      "name": "typography/chip/s/name/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Letter spacing"
+    },
+    {
+      "name": "typography/chip/s/name/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/14",
+        "dark": "font/line-height/14"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Line height"
+    },
+    {
+      "name": "typography/chip/s/name/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font size"
+    },
+    {
+      "name": "typography/chip/s/name/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": "Compact/small button - Font weight"
+    }
+  ],
+  "l3": [
+    {
+      "name": "chip/bg/hard/base-inverse/active",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/base-inverse/default",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/base-inverse/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/base/active",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/base/default",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/base/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/blue/active",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/blue/default",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/blue/hover",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/green/active",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/green/default",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/green/hover",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/purple/active",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/purple/default",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/purple/hover",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/red/active",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/red/default",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/red/hover",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/yellow/active",
+      "type": "COLOR",
+      "alias": "color/status/yellow/bold/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/yellow/medium/active",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/bg/hard/yellow/default",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/hard/yellow/hover",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/base-inverse/active",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/base-inverse/default",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/base-inverse/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/base/active",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/base/default",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/base/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/blue/active",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/blue/default",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/blue/hover",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/green/active",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/green/default",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/green/hover",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/purple/active",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/purple/default",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/purple/hover",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/red/active",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/active",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/red/default",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/red/hover",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/bg/soft/yellow/active",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/yellow/soft/active",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/bg/soft/yellow/default",
+      "type": "COLOR",
+      "alias": "color/static/bg/solid/yellow/weak",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/yellow/soft/default",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/bg/soft/yellow/hover",
+      "type": "COLOR",
+      "alias": "color/static/bg/solid/yellow/mild",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/yellow/soft/hover",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/border/focus",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base-inverse/active",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base-inverse/default",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base-inverse/disabled",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base-inverse/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/pure/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base/active",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base/default",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base/disabled",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/base/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/blue/active",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/blue/default",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/blue/disabled",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/blue/hover",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/green/active",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/green/default",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/green/disabled",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/green/hover",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/purple/active",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/purple/default",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/purple/disabled",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/purple/hover",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/red/active",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/red/default",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/red/disabled",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/red/hover",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/yellow/active",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/yellow/default",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/yellow/disabled",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/hard/yellow/hover",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base-inverse/active",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base-inverse/default",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base-inverse/disabled",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base-inverse/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/inverse-soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base/active",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base/default",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base/disabled",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/base/hover",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/blue/active",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/blue/default",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/blue/disabled",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/blue/hover",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/green/active",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/green/default",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/green/disabled",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/green/hover",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/purple/active",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/purple/default",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/purple/disabled",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/purple/hover",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/red/active",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/red/default",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/red/disabled",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/red/hover",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/yellow/active",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/border-active",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/yellow/default",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/border",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/yellow/disabled",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/border-disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/border/soft/yellow/hover",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/border-hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/base",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/green",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/red",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard-disabled/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/base",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/green",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/red",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/hard/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/base",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/green",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/red",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft-disabled/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/on-secondary",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/base",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/green",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/red",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/icon/soft/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/on",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box",
+      "type": "FLOAT",
+      "alias": "size/chip/box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-avatar-x",
+      "type": "FLOAT",
+      "alias": "space/chip/box/x/m-avatar",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-avatar-y",
+      "type": "FLOAT",
+      "alias": "space/chip/box/y/m-avatar",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-border",
+      "type": "FLOAT",
+      "alias": "border/chip/box/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-gap",
+      "type": "FLOAT",
+      "alias": "gap/chip/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-radius-circle",
+      "type": "FLOAT",
+      "alias": "radius/chip/box/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-radius-square",
+      "type": "FLOAT",
+      "alias": "radius/chip/box/m-square",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-x",
+      "type": "FLOAT",
+      "alias": "space/chip/box/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/box-y",
+      "type": "FLOAT",
+      "alias": "space/chip/box/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/counter-gap",
+      "type": "FLOAT",
+      "alias": "gap/chip/m-counter",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/counter-x",
+      "type": "FLOAT",
+      "alias": "space/chip/counter/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/counter-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/chip/counter/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/counter-y-top",
+      "type": "FLOAT",
+      "alias": "space/chip/counter/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/focus-border",
+      "type": "FLOAT",
+      "alias": "border/chip/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/focus-radius-circle",
+      "type": "FLOAT",
+      "alias": "radius/chip/focus/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/focus-radius-square",
+      "type": "FLOAT",
+      "alias": "radius/chip/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/icon",
+      "type": "FLOAT",
+      "alias": "size/chip/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/text-avatar-x",
+      "type": "FLOAT",
+      "alias": "space/chip/text/x/m-avatar",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/chip/m-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/text-x",
+      "type": "FLOAT",
+      "alias": "space/chip/text/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/text-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/chip/text/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/m/text-y-top",
+      "type": "FLOAT",
+      "alias": "space/chip/text/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box",
+      "type": "FLOAT",
+      "alias": "size/chip/box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-avatar-x",
+      "type": "FLOAT",
+      "alias": "space/chip/box/x/s-avatar",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-avatar-y",
+      "type": "FLOAT",
+      "alias": "space/chip/box/y/s-avatar",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-border",
+      "type": "FLOAT",
+      "alias": "border/chip/box/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-gap",
+      "type": "FLOAT",
+      "alias": "gap/chip/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-radius-circle",
+      "type": "FLOAT",
+      "alias": "radius/chip/box/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-radius-square",
+      "type": "FLOAT",
+      "alias": "radius/chip/box/s-square",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-x",
+      "type": "FLOAT",
+      "alias": "space/chip/box/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/box-y",
+      "type": "FLOAT",
+      "alias": "space/chip/box/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/counter-gap",
+      "type": "FLOAT",
+      "alias": "gap/chip/s-counter",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/counter-x",
+      "type": "FLOAT",
+      "alias": "space/chip/counter/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/counter-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/chip/counter/y/s-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/counter-y-top",
+      "type": "FLOAT",
+      "alias": "space/chip/counter/y/s-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/focus-border",
+      "type": "FLOAT",
+      "alias": "border/chip/focus/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/focus-radius-circle",
+      "type": "FLOAT",
+      "alias": "radius/chip/focus/circle",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/focus-radius-square",
+      "type": "FLOAT",
+      "alias": "radius/chip/focus/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/icon",
+      "type": "FLOAT",
+      "alias": "size/chip/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/text-avatar-x",
+      "type": "FLOAT",
+      "alias": "space/chip/text/x/s-avatar",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/text-gap",
+      "type": "FLOAT",
+      "alias": "gap/chip/s-text",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/text-x",
+      "type": "FLOAT",
+      "alias": "space/chip/text/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/text-y-bottom",
+      "type": "FLOAT",
+      "alias": "space/chip/text/y/s-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/size/s/text-y-top",
+      "type": "FLOAT",
+      "alias": "space/chip/text/y/s-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/base",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/green",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/red",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/disabled/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/base",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/green",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/red",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/main/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/secondary/base",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/secondary/base-inverse",
+      "type": "COLOR",
+      "alias": "color/static/text/base/firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/base/soft/on-secondary",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/hard/secondary/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/secondary/green",
+      "type": "COLOR",
+      "alias": "color/status/green/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/secondary/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/secondary/red",
+      "type": "COLOR",
+      "alias": "color/status/red/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/hard/secondary/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/medium/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/base",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/blue",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/green",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/purple",
+      "type": "COLOR",
+      "alias": "color/status/purple/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/red",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/disabled/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/main/base",
+      "type": "COLOR",
+      "alias": "color/status/base/soft/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/main/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/main/blue",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/blue",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/blue/soft/on",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/main/green",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/green",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/green/soft/on",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/main/purple",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/purple",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/purple/soft/on",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/main/red",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/red",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/red/soft/on",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/main/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/on",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/secondary/base",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/base/soft/on-secondary",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/secondary/base-inverse",
+      "type": "COLOR",
+      "alias": "color/status/base/heavy/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "chip/text/soft/secondary/blue",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/blue",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/blue/soft/on-secondary",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/secondary/green",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/green",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/green/soft/on-secondary",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/secondary/purple",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/purple",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/purple/soft/on-secondary",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/secondary/red",
+      "type": "COLOR",
+      "alias": "color/static/text/palette/red",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/status/red/soft/on-secondary",
+        "approved": "2026-09-22, контраст WCAG AA (повтор Chip): правило автора «Контраст WCAG AA обязателен»"
+      }
+    },
+    {
+      "name": "chip/text/soft/secondary/yellow",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/on-secondary",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/action/chip/s/head",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/chip/s/head/size",
+        "lineHeight": "typography/chip/s/head/line-height",
+        "letterSpacing": "typography/chip/s/head/letter-spacing",
+        "fontWeight": "typography/chip/s/head/weight"
+      }
+    },
+    {
+      "name": "typography/action/chip/s/name",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/chip/s/name/size",
+        "lineHeight": "typography/chip/s/name/line-height",
+        "letterSpacing": "typography/chip/s/name/letter-spacing",
+        "fontWeight": "typography/chip/s/name/weight"
+      }
+    },
+    {
+      "name": "typography/action/chip/s/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/chip/s/description/size",
+        "lineHeight": "typography/chip/s/description/line-height",
+        "letterSpacing": "typography/chip/s/description/letter-spacing",
+        "fontWeight": "typography/chip/s/description/weight"
+      }
+    },
+    {
+      "name": "typography/action/chip/m/head",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/chip/m/head/size",
+        "lineHeight": "typography/chip/m/head/line-height",
+        "letterSpacing": "typography/chip/m/head/letter-spacing",
+        "fontWeight": "typography/chip/m/head/weight"
+      }
+    },
+    {
+      "name": "typography/action/chip/m/name",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/chip/m/name/size",
+        "lineHeight": "typography/chip/m/name/line-height",
+        "letterSpacing": "typography/chip/m/name/letter-spacing",
+        "fontWeight": "typography/chip/m/name/weight"
+      }
+    },
+    {
+      "name": "typography/action/chip/m/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/chip/m/description/size",
+        "lineHeight": "typography/chip/m/description/line-height",
+        "letterSpacing": "typography/chip/m/description/letter-spacing",
+        "fontWeight": "typography/chip/m/description/weight"
+      }
+    }
+  ],
+  "exceptions": []
+}

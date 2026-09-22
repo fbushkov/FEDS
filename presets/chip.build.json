@@ -1,0 +1,1959 @@
+{
+ "component": "chip",
+ "title": "Chip",
+ "page": "Components / Chip",
+ "origin": "existing",
+ "requires": [
+  "avatar",
+  "button"
+ ],
+ "notes": [
+  "Повтор Chip из файла «Компоненты · Базовые»: Circle и Squared по 420 вариантов, оси и свойства как в файле, имена токенов — библиотеки.",
+  "Avatar — экземпляр `_ Avatar / {s} / Circle|Square` той же формы; крестик — Button / Icon Only (тип по виду и цвету, как в файле).",
+  "Disabled — без крестика и фокуса; Loading — форма чипа без содержимого."
+ ],
+ "sets": [
+  {
+   "name": "Chip / Circle",
+   "description": "Компактный элемент: выбранное значение, фильтр, тег или сущность. Может содержать иконку или аватар, подсказку, счётчик и кнопку удаления. Group — «Название: значение» для фильтров.",
+   "axes": [
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed / Selected",
+      "Disabled",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Size",
+     "values": [
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Avatar",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "Group",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "Color",
+     "values": [
+      "Gray",
+      "Blue",
+      "Red",
+      "Green",
+      "Yellow",
+      "Purple",
+      "White"
+     ]
+    },
+    {
+     "name": "Filled",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "Avatar": "True",
+     "Group": "True"
+    }
+   ],
+   "grid": {
+    "columns": "State",
+    "blocks": "Size",
+    "rows": [
+     "Filled",
+     "Avatar",
+     "Group",
+     "Color"
+    ],
+    "split": {
+     "axis": "Color",
+     "values": [
+      "White"
+     ]
+    }
+   },
+   "a11y": {
+    "exempt": {
+     "State": [
+      "Disabled",
+      "Loading"
+     ]
+    },
+    "surfaces": {
+     "axis": "Color",
+     "map": {
+      "White": [
+       "color/bg/section/inverse-main"
+      ]
+     }
+    },
+    "reason": "Disabled — недоступный элемент (WCAG 1.4.3 не требует контраста), Loading — содержимое скрыто"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "S": {
+     "from": "Size"
+    },
+    "f": {
+     "from": "Filled",
+     "map": {
+      "False": "soft",
+      "True": "hard"
+     }
+    },
+    "c": {
+     "from": "Color",
+     "map": {
+      "Gray": "base",
+      "Blue": "blue",
+      "Red": "red",
+      "Green": "green",
+      "Yellow": "yellow",
+      "Purple": "purple",
+      "White": "base-inverse"
+     }
+    },
+    "stb": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed / Selected": "active",
+      "Disabled": "default",
+      "Loading": "default"
+     }
+    },
+    "sts": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed / Selected": "active",
+      "Disabled": "disabled",
+      "Loading": "default"
+     }
+    },
+    "fi": {
+     "from": [
+      "Filled",
+      "State"
+     ],
+     "map": {
+      "False|Default": "soft",
+      "False|Hover": "soft",
+      "False|Pressed / Selected": "soft",
+      "False|Disabled": "soft-disabled",
+      "False|Loading": "soft",
+      "True|Default": "hard",
+      "True|Hover": "hard",
+      "True|Pressed / Selected": "hard",
+      "True|Disabled": "hard-disabled",
+      "True|Loading": "hard"
+     }
+    },
+    "t_main": {
+     "from": "State",
+     "map": {
+      "Default": "main",
+      "Hover": "main",
+      "Pressed / Selected": "main",
+      "Disabled": "disabled",
+      "Loading": "main"
+     }
+    },
+    "t_secondary": {
+     "from": "State",
+     "map": {
+      "Default": "secondary",
+      "Hover": "secondary",
+      "Pressed / Selected": "secondary",
+      "Disabled": "disabled",
+      "Loading": "secondary"
+     }
+    },
+    "at": {
+     "from": "State",
+     "map": {
+      "Default": "Photo",
+      "Hover": "Photo",
+      "Pressed / Selected": "Photo",
+      "Disabled": "Photo",
+      "Loading": "Loading"
+     }
+    },
+    "ac": {
+     "from": "State",
+     "map": {
+      "Default": "Blue",
+      "Hover": "Blue",
+      "Pressed / Selected": "Blue",
+      "Disabled": "Blue",
+      "Loading": "Base"
+     }
+    },
+    "xt": {
+     "from": [
+      "Filled",
+      "Color"
+     ],
+     "map": {
+      "False|Gray": "Secondary",
+      "True|Gray": "Inverse-primary",
+      "False|Blue": "Primary",
+      "True|Blue": "Inverse-primary",
+      "False|Red": "Danger",
+      "True|Red": "Inverse-primary",
+      "False|Green": "Secondary",
+      "True|Green": "Inverse-primary",
+      "False|Yellow": "Secondary",
+      "True|Yellow": "Secondary",
+      "False|Purple": "Secondary",
+      "True|Purple": "Inverse-primary",
+      "False|White": "Inverse-primary",
+      "True|White": "Secondary"
+     }
+    },
+    "xth": {
+     "from": [
+      "Filled",
+      "Color"
+     ],
+     "map": {
+      "False|Gray": "",
+      "False|Blue": "",
+      "False|Red": "",
+      "False|Green": "",
+      "False|Yellow": "",
+      "False|Purple": "",
+      "False|White": "",
+      "True|Gray": "",
+      "True|Blue": "light",
+      "True|Red": "light",
+      "True|Green": "light",
+      "True|Yellow": "light",
+      "True|Purple": "light",
+      "True|White": ""
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Hint",
+     "type": "TEXT",
+     "default": "Подсказка"
+    },
+    {
+     "name": "Hint Text",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Name",
+     "type": "TEXT",
+     "default": "Название"
+    },
+    {
+     "name": "Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Icon",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "X-icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Counter",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Num",
+     "type": "TEXT",
+     "default": "1"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "↳ Content",
+     "type": "TEXT",
+     "default": "Элемент"
+    },
+    {
+     "name": "↳ Head",
+     "type": "TEXT",
+     "default": "Название"
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "chip/size/{s}/box-gap",
+     "pl": {
+      "by": "Avatar",
+      "map": {
+       "False": "chip/size/{s}/box-x",
+       "True": "chip/size/{s}/box-avatar-x"
+      }
+     },
+     "pr": "chip/size/{s}/box-x",
+     "pt": {
+      "by": "Avatar",
+      "map": {
+       "False": "chip/size/{s}/box-y",
+       "True": "chip/size/{s}/box-avatar-y"
+      }
+     },
+     "pb": {
+      "by": "Avatar",
+      "map": {
+       "False": "chip/size/{s}/box-y",
+       "True": "chip/size/{s}/box-avatar-y"
+      }
+     },
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "FIXED"
+    },
+    "height": "chip/size/{s}/box",
+    "radius": "chip/size/{s}/box-radius-circle",
+    "fill": "chip/bg/{f}/{c}/{stb}",
+    "stroke": {
+     "color": {
+      "by": "State",
+      "map": {
+       "Loading": "",
+       "Default": "chip/border/{f}/{c}/{sts}",
+       "Hover": "chip/border/{f}/{c}/{sts}",
+       "Pressed / Selected": "chip/border/{f}/{c}/{sts}",
+       "Disabled": "chip/border/{f}/{c}/{sts}"
+      }
+     },
+     "weight": "chip/size/{s}/box-border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed / Selected",
+        "Loading"
+       ]
+      },
+      "abs": "focus",
+      "offset": 3,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "chip/size/{s}/focus-radius-circle",
+      "stroke": {
+       "color": "chip/border/focus",
+       "weight": "chip/size/{s}/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Icon",
+      "when": {
+       "Avatar": "False"
+      },
+      "opacity": {
+       "by": "State",
+       "map": {
+        "Loading": 0
+       }
+      },
+      "refs": {
+       "visible": "Icon",
+       "mainComponent": "↳ Icon"
+      },
+      "icon": {
+       "name": "circle",
+       "size": "chip/size/{s}/icon",
+       "color": "chip/icon/{fi}/{c}"
+      }
+     },
+     {
+      "type": "instance",
+      "name": "Avatar",
+      "when": {
+       "Avatar": "True"
+      },
+      "instance": {
+       "set": "_ Avatar / {s} / Circle",
+       "variant": {
+        "Style": "Image",
+        "Type": "{at}",
+        "Color": "{ac}"
+       },
+       "props": {}
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "opacity": {
+       "by": "State",
+       "map": {
+        "Loading": 0
+       }
+      },
+      "layout": {
+       "dir": "H",
+       "gap": "chip/size/{s}/text-gap",
+       "pl": {
+        "by": "Avatar",
+        "map": {
+         "False": "chip/size/{s}/text-x",
+         "True": "chip/size/{s}/text-avatar-x"
+        }
+       },
+       "pr": "chip/size/{s}/text-x",
+       "pt": "chip/size/{s}/text-y-top",
+       "pb": "chip/size/{s}/text-y-bottom",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Additional",
+        "refs": {
+         "visible": "Hint Text",
+         "characters": "↳ Hint"
+        },
+        "text": {
+         "chars": "Подсказка",
+         "style": "typography/action/chip/{s}/description",
+         "fontStyle": "Regular",
+         "fill": "chip/text/{f}/{t_secondary}/{c}"
+        },
+        "when": {
+         "Group": "False"
+        }
+       },
+       {
+        "type": "frame",
+        "name": "Content",
+        "when": {
+         "Group": "False"
+        },
+        "layout": {
+         "dir": "H",
+         "gap": "chip/size/{s}/counter-gap",
+         "align": "MIN",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Name",
+          "refs": {
+           "characters": "↳ Name"
+          },
+          "text": {
+           "chars": "Название",
+           "style": "typography/action/chip/{s}/name",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_main}/{c}"
+          }
+         },
+         {
+          "type": "frame",
+          "name": "Counter",
+          "refs": {
+           "visible": "Counter"
+          },
+          "layout": {
+           "dir": "H",
+           "pl": "chip/size/{s}/counter-x",
+           "pr": "chip/size/{s}/counter-x",
+           "pt": "chip/size/{s}/counter-y-top",
+           "pb": "chip/size/{s}/counter-y-bottom",
+           "align": "MIN",
+           "counter": "CENTER",
+           "w": "HUG",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "text",
+            "name": "+",
+            "text": {
+             "chars": ", +",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_main}/{c}"
+            }
+           },
+           {
+            "type": "text",
+            "name": "Num",
+            "refs": {
+             "characters": "↳ Num"
+            },
+            "text": {
+             "chars": "1",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_main}/{c}"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Head",
+        "when": {
+         "Group": "True"
+        },
+        "layout": {
+         "dir": "H",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Head",
+          "refs": {
+           "characters": "↳ Head"
+          },
+          "text": {
+           "chars": "Название",
+           "style": "typography/action/chip/{s}/head",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_main}/{c}"
+          }
+         },
+         {
+          "type": "text",
+          "name": ":",
+          "text": {
+           "chars": ":",
+           "style": "typography/action/chip/{s}/head",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_main}/{c}"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Content",
+        "when": {
+         "Group": "True"
+        },
+        "layout": {
+         "dir": "H",
+         "gap": "chip/size/{s}/counter-gap",
+         "align": "MIN",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Content",
+          "refs": {
+           "characters": "↳ Content"
+          },
+          "text": {
+           "chars": "Элемент",
+           "style": "typography/action/chip/{s}/name",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_secondary}/{c}"
+          }
+         },
+         {
+          "type": "frame",
+          "name": "Counter",
+          "refs": {
+           "visible": "Counter"
+          },
+          "layout": {
+           "dir": "H",
+           "pl": "chip/size/{s}/counter-x",
+           "pr": "chip/size/{s}/counter-x",
+           "pt": "chip/size/{s}/counter-y-top",
+           "pb": "chip/size/{s}/counter-y-bottom",
+           "align": "MIN",
+           "counter": "CENTER",
+           "w": "HUG",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "text",
+            "name": "+",
+            "text": {
+             "chars": ", +",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_secondary}/{c}"
+            }
+           },
+           {
+            "type": "text",
+            "name": "Num",
+            "refs": {
+             "characters": "↳ Num"
+            },
+            "text": {
+             "chars": "1",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_secondary}/{c}"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "instance",
+      "name": "X-icon",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed / Selected",
+        "Loading"
+       ]
+      },
+      "opacity": {
+       "by": "State",
+       "map": {
+        "Loading": 0
+       }
+      },
+      "refs": {
+       "visible": "X-icon"
+      },
+      "theme": "{xth}",
+      "instance": {
+       "set": "Button / Icon Only",
+       "variant": {
+        "Size": "{S}",
+        "Type": "{xt}",
+        "State": "Default",
+        "Loading": "False"
+       },
+       "props": {
+        "↳ Icon": "icon:x"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "Chip / Squared",
+   "description": "Компактный элемент: выбранное значение, фильтр, тег или сущность. Может содержать иконку или аватар, подсказку, счётчик и кнопку удаления. Group — «Название: значение» для фильтров.",
+   "axes": [
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed / Selected",
+      "Disabled",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Size",
+     "values": [
+      "M",
+      "S"
+     ]
+    },
+    {
+     "name": "Avatar",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "Group",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "Color",
+     "values": [
+      "Gray",
+      "Blue",
+      "Red",
+      "Green",
+      "Yellow",
+      "Purple",
+      "White"
+     ]
+    },
+    {
+     "name": "Filled",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "Avatar": "True",
+     "Group": "True"
+    }
+   ],
+   "grid": {
+    "columns": "State",
+    "blocks": "Size",
+    "rows": [
+     "Filled",
+     "Avatar",
+     "Group",
+     "Color"
+    ],
+    "split": {
+     "axis": "Color",
+     "values": [
+      "White"
+     ]
+    }
+   },
+   "a11y": {
+    "exempt": {
+     "State": [
+      "Disabled",
+      "Loading"
+     ]
+    },
+    "surfaces": {
+     "axis": "Color",
+     "map": {
+      "White": [
+       "color/bg/section/inverse-main"
+      ]
+     }
+    },
+    "reason": "Disabled — недоступный элемент (WCAG 1.4.3 не требует контраста), Loading — содержимое скрыто"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "S": {
+     "from": "Size"
+    },
+    "f": {
+     "from": "Filled",
+     "map": {
+      "False": "soft",
+      "True": "hard"
+     }
+    },
+    "c": {
+     "from": "Color",
+     "map": {
+      "Gray": "base",
+      "Blue": "blue",
+      "Red": "red",
+      "Green": "green",
+      "Yellow": "yellow",
+      "Purple": "purple",
+      "White": "base-inverse"
+     }
+    },
+    "stb": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed / Selected": "active",
+      "Disabled": "default",
+      "Loading": "default"
+     }
+    },
+    "sts": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed / Selected": "active",
+      "Disabled": "disabled",
+      "Loading": "default"
+     }
+    },
+    "fi": {
+     "from": [
+      "Filled",
+      "State"
+     ],
+     "map": {
+      "False|Default": "soft",
+      "False|Hover": "soft",
+      "False|Pressed / Selected": "soft",
+      "False|Disabled": "soft-disabled",
+      "False|Loading": "soft",
+      "True|Default": "hard",
+      "True|Hover": "hard",
+      "True|Pressed / Selected": "hard",
+      "True|Disabled": "hard-disabled",
+      "True|Loading": "hard"
+     }
+    },
+    "t_main": {
+     "from": "State",
+     "map": {
+      "Default": "main",
+      "Hover": "main",
+      "Pressed / Selected": "main",
+      "Disabled": "disabled",
+      "Loading": "main"
+     }
+    },
+    "t_secondary": {
+     "from": "State",
+     "map": {
+      "Default": "secondary",
+      "Hover": "secondary",
+      "Pressed / Selected": "secondary",
+      "Disabled": "disabled",
+      "Loading": "secondary"
+     }
+    },
+    "at": {
+     "from": "State",
+     "map": {
+      "Default": "Photo",
+      "Hover": "Photo",
+      "Pressed / Selected": "Photo",
+      "Disabled": "Photo",
+      "Loading": "Loading"
+     }
+    },
+    "ac": {
+     "from": "State",
+     "map": {
+      "Default": "Blue",
+      "Hover": "Blue",
+      "Pressed / Selected": "Blue",
+      "Disabled": "Blue",
+      "Loading": "Base"
+     }
+    },
+    "xt": {
+     "from": [
+      "Filled",
+      "Color"
+     ],
+     "map": {
+      "False|Gray": "Secondary",
+      "True|Gray": "Inverse-primary",
+      "False|Blue": "Primary",
+      "True|Blue": "Inverse-primary",
+      "False|Red": "Danger",
+      "True|Red": "Inverse-primary",
+      "False|Green": "Secondary",
+      "True|Green": "Inverse-primary",
+      "False|Yellow": "Secondary",
+      "True|Yellow": "Secondary",
+      "False|Purple": "Secondary",
+      "True|Purple": "Inverse-primary",
+      "False|White": "Inverse-primary",
+      "True|White": "Secondary"
+     }
+    },
+    "xth": {
+     "from": [
+      "Filled",
+      "Color"
+     ],
+     "map": {
+      "False|Gray": "",
+      "False|Blue": "",
+      "False|Red": "",
+      "False|Green": "",
+      "False|Yellow": "",
+      "False|Purple": "",
+      "False|White": "",
+      "True|Gray": "",
+      "True|Blue": "light",
+      "True|Red": "light",
+      "True|Green": "light",
+      "True|Yellow": "light",
+      "True|Purple": "light",
+      "True|White": ""
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Hint",
+     "type": "TEXT",
+     "default": "Подсказка"
+    },
+    {
+     "name": "Hint Text",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Name",
+     "type": "TEXT",
+     "default": "Название"
+    },
+    {
+     "name": "Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Icon",
+     "type": "INSTANCE_SWAP",
+     "default": "circle"
+    },
+    {
+     "name": "X-icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Counter",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Num",
+     "type": "TEXT",
+     "default": "1"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "↳ Content",
+     "type": "TEXT",
+     "default": "Элемент"
+    },
+    {
+     "name": "↳ Head",
+     "type": "TEXT",
+     "default": "Название"
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "chip/size/{s}/box-gap",
+     "pl": {
+      "by": "Avatar",
+      "map": {
+       "False": "chip/size/{s}/box-x",
+       "True": "chip/size/{s}/box-avatar-x"
+      }
+     },
+     "pr": "chip/size/{s}/box-x",
+     "pt": {
+      "by": "Avatar",
+      "map": {
+       "False": "chip/size/{s}/box-y",
+       "True": "chip/size/{s}/box-avatar-y"
+      }
+     },
+     "pb": {
+      "by": "Avatar",
+      "map": {
+       "False": "chip/size/{s}/box-y",
+       "True": "chip/size/{s}/box-avatar-y"
+      }
+     },
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "HUG",
+     "h": "FIXED"
+    },
+    "height": "chip/size/{s}/box",
+    "radius": "chip/size/{s}/box-radius-square",
+    "fill": "chip/bg/{f}/{c}/{stb}",
+    "stroke": {
+     "color": {
+      "by": "State",
+      "map": {
+       "Loading": "",
+       "Default": "chip/border/{f}/{c}/{sts}",
+       "Hover": "chip/border/{f}/{c}/{sts}",
+       "Pressed / Selected": "chip/border/{f}/{c}/{sts}",
+       "Disabled": "chip/border/{f}/{c}/{sts}"
+      }
+     },
+     "weight": "chip/size/{s}/box-border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus Ring",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed / Selected",
+        "Loading"
+       ]
+      },
+      "abs": "focus",
+      "offset": 3,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "chip/size/{s}/focus-radius-square",
+      "stroke": {
+       "color": "chip/border/focus",
+       "weight": "chip/size/{s}/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Icon",
+      "when": {
+       "Avatar": "False"
+      },
+      "opacity": {
+       "by": "State",
+       "map": {
+        "Loading": 0
+       }
+      },
+      "refs": {
+       "visible": "Icon",
+       "mainComponent": "↳ Icon"
+      },
+      "icon": {
+       "name": "circle",
+       "size": "chip/size/{s}/icon",
+       "color": "chip/icon/{fi}/{c}"
+      }
+     },
+     {
+      "type": "instance",
+      "name": "Avatar",
+      "when": {
+       "Avatar": "True"
+      },
+      "instance": {
+       "set": "_ Avatar / {s} / Square",
+       "variant": {
+        "Style": "Image",
+        "Type": "{at}",
+        "Color": "{ac}"
+       },
+       "props": {}
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "opacity": {
+       "by": "State",
+       "map": {
+        "Loading": 0
+       }
+      },
+      "layout": {
+       "dir": "H",
+       "gap": "chip/size/{s}/text-gap",
+       "pl": {
+        "by": "Avatar",
+        "map": {
+         "False": "chip/size/{s}/text-x",
+         "True": "chip/size/{s}/text-avatar-x"
+        }
+       },
+       "pr": "chip/size/{s}/text-x",
+       "pt": "chip/size/{s}/text-y-top",
+       "pb": "chip/size/{s}/text-y-bottom",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Additional",
+        "refs": {
+         "visible": "Hint Text",
+         "characters": "↳ Hint"
+        },
+        "text": {
+         "chars": "Подсказка",
+         "style": "typography/action/chip/{s}/description",
+         "fontStyle": "Regular",
+         "fill": "chip/text/{f}/{t_secondary}/{c}"
+        },
+        "when": {
+         "Group": "False"
+        }
+       },
+       {
+        "type": "frame",
+        "name": "Content",
+        "when": {
+         "Group": "False"
+        },
+        "layout": {
+         "dir": "H",
+         "gap": "chip/size/{s}/counter-gap",
+         "align": "MIN",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Name",
+          "refs": {
+           "characters": "↳ Name"
+          },
+          "text": {
+           "chars": "Название",
+           "style": "typography/action/chip/{s}/name",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_main}/{c}"
+          }
+         },
+         {
+          "type": "frame",
+          "name": "Counter",
+          "refs": {
+           "visible": "Counter"
+          },
+          "layout": {
+           "dir": "H",
+           "pl": "chip/size/{s}/counter-x",
+           "pr": "chip/size/{s}/counter-x",
+           "pt": "chip/size/{s}/counter-y-top",
+           "pb": "chip/size/{s}/counter-y-bottom",
+           "align": "MIN",
+           "counter": "CENTER",
+           "w": "HUG",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "text",
+            "name": "+",
+            "text": {
+             "chars": ", +",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_main}/{c}"
+            }
+           },
+           {
+            "type": "text",
+            "name": "Num",
+            "refs": {
+             "characters": "↳ Num"
+            },
+            "text": {
+             "chars": "1",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_main}/{c}"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Head",
+        "when": {
+         "Group": "True"
+        },
+        "layout": {
+         "dir": "H",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Head",
+          "refs": {
+           "characters": "↳ Head"
+          },
+          "text": {
+           "chars": "Название",
+           "style": "typography/action/chip/{s}/head",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_main}/{c}"
+          }
+         },
+         {
+          "type": "text",
+          "name": ":",
+          "text": {
+           "chars": ":",
+           "style": "typography/action/chip/{s}/head",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_main}/{c}"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Content",
+        "when": {
+         "Group": "True"
+        },
+        "layout": {
+         "dir": "H",
+         "gap": "chip/size/{s}/counter-gap",
+         "align": "MIN",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Content",
+          "refs": {
+           "characters": "↳ Content"
+          },
+          "text": {
+           "chars": "Элемент",
+           "style": "typography/action/chip/{s}/name",
+           "fontStyle": "Regular",
+           "fill": "chip/text/{f}/{t_secondary}/{c}"
+          }
+         },
+         {
+          "type": "frame",
+          "name": "Counter",
+          "refs": {
+           "visible": "Counter"
+          },
+          "layout": {
+           "dir": "H",
+           "pl": "chip/size/{s}/counter-x",
+           "pr": "chip/size/{s}/counter-x",
+           "pt": "chip/size/{s}/counter-y-top",
+           "pb": "chip/size/{s}/counter-y-bottom",
+           "align": "MIN",
+           "counter": "CENTER",
+           "w": "HUG",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "text",
+            "name": "+",
+            "text": {
+             "chars": ", +",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_secondary}/{c}"
+            }
+           },
+           {
+            "type": "text",
+            "name": "Num",
+            "refs": {
+             "characters": "↳ Num"
+            },
+            "text": {
+             "chars": "1",
+             "style": "typography/action/chip/{s}/name",
+             "fontStyle": "Regular",
+             "fill": "chip/text/{f}/{t_secondary}/{c}"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "instance",
+      "name": "X-icon",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed / Selected",
+        "Loading"
+       ]
+      },
+      "opacity": {
+       "by": "State",
+       "map": {
+        "Loading": 0
+       }
+      },
+      "refs": {
+       "visible": "X-icon"
+      },
+      "theme": "{xth}",
+      "instance": {
+       "set": "Button / Icon Only",
+       "variant": {
+        "Size": "{S}",
+        "Type": "{xt}",
+        "State": "Default",
+        "Loading": "False"
+       },
+       "props": {
+        "↳ Icon": "icon:x"
+       }
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "spec": {
+  "title": "Chip",
+  "description": "Компактный элемент: выбранное значение, фильтр, тег или сущность. Может содержать иконку или аватар, подсказку, счётчик и кнопку удаления. Group — «Название: значение» для фильтров.",
+  "columns": [
+   {
+    "title": "Форма",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Circle",
+      "description": "Люди и их выбор: участники, упоминания, пользовательские теги",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "True",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Squared",
+      "description": "Система и объекты: фильтры, статусы, категории, проекты. В одной группе — одна форма",
+      "items": [
+       {
+        "set": "Chip / Squared",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Размер",
+    "width": 360,
+    "cards": [
+     {
+      "title": "M",
+      "description": "Стандартный: поля выбора, фильтры, карточки",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "S",
+      "description": "Плотные таблицы, списки, поле Multiselect размера S и M",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "S",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Вид и цвет",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Soft",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Gray",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Red",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Green",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Yellow",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Purple",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Filled",
+      "description": "Акцент: выбранный фильтр, важная метка",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Gray",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Red",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Green",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Yellow",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Purple",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Конфигурация",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Иконка",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Аватар",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "True",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Подсказка и счётчик",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Group",
+      "description": "«Название: значение» — фильтр со значением; счётчик — сколько ещё значений",
+      "items": [
+       {
+        "set": "Chip / Squared",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "True",
+         "Color": "Blue",
+         "Filled": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Без удаления",
+      "description": "Только для чтения: метка без действия",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false,
+         "X-icon": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Состояния",
+    "width": 360,
+    "cards": [
+     {
+      "title": "Mouse",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        },
+        "label": "Default"
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Hover",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        },
+        "label": "Hover"
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Pressed / Selected",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        },
+        "label": "Pressed / Selected"
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Disabled",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        },
+        "label": "Disabled"
+       }
+      ]
+     },
+     {
+      "title": "Keyboard",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false,
+         "Focused": true
+        },
+        "label": "Focused"
+       }
+      ]
+     },
+     {
+      "title": "Loading",
+      "description": "Значение загружается: форма чипа без содержимого",
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Loading",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Loading",
+         "Size": "M",
+         "Avatar": "True",
+         "Group": "False",
+         "Color": "Blue",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Инверсия",
+    "width": 360,
+    "cards": [
+     {
+      "title": "White",
+      "description": "На тёмных поверхностях — цвет White",
+      "inverse": true,
+      "items": [
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "White",
+         "Filled": "False"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       },
+       {
+        "set": "Chip / Circle",
+        "variant": {
+         "State": "Default",
+         "Size": "M",
+         "Avatar": "False",
+         "Group": "False",
+         "Color": "White",
+         "Filled": "True"
+        },
+        "props": {
+         "Hint Text": false,
+         "Counter": false
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

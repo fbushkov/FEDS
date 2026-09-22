@@ -1,0 +1,470 @@
+{
+ "component": "skeleton",
+ "title": "Skeleton",
+ "page": "Components / Skeleton",
+ "origin": "new",
+ "notes": [
+  "Единое правило: загрузка данных в любом компоненте — экземпляры Skeleton, повторяющие раскладку содержимого (docs/build-rules.md, раздел 2). Ожидание внутри контрола (кнопка отправляет форму) — спиннер в контроле, как у Button.",
+  "Три набора по форме: Line (S…XL), Circle (S…2XL), Block (Control S…XL, Image, Card). Инверсные варианты — на тёмной правой половине.",
+  "Ширина — свойство экземпляра (доля области), в мастере стоит ширина по умолчанию. Анимация мерцания в Figma не собирается: токены блика `skeleton/shimmer/*` — для разработки."
+ ],
+ "sets": [
+  {
+   "name": "Skeleton / Line",
+   "description": "Строка-заглушка текста: высота равна интерлиньяжу строки, которую она заменяет. Ширина — доля области: заголовок ~40 %, строки абзаца — 100 %, последняя — ~60 %.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "S",
+      "M",
+      "L",
+      "XL"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "Size",
+    "rows": [],
+    "split": "Inverse"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "b": {
+     "from": "Inverse",
+     "map": {
+      "False": "bg",
+      "True": "inverse-bg"
+     }
+    }
+   },
+   "props": [],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "fill": "skeleton/shape/{b}",
+    "width": 240,
+    "height": "skeleton/size/line/{s}/height",
+    "radius": "skeleton/size/line/{s}/radius"
+   }
+  },
+  {
+   "name": "Skeleton / Circle",
+   "description": "Круг-заглушка аватара: диаметр равен размеру заменяемого аватара.",
+   "axes": [
+    {
+     "name": "Size",
+     "values": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "Size",
+    "rows": [],
+    "split": "Inverse"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "b": {
+     "from": "Inverse",
+     "map": {
+      "False": "bg",
+      "True": "inverse-bg"
+     }
+    }
+   },
+   "props": [],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "fill": "skeleton/shape/{b}",
+    "width": "skeleton/size/circle/{s}/box",
+    "height": "skeleton/size/circle/{s}/box",
+    "radius": "skeleton/size/circle/{s}/radius"
+   }
+  },
+  {
+   "name": "Skeleton / Block",
+   "description": "Блок-заглушка: контрол (высота и скругление как у Button S…XL), изображение или карточка.",
+   "axes": [
+    {
+     "name": "Type",
+     "values": [
+      "Control S",
+      "Control M",
+      "Control L",
+      "Control XL",
+      "Image",
+      "Card"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "Type",
+    "rows": [],
+    "split": "Inverse"
+   },
+   "vars": {
+    "k": {
+     "from": "Type",
+     "map": {
+      "Control S": "control-s",
+      "Control M": "control-m",
+      "Control L": "control-l",
+      "Control XL": "control-xl",
+      "Image": "image",
+      "Card": "card"
+     }
+    },
+    "b": {
+     "from": "Inverse",
+     "map": {
+      "False": "bg",
+      "True": "inverse-bg"
+     }
+    }
+   },
+   "props": [],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "fill": "skeleton/shape/{b}",
+    "width": {
+     "by": "Type",
+     "map": {
+      "Control S": 120,
+      "Control M": 140,
+      "Control L": 160,
+      "Control XL": 180,
+      "Image": 240,
+      "Card": 320
+     }
+    },
+    "height": {
+     "by": "Type",
+     "map": {
+      "Control S": "skeleton/size/block/control-s/height",
+      "Control M": "skeleton/size/block/control-m/height",
+      "Control L": "skeleton/size/block/control-l/height",
+      "Control XL": "skeleton/size/block/control-xl/height",
+      "Image": 160,
+      "Card": 200
+     }
+    },
+    "radius": "skeleton/size/block/{k}/radius"
+   }
+  }
+ ],
+ "spec": {
+  "title": "Skeleton",
+  "description": "Временная заглушка на месте содержимого известной структуры, которое загружается: строки текста, круги аватаров, блоки изображений и карточек. Когда данные пришли, заглушка заменяется содержимым без сдвига раскладки.",
+  "columns": [
+   {
+    "title": "Строка",
+    "width": 400,
+    "cards": [
+     {
+      "title": "S",
+      "description": "Интерлиньяж 16: подписи, мелкий текст",
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "S",
+         "Inverse": "False"
+        },
+        "width": 240
+       }
+      ]
+     },
+     {
+      "title": "M",
+      "description": "Интерлиньяж 20: основной текст интерфейса",
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "M",
+         "Inverse": "False"
+        },
+        "width": 240
+       }
+      ]
+     },
+     {
+      "title": "L",
+      "description": "Интерлиньяж 24: текст для чтения",
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "L",
+         "Inverse": "False"
+        },
+        "width": 240
+       }
+      ]
+     },
+     {
+      "title": "XL",
+      "description": "Интерлиньяж 28: заголовки",
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "XL",
+         "Inverse": "False"
+        },
+        "width": 240
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Круг",
+    "cards": [
+     {
+      "title": "Аватар",
+      "description": "Диаметр как у аватара S…2XL",
+      "items": [
+       {
+        "set": "Skeleton / Circle",
+        "variant": {
+         "Size": "S",
+         "Inverse": "False"
+        },
+        "label": "S"
+       },
+       {
+        "set": "Skeleton / Circle",
+        "variant": {
+         "Size": "M",
+         "Inverse": "False"
+        },
+        "label": "M"
+       },
+       {
+        "set": "Skeleton / Circle",
+        "variant": {
+         "Size": "L",
+         "Inverse": "False"
+        },
+        "label": "L"
+       },
+       {
+        "set": "Skeleton / Circle",
+        "variant": {
+         "Size": "XL",
+         "Inverse": "False"
+        },
+        "label": "XL"
+       },
+       {
+        "set": "Skeleton / Circle",
+        "variant": {
+         "Size": "2XL",
+         "Inverse": "False"
+        },
+        "label": "2XL"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Блок",
+    "width": 400,
+    "cards": [
+     {
+      "title": "Контрол",
+      "description": "Высота и скругление как у Button S…XL",
+      "items": [
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Control S",
+         "Inverse": "False"
+        },
+        "label": "Control S"
+       },
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Control M",
+         "Inverse": "False"
+        },
+        "label": "Control M"
+       },
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Control L",
+         "Inverse": "False"
+        },
+        "label": "Control L"
+       },
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Control XL",
+         "Inverse": "False"
+        },
+        "label": "Control XL"
+       }
+      ]
+     },
+     {
+      "title": "Изображение и карточка",
+      "items": [
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Image",
+         "Inverse": "False"
+        },
+        "label": "Image"
+       },
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Card",
+         "Inverse": "False"
+        },
+        "label": "Card"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Применение",
+    "width": 560,
+    "cards": [
+     {
+      "title": "Абзац",
+      "description": "3 строки, последняя короче (100 · 100 · 60 %)",
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "M",
+         "Inverse": "False"
+        },
+        "width": 480
+       },
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "M",
+         "Inverse": "False"
+        },
+        "width": 480
+       },
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "M",
+         "Inverse": "False"
+        },
+        "width": 288
+       }
+      ]
+     },
+     {
+      "title": "Заголовок с подзаголовком",
+      "description": "1 строка 40 % и 1 строка 60 %",
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "XL",
+         "Inverse": "False"
+        },
+        "width": 192
+       },
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "M",
+         "Inverse": "False"
+        },
+        "width": 288
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Инверсия",
+    "width": 400,
+    "cards": [
+     {
+      "title": "Inverse",
+      "description": "На тёмных поверхностях",
+      "inverse": true,
+      "items": [
+       {
+        "set": "Skeleton / Line",
+        "variant": {
+         "Size": "M",
+         "Inverse": "True"
+        },
+        "width": 240
+       },
+       {
+        "set": "Skeleton / Circle",
+        "variant": {
+         "Size": "L",
+         "Inverse": "True"
+        }
+       },
+       {
+        "set": "Skeleton / Block",
+        "variant": {
+         "Type": "Control L",
+         "Inverse": "True"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

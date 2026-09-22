@@ -1,0 +1,4747 @@
+{
+ "component": "select",
+ "title": "Select",
+ "page": "Components / Select",
+ "origin": "existing",
+ "requires": [
+  "button"
+ ],
+ "notes": [
+  "Семейство Select: публикуется один набор `Select` (Field × Type × Size × Open × Inverse, 144 варианта). Части — приватные (`_`): контрол `_ Select / Button`, список `_ Select / Dropdown`, пункты `_ Select / Dropdown Items` (S, M, L).",
+  "Контрол и список — повтор текущего SimpleSelect из файла (Select / Button, _ Select / Dropdown, _ Select / Dropdown Items), контрол стал приватным.",
+  "Dropdown — механика Select (а также Combobox и Multiselect), а не отдельный компонент каталога.",
+  "Field не публикуется отдельно: режим Field (None / Vertical / Horizontal) — свойство семейства; части Field те же, что у Input (docs/forms-architecture.md).",
+  "Список открывается в потоке под контролом (как `Select` Open=True в файле); тень — переменные `effects/select/*`."
+ ],
+ "exceptions": [
+  {
+   "token": "color/transparent-black/120",
+   "reason": "Цвет тени списка привязан к L1, как в файле компонентов: эффекты пока не проработаны (решение автора), своего L2 для тени нет."
+  }
+ ],
+ "sets": [
+  {
+   "name": "_ Select / Button / S",
+   "description": "Контрол Select: выбранное значение и кнопка открытия списка. Приватная часть семейства Select.",
+   "axes": [
+    {
+     "name": "Filled",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Read Only",
+      "Error",
+      "Warning",
+      "Success"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Filled"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "st": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed": "pressed",
+      "Disabled": "disabled",
+      "Read Only": "read-only",
+      "Error": "error",
+      "Warning": "warning",
+      "Success": "success"
+     }
+    },
+    "bgs": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed": "pressed",
+      "Disabled": "disabled",
+      "Read Only": "read-only",
+      "Error": "default",
+      "Warning": "default",
+      "Success": "default"
+     }
+    },
+    "tx": {
+     "from": [
+      "Filled",
+      "State"
+     ],
+     "map": {
+      "True|Default": "value",
+      "True|Hover": "value",
+      "True|Pressed": "value",
+      "True|Disabled": "disabled",
+      "True|Read Only": "read-only",
+      "True|Error": "value",
+      "True|Warning": "value",
+      "True|Success": "value",
+      "False|Default": "inactive",
+      "False|Hover": "inactive",
+      "False|Pressed": "inactive",
+      "False|Disabled": "inactive-disabled",
+      "False|Read Only": "inactive",
+      "False|Error": "inactive",
+      "False|Warning": "inactive",
+      "False|Success": "inactive"
+     }
+    },
+    "vi": {
+     "from": "State",
+     "map": {
+      "Default": "circle",
+      "Hover": "circle",
+      "Pressed": "circle",
+      "Disabled": "circle",
+      "Read Only": "circle",
+      "Error": "alert-circle",
+      "Warning": "alert-triangle",
+      "Success": "circle-check"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Leading Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Inactive",
+     "type": "TEXT",
+     "default": "Не выбрано"
+    },
+    {
+     "name": "↳ Value",
+     "type": "TEXT",
+     "default": "Значение"
+    },
+    {
+     "name": "Clear",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Loading",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Validation Marker",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "field/size/select/s/button/container-gap",
+     "px": "field/size/select/s/button/container-x",
+     "py": "field/size/select/s/button/container-y",
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": "field/size/select/s/button/container",
+    "radius": "field/size/select/s/button/container-radius",
+    "fill": "field/select/bg/{i}{bgs}",
+    "stroke": {
+     "color": "field/select/border/{i}{st}",
+     "weight": "field/size/select/s/button/container-border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed",
+        "Read Only",
+        "Error",
+        "Warning",
+        "Success"
+       ]
+      },
+      "abs": "focus",
+      "offset": 2,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "field/size/select/s/button/focus-radius",
+      "stroke": {
+       "color": "field/select/{i}focus-ring",
+       "weight": "field/size/select/s/button/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Leading_icon",
+      "refs": {
+       "visible": "Leading Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/s/button/leading-icon-xy",
+       "py": "field/size/select/s/button/leading-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/s/button/leading-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "circle",
+         "size": "field/size/select/s/button/leading-icon",
+         "color": "field/select/leading-icon/{i}{tx}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/select/s/button/text-gap",
+       "pl": "field/size/select/s/button/text-x-left",
+       "pr": "field/size/select/s/button/text-x-right",
+       "py": "field/size/select/s/button/text-y",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Filled": "True"
+        },
+        "refs": {
+         "characters": "↳ Value"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Значение",
+         "typography": "typography/field/select/text/s",
+         "fontStyle": "Regular",
+         "fill": "field/select/text/{i}{tx}",
+         "truncate": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Filled": "False"
+        },
+        "refs": {
+         "characters": "↳ Inactive"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Не выбрано",
+         "typography": "typography/field/select/text/s",
+         "fontStyle": "Regular",
+         "fill": "field/select/text/{i}{tx}",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Trailing",
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/select/s/button/trailing-gap",
+       "align": "MAX",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "frame",
+        "name": "Validation Marker",
+        "when": {
+         "State": [
+          "Error",
+          "Warning",
+          "Success"
+         ]
+        },
+        "refs": {
+         "visible": "Validation Marker"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/s/button/validation-icon-xy",
+         "py": "field/size/select/s/button/validation-icon-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/s/button/validation-icon-box",
+        "children": [
+         {
+          "type": "icon",
+          "name": "Icon",
+          "icon": {
+           "name": "{vi}",
+           "size": "field/size/select/s/button/validation-icon",
+           "color": "field/select/validation-icons/{i}{st}"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Clear",
+        "when": {
+         "Filled": "True",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Error",
+          "Warning",
+          "Success"
+         ]
+        },
+        "refs": {
+         "visible": "Clear"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/s/button/action-xy",
+         "py": "field/size/select/s/button/action-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/s/button/action-box",
+        "children": [
+         {
+          "type": "instance",
+          "name": "X",
+          "instance": {
+           "set": "Button / Icon Only",
+           "variant": {
+            "Size": "M",
+            "Type": {
+             "by": "Inverse",
+             "map": {
+              "False": "Secondary",
+              "True": "Inverse-primary"
+             }
+            },
+            "State": {
+             "by": "State",
+             "map": {
+              "Default": "Default",
+              "Hover": "Default",
+              "Pressed": "Default",
+              "Disabled": "Disabled",
+              "Read Only": "Disabled",
+              "Error": "Default",
+              "Warning": "Default",
+              "Success": "Default"
+             }
+            },
+            "Loading": "False"
+           },
+           "props": {
+            "↳ Icon": "icon:x"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Loading",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "refs": {
+         "visible": "Loading"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/s/button/loading-icon-xy",
+         "py": "field/size/select/s/button/loading-icon-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/s/button/loading-icon-box",
+        "children": [
+         {
+          "type": "icon",
+          "name": "Icon",
+          "icon": {
+           "name": "loader-circle",
+           "size": "field/size/select/s/button/loading-icon",
+           "color": "field/select/loading/{i}loading"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Action",
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/s/button/action-xy",
+         "py": "field/size/select/s/button/action-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/s/button/action-box",
+        "children": [
+         {
+          "type": "instance",
+          "name": "Open-Close",
+          "instance": {
+           "set": "Button / Icon Only",
+           "variant": {
+            "Size": "M",
+            "Type": {
+             "by": "Inverse",
+             "map": {
+              "False": "Secondary",
+              "True": "Inverse-primary"
+             }
+            },
+            "State": {
+             "by": "State",
+             "map": {
+              "Default": "Default",
+              "Hover": "Default",
+              "Pressed": "Default",
+              "Disabled": "Disabled",
+              "Read Only": "Disabled",
+              "Error": "Default",
+              "Warning": "Default",
+              "Success": "Default"
+             }
+            },
+            "Loading": "False"
+           },
+           "props": {
+            "↳ Icon": "icon:chevron-down"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Button / M",
+   "description": "Контрол Select: выбранное значение и кнопка открытия списка. Приватная часть семейства Select.",
+   "axes": [
+    {
+     "name": "Filled",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Read Only",
+      "Error",
+      "Warning",
+      "Success"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Filled"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "st": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed": "pressed",
+      "Disabled": "disabled",
+      "Read Only": "read-only",
+      "Error": "error",
+      "Warning": "warning",
+      "Success": "success"
+     }
+    },
+    "bgs": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed": "pressed",
+      "Disabled": "disabled",
+      "Read Only": "read-only",
+      "Error": "default",
+      "Warning": "default",
+      "Success": "default"
+     }
+    },
+    "tx": {
+     "from": [
+      "Filled",
+      "State"
+     ],
+     "map": {
+      "True|Default": "value",
+      "True|Hover": "value",
+      "True|Pressed": "value",
+      "True|Disabled": "disabled",
+      "True|Read Only": "read-only",
+      "True|Error": "value",
+      "True|Warning": "value",
+      "True|Success": "value",
+      "False|Default": "inactive",
+      "False|Hover": "inactive",
+      "False|Pressed": "inactive",
+      "False|Disabled": "inactive-disabled",
+      "False|Read Only": "inactive",
+      "False|Error": "inactive",
+      "False|Warning": "inactive",
+      "False|Success": "inactive"
+     }
+    },
+    "vi": {
+     "from": "State",
+     "map": {
+      "Default": "circle",
+      "Hover": "circle",
+      "Pressed": "circle",
+      "Disabled": "circle",
+      "Read Only": "circle",
+      "Error": "alert-circle",
+      "Warning": "alert-triangle",
+      "Success": "circle-check"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Leading Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Inactive",
+     "type": "TEXT",
+     "default": "Не выбрано"
+    },
+    {
+     "name": "↳ Value",
+     "type": "TEXT",
+     "default": "Значение"
+    },
+    {
+     "name": "Clear",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Loading",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Validation Marker",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "field/size/select/m/button/container-gap",
+     "px": "field/size/select/m/button/container-x",
+     "py": "field/size/select/m/button/container-y",
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": "field/size/select/m/button/container",
+    "radius": "field/size/select/m/button/container-radius",
+    "fill": "field/select/bg/{i}{bgs}",
+    "stroke": {
+     "color": "field/select/border/{i}{st}",
+     "weight": "field/size/select/m/button/container-border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed",
+        "Read Only",
+        "Error",
+        "Warning",
+        "Success"
+       ]
+      },
+      "abs": "focus",
+      "offset": 4,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "field/size/select/m/button/focus-radius",
+      "stroke": {
+       "color": "field/select/{i}focus-ring",
+       "weight": "field/size/select/m/button/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Leading_icon",
+      "refs": {
+       "visible": "Leading Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/m/button/leading-icon-xy",
+       "py": "field/size/select/m/button/leading-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/m/button/leading-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "circle",
+         "size": "field/size/select/m/button/leading-icon",
+         "color": "field/select/leading-icon/{i}{tx}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/select/m/button/text-gap",
+       "pl": "field/size/select/m/button/text-x-left",
+       "pr": "field/size/select/m/button/text-x-right",
+       "py": "field/size/select/m/button/text-y",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Filled": "True"
+        },
+        "refs": {
+         "characters": "↳ Value"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Значение",
+         "typography": "typography/field/select/text/m",
+         "fontStyle": "Regular",
+         "fill": "field/select/text/{i}{tx}",
+         "truncate": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Filled": "False"
+        },
+        "refs": {
+         "characters": "↳ Inactive"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Не выбрано",
+         "typography": "typography/field/select/text/m",
+         "fontStyle": "Regular",
+         "fill": "field/select/text/{i}{tx}",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Trailing",
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/select/m/button/trailing-gap",
+       "align": "MAX",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "frame",
+        "name": "Validation Marker",
+        "when": {
+         "State": [
+          "Error",
+          "Warning",
+          "Success"
+         ]
+        },
+        "refs": {
+         "visible": "Validation Marker"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/m/button/validation-icon-xy",
+         "py": "field/size/select/m/button/validation-icon-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/m/button/validation-icon-box",
+        "children": [
+         {
+          "type": "icon",
+          "name": "Icon",
+          "icon": {
+           "name": "{vi}",
+           "size": "field/size/select/m/button/validation-icon",
+           "color": "field/select/validation-icons/{i}{st}"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Clear",
+        "when": {
+         "Filled": "True",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Error",
+          "Warning",
+          "Success"
+         ]
+        },
+        "refs": {
+         "visible": "Clear"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/m/button/action-xy",
+         "py": "field/size/select/m/button/action-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/m/button/action-box",
+        "children": [
+         {
+          "type": "instance",
+          "name": "X",
+          "instance": {
+           "set": "Button / Icon Only",
+           "variant": {
+            "Size": "L",
+            "Type": {
+             "by": "Inverse",
+             "map": {
+              "False": "Secondary",
+              "True": "Inverse-primary"
+             }
+            },
+            "State": {
+             "by": "State",
+             "map": {
+              "Default": "Default",
+              "Hover": "Default",
+              "Pressed": "Default",
+              "Disabled": "Disabled",
+              "Read Only": "Disabled",
+              "Error": "Default",
+              "Warning": "Default",
+              "Success": "Default"
+             }
+            },
+            "Loading": "False"
+           },
+           "props": {
+            "↳ Icon": "icon:x"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Loading",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "refs": {
+         "visible": "Loading"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/m/button/loading-icon-xy",
+         "py": "field/size/select/m/button/loading-icon-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/m/button/loading-icon-box",
+        "children": [
+         {
+          "type": "icon",
+          "name": "Icon",
+          "icon": {
+           "name": "loader-circle",
+           "size": "field/size/select/m/button/loading-icon",
+           "color": "field/select/loading/{i}loading"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Action",
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/m/button/action-xy",
+         "py": "field/size/select/m/button/action-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/m/button/action-box",
+        "children": [
+         {
+          "type": "instance",
+          "name": "Open-Close",
+          "instance": {
+           "set": "Button / Icon Only",
+           "variant": {
+            "Size": "L",
+            "Type": {
+             "by": "Inverse",
+             "map": {
+              "False": "Secondary",
+              "True": "Inverse-primary"
+             }
+            },
+            "State": {
+             "by": "State",
+             "map": {
+              "Default": "Default",
+              "Hover": "Default",
+              "Pressed": "Default",
+              "Disabled": "Disabled",
+              "Read Only": "Disabled",
+              "Error": "Default",
+              "Warning": "Default",
+              "Success": "Default"
+             }
+            },
+            "Loading": "False"
+           },
+           "props": {
+            "↳ Icon": "icon:chevron-down"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Button / L",
+   "description": "Контрол Select: выбранное значение и кнопка открытия списка. Приватная часть семейства Select.",
+   "axes": [
+    {
+     "name": "Filled",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Disabled",
+      "Read Only",
+      "Error",
+      "Warning",
+      "Success"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [
+     "Filled"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "st": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed": "pressed",
+      "Disabled": "disabled",
+      "Read Only": "read-only",
+      "Error": "error",
+      "Warning": "warning",
+      "Success": "success"
+     }
+    },
+    "bgs": {
+     "from": "State",
+     "map": {
+      "Default": "default",
+      "Hover": "hover",
+      "Pressed": "pressed",
+      "Disabled": "disabled",
+      "Read Only": "read-only",
+      "Error": "default",
+      "Warning": "default",
+      "Success": "default"
+     }
+    },
+    "tx": {
+     "from": [
+      "Filled",
+      "State"
+     ],
+     "map": {
+      "True|Default": "value",
+      "True|Hover": "value",
+      "True|Pressed": "value",
+      "True|Disabled": "disabled",
+      "True|Read Only": "read-only",
+      "True|Error": "value",
+      "True|Warning": "value",
+      "True|Success": "value",
+      "False|Default": "inactive",
+      "False|Hover": "inactive",
+      "False|Pressed": "inactive",
+      "False|Disabled": "inactive-disabled",
+      "False|Read Only": "inactive",
+      "False|Error": "inactive",
+      "False|Warning": "inactive",
+      "False|Success": "inactive"
+     }
+    },
+    "vi": {
+     "from": "State",
+     "map": {
+      "Default": "circle",
+      "Hover": "circle",
+      "Pressed": "circle",
+      "Disabled": "circle",
+      "Read Only": "circle",
+      "Error": "alert-circle",
+      "Warning": "alert-triangle",
+      "Success": "circle-check"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Leading Icon",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Inactive",
+     "type": "TEXT",
+     "default": "Не выбрано"
+    },
+    {
+     "name": "↳ Value",
+     "type": "TEXT",
+     "default": "Значение"
+    },
+    {
+     "name": "Clear",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "Loading",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "Validation Marker",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "field/size/select/l/button/container-gap",
+     "px": "field/size/select/l/button/container-x",
+     "py": "field/size/select/l/button/container-y",
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": "field/size/select/l/button/container",
+    "radius": "field/size/select/l/button/container-radius",
+    "fill": "field/select/bg/{i}{bgs}",
+    "stroke": {
+     "color": "field/select/border/{i}{st}",
+     "weight": "field/size/select/l/button/container-border",
+     "align": "INSIDE"
+    },
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus",
+      "when": {
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed",
+        "Read Only",
+        "Error",
+        "Warning",
+        "Success"
+       ]
+      },
+      "abs": "focus",
+      "offset": 4,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "field/size/select/l/button/focus-radius",
+      "stroke": {
+       "color": "field/select/{i}focus-ring",
+       "weight": "field/size/select/l/button/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Leading_icon",
+      "refs": {
+       "visible": "Leading Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/l/button/leading-icon-xy",
+       "py": "field/size/select/l/button/leading-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/l/button/leading-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "circle",
+         "size": "field/size/select/l/button/leading-icon",
+         "color": "field/select/leading-icon/{i}{tx}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "w": "FILL",
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/select/l/button/text-gap",
+       "pl": "field/size/select/l/button/text-x-left",
+       "pr": "field/size/select/l/button/text-x-right",
+       "py": "field/size/select/l/button/text-y",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Filled": "True"
+        },
+        "refs": {
+         "characters": "↳ Value"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Значение",
+         "typography": "typography/field/select/text/l",
+         "fontStyle": "Regular",
+         "fill": "field/select/text/{i}{tx}",
+         "truncate": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Filled": "False"
+        },
+        "refs": {
+         "characters": "↳ Inactive"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Не выбрано",
+         "typography": "typography/field/select/text/l",
+         "fontStyle": "Regular",
+         "fill": "field/select/text/{i}{tx}",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Trailing",
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/select/l/button/trailing-gap",
+       "align": "MAX",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "frame",
+        "name": "Validation Marker",
+        "when": {
+         "State": [
+          "Error",
+          "Warning",
+          "Success"
+         ]
+        },
+        "refs": {
+         "visible": "Validation Marker"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/l/button/validation-icon-xy",
+         "py": "field/size/select/l/button/validation-icon-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/l/button/validation-icon-box",
+        "children": [
+         {
+          "type": "icon",
+          "name": "Icon",
+          "icon": {
+           "name": "{vi}",
+           "size": "field/size/select/l/button/validation-icon",
+           "color": "field/select/validation-icons/{i}{st}"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Clear",
+        "when": {
+         "Filled": "True",
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Error",
+          "Warning",
+          "Success"
+         ]
+        },
+        "refs": {
+         "visible": "Clear"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/l/button/action-xy",
+         "py": "field/size/select/l/button/action-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/l/button/action-box",
+        "children": [
+         {
+          "type": "instance",
+          "name": "X",
+          "instance": {
+           "set": "Button / Icon Only",
+           "variant": {
+            "Size": "XL",
+            "Type": {
+             "by": "Inverse",
+             "map": {
+              "False": "Secondary",
+              "True": "Inverse-primary"
+             }
+            },
+            "State": {
+             "by": "State",
+             "map": {
+              "Default": "Default",
+              "Hover": "Default",
+              "Pressed": "Default",
+              "Disabled": "Disabled",
+              "Read Only": "Disabled",
+              "Error": "Default",
+              "Warning": "Default",
+              "Success": "Default"
+             }
+            },
+            "Loading": "False"
+           },
+           "props": {
+            "↳ Icon": "icon:x"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Loading",
+        "when": {
+         "State": [
+          "Default",
+          "Hover",
+          "Pressed"
+         ]
+        },
+        "refs": {
+         "visible": "Loading"
+        },
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/l/button/loading-icon-xy",
+         "py": "field/size/select/l/button/loading-icon-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/l/button/loading-icon-box",
+        "children": [
+         {
+          "type": "icon",
+          "name": "Icon",
+          "icon": {
+           "name": "loader-circle",
+           "size": "field/size/select/l/button/loading-icon",
+           "color": "field/select/loading/{i}loading"
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Action",
+        "layout": {
+         "dir": "H",
+         "px": "field/size/select/l/button/action-xy",
+         "py": "field/size/select/l/button/action-xy",
+         "align": "CENTER",
+         "counter": "CENTER",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "height": "field/size/select/l/button/action-box",
+        "children": [
+         {
+          "type": "instance",
+          "name": "Open-Close",
+          "instance": {
+           "set": "Button / Icon Only",
+           "variant": {
+            "Size": "XL",
+            "Type": {
+             "by": "Inverse",
+             "map": {
+              "False": "Secondary",
+              "True": "Inverse-primary"
+             }
+            },
+            "State": {
+             "by": "State",
+             "map": {
+              "Default": "Default",
+              "Hover": "Default",
+              "Pressed": "Default",
+              "Disabled": "Disabled",
+              "Read Only": "Disabled",
+              "Error": "Default",
+              "Warning": "Default",
+              "Success": "Default"
+             }
+            },
+            "Loading": "False"
+           },
+           "props": {
+            "↳ Icon": "icon:chevron-down"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Dropdown Items / S",
+   "description": "Пункт списка Select: вариант, заголовок группы, разделитель. Приватная часть.",
+   "axes": [
+    {
+     "name": "Active",
+     "values": [
+      "True",
+      "False"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Read Only"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Option",
+      "Group Title",
+      "Divider"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "Type": [
+      "Group Title",
+      "Divider"
+     ],
+     "State": [
+      "Hover",
+      "Pressed",
+      "Read Only"
+     ]
+    }
+   ],
+   "a11y": {
+    "exempt": {
+     "State": "Read Only"
+    },
+    "reason": "Read Only пункта — недоступный для выбора вариант (WCAG 1.4.3: неактивные элементы)"
+   },
+   "grid": {
+    "columns": "State",
+    "blocks": "Type",
+    "rows": [
+     "Active"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "bgk": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "False|Default": "default",
+      "False|Hover": "hover",
+      "False|Pressed": "pressed",
+      "False|Read Only": "disabled",
+      "True|Default": "active",
+      "True|Hover": "active-hover",
+      "True|Pressed": "active-hover",
+      "True|Read Only": "active-disabled"
+     }
+    },
+    "tx": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "value",
+      "True|Hover": "value",
+      "True|Pressed": "value",
+      "True|Read Only": "disabled",
+      "False|Default": "value",
+      "False|Hover": "value",
+      "False|Pressed": "value",
+      "False|Read Only": "disabled"
+     }
+    },
+    "lt": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "icon",
+      "True|Hover": "icon",
+      "True|Pressed": "icon",
+      "True|Read Only": "read-only",
+      "False|Default": "icon",
+      "False|Hover": "icon",
+      "False|Pressed": "icon",
+      "False|Read Only": "read-only"
+     }
+    },
+    "ic": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "icon",
+      "True|Hover": "icon",
+      "True|Pressed": "icon",
+      "True|Read Only": "icon-disabled",
+      "False|Default": "icon",
+      "False|Hover": "icon",
+      "False|Pressed": "icon",
+      "False|Read Only": "icon-disabled"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Leading Icon",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "↳ Value",
+     "type": "TEXT",
+     "default": "Значение"
+    },
+    {
+     "name": "Indicator",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Group Title",
+     "type": "TEXT",
+     "default": "Заголовок группы"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "field/size/select/s/option/container-gap",
+     "px": "field/size/select/s/option/container-x",
+     "py": "field/size/select/s/option/container-y",
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": {
+     "by": "Type",
+     "map": {
+      "Option": "field/size/select/s/option/container"
+     }
+    },
+    "radius": "field/size/select/s/option/container-radius",
+    "fill": "field/select/dropdown/option/bg/{i}{bgk}",
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus",
+      "when": {
+       "Type": [
+        "Option",
+        "Group Title"
+       ],
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": 0,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "field/size/select/s/option/focus-radius",
+      "stroke": {
+       "color": "field/select/dropdown/option/{i}focus-ring",
+       "weight": "field/size/select/s/option/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Leading_icon",
+      "when": {
+       "Type": "Option"
+      },
+      "refs": {
+       "visible": "Leading Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/s/option/leading-icon-xy",
+       "py": "field/size/select/s/option/leading-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/s/option/leading-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "circle",
+         "size": "field/size/select/s/option/leading-icon",
+         "color": "field/select/dropdown/option/leading-icon/{i}{lt}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "when": {
+       "Type": [
+        "Option",
+        "Group Title"
+       ]
+      },
+      "w": "FILL",
+      "layout": {
+       "dir": "H",
+       "pl": "field/size/select/s/option/text-x-left",
+       "pr": "field/size/select/s/option/text-x-right",
+       "py": "field/size/select/s/option/text-y",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Type": "Option"
+        },
+        "refs": {
+         "characters": "↳ Value"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Значение",
+         "typography": "typography/field/select/option/s",
+         "fontStyle": "Regular",
+         "fill": "field/select/dropdown/option/text/{i}{tx}",
+         "truncate": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Type": "Group Title"
+        },
+        "refs": {
+         "characters": "↳ Group Title"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Заголовок группы",
+         "typography": "typography/field/select/option-title/s",
+         "fontStyle": "Medium",
+         "fill": "field/select/dropdown/option/text/{i}value",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Indicator",
+      "when": {
+       "Type": "Option",
+       "Active": "True"
+      },
+      "refs": {
+       "visible": "Indicator"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/s/option/indicator-icon-xy",
+       "py": "field/size/select/s/option/indicator-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/s/option/indicator-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "check",
+         "size": "field/size/select/s/option/indicator-icon",
+         "color": "field/select/dropdown/option/indicator/{i}{ic}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Divider",
+      "when": {
+       "Type": "Divider"
+      },
+      "w": "FILL",
+      "height": 1,
+      "layout": {
+       "dir": "H",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "FIXED"
+      },
+      "fill": {
+       "by": "Inverse",
+       "map": {
+        "False": "divider/line/intense",
+        "True": "field/select/dropdown/option/divider/inverse"
+       }
+      },
+      "children": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Dropdown Items / M",
+   "description": "Пункт списка Select: вариант, заголовок группы, разделитель. Приватная часть.",
+   "axes": [
+    {
+     "name": "Active",
+     "values": [
+      "True",
+      "False"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Read Only"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Option",
+      "Group Title",
+      "Divider"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "Type": [
+      "Group Title",
+      "Divider"
+     ],
+     "State": [
+      "Hover",
+      "Pressed",
+      "Read Only"
+     ]
+    }
+   ],
+   "a11y": {
+    "exempt": {
+     "State": "Read Only"
+    },
+    "reason": "Read Only пункта — недоступный для выбора вариант (WCAG 1.4.3: неактивные элементы)"
+   },
+   "grid": {
+    "columns": "State",
+    "blocks": "Type",
+    "rows": [
+     "Active"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "bgk": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "False|Default": "default",
+      "False|Hover": "hover",
+      "False|Pressed": "pressed",
+      "False|Read Only": "disabled",
+      "True|Default": "active",
+      "True|Hover": "active-hover",
+      "True|Pressed": "active-hover",
+      "True|Read Only": "active-disabled"
+     }
+    },
+    "tx": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "value",
+      "True|Hover": "value",
+      "True|Pressed": "value",
+      "True|Read Only": "disabled",
+      "False|Default": "value",
+      "False|Hover": "value",
+      "False|Pressed": "value",
+      "False|Read Only": "disabled"
+     }
+    },
+    "lt": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "icon",
+      "True|Hover": "icon",
+      "True|Pressed": "icon",
+      "True|Read Only": "read-only",
+      "False|Default": "icon",
+      "False|Hover": "icon",
+      "False|Pressed": "icon",
+      "False|Read Only": "read-only"
+     }
+    },
+    "ic": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "icon",
+      "True|Hover": "icon",
+      "True|Pressed": "icon",
+      "True|Read Only": "icon-disabled",
+      "False|Default": "icon",
+      "False|Hover": "icon",
+      "False|Pressed": "icon",
+      "False|Read Only": "icon-disabled"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Leading Icon",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "↳ Value",
+     "type": "TEXT",
+     "default": "Значение"
+    },
+    {
+     "name": "Indicator",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Group Title",
+     "type": "TEXT",
+     "default": "Заголовок группы"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "field/size/select/m/option/container-gap",
+     "px": "field/size/select/m/option/container-x",
+     "py": "field/size/select/m/option/container-y",
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": {
+     "by": "Type",
+     "map": {
+      "Option": "field/size/select/m/option/container"
+     }
+    },
+    "radius": "field/size/select/m/option/container-radius",
+    "fill": "field/select/dropdown/option/bg/{i}{bgk}",
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus",
+      "when": {
+       "Type": [
+        "Option",
+        "Group Title"
+       ],
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": 0,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "field/size/select/m/option/focus-radius",
+      "stroke": {
+       "color": "field/select/dropdown/option/{i}focus-ring",
+       "weight": "field/size/select/m/option/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Leading_icon",
+      "when": {
+       "Type": "Option"
+      },
+      "refs": {
+       "visible": "Leading Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/m/option/leading-icon-xy",
+       "py": "field/size/select/m/option/leading-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/m/option/leading-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "circle",
+         "size": "field/size/select/m/option/leading-icon",
+         "color": "field/select/dropdown/option/leading-icon/{i}{lt}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "when": {
+       "Type": [
+        "Option",
+        "Group Title"
+       ]
+      },
+      "w": "FILL",
+      "layout": {
+       "dir": "H",
+       "pl": "field/size/select/m/option/text-x-left",
+       "pr": "field/size/select/m/option/text-x-right",
+       "py": "field/size/select/m/option/text-y",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Type": "Option"
+        },
+        "refs": {
+         "characters": "↳ Value"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Значение",
+         "typography": "typography/field/select/option/m",
+         "fontStyle": "Regular",
+         "fill": "field/select/dropdown/option/text/{i}{tx}",
+         "truncate": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Type": "Group Title"
+        },
+        "refs": {
+         "characters": "↳ Group Title"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Заголовок группы",
+         "typography": "typography/field/select/option-title/m",
+         "fontStyle": "Medium",
+         "fill": "field/select/dropdown/option/text/{i}value",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Indicator",
+      "when": {
+       "Type": "Option",
+       "Active": "True"
+      },
+      "refs": {
+       "visible": "Indicator"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/m/option/indicator-icon-xy",
+       "py": "field/size/select/m/option/indicator-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/m/option/indicator-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "check",
+         "size": "field/size/select/m/option/indicator-icon",
+         "color": "field/select/dropdown/option/indicator/{i}{ic}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Divider",
+      "when": {
+       "Type": "Divider"
+      },
+      "w": "FILL",
+      "height": 1,
+      "layout": {
+       "dir": "H",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "FIXED"
+      },
+      "fill": {
+       "by": "Inverse",
+       "map": {
+        "False": "divider/line/intense",
+        "True": "field/select/dropdown/option/divider/inverse"
+       }
+      },
+      "children": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Dropdown Items / L",
+   "description": "Пункт списка Select: вариант, заголовок группы, разделитель. Приватная часть.",
+   "axes": [
+    {
+     "name": "Active",
+     "values": [
+      "True",
+      "False"
+     ]
+    },
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Read Only"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Option",
+      "Group Title",
+      "Divider"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [
+    {
+     "Type": [
+      "Group Title",
+      "Divider"
+     ],
+     "State": [
+      "Hover",
+      "Pressed",
+      "Read Only"
+     ]
+    }
+   ],
+   "a11y": {
+    "exempt": {
+     "State": "Read Only"
+    },
+    "reason": "Read Only пункта — недоступный для выбора вариант (WCAG 1.4.3: неактивные элементы)"
+   },
+   "grid": {
+    "columns": "State",
+    "blocks": "Type",
+    "rows": [
+     "Active"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "bgk": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "False|Default": "default",
+      "False|Hover": "hover",
+      "False|Pressed": "pressed",
+      "False|Read Only": "disabled",
+      "True|Default": "active",
+      "True|Hover": "active-hover",
+      "True|Pressed": "active-hover",
+      "True|Read Only": "active-disabled"
+     }
+    },
+    "tx": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "value",
+      "True|Hover": "value",
+      "True|Pressed": "value",
+      "True|Read Only": "disabled",
+      "False|Default": "value",
+      "False|Hover": "value",
+      "False|Pressed": "value",
+      "False|Read Only": "disabled"
+     }
+    },
+    "lt": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "icon",
+      "True|Hover": "icon",
+      "True|Pressed": "icon",
+      "True|Read Only": "read-only",
+      "False|Default": "icon",
+      "False|Hover": "icon",
+      "False|Pressed": "icon",
+      "False|Read Only": "read-only"
+     }
+    },
+    "ic": {
+     "from": [
+      "Active",
+      "State"
+     ],
+     "map": {
+      "True|Default": "icon",
+      "True|Hover": "icon",
+      "True|Pressed": "icon",
+      "True|Read Only": "icon-disabled",
+      "False|Default": "icon",
+      "False|Hover": "icon",
+      "False|Pressed": "icon",
+      "False|Read Only": "icon-disabled"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Leading Icon",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "↳ Value",
+     "type": "TEXT",
+     "default": "Значение"
+    },
+    {
+     "name": "Indicator",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Group Title",
+     "type": "TEXT",
+     "default": "Заголовок группы"
+    },
+    {
+     "name": "Focused",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "H",
+     "gap": "field/size/select/l/option/container-gap",
+     "px": "field/size/select/l/option/container-x",
+     "py": "field/size/select/l/option/container-y",
+     "align": "MIN",
+     "counter": "CENTER",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": {
+     "by": "Type",
+     "map": {
+      "Option": "field/size/select/l/option/container"
+     }
+    },
+    "radius": "field/size/select/l/option/container-radius",
+    "fill": "field/select/dropdown/option/bg/{i}{bgk}",
+    "children": [
+     {
+      "type": "rect",
+      "name": "Focus",
+      "when": {
+       "Type": [
+        "Option",
+        "Group Title"
+       ],
+       "State": [
+        "Default",
+        "Hover",
+        "Pressed"
+       ]
+      },
+      "abs": "focus",
+      "offset": 0,
+      "visible": false,
+      "refs": {
+       "visible": "Focused"
+      },
+      "radius": "field/size/select/l/option/focus-radius",
+      "stroke": {
+       "color": "field/select/dropdown/option/{i}focus-ring",
+       "weight": "field/size/select/l/option/focus-border",
+       "align": "INSIDE"
+      }
+     },
+     {
+      "type": "frame",
+      "name": "Leading_icon",
+      "when": {
+       "Type": "Option"
+      },
+      "refs": {
+       "visible": "Leading Icon"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/l/option/leading-icon-xy",
+       "py": "field/size/select/l/option/leading-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/l/option/leading-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "circle",
+         "size": "field/size/select/l/option/leading-icon",
+         "color": "field/select/dropdown/option/leading-icon/{i}{lt}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Text",
+      "when": {
+       "Type": [
+        "Option",
+        "Group Title"
+       ]
+      },
+      "w": "FILL",
+      "layout": {
+       "dir": "H",
+       "pl": "field/size/select/l/option/text-x-left",
+       "pr": "field/size/select/l/option/text-x-right",
+       "py": "field/size/select/l/option/text-y",
+       "align": "MIN",
+       "counter": "CENTER",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Type": "Option"
+        },
+        "refs": {
+         "characters": "↳ Value"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Значение",
+         "typography": "typography/field/select/option/l",
+         "fontStyle": "Regular",
+         "fill": "field/select/dropdown/option/text/{i}{tx}",
+         "truncate": true
+        }
+       },
+       {
+        "type": "text",
+        "name": "Name",
+        "when": {
+         "Type": "Group Title"
+        },
+        "refs": {
+         "characters": "↳ Group Title"
+        },
+        "w": "FILL",
+        "text": {
+         "chars": "Заголовок группы",
+         "typography": "typography/field/select/option-title/l",
+         "fontStyle": "Medium",
+         "fill": "field/select/dropdown/option/text/{i}value",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Indicator",
+      "when": {
+       "Type": "Option",
+       "Active": "True"
+      },
+      "refs": {
+       "visible": "Indicator"
+      },
+      "layout": {
+       "dir": "H",
+       "px": "field/size/select/l/option/indicator-icon-xy",
+       "py": "field/size/select/l/option/indicator-icon-xy",
+       "align": "CENTER",
+       "counter": "CENTER",
+       "w": "HUG",
+       "h": "HUG"
+      },
+      "height": "field/size/select/l/option/indicator-icon-box",
+      "children": [
+       {
+        "type": "icon",
+        "name": "Icon",
+        "icon": {
+         "name": "check",
+         "size": "field/size/select/l/option/indicator-icon",
+         "color": "field/select/dropdown/option/indicator/{i}{ic}"
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Divider",
+      "when": {
+       "Type": "Divider"
+      },
+      "w": "FILL",
+      "height": 1,
+      "layout": {
+       "dir": "H",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "FIXED"
+      },
+      "fill": {
+       "by": "Inverse",
+       "map": {
+        "False": "divider/line/intense",
+        "True": "field/select/dropdown/option/divider/inverse"
+       }
+      },
+      "children": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Dropdown / S",
+   "description": "Список Select: пункты, пустой результат, загрузка вариантов. Приватная часть.",
+   "axes": [
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Empty",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Text",
+     "type": "TEXT",
+     "default": "Ничего не найдено"
+    },
+    {
+     "name": "03",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "04",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "05",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "06",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "07",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "08",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "V",
+     "gap": "field/size/select/s/dropdown-box/container-gap",
+     "px": "field/size/select/s/dropdown-box/container-x",
+     "py": "field/size/select/s/dropdown-box/container-y",
+     "align": {
+      "by": "State",
+      "map": {
+       "Default": "MIN",
+       "Empty": "CENTER",
+       "Loading": "CENTER"
+      }
+     },
+     "counter": {
+      "by": "State",
+      "map": {
+       "Default": "MIN",
+       "Empty": "CENTER",
+       "Loading": "CENTER"
+      }
+     },
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": {
+     "by": "State",
+     "map": {
+      "Default": "",
+      "Empty": "field/size/select/s/dropdown-box/empty-height",
+      "Loading": "field/size/select/s/dropdown-box/empty-height"
+     }
+    },
+    "radius": "field/size/select/s/button/container-radius",
+    "fill": "field/select/dropdown/container/{i}base",
+    "shadow": {
+     "x": "effects/select/x/s",
+     "y": "effects/select/y/s",
+     "blur": "effects/select/blur/s",
+     "spread": "effects/select/spread/s",
+     "color": "color/transparent-black/120"
+    },
+    "children": [
+     {
+      "type": "instance",
+      "name": "1",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Москва"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "2",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "True",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Санкт-Петербург"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "3",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "03"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Казань"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "4",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "04"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Новосибирск"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "5",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "05"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Екатеринбург"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "6",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "06"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Нижний Новгород"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "7",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "07"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Самара"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "8",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "08"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / S",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Омск"
+       }
+      }
+     },
+     {
+      "type": "text",
+      "name": "Hint",
+      "when": {
+       "State": "Empty"
+      },
+      "refs": {
+       "characters": "↳ Text"
+      },
+      "text": {
+       "chars": "Ничего не найдено",
+       "typography": "typography/field/select/hint/s",
+       "fontStyle": "Regular",
+       "fill": "field/select/dropdown/container/{i}hint"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loader",
+      "when": {
+       "State": "Loading"
+      },
+      "icon": {
+       "name": "loader",
+       "size": "field/size/select/s/dropdown-box/loader",
+       "color": "field/select/dropdown/container/{i}loader-icon"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Dropdown / M",
+   "description": "Список Select: пункты, пустой результат, загрузка вариантов. Приватная часть.",
+   "axes": [
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Empty",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Text",
+     "type": "TEXT",
+     "default": "Ничего не найдено"
+    },
+    {
+     "name": "03",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "04",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "05",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "06",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "07",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "08",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "V",
+     "gap": "field/size/select/m/dropdown-box/container-gap",
+     "px": "field/size/select/m/dropdown-box/container-x",
+     "py": "field/size/select/m/dropdown-box/container-y",
+     "align": {
+      "by": "State",
+      "map": {
+       "Default": "MIN",
+       "Empty": "CENTER",
+       "Loading": "CENTER"
+      }
+     },
+     "counter": {
+      "by": "State",
+      "map": {
+       "Default": "MIN",
+       "Empty": "CENTER",
+       "Loading": "CENTER"
+      }
+     },
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": {
+     "by": "State",
+     "map": {
+      "Default": "",
+      "Empty": "field/size/select/m/dropdown-box/empty-height",
+      "Loading": "field/size/select/m/dropdown-box/empty-height"
+     }
+    },
+    "radius": "field/size/select/m/button/container-radius",
+    "fill": "field/select/dropdown/container/{i}base",
+    "shadow": {
+     "x": "effects/select/x/m",
+     "y": "effects/select/y/m",
+     "blur": "effects/select/blur/m",
+     "spread": "effects/select/spread/m",
+     "color": "color/transparent-black/120"
+    },
+    "children": [
+     {
+      "type": "instance",
+      "name": "1",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Москва"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "2",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "True",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Санкт-Петербург"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "3",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "03"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Казань"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "4",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "04"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Новосибирск"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "5",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "05"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Екатеринбург"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "6",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "06"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Нижний Новгород"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "7",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "07"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Самара"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "8",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "08"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / M",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Омск"
+       }
+      }
+     },
+     {
+      "type": "text",
+      "name": "Hint",
+      "when": {
+       "State": "Empty"
+      },
+      "refs": {
+       "characters": "↳ Text"
+      },
+      "text": {
+       "chars": "Ничего не найдено",
+       "typography": "typography/field/select/hint/m",
+       "fontStyle": "Regular",
+       "fill": "field/select/dropdown/container/{i}hint"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loader",
+      "when": {
+       "State": "Loading"
+      },
+      "icon": {
+       "name": "loader",
+       "size": "field/size/select/m/dropdown-box/loader",
+       "color": "field/select/dropdown/container/{i}loader-icon"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "_ Select / Dropdown / L",
+   "description": "Список Select: пункты, пустой результат, загрузка вариантов. Приватная часть.",
+   "axes": [
+    {
+     "name": "State",
+     "values": [
+      "Default",
+      "Empty",
+      "Loading"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "State",
+    "rows": [],
+    "split": "Inverse"
+   },
+   "vars": {
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "I": {
+     "from": "Inverse"
+    }
+   },
+   "props": [
+    {
+     "name": "↳ Text",
+     "type": "TEXT",
+     "default": "Ничего не найдено"
+    },
+    {
+     "name": "03",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "04",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "05",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "06",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "07",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "08",
+     "type": "BOOLEAN",
+     "default": true
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": "V",
+     "gap": "field/size/select/l/dropdown-box/container-gap",
+     "px": "field/size/select/l/dropdown-box/container-x",
+     "py": "field/size/select/l/dropdown-box/container-y",
+     "align": {
+      "by": "State",
+      "map": {
+       "Default": "MIN",
+       "Empty": "CENTER",
+       "Loading": "CENTER"
+      }
+     },
+     "counter": {
+      "by": "State",
+      "map": {
+       "Default": "MIN",
+       "Empty": "CENTER",
+       "Loading": "CENTER"
+      }
+     },
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": 320,
+    "height": {
+     "by": "State",
+     "map": {
+      "Default": "",
+      "Empty": "field/size/select/l/dropdown-box/empty-height",
+      "Loading": "field/size/select/l/dropdown-box/empty-height"
+     }
+    },
+    "radius": "field/size/select/l/button/container-radius",
+    "fill": "field/select/dropdown/container/{i}base",
+    "shadow": {
+     "x": "effects/select/x/l",
+     "y": "effects/select/y/l",
+     "blur": "effects/select/blur/l",
+     "spread": "effects/select/spread/l",
+     "color": "color/transparent-black/120"
+    },
+    "children": [
+     {
+      "type": "instance",
+      "name": "1",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Москва"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "2",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "True",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Санкт-Петербург"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "3",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "03"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Казань"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "4",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "04"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Новосибирск"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "5",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "05"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Екатеринбург"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "6",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "06"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Нижний Новгород"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "7",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "07"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Самара"
+       }
+      }
+     },
+     {
+      "type": "instance",
+      "name": "8",
+      "when": {
+       "State": "Default"
+      },
+      "w": "FILL",
+      "refs": {
+       "visible": "08"
+      },
+      "instance": {
+       "set": "_ Select / Dropdown Items / L",
+       "variant": {
+        "Active": "False",
+        "State": "Default",
+        "Type": "Option",
+        "Inverse": "{I}"
+       },
+       "props": {
+        "↳ Value": "Омск"
+       }
+      }
+     },
+     {
+      "type": "text",
+      "name": "Hint",
+      "when": {
+       "State": "Empty"
+      },
+      "refs": {
+       "characters": "↳ Text"
+      },
+      "text": {
+       "chars": "Ничего не найдено",
+       "typography": "typography/field/select/hint/l",
+       "fontStyle": "Regular",
+       "fill": "field/select/dropdown/container/{i}hint"
+      }
+     },
+     {
+      "type": "icon",
+      "name": "Loader",
+      "when": {
+       "State": "Loading"
+      },
+      "icon": {
+       "name": "loader",
+       "size": "field/size/select/l/dropdown-box/loader",
+       "color": "field/select/dropdown/container/{i}loader-icon"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "name": "Select",
+   "origin": "new",
+   "description": "Выбор одного значения из списка. Field: None — только контрол; Vertical и Horizontal — в обёртке Field (Label, подсказка, сообщение проверки). Open — раскрытый список.",
+   "axes": [
+    {
+     "name": "Field",
+     "values": [
+      "None",
+      "Vertical",
+      "Horizontal"
+     ]
+    },
+    {
+     "name": "Type",
+     "values": [
+      "Base",
+      "Error",
+      "Warning",
+      "Success"
+     ]
+    },
+    {
+     "name": "Size",
+     "values": [
+      "S",
+      "M",
+      "L"
+     ]
+    },
+    {
+     "name": "Open",
+     "values": [
+      "False",
+      "True"
+     ]
+    },
+    {
+     "name": "Inverse",
+     "values": [
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "exclude": [],
+   "grid": {
+    "columns": "Type",
+    "blocks": "Field",
+    "rows": [
+     "Size",
+     "Open"
+    ],
+    "split": "Inverse"
+   },
+   "vars": {
+    "s": {
+     "from": "Size",
+     "case": "lower"
+    },
+    "S": {
+     "from": "Size"
+    },
+    "I": {
+     "from": "Inverse"
+    },
+    "i": {
+     "from": "Inverse",
+     "map": {
+      "False": "",
+      "True": "inverse-"
+     }
+    },
+    "fg": {
+     "from": "Size",
+     "map": {
+      "S": "gap-vertical",
+      "M": "gap",
+      "L": "gap-vertical"
+     }
+    },
+    "t": {
+     "from": "Type",
+     "case": "lower"
+    },
+    "T": {
+     "from": "Type"
+    },
+    "vi": {
+     "from": "Type",
+     "map": {
+      "Base": "circle",
+      "Error": "alert-circle",
+      "Warning": "alert-triangle",
+      "Success": "circle-check"
+     }
+    },
+    "msg": {
+     "from": "Type",
+     "map": {
+      "Base": "",
+      "Error": "Выберите значение из списка",
+      "Warning": "Значение устарело, проверьте его",
+      "Success": "Значение сохранено"
+     }
+    }
+   },
+   "props": [
+    {
+     "name": "Label",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Label",
+     "type": "TEXT",
+     "default": "Заголовок"
+    },
+    {
+     "name": "+ Required (*)",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "+ Add. Text",
+     "type": "BOOLEAN",
+     "default": false
+    },
+    {
+     "name": "↳ Add. Text",
+     "type": "TEXT",
+     "default": "(доп. текст)"
+    },
+    {
+     "name": "Description Zone",
+     "type": "BOOLEAN",
+     "default": true
+    },
+    {
+     "name": "↳ Hint",
+     "type": "TEXT",
+     "default": "Подсказка"
+    },
+    {
+     "name": "↳ Message",
+     "type": "TEXT",
+     "default": "Сообщение проверки"
+    },
+    {
+     "name": "+ Extra Space",
+     "type": "BOOLEAN",
+     "default": false
+    }
+   ],
+   "root": {
+    "type": "frame",
+    "name": "root",
+    "layout": {
+     "dir": {
+      "by": "Field",
+      "map": {
+       "None": "V",
+       "Vertical": "V",
+       "Horizontal": "H"
+      }
+     },
+     "gap": {
+      "by": "Field",
+      "map": {
+       "None": 0,
+       "Vertical": "field/size/field/base/{s}/{fg}",
+       "Horizontal": "field/size/field/base/{s}/gap-horizontal"
+      }
+     },
+     "pl": {
+      "by": "Field",
+      "map": {
+       "None": 0,
+       "Vertical": "field/size/field/base/{s}/x-left",
+       "Horizontal": "field/size/field/base/{s}/x-left"
+      }
+     },
+     "pr": {
+      "by": "Field",
+      "map": {
+       "None": 0,
+       "Vertical": "field/size/field/base/{s}/x-right",
+       "Horizontal": "field/size/field/base/{s}/x-right"
+      }
+     },
+     "pt": {
+      "by": "Field",
+      "map": {
+       "None": 0,
+       "Vertical": "field/size/field/base/{s}/y-top",
+       "Horizontal": "field/size/field/base/{s}/y-top"
+      }
+     },
+     "pb": {
+      "by": "Field",
+      "map": {
+       "None": 0,
+       "Vertical": "field/size/field/base/{s}/y-bottom",
+       "Horizontal": "field/size/field/base/{s}/y-bottom"
+      }
+     },
+     "align": "MIN",
+     "counter": "MIN",
+     "w": "FIXED",
+     "h": "HUG"
+    },
+    "width": {
+     "by": "Field",
+     "map": {
+      "None": 320,
+      "Vertical": 360,
+      "Horizontal": 520
+     }
+    },
+    "children": [
+     {
+      "type": "frame",
+      "name": "Label",
+      "w": "FILL",
+      "when": {
+       "Field": "Vertical"
+      },
+      "refs": {
+       "visible": "Label"
+      },
+      "layout": {
+       "dir": "H",
+       "gap": "field/size/label/{s}/gap-left-right",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG",
+       "pl": "field/size/label/{s}/x-left",
+       "pr": "field/size/label/{s}/x-right",
+       "pt": "field/size/label/{s}/y-top",
+       "pb": "field/size/label/{s}/y-bottom"
+      },
+      "children": [
+       {
+        "type": "frame",
+        "name": "Title+",
+        "layout": {
+         "dir": "H",
+         "gap": "field/size/label/{s}/gap-text-asterisk",
+         "align": "MIN",
+         "counter": "MIN",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Label",
+          "refs": {
+           "characters": "↳ Label"
+          },
+          "text": {
+           "chars": "Заголовок",
+           "typography": "typography/field/label/title/{s}",
+           "fontStyle": "Regular",
+           "fill": "field/label/{i}primary",
+           "truncate": true
+          }
+         },
+         {
+          "type": "text",
+          "name": "*",
+          "refs": {
+           "visible": "+ Required (*)"
+          },
+          "visible": false,
+          "text": {
+           "chars": "*",
+           "typography": "typography/field/label/title/{s}",
+           "fontStyle": "Regular",
+           "fill": "field/label/{i}requirement"
+          }
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "name": "Additional Text",
+        "refs": {
+         "visible": "+ Add. Text",
+         "characters": "↳ Add. Text"
+        },
+        "visible": false,
+        "text": {
+         "chars": "(доп. текст)",
+         "typography": "typography/field/label/additional/{s}",
+         "fontStyle": "Regular",
+         "fill": "field/label/{i}additional",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Label",
+      "when": {
+       "Field": "Horizontal"
+      },
+      "refs": {
+       "visible": "Label"
+      },
+      "layout": {
+       "dir": "V",
+       "gap": "field/size/label/{s}/gap-vertical",
+       "pl": "field/size/label/{s}/x-left",
+       "pr": "field/size/label/{s}/x-right",
+       "pt": "field/size/label/{s}/horizontal-y",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FIXED",
+       "h": "HUG"
+      },
+      "width": "field/size/label/{s}/horizontal",
+      "children": [
+       {
+        "type": "frame",
+        "name": "Title+",
+        "layout": {
+         "dir": "H",
+         "gap": "field/size/label/{s}/gap-text-asterisk",
+         "align": "MIN",
+         "counter": "MIN",
+         "w": "HUG",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "text",
+          "name": "Label",
+          "refs": {
+           "characters": "↳ Label"
+          },
+          "text": {
+           "chars": "Заголовок",
+           "typography": "typography/field/label/title/{s}",
+           "fontStyle": "Regular",
+           "fill": "field/label/{i}primary",
+           "truncate": true
+          }
+         },
+         {
+          "type": "text",
+          "name": "*",
+          "refs": {
+           "visible": "+ Required (*)"
+          },
+          "visible": false,
+          "text": {
+           "chars": "*",
+           "typography": "typography/field/label/title/{s}",
+           "fontStyle": "Regular",
+           "fill": "field/label/{i}requirement"
+          }
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "name": "Additional Text",
+        "refs": {
+         "visible": "+ Add. Text",
+         "characters": "↳ Add. Text"
+        },
+        "visible": false,
+        "text": {
+         "chars": "(доп. текст)",
+         "typography": "typography/field/label/additional/{s}",
+         "fontStyle": "Regular",
+         "fill": "field/label/{i}additional",
+         "truncate": true
+        }
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "name": "Body",
+      "w": "FILL",
+      "layout": {
+       "dir": "V",
+       "gap": "field/size/field/base/{s}/{fg}",
+       "align": "MIN",
+       "counter": "MIN",
+       "w": "FILL",
+       "h": "HUG"
+      },
+      "children": [
+       {
+        "type": "frame",
+        "name": "Control",
+        "w": "FILL",
+        "layout": {
+         "dir": "V",
+         "gap": "field/size/select/{s}/button-dropdown-gap",
+         "align": "MIN",
+         "counter": "MIN",
+         "w": "FILL",
+         "h": "HUG"
+        },
+        "children": [
+         {
+          "type": "instance",
+          "name": "Select",
+          "expose": true,
+          "w": "FILL",
+          "instance": {
+           "set": "_ Select / Button / {S}",
+           "variant": {
+            "Filled": {
+             "by": "Open",
+             "map": {
+              "False": "False",
+              "True": "True"
+             }
+            },
+            "State": {
+             "by": "Type",
+             "map": {
+              "Base": "Default",
+              "Error": "Error",
+              "Warning": "Warning",
+              "Success": "Success"
+             }
+            },
+            "Inverse": "{I}"
+           },
+           "props": {
+            "Leading Icon": false,
+            "Loading": false,
+            "↳ Value": {
+             "by": "Open",
+             "map": {
+              "False": "Значение",
+              "True": "Санкт-Петербург"
+             }
+            }
+           }
+          }
+         },
+         {
+          "type": "instance",
+          "name": "Dropdown",
+          "expose": true,
+          "when": {
+           "Open": "True"
+          },
+          "w": "FILL",
+          "instance": {
+           "set": "_ Select / Dropdown / {S}",
+           "variant": {
+            "State": "Default",
+            "Inverse": "{I}"
+           },
+           "props": {}
+          }
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Description",
+        "w": "FILL",
+        "when": {
+         "Field": [
+          "Vertical",
+          "Horizontal"
+         ]
+        },
+        "refs": {
+         "visible": "Description Zone"
+        },
+        "layout": {
+         "dir": "H",
+         "gap": "field/size/description/{s}/gap-left-right",
+         "align": "MIN",
+         "counter": "MIN",
+         "w": "FILL",
+         "h": "HUG",
+         "pl": "field/size/description/{s}/x-left",
+         "pr": "field/size/description/{s}/x-right",
+         "pt": "field/size/description/{s}/y-top",
+         "pb": "field/size/description/{s}/y-bottom"
+        },
+        "children": [
+         {
+          "type": "frame",
+          "name": "Hint",
+          "w": "FILL",
+          "when": {
+           "Type": "Base"
+          },
+          "layout": {
+           "dir": "H",
+           "gap": "field/size/description/{s}/gap-icon-text",
+           "align": "MIN",
+           "counter": "MIN",
+           "w": "FILL",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "text",
+            "name": "Text",
+            "refs": {
+             "characters": "↳ Hint"
+            },
+            "w": "FILL",
+            "text": {
+             "chars": "Подсказка",
+             "typography": "typography/field/hint/{s}",
+             "fontStyle": "Regular",
+             "fill": "field/description/text/{i}hint",
+             "wrap": true
+            }
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "name": "{T}",
+          "w": "FILL",
+          "when": {
+           "Type": [
+            "Error",
+            "Warning",
+            "Success"
+           ]
+          },
+          "layout": {
+           "dir": "H",
+           "gap": "field/size/description/{s}/gap-icon-text",
+           "align": "MIN",
+           "counter": "MIN",
+           "w": "FILL",
+           "h": "HUG"
+          },
+          "children": [
+           {
+            "type": "frame",
+            "name": "Icon",
+            "layout": {
+             "dir": "H",
+             "px": "field/size/description/{s}/hint-icon-x",
+             "py": "field/size/description/{s}/hint-icon-y",
+             "align": "CENTER",
+             "counter": "CENTER",
+             "w": "HUG",
+             "h": "HUG"
+            },
+            "height": "field/size/description/{s}/hint-icon-box",
+            "children": [
+             {
+              "type": "icon",
+              "name": "Icon",
+              "icon": {
+               "name": "{vi}",
+               "size": "field/size/description/{s}/hint-icon",
+               "color": "field/description/icon/{i}{t}"
+              }
+             }
+            ]
+           },
+           {
+            "type": "text",
+            "name": "Text",
+            "refs": {
+             "characters": "↳ Message"
+            },
+            "w": "FILL",
+            "text": {
+             "chars": "{msg}",
+             "typography": "typography/field/hint/{s}",
+             "fontStyle": "Regular",
+             "fill": "field/description/text/{i}{t}",
+             "wrap": true
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "name": "Extra Space",
+        "when": {
+         "Field": [
+          "Vertical",
+          "Horizontal"
+         ]
+        },
+        "visible": false,
+        "refs": {
+         "visible": "+ Extra Space"
+        },
+        "w": "FILL",
+        "layout": {
+         "dir": "V",
+         "align": "MIN",
+         "counter": "MIN",
+         "w": "FILL",
+         "h": "HUG"
+        },
+        "height": "field/size/field/extraspace/{s}",
+        "children": []
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "spec": {
+  "title": "Select",
+  "description": "Выбор одного значения из списка. Семейство: контрол, список и обёртка Field — одно свойство, а не отдельные компоненты. Field: None — контрол без подписей (таблицы, фильтры); Vertical — Label сверху; Horizontal — Label слева.",
+  "columns": [
+   {
+    "title": "Field",
+    "width": 640,
+    "cards": [
+     {
+      "title": "None",
+      "description": "Только контрол: фильтры, строки таблиц, плотные панели. Доступное имя задаётся в коде",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "None",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Vertical",
+      "description": "Label сверху, подсказка снизу — основной режим форм",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "+ Required (*)": true
+        }
+       }
+      ]
+     },
+     {
+      "title": "Horizontal",
+      "description": "Label слева — формы с устойчивой сеткой и достаточной шириной",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Horizontal",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Размер",
+    "width": 440,
+    "cards": [
+     {
+      "title": "S",
+      "description": "Плотные формы и таблицы",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "S",
+         "Open": "False",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "M",
+      "description": "Основной размер форм",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "L",
+      "description": "Крупные формы и мобильные сценарии",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "L",
+         "Open": "False",
+         "Inverse": "False"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Проверка",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Base",
+      "description": "Без сообщения проверки",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Error",
+      "description": "Значение нужно исправить: сообщение объясняет, что сделать",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Error",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "↳ Message": "Выберите значение из списка"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Warning",
+      "description": "Значение допустимо, но требует внимания",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Warning",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "↳ Message": "Значение устарело, проверьте его"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Success",
+      "description": "Подтверждение, когда оно полезно",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Success",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "↳ Message": "Значение сохранено"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Состояния контрола",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Mouse и клавиатура",
+      "items": [
+       {
+        "set": "_ Select / Button / M",
+        "variant": {
+         "Filled": "False",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "label": "Default"
+       },
+       {
+        "set": "_ Select / Button / M",
+        "variant": {
+         "Filled": "False",
+         "State": "Hover",
+         "Inverse": "False"
+        },
+        "label": "Hover"
+       },
+       {
+        "set": "_ Select / Button / M",
+        "variant": {
+         "Filled": "False",
+         "State": "Pressed",
+         "Inverse": "False"
+        },
+        "label": "Pressed"
+       },
+       {
+        "set": "_ Select / Button / M",
+        "variant": {
+         "Filled": "False",
+         "State": "Default",
+         "Inverse": "False"
+        },
+        "props": {
+         "Focused": true
+        },
+        "label": "Focused"
+       },
+       {
+        "set": "_ Select / Button / M",
+        "variant": {
+         "Filled": "False",
+         "State": "Disabled",
+         "Inverse": "False"
+        },
+        "label": "Disabled"
+       },
+       {
+        "set": "_ Select / Button / M",
+        "variant": {
+         "Filled": "True",
+         "State": "Read Only",
+         "Inverse": "False"
+        },
+        "label": "Read Only"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Список",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Открыт",
+      "description": "Список под контролом; выбранный пункт отмечен галочкой",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "None",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "True",
+         "Inverse": "False"
+        }
+       }
+      ]
+     },
+     {
+      "title": "Пусто",
+      "description": "Поиск не дал результатов",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "None",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "True",
+         "Inverse": "False"
+        },
+        "nested": {
+         "Dropdown": {
+          "State": "Empty"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "title": "Загрузка вариантов",
+      "description": "Список ждёт данные: спиннер внутри списка, контрол статичен",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "None",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "True",
+         "Inverse": "False"
+        },
+        "nested": {
+         "Dropdown": {
+          "State": "Loading"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Пункты списка",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Состояния пункта",
+      "items": [
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "False",
+         "State": "Default",
+         "Type": "Option",
+         "Inverse": "False"
+        },
+        "label": "Default"
+       },
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "False",
+         "State": "Hover",
+         "Type": "Option",
+         "Inverse": "False"
+        },
+        "label": "Hover"
+       },
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "False",
+         "State": "Pressed",
+         "Type": "Option",
+         "Inverse": "False"
+        },
+        "label": "Pressed"
+       },
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "True",
+         "State": "Default",
+         "Type": "Option",
+         "Inverse": "False"
+        },
+        "label": "Выбран"
+       },
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "True",
+         "State": "Read Only",
+         "Type": "Option",
+         "Inverse": "False"
+        },
+        "label": "Read Only"
+       }
+      ]
+     },
+     {
+      "title": "Группы",
+      "description": "Заголовок группы и разделитель",
+      "items": [
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "False",
+         "State": "Default",
+         "Type": "Group Title",
+         "Inverse": "False"
+        },
+        "label": "Group Title"
+       },
+       {
+        "set": "_ Select / Dropdown Items / M",
+        "variant": {
+         "Active": "False",
+         "State": "Default",
+         "Type": "Divider",
+         "Inverse": "False"
+        },
+        "label": "Divider"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Содержание",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Label",
+      "description": "Обязательность и дополнительный текст",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "+ Required (*)": true,
+         "+ Add. Text": true
+        }
+       }
+      ]
+     },
+     {
+      "title": "Без описания",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "Description Zone": false
+        }
+       }
+      ]
+     },
+     {
+      "title": "Заполнено, ведущая иконка",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "nested": {
+         "Select": {
+          "Leading Icon": true,
+          "Filled": "True",
+          "↳ Value": "Москва"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Corner Case",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Длинное значение",
+      "description": "Значение обрезается многоточием, полное — в Tooltip",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "nested": {
+         "Select": {
+          "Filled": "True",
+          "↳ Value": "Санкт-Петербург, Ленинградская область, Российская Федерация"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "title": "Длинное сообщение",
+      "description": "Сообщение переносится и не обрезается",
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Error",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "False"
+        },
+        "props": {
+         "↳ Message": "Этот вариант недоступен для вашего тарифа. Выберите другой вариант или смените тариф в настройках"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Инверсия",
+    "width": 440,
+    "cards": [
+     {
+      "title": "Inverse",
+      "description": "На тёмных поверхностях: светлые токены inverse-* для текста, иконок, рамки и списка",
+      "inverse": true,
+      "items": [
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "True"
+        },
+        "nested": {
+         "Select": {
+          "Filled": "True",
+          "↳ Value": "Москва"
+         }
+        }
+       },
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "None",
+         "Type": "Base",
+         "Size": "M",
+         "Open": "True",
+         "Inverse": "True"
+        }
+       },
+       {
+        "set": "Select",
+        "variant": {
+         "Field": "Vertical",
+         "Type": "Error",
+         "Size": "M",
+         "Open": "False",
+         "Inverse": "True"
+        },
+        "props": {
+         "↳ Message": "Выберите значение из списка"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

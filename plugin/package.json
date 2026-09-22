@@ -1,0 +1,22 @@
+{
+  "name": "feds-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FEDS — плагин дизайн-системы FEroom для Figma",
+  "type": "module",
+  "scripts": {
+    "presets": "node scripts/bundle-presets.mjs && node scripts/bundle-docs.mjs && node scripts/bundle-builds.mjs",
+    "build": "npm run presets && node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.138.0",
+    "@types/node": "^26.6.2",
+    "esbuild": "^0.28.2",
+    "fflate": "^0.8.3",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}

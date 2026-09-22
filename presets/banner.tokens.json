@@ -1,0 +1,831 @@
+{
+  "component": "banner",
+  "roots": [
+    "banner"
+  ],
+  "title": "Banner",
+  "kind": "component",
+  "analog": "status",
+  "source": "input/backlog/banner.md",
+  "axes": {
+    "Width": [
+      "Inset",
+      "Full Bleed"
+    ],
+    "Role": [
+      "Info",
+      "Success",
+      "Warning",
+      "Error"
+    ],
+    "Inverse": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "icon",
+    "title",
+    "description",
+    "actions",
+    "close"
+  ],
+  "l2": [
+    {
+      "name": "border/banner/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Banner M — толщина обводки контейнера"
+    },
+    {
+      "name": "gap/banner/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Banner M — промежуток между текстом и строкой действий (Button/Link)"
+    },
+    {
+      "name": "gap/banner/close/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "description": "Banner M — промежуток между контентом и кнопкой закрытия"
+    },
+    {
+      "name": "gap/banner/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/12",
+        "dark": "space/12"
+      },
+      "description": "Banner M — промежуток между иконкой роли и текстовым блоком"
+    },
+    {
+      "name": "gap/banner/title/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Banner M — промежуток между заголовком и текстом"
+    },
+    {
+      "name": "radius/banner/full-bleed",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/0",
+        "dark": "radius/0"
+      },
+      "description": "Banner — скругление контейнера, вариант Full bleed (без скругления)"
+    },
+    {
+      "name": "radius/banner/inset",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/12",
+        "dark": "radius/12"
+      },
+      "description": "Banner — скругление контейнера, вариант Inset"
+    },
+    {
+      "name": "size/banner/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Banner M — размер иконки роли"
+    },
+    {
+      "name": "space/banner/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Banner M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "space/banner/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/16",
+        "dark": "space/16"
+      },
+      "description": "Banner M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "typography/banner/m/description/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Banner M — текст сообщения: letter-spacing"
+    },
+    {
+      "name": "typography/banner/m/description/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Banner M — текст сообщения: line-height"
+    },
+    {
+      "name": "typography/banner/m/description/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Banner M — текст сообщения: size"
+    },
+    {
+      "name": "typography/banner/m/description/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Banner M — текст сообщения: weight"
+    },
+    {
+      "name": "typography/banner/m/title/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "description": "Banner M — заголовок: letter-spacing"
+    },
+    {
+      "name": "typography/banner/m/title/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Banner M — заголовок: line-height"
+    },
+    {
+      "name": "typography/banner/m/title/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Banner M — заголовок: size"
+    },
+    {
+      "name": "typography/banner/m/title/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/600",
+        "dark": "font/weight/600"
+      },
+      "description": "Banner M — заголовок: weight"
+    }
+  ],
+  "l3": [
+    {
+      "name": "banner/bg/error",
+      "type": "COLOR",
+      "alias": "color/status/red/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Error, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/bg/info",
+      "type": "COLOR",
+      "alias": "color/status/blue/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Info, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/bg/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/red/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Error, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/bg/inverse-info",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/blue/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Info, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/bg/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/green/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Success, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/bg/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/bg/transparent/accent/yellow/light",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Warning, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/bg/success",
+      "type": "COLOR",
+      "alias": "color/status/green/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Success, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/bg/warning",
+      "type": "COLOR",
+      "alias": "color/status/yellow/soft/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Banner — фон контейнера, роль Warning, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/border/error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Error, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/border/info",
+      "type": "COLOR",
+      "alias": "color/static/border/info/firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Info, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/border/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/border/danger/inverse-firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Error, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/border/inverse-info",
+      "type": "COLOR",
+      "alias": "color/static/border/info/inverse-firm",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Info, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/border/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/border/success/inverse-hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Success, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/border/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/border/warning/inverse-hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Warning, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/border/success",
+      "type": "COLOR",
+      "alias": "color/static/border/success/hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Success, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/border/warning",
+      "type": "COLOR",
+      "alias": "color/static/border/warning/hard",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Banner — обводка контейнера, роль Warning, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/icon/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Error, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/icon/info",
+      "type": "COLOR",
+      "alias": "color/static/indicator/info/firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Info, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/icon/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Error, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/icon/inverse-info",
+      "type": "COLOR",
+      "alias": "color/static/indicator/info/inverse-firm",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Info, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/icon/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Success, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/icon/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Warning, на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/icon/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Success, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/icon/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Banner — иконка роли Warning, на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/size/m/actions-gap",
+      "type": "FLOAT",
+      "alias": "gap/banner/actions/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Banner M — промежуток между текстом и строкой действий (Button/Link)"
+    },
+    {
+      "name": "banner/size/m/border",
+      "type": "FLOAT",
+      "alias": "border/banner/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Banner M — толщина обводки контейнера"
+    },
+    {
+      "name": "banner/size/m/close-gap",
+      "type": "FLOAT",
+      "alias": "gap/banner/close/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Banner M — промежуток между контентом и кнопкой закрытия"
+    },
+    {
+      "name": "banner/size/m/icon",
+      "type": "FLOAT",
+      "alias": "size/banner/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Banner M — размер иконки роли"
+    },
+    {
+      "name": "banner/size/m/icon-gap",
+      "type": "FLOAT",
+      "alias": "gap/banner/icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Banner M — промежуток между иконкой роли и текстовым блоком"
+    },
+    {
+      "name": "banner/size/m/radius-full-bleed",
+      "type": "FLOAT",
+      "alias": "radius/banner/full-bleed",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Banner M — скругление контейнера, вариант Full bleed (без скругления)"
+    },
+    {
+      "name": "banner/size/m/radius-inset",
+      "type": "FLOAT",
+      "alias": "radius/banner/inset",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Banner M — скругление контейнера, вариант Inset"
+    },
+    {
+      "name": "banner/size/m/title-gap",
+      "type": "FLOAT",
+      "alias": "gap/banner/title/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Banner M — промежуток между заголовком и текстом"
+    },
+    {
+      "name": "banner/size/m/x",
+      "type": "FLOAT",
+      "alias": "space/banner/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Banner M — горизонтальный внутренний отступ контейнера"
+    },
+    {
+      "name": "banner/size/m/y",
+      "type": "FLOAT",
+      "alias": "space/banner/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Banner M — вертикальный внутренний отступ контейнера"
+    },
+    {
+      "name": "banner/text/description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Banner — цвет основного текста сообщения (одинаков для всех ролей), на светлой (обычной) поверхности"
+    },
+    {
+      "name": "banner/text/inverse-description",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Banner — цвет основного текста сообщения (одинаков для всех ролей), на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/text/inverse-title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Banner — цвет заголовка (одинаков для всех ролей), на тёмной (инверсной) поверхности"
+    },
+    {
+      "name": "banner/text/title",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Banner — цвет заголовка (одинаков для всех ролей), на светлой (обычной) поверхности"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/banner/m/title",
+      "fontFamily": "Roboto",
+      "fontStyle": "SemiBold",
+      "vars": {
+        "fontSize": "typography/banner/m/title/size",
+        "lineHeight": "typography/banner/m/title/line-height",
+        "letterSpacing": "typography/banner/m/title/letter-spacing",
+        "fontWeight": "typography/banner/m/title/weight"
+      },
+      "description": "Banner M — заголовок"
+    },
+    {
+      "name": "typography/banner/m/description",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/banner/m/description/size",
+        "lineHeight": "typography/banner/m/description/line-height",
+        "letterSpacing": "typography/banner/m/description/letter-spacing",
+        "fontWeight": "typography/banner/m/description/weight"
+      },
+      "description": "Banner M — текст сообщения"
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "banner/text/title",
+      "bg": "banner/bg/info",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/text/description",
+      "bg": "banner/bg/info",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/icon/info",
+      "bg": "banner/bg/info",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/border/info",
+      "bg": "banner/bg/info",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/text/inverse-title",
+      "bg": "banner/bg/inverse-info",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/inverse-description",
+      "bg": "banner/bg/inverse-info",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/icon/inverse-info",
+      "bg": "banner/bg/inverse-info",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/border/inverse-info",
+      "bg": "banner/bg/inverse-info",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/title",
+      "bg": "banner/bg/success",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/text/description",
+      "bg": "banner/bg/success",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/icon/success",
+      "bg": "banner/bg/success",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/border/success",
+      "bg": "banner/bg/success",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/text/inverse-title",
+      "bg": "banner/bg/inverse-success",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/inverse-description",
+      "bg": "banner/bg/inverse-success",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/icon/inverse-success",
+      "bg": "banner/bg/inverse-success",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/border/inverse-success",
+      "bg": "banner/bg/inverse-success",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/title",
+      "bg": "banner/bg/warning",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/text/description",
+      "bg": "banner/bg/warning",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/icon/warning",
+      "bg": "banner/bg/warning",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/border/warning",
+      "bg": "banner/bg/warning",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/text/inverse-title",
+      "bg": "banner/bg/inverse-warning",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/inverse-description",
+      "bg": "banner/bg/inverse-warning",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/icon/inverse-warning",
+      "bg": "banner/bg/inverse-warning",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/border/inverse-warning",
+      "bg": "banner/bg/inverse-warning",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/title",
+      "bg": "banner/bg/error",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/text/description",
+      "bg": "banner/bg/error",
+      "kind": "text"
+    },
+    {
+      "fg": "banner/icon/error",
+      "bg": "banner/bg/error",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/border/error",
+      "bg": "banner/bg/error",
+      "kind": "graphic"
+    },
+    {
+      "fg": "banner/text/inverse-title",
+      "bg": "banner/bg/inverse-error",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/text/inverse-description",
+      "bg": "banner/bg/inverse-error",
+      "kind": "text",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/icon/inverse-error",
+      "bg": "banner/bg/inverse-error",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    },
+    {
+      "fg": "banner/border/inverse-error",
+      "bg": "banner/bg/inverse-error",
+      "kind": "graphic",
+      "over": "color/bg/page/inverse-main"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Грамматика: короткая форма неинтерактивного компонента, как у Status — `{c}/{part}/{variant}`; части bg, border, icon, text. Размеры — `{c}/size/{s}/{prop}` → свои L2 `space|gap|size|radius|border/{c}/…`.",
+    "Роли: info · success · warning · error. Документ называет четвёртую роль `danger`; в L3 взято имя `error`, как у Status и Field (`status/*/error`, `field/description/*/error`). В L2 роль идёт в семантику `color/static/*/danger/*`. Роль brand не заводится (документ). Neutral в документе нет — не заводится.",
+    "Соответствие оттенков как у Status: info → blue, success → green, warning → yellow, error → red.",
+    "Фон (regular) — `color/status/{hue}/soft/default`, тот же, что у Status Soft и Badge Soft. Документ предлагал `color/layer/card|page/{role}/subtle` — такого корня в FEroom нет.",
+    "Инверсия — по образцу Field (`field/description/*/inverse-{role}`) и Status (`status/text/inverse`): отдельные L3 с сегментом `inverse-{role}` / `inverse-title`, алиасы на `inverse-*` L2 (`color/static/{text,indicator,border}/…/inverse-firm|inverse-hard`). Документ пишет «Inverse наследует режим фрейма, отдельного варианта нет, inverse-токенов нет» — в FEroom тема приходит через light/dark, а тёмная поверхность внутри светлой темы — через `inverse-*`, поэтому нужна ось Inverse = False/True.",
+    "Фон inverse: у цветных `color/status/{hue}` нет `inverse-soft`, а у `color/bg/*` нет blue/yellow. Взят `color/static/bg/transparent/accent/{hue}/light` (прозрачный тон 10–12 %, одинаков в light/dark) — полупрозрачная заливка корректно ложится и на тёмную, и на светлую инверсную поверхность. Новый цвет в L2 не создавался.",
+    "Иконка роли — `color/static/indicator/{role}/firm`, обводка — `color/static/border/{role}/firm`; там, где firm не даёт 3:1 к фону, взят следующий шаг той же шкалы `hard` (см. список замен ниже). Документ требует обводку ≥ 3:1 (`color/static/border/{role}/default`) — в FEroom шага default нет.",
+    "Заголовок и текст нейтральные (`color/static/text/base/*`), одинаковые для всех ролей — роль несут иконка, фон и обводка (WCAG 1.4.1).",
+    "Вложенные действия — экземпляры Button и Link, кнопка закрытия — экземпляр Button Icon Only (на inverse — тип Inverse-secondary). Их токены не дублируются; ссылки в сводке ошибок — экземпляры Link.",
+    "Типографика: L2 `typography/{c}/{size}/{title|description}/{size|line-height|letter-spacing|weight}` → `font/*`, стили `typography/{c}/{size}/{slot}` без группы action (компонент неинтерактивный, `interactive: false`). Межбуквенный интервал по соглашению FEroom для этих кеглей: 14/20 → 0.1 (`font/letter-spacing/10`), 12/16 → 0.25 (`font/letter-spacing/25`) — как у `typography/content/label/*`, `field/*`. Документ интервал не задаёт. Начертание заголовка 600 → Roboto SemiBold.",
+    "Слоты текста названы `title` и `description` (как Name/Description у Checkbox, Chip, Avatar); документ называет их «Заголовок» и «Текст».",
+    "Эффекты и тени не создаются: Alert/Banner лежат в потоке и тени не требуют.",
+    "codeSyntax не заполняется (решение автора). L3 публикуются (как все L3). Правило скрытия L2 от публикации ещё не выведено (figma-conventions.md) — флаг не задаётся в пресете, решает плагин по правилу аналитика.",
+    "Все L2 размеров ссылаются на существующие примитивы L1, исключений (сырых значений, L3 → L1) нет. `gap/*` → `space/*` L1, как у `gap/status/*`.",
+    "Banner: размер в документе один; в именах он записан как `m` (`banner/size/m/*`, `typography/banner/m/*`), чтобы сохранить грамматику `{c}/size/{s}/{prop}` и совпасть по шагу с Alert M. Ось Size в компонент не выводится.",
+    "Banner: варианты ширины Inset (радиус 12) и Full bleed (радиус 0) → `radius/banner/inset` → `radius/12`, `radius/banner/full-bleed` → `radius/0`; L3 `banner/size/m/radius-inset|radius-full-bleed` (форма как `box-radius-circle|square`). Документ предлагал общий `radius/card` — в FEroom у компонента свои L2.",
+    "Banner Full bleed: обводка только снизу — задаётся сборкой (толщины сторон 0/0/0/`banner/size/m/border`), отдельный токен не нужен.",
+    "Banner: пояснение — `color/static/text/base/medium` (документ: `text/neutral/secondary`), заголовок — `base/hard`.",
+    "Banner: `z-index/banner` = 1200 (закрепление) — свойство кода, не переменная Figma; в пресет не входит.",
+    "Banner: толщина обводки 1 (документ толщину не задаёт) → `border/1`.",
+    "Замена по контрасту: `banner/icon/success`: `color/static/indicator/success/firm` не даёт 3:1 к фону → `color/static/indicator/success/hard`",
+    "Замена по контрасту: `banner/border/success`: `color/static/border/success/firm` не даёт 3:1 к фону → `color/static/border/success/hard`",
+    "Замена по контрасту: `banner/icon/inverse-success`: `color/static/indicator/success/inverse-firm` не даёт 3:1 к фону → `color/static/indicator/success/inverse-hard`",
+    "Замена по контрасту: `banner/border/inverse-success`: `color/static/border/success/inverse-firm` не даёт 3:1 к фону → `color/static/border/success/inverse-hard`",
+    "Замена по контрасту: `banner/icon/warning`: `color/static/indicator/warning/firm` не даёт 3:1 к фону → `color/static/indicator/warning/hard`",
+    "Замена по контрасту: `banner/border/warning`: `color/static/border/warning/firm` не даёт 3:1 к фону → `color/static/border/warning/hard`",
+    "Замена по контрасту: `banner/icon/inverse-warning`: `color/static/indicator/warning/inverse-firm` не даёт 3:1 к фону → `color/static/indicator/warning/inverse-hard`",
+    "Замена по контрасту: `banner/border/inverse-warning`: `color/static/border/warning/inverse-firm` не даёт 3:1 к фону → `color/static/border/warning/inverse-hard`"
+  ]
+}

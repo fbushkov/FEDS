@@ -1,0 +1,6915 @@
+{
+  "component": "field",
+  "title": "Input, Text Area, Field",
+  "kind": "component",
+  "origin": "existing",
+  "source": "input/tokens/variables.json",
+  "doc": "input/builds/field/field.md",
+  "roots": [
+    "field"
+  ],
+  "prefixes": [
+    "field/input/",
+    "field/label/",
+    "field/description/",
+    "field/counter/",
+    "field/size/input/",
+    "field/size/text-area/",
+    "field/size/label/",
+    "field/size/description/",
+    "field/size/field/"
+  ],
+  "decisions": [
+    "Пресет снят с текущей системы: повторная запись в исходный файл должна дать 0 изменений."
+  ],
+  "l2": [
+    {
+      "name": "border/field/input/l",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/input/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "border/field/input/s",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/icon-text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/icon-text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/icon-text/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/left-right/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/left-right/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/left-right/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/text-link/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/text-link/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/description/text-link/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/horizontal/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/horizontal/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/horizontal/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/leading/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/leading/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/leading/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/text/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/text/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/text/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/trailing/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/trailing/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/input/trailing/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/horizontal/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/5",
+        "dark": "space/5"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/horizontal/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/horizontal/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/left-right/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/left-right/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/left-right/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/text-asterisk/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/text-asterisk/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/text-asterisk/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/vertical/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/vertical/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/label/vertical/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/vertical/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/vertical/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "gap/field/vertical/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/caret/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/2",
+        "dark": "radius/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/caret/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/1",
+        "dark": "radius/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/caret/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/1",
+        "dark": "radius/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/input/l",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/10",
+        "dark": "radius/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/input/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/8",
+        "dark": "radius/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "radius/field/input/s",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/6",
+        "dark": "radius/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "size/field/counter/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/counter/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/counter/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/extraspace/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/30",
+        "dark": "size/30"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/extraspace/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/extraspace/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/18",
+        "dark": "size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/hint-icon/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/hint-icon/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/hint-icon/box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/hint-icon/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/hint-icon/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/14",
+        "dark": "size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/hint-icon/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/12",
+        "dark": "size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/actions/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/box/l-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/box/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/box/m-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/box/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/box/s-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/box/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/0",
+        "dark": "size/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/icon/l-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/icon/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/2",
+        "dark": "size/2"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/icon/m-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/icon/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/1",
+        "dark": "size/1"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/icon/s-height",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/caret/icon/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/1",
+        "dark": "size/1"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/container/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/48",
+        "dark": "size/48"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/container/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/40",
+        "dark": "size/40"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/container/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/32",
+        "dark": "size/32"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/leading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/leading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/leading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/leading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/leading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/leading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/loading/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/loading/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/loading/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/loading/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/loading/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/loading/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/validation-markers/icon-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/28",
+        "dark": "size/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/validation-markers/icon-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/validation-markers/icon-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/validation-markers/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/validation-markers/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/input/validation-markers/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/height/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/height/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/height/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/horizontal/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/240",
+        "dark": "size/240"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/horizontal/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/216",
+        "dark": "size/216"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/horizontal/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/192",
+        "dark": "size/192"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/info-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/info-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/info-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/requirement/l-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/8",
+        "dark": "size/8"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/requirement/m-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/7",
+        "dark": "size/7"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/label/requirement/s-width",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/6",
+        "dark": "size/6"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/resizer/box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/resizer/box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/resizer/box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/12",
+        "dark": "size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/resizer/icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/12",
+        "dark": "size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/resizer/icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/10",
+        "dark": "size/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "size/field/resizer/icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/8",
+        "dark": "size/8"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/y/l-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/y/l-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/y/s-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/base/y/s-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/y/l-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/y/l-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/y/s-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/base/y/s-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/hint-icon/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/hint-icon/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/hint-icon/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/hint-icon/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/hint-icon/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/description/hint-icon/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/actions/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/actions/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/actions/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/container/x/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/container/x/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/container/x/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/container/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/container/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/container/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/leading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/leading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/leading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/loading-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/loading-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/loading-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/prefix/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/suffix/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/text/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/validation-icon/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/validation-icon/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/input/validation-icon/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/3",
+        "dark": "space/3"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/additional/y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/x/l-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/x/l-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/x/m-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/x/m-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/x/s-left",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/x/s-right",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/y/l-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/8",
+        "dark": "space/8"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/y/l-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/y/m-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/6",
+        "dark": "space/6"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/y/m-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/y/s-bottom",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/base/y/s-top",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/0",
+        "dark": "space/0"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/horizontal-y/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/13",
+        "dark": "space/13"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/horizontal-y/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/10",
+        "dark": "space/10"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/horizontal-y/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/9",
+        "dark": "space/9"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/info-box/l",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/info-box/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/2",
+        "dark": "space/2"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "space/field/label/info-box/s",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/1",
+        "dark": "space/1"
+      },
+      "hidden": false,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/counter/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/hint/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/prefix/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/suffix/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/28",
+        "dark": "font/line-height/28"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/18",
+        "dark": "font/size/18"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/input/text/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/additional/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/l/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/l/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/24",
+        "dark": "font/line-height/24"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/l/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/16",
+        "dark": "font/size/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/l/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/m/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/10",
+        "dark": "font/letter-spacing/10"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/m/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/m/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/m/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/s/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/25",
+        "dark": "font/letter-spacing/25"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/s/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/16",
+        "dark": "font/line-height/16"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/s/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/12",
+        "dark": "font/size/12"
+      },
+      "hidden": true,
+      "description": ""
+    },
+    {
+      "name": "typography/field/label/title/s/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "hidden": true,
+      "description": ""
+    }
+  ],
+  "l3": [
+    {
+      "name": "field/counter/inverse-over-limit",
+      "type": "COLOR",
+      "alias": "color/static/text/danger/inverse-firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/counter/inverse-regular",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/counter/over-limit",
+      "type": "COLOR",
+      "alias": "color/static/text/danger/firm",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/counter/regular",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/description/icon/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/danger/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/icon/hint",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/description/icon/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/danger/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/icon/inverse-hint",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-medium",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/description/icon/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/success/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/icon/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/warning/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/icon/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/success/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/icon/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/warning/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/text/error",
+      "type": "COLOR",
+      "alias": "color/static/text/danger/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/danger/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/text/hint",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/description/text/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/text/danger/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/danger/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/text/inverse-hint",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/description/text/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/text/success/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/success/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/text/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/text/warning/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/warning/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/text/success",
+      "type": "COLOR",
+      "alias": "color/static/text/success/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/success/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/description/text/warning",
+      "type": "COLOR",
+      "alias": "color/static/text/warning/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/warning/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/input/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/focused",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/disabled",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/inverse-focused",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/inverse-pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/bg/read-only",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/pure/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/focused",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-default",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/default",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/disabled",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-error",
+      "type": "COLOR",
+      "alias": "color/action/border/danger/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-focused",
+      "type": "COLOR",
+      "alias": "color/action/border/brand/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-hover",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/hover",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/inverse-soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/inverse-selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/read-only",
+      "type": "COLOR",
+      "alias": "color/action/border/base/soft/read-only",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/success",
+      "type": "COLOR",
+      "alias": "color/action/border/success/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/border/warning",
+      "type": "COLOR",
+      "alias": "color/action/border/warning/calm/selected",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/icon/caret",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/icon/inverse-caret",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/icon/inverse-loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/icon/inverse-resizer",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/icon/loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/icon/resizer",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/leading/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/leading/inverse-icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-soft",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/leading/inverse-text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/leading/text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/loading/inverse-loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/inverse-light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/loading/loading",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/inverse-disabled",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/inverse-placeholder",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/inverse-read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/inverse-value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/placeholder",
+      "type": "COLOR",
+      "alias": "color/static/text/base/soft",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/read-only",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/text/value",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/input/validation-icons/error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/danger/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/input/validation-icons/inverse-error",
+      "type": "COLOR",
+      "alias": "color/static/indicator/danger/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/danger/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/input/validation-icons/inverse-success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/success/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/input/validation-icons/inverse-warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/inverse-hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/warning/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/input/validation-icons/success",
+      "type": "COLOR",
+      "alias": "color/static/indicator/success/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/success/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/input/validation-icons/warning",
+      "type": "COLOR",
+      "alias": "color/static/indicator/warning/hard",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/indicator/warning/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/label/additional",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/base/soft",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/label/inverse-additional",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/base/inverse-soft",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/label/inverse-primary",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/label/inverse-requirement",
+      "type": "COLOR",
+      "alias": "color/static/text/danger/inverse-hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/danger/inverse-firm",
+        "approved": "2026-09-21, контраст WCAG на inverse-поверхности; иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/label/inverse-secondary",
+      "type": "COLOR",
+      "alias": "color/static/text/base/inverse-medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/label/primary",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/label/requirement",
+      "type": "COLOR",
+      "alias": "color/static/text/danger/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "",
+      "change": {
+        "was": "color/static/text/danger/firm",
+        "approved": "2026-09-21, contrast WCAG (light и dark), иконка в цвет текста"
+      }
+    },
+    {
+      "name": "field/label/secondary",
+      "type": "COLOR",
+      "alias": "color/static/text/base/medium",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/counter",
+      "type": "FLOAT",
+      "alias": "size/field/counter/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/gap-icon-text",
+      "type": "FLOAT",
+      "alias": "gap/field/description/icon-text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/gap-left-right",
+      "type": "FLOAT",
+      "alias": "gap/field/description/left-right/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/gap-text-link",
+      "type": "FLOAT",
+      "alias": "gap/field/description/text-link/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/hint-icon",
+      "type": "FLOAT",
+      "alias": "size/field/hint-icon/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/hint-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/hint-icon/box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/hint-icon-x",
+      "type": "FLOAT",
+      "alias": "space/field/description/hint-icon/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/hint-icon-y",
+      "type": "FLOAT",
+      "alias": "space/field/description/hint-icon/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/y/l-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/l/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/y/l-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/counter",
+      "type": "FLOAT",
+      "alias": "size/field/counter/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/gap-icon-text",
+      "type": "FLOAT",
+      "alias": "gap/field/description/icon-text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/gap-left-right",
+      "type": "FLOAT",
+      "alias": "gap/field/description/left-right/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/gap-text-link",
+      "type": "FLOAT",
+      "alias": "gap/field/description/text-link/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/hint-icon",
+      "type": "FLOAT",
+      "alias": "size/field/hint-icon/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/hint-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/hint-icon/box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/hint-icon-x",
+      "type": "FLOAT",
+      "alias": "space/field/description/hint-icon/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/hint-icon-y",
+      "type": "FLOAT",
+      "alias": "space/field/description/hint-icon/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/m/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/counter",
+      "type": "FLOAT",
+      "alias": "size/field/counter/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/gap-icon-text",
+      "type": "FLOAT",
+      "alias": "gap/field/description/icon-text/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/gap-left-right",
+      "type": "FLOAT",
+      "alias": "gap/field/description/left-right/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/gap-text-link",
+      "type": "FLOAT",
+      "alias": "gap/field/description/text-link/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/hint-icon",
+      "type": "FLOAT",
+      "alias": "size/field/hint-icon/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/hint-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/hint-icon/box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/hint-icon-x",
+      "type": "FLOAT",
+      "alias": "space/field/description/hint-icon/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/hint-icon-y",
+      "type": "FLOAT",
+      "alias": "space/field/description/hint-icon/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/y/s-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/description/s/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/description/base/y/s-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/l/gap-horizontal",
+      "type": "FLOAT",
+      "alias": "gap/field/horizontal/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/l/gap-vertical",
+      "type": "FLOAT",
+      "alias": "gap/field/vertical/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/l/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/base/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/l/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/base/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/l/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/base/y/l-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/l/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/base/y/l-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/field/vertical/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/m/gap-horizontal",
+      "type": "FLOAT",
+      "alias": "gap/field/horizontal/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/m/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/base/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/m/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/base/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/m/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/base/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/m/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/base/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/s/gap-horizontal",
+      "type": "FLOAT",
+      "alias": "gap/field/horizontal/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/s/gap-vertical",
+      "type": "FLOAT",
+      "alias": "gap/field/vertical/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/s/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/base/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/s/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/base/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/s/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/base/y/s-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/base/s/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/base/y/s-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/extraspace/l",
+      "type": "FLOAT",
+      "alias": "size/field/extraspace/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/extraspace/m",
+      "type": "FLOAT",
+      "alias": "size/field/extraspace/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/field/extraspace/s",
+      "type": "FLOAT",
+      "alias": "size/field/extraspace/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/actions",
+      "type": "FLOAT",
+      "alias": "size/field/input/actions/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/actions/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/border",
+      "type": "FLOAT",
+      "alias": "border/field/input/l",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/box/l-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/box/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/icon/l-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/icon/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/container",
+      "type": "FLOAT",
+      "alias": "size/field/input/container/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/input/container/x/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/container/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/input/container/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/input/leading/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/input/text/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/input/trailing/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/leading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/leading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/leading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/loading/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/loading/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/loading-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/prefix-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/prefix-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/prefix-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/input/l",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/suffix-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/suffix-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/suffix-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/validation-markers/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/validation-markers/icon-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/l/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/validation-icon/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/actions",
+      "type": "FLOAT",
+      "alias": "size/field/input/actions/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/actions/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/border",
+      "type": "FLOAT",
+      "alias": "border/field/input/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/box/m-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/box/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/icon/m-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/icon/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/container",
+      "type": "FLOAT",
+      "alias": "size/field/input/container/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/input/container/x/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/container/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/input/container/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/input/leading/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/input/text/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/input/trailing/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/leading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/leading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/leading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/loading/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/loading/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/loading-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/prefix-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/prefix-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/prefix-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/input/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/suffix-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/suffix-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/suffix-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/validation-markers/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/validation-markers/icon-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/m/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/validation-icon/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/actions",
+      "type": "FLOAT",
+      "alias": "size/field/input/actions/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/actions-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/actions/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/border",
+      "type": "FLOAT",
+      "alias": "border/field/input/s",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/caret-box-height",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/box/s-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/caret-box-width",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/box/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/caret-height",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/icon/s-height",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/caret-radius",
+      "type": "FLOAT",
+      "alias": "radius/field/caret/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/caret-width",
+      "type": "FLOAT",
+      "alias": "size/field/input/caret/icon/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/container",
+      "type": "FLOAT",
+      "alias": "size/field/input/container/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/container-x",
+      "type": "FLOAT",
+      "alias": "space/field/input/container/x/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/container-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/container/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/gap-container",
+      "type": "FLOAT",
+      "alias": "gap/field/input/container/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/gap-leading",
+      "type": "FLOAT",
+      "alias": "gap/field/input/leading/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/gap-text",
+      "type": "FLOAT",
+      "alias": "gap/field/input/text/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/gap-trailing",
+      "type": "FLOAT",
+      "alias": "gap/field/input/trailing/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/leading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/leading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/leading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/leading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/leading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/leading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/loading-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/loading/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/loading-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/loading/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/loading-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/loading-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/prefix-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/prefix-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/prefix-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/prefix/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/radius",
+      "type": "FLOAT",
+      "alias": "radius/field/input/s",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/suffix-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/suffix-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/suffix-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/suffix/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/text-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/text-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/text-y",
+      "type": "FLOAT",
+      "alias": "space/field/input/text/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/validation-icon",
+      "type": "FLOAT",
+      "alias": "size/field/input/validation-markers/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/validation-icon-box",
+      "type": "FLOAT",
+      "alias": "size/field/input/validation-markers/icon-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/input/s/validation-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/input/validation-icon/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/additional-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/additional-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/additional-y",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/gap-horizontal",
+      "type": "FLOAT",
+      "alias": "gap/field/label/horizontal/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/gap-left-right",
+      "type": "FLOAT",
+      "alias": "gap/field/label/left-right/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/gap-text-asterisk",
+      "type": "FLOAT",
+      "alias": "gap/field/label/text-asterisk/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/gap-vertical",
+      "type": "FLOAT",
+      "alias": "gap/field/label/vertical/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/height",
+      "type": "FLOAT",
+      "alias": "size/field/label/height/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/horizontal",
+      "type": "FLOAT",
+      "alias": "size/field/label/horizontal/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/horizontal-y",
+      "type": "FLOAT",
+      "alias": "space/field/label/horizontal-y/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/info-box",
+      "type": "FLOAT",
+      "alias": "size/field/label/info-box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/info-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/label/info-box/l",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/requirement",
+      "type": "FLOAT",
+      "alias": "size/field/label/requirement/l-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/x/l-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/x/l-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/y/l-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/l/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/y/l-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/additional-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/additional-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/additional-y",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/gap-horizontal",
+      "type": "FLOAT",
+      "alias": "gap/field/label/horizontal/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/gap-left-right",
+      "type": "FLOAT",
+      "alias": "gap/field/label/left-right/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/gap-text-asterisk",
+      "type": "FLOAT",
+      "alias": "gap/field/label/text-asterisk/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/gap-vertical",
+      "type": "FLOAT",
+      "alias": "gap/field/label/vertical/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/height",
+      "type": "FLOAT",
+      "alias": "size/field/label/height/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/horizontal",
+      "type": "FLOAT",
+      "alias": "size/field/label/horizontal/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/horizontal-y",
+      "type": "FLOAT",
+      "alias": "space/field/label/horizontal-y/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/info-box",
+      "type": "FLOAT",
+      "alias": "size/field/label/info-box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/info-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/label/info-box/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/requirement",
+      "type": "FLOAT",
+      "alias": "size/field/label/requirement/m-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/x/m-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/x/m-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/y/m-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/m/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/y/m-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/additional-x-left",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/additional-x-right",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/additional-y",
+      "type": "FLOAT",
+      "alias": "space/field/label/additional/y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/gap-horizontal",
+      "type": "FLOAT",
+      "alias": "gap/field/label/horizontal/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/gap-left-right",
+      "type": "FLOAT",
+      "alias": "gap/field/label/left-right/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/gap-text-asterisk",
+      "type": "FLOAT",
+      "alias": "gap/field/label/text-asterisk/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/gap-vertical",
+      "type": "FLOAT",
+      "alias": "gap/field/label/vertical/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/height",
+      "type": "FLOAT",
+      "alias": "size/field/label/height/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/horizontal",
+      "type": "FLOAT",
+      "alias": "size/field/label/horizontal/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/horizontal-y",
+      "type": "FLOAT",
+      "alias": "space/field/label/horizontal-y/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/info-box",
+      "type": "FLOAT",
+      "alias": "size/field/label/info-box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/info-icon-xy",
+      "type": "FLOAT",
+      "alias": "space/field/label/info-box/s",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/requirement",
+      "type": "FLOAT",
+      "alias": "size/field/label/requirement/s-width",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/x-left",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/x/s-left",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/x-right",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/x/s-right",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/y-bottom",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/y/s-bottom",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/label/s/y-top",
+      "type": "FLOAT",
+      "alias": "space/field/label/base/y/s-top",
+      "scopes": [
+        "GAP"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/text-area/l/resizer",
+      "type": "FLOAT",
+      "alias": "size/field/resizer/icon/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/text-area/l/resizer-box",
+      "type": "FLOAT",
+      "alias": "size/field/resizer/box/l",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/text-area/m/resizer",
+      "type": "FLOAT",
+      "alias": "size/field/resizer/icon/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/text-area/m/resizer-box",
+      "type": "FLOAT",
+      "alias": "size/field/resizer/box/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/text-area/s/resizer",
+      "type": "FLOAT",
+      "alias": "size/field/resizer/icon/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    },
+    {
+      "name": "field/size/text-area/s/resizer-box",
+      "type": "FLOAT",
+      "alias": "size/field/resizer/box/s",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": ""
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/field/input/text/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/text/l/size",
+        "lineHeight": "typography/field/input/text/l/line-height",
+        "letterSpacing": "typography/field/input/text/l/letter-spacing",
+        "fontWeight": "typography/field/input/text/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/text/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/text/m/size",
+        "lineHeight": "typography/field/input/text/m/line-height",
+        "letterSpacing": "typography/field/input/text/m/letter-spacing",
+        "fontWeight": "typography/field/input/text/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/text/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/text/s/size",
+        "lineHeight": "typography/field/input/text/s/line-height",
+        "letterSpacing": "typography/field/input/text/s/letter-spacing",
+        "fontWeight": "typography/field/input/text/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/prefix/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/prefix/l/size",
+        "lineHeight": "typography/field/input/prefix/l/line-height",
+        "letterSpacing": "typography/field/input/prefix/l/letter-spacing",
+        "fontWeight": "typography/field/input/prefix/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/prefix/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/prefix/m/size",
+        "lineHeight": "typography/field/input/prefix/m/line-height",
+        "letterSpacing": "typography/field/input/prefix/m/letter-spacing",
+        "fontWeight": "typography/field/input/prefix/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/prefix/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/prefix/s/size",
+        "lineHeight": "typography/field/input/prefix/s/line-height",
+        "letterSpacing": "typography/field/input/prefix/s/letter-spacing",
+        "fontWeight": "typography/field/input/prefix/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/suffix/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/suffix/l/size",
+        "lineHeight": "typography/field/input/suffix/l/line-height",
+        "letterSpacing": "typography/field/input/suffix/l/letter-spacing",
+        "fontWeight": "typography/field/input/suffix/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/suffix/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/suffix/m/size",
+        "lineHeight": "typography/field/input/suffix/m/line-height",
+        "letterSpacing": "typography/field/input/suffix/m/letter-spacing",
+        "fontWeight": "typography/field/input/suffix/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/input/suffix/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/input/suffix/s/size",
+        "lineHeight": "typography/field/input/suffix/s/line-height",
+        "letterSpacing": "typography/field/input/suffix/s/letter-spacing",
+        "fontWeight": "typography/field/input/suffix/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/label/title/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/label/title/l/size",
+        "lineHeight": "typography/field/label/title/l/line-height",
+        "letterSpacing": "typography/field/label/title/l/letter-spacing",
+        "fontWeight": "typography/field/label/title/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/label/title/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/label/title/m/size",
+        "lineHeight": "typography/field/label/title/m/line-height",
+        "letterSpacing": "typography/field/label/title/m/letter-spacing",
+        "fontWeight": "typography/field/label/title/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/label/title/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/label/title/s/size",
+        "lineHeight": "typography/field/label/title/s/line-height",
+        "letterSpacing": "typography/field/label/title/s/letter-spacing",
+        "fontWeight": "typography/field/label/title/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/label/additional/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/label/additional/l/size",
+        "lineHeight": "typography/field/label/additional/l/line-height",
+        "letterSpacing": "typography/field/label/additional/l/letter-spacing",
+        "fontWeight": "typography/field/label/additional/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/label/additional/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/label/additional/m/size",
+        "lineHeight": "typography/field/label/additional/m/line-height",
+        "letterSpacing": "typography/field/label/additional/m/letter-spacing",
+        "fontWeight": "typography/field/label/additional/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/label/additional/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/label/additional/s/size",
+        "lineHeight": "typography/field/label/additional/s/line-height",
+        "letterSpacing": "typography/field/label/additional/s/letter-spacing",
+        "fontWeight": "typography/field/label/additional/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/description/hint/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/hint/l/size",
+        "lineHeight": "typography/field/hint/l/line-height",
+        "letterSpacing": "typography/field/hint/l/letter-spacing",
+        "fontWeight": "typography/field/hint/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/description/hint/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/hint/m/size",
+        "lineHeight": "typography/field/hint/m/line-height",
+        "letterSpacing": "typography/field/hint/m/letter-spacing",
+        "fontWeight": "typography/field/hint/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/description/hint/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/hint/s/size",
+        "lineHeight": "typography/field/hint/s/line-height",
+        "letterSpacing": "typography/field/hint/s/letter-spacing",
+        "fontWeight": "typography/field/hint/s/weight"
+      }
+    },
+    {
+      "name": "typography/field/description/counter/l",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/counter/l/size",
+        "lineHeight": "typography/field/counter/l/line-height",
+        "letterSpacing": "typography/field/counter/l/letter-spacing",
+        "fontWeight": "typography/field/counter/l/weight"
+      }
+    },
+    {
+      "name": "typography/field/description/counter/m",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/counter/m/size",
+        "lineHeight": "typography/field/counter/m/line-height",
+        "letterSpacing": "typography/field/counter/m/letter-spacing",
+        "fontWeight": "typography/field/counter/m/weight"
+      }
+    },
+    {
+      "name": "typography/field/description/counter/s",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/field/counter/s/size",
+        "lineHeight": "typography/field/counter/s/line-height",
+        "letterSpacing": "typography/field/counter/s/letter-spacing",
+        "fontWeight": "typography/field/counter/s/weight"
+      }
+    }
+  ],
+  "exceptions": []
+}

@@ -1,0 +1,391 @@
+{
+  "component": "breadcrumbs",
+  "roots": [
+    "breadcrumbs"
+  ],
+  "title": "Breadcrumbs",
+  "kind": "component",
+  "analog": "link",
+  "source": "input/backlog/breadcrumbs.md",
+  "axes": {
+    "Size": [
+      "M"
+    ],
+    "Overflow": [
+      "False",
+      "True"
+    ]
+  },
+  "parts": [
+    "container",
+    "item",
+    "separator",
+    "current",
+    "overflow"
+  ],
+  "l2": [
+    {
+      "name": "size/breadcrumbs/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/24",
+        "dark": "size/24"
+      },
+      "description": "Breadcrumbs — высота строки пути (зона нажатия 24), размер M"
+    },
+    {
+      "name": "gap/breadcrumbs/m",
+      "type": "FLOAT",
+      "scopes": [
+        "GAP"
+      ],
+      "values": {
+        "light": "space/4",
+        "dark": "space/4"
+      },
+      "description": "Breadcrumbs — промежуток между уровнем пути и разделителем, размер M"
+    },
+    {
+      "name": "size/breadcrumbs/separator/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/12",
+        "dark": "size/12"
+      },
+      "description": "Breadcrumbs — размер иконки-разделителя, размер M"
+    },
+    {
+      "name": "size/breadcrumbs/overflow/m",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/20",
+        "dark": "size/20"
+      },
+      "description": "Breadcrumbs — размер кнопки «…» (скрытые уровни), размер M"
+    },
+    {
+      "name": "size/breadcrumbs/overflow/m-icon",
+      "type": "FLOAT",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "values": {
+        "light": "size/16",
+        "dark": "size/16"
+      },
+      "description": "Breadcrumbs — размер иконки в кнопке «…», размер M"
+    },
+    {
+      "name": "radius/breadcrumbs/overflow/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/4",
+        "dark": "radius/4"
+      },
+      "description": "Breadcrumbs — скругление кнопки «…», размер M"
+    },
+    {
+      "name": "radius/breadcrumbs/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "values": {
+        "light": "radius/7",
+        "dark": "radius/7"
+      },
+      "description": "Breadcrumbs — скругление кольца фокуса кнопки «…», размер M"
+    },
+    {
+      "name": "border/breadcrumbs/focus/m",
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "values": {
+        "light": "border/1",
+        "dark": "border/1"
+      },
+      "description": "Breadcrumbs — толщина кольца фокуса кнопки «…», размер M"
+    },
+    {
+      "name": "typography/breadcrumbs/m/current/size",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "values": {
+        "light": "font/size/14",
+        "dark": "font/size/14"
+      },
+      "description": "Breadcrumbs — текущая страница, размер M: кегль"
+    },
+    {
+      "name": "typography/breadcrumbs/m/current/line-height",
+      "type": "FLOAT",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "values": {
+        "light": "font/line-height/20",
+        "dark": "font/line-height/20"
+      },
+      "description": "Breadcrumbs — текущая страница, размер M: интерлиньяж"
+    },
+    {
+      "name": "typography/breadcrumbs/m/current/letter-spacing",
+      "type": "FLOAT",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "values": {
+        "light": "font/letter-spacing/0",
+        "dark": "font/letter-spacing/0"
+      },
+      "description": "Breadcrumbs — текущая страница, размер M: трекинг"
+    },
+    {
+      "name": "typography/breadcrumbs/m/current/weight",
+      "type": "FLOAT",
+      "scopes": [
+        "FONT_WEIGHT"
+      ],
+      "values": {
+        "light": "font/weight/400",
+        "dark": "font/weight/400"
+      },
+      "description": "Breadcrumbs — текущая страница, размер M: насыщенность"
+    }
+  ],
+  "l3": [
+    {
+      "name": "breadcrumbs/separator/icon",
+      "type": "COLOR",
+      "alias": "color/static/indicator/base/light",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Breadcrumbs — иконка-разделитель между уровнями пути"
+    },
+    {
+      "name": "breadcrumbs/current/text",
+      "type": "COLOR",
+      "alias": "color/static/text/base/hard",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "description": "Breadcrumbs — название текущей страницы (последний элемент, не ссылка)"
+    },
+    {
+      "name": "breadcrumbs/overflow/bg/default",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/default",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Breadcrumbs — фон кнопки «…»: обычное состояние"
+    },
+    {
+      "name": "breadcrumbs/overflow/bg/hover",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/hover",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Breadcrumbs — фон кнопки «…»: наведение"
+    },
+    {
+      "name": "breadcrumbs/overflow/bg/pressed",
+      "type": "COLOR",
+      "alias": "color/action/bg/base/ghost/pressed",
+      "scopes": [
+        "FRAME_FILL"
+      ],
+      "description": "Breadcrumbs — фон кнопки «…»: нажатие"
+    },
+    {
+      "name": "breadcrumbs/overflow/icon/default",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/default",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Breadcrumbs — иконка кнопки «…»: обычное состояние"
+    },
+    {
+      "name": "breadcrumbs/overflow/icon/hover",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/hover",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Breadcrumbs — иконка кнопки «…»: наведение"
+    },
+    {
+      "name": "breadcrumbs/overflow/icon/pressed",
+      "type": "COLOR",
+      "alias": "color/action/indicator/base/medium/pressed",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "description": "Breadcrumbs — иконка кнопки «…»: нажатие"
+    },
+    {
+      "name": "breadcrumbs/focus-ring",
+      "type": "COLOR",
+      "alias": "color/static/focus/brand",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "description": "Breadcrumbs — кольцо клавиатурного фокуса кнопки «…»"
+    },
+    {
+      "name": "breadcrumbs/size/m/box",
+      "type": "FLOAT",
+      "alias": "size/breadcrumbs/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Breadcrumbs M — высота строки пути"
+    },
+    {
+      "name": "breadcrumbs/size/m/gap",
+      "type": "FLOAT",
+      "alias": "gap/breadcrumbs/m",
+      "scopes": [
+        "GAP"
+      ],
+      "description": "Breadcrumbs M — промежуток между уровнем и разделителем"
+    },
+    {
+      "name": "breadcrumbs/size/m/separator-icon",
+      "type": "FLOAT",
+      "alias": "size/breadcrumbs/separator/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Breadcrumbs M — размер иконки-разделителя"
+    },
+    {
+      "name": "breadcrumbs/size/m/overflow-box",
+      "type": "FLOAT",
+      "alias": "size/breadcrumbs/overflow/m",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Breadcrumbs M — размер кнопки «…»"
+    },
+    {
+      "name": "breadcrumbs/size/m/overflow-icon",
+      "type": "FLOAT",
+      "alias": "size/breadcrumbs/overflow/m-icon",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "description": "Breadcrumbs M — размер иконки кнопки «…»"
+    },
+    {
+      "name": "breadcrumbs/size/m/overflow-radius",
+      "type": "FLOAT",
+      "alias": "radius/breadcrumbs/overflow/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Breadcrumbs M — скругление кнопки «…»"
+    },
+    {
+      "name": "breadcrumbs/size/m/focus-border",
+      "type": "FLOAT",
+      "alias": "border/breadcrumbs/focus/m",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "description": "Breadcrumbs M — толщина кольца фокуса кнопки «…»"
+    },
+    {
+      "name": "breadcrumbs/size/m/focus-radius",
+      "type": "FLOAT",
+      "alias": "radius/breadcrumbs/focus/m",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "description": "Breadcrumbs M — скругление кольца фокуса кнопки «…»"
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/action/breadcrumbs/m/current",
+      "fontFamily": "Roboto",
+      "fontStyle": "Regular",
+      "vars": {
+        "fontSize": "typography/breadcrumbs/m/current/size",
+        "lineHeight": "typography/breadcrumbs/m/current/line-height",
+        "letterSpacing": "typography/breadcrumbs/m/current/letter-spacing",
+        "fontWeight": "typography/breadcrumbs/m/current/weight"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "breadcrumbs/current/text",
+      "bg": "color/bg/page/main",
+      "kind": "text"
+    },
+    {
+      "fg": "breadcrumbs/separator/icon",
+      "bg": "color/bg/page/main",
+      "kind": "graphic"
+    },
+    {
+      "fg": "breadcrumbs/overflow/icon/default",
+      "bg": "breadcrumbs/overflow/bg/default",
+      "kind": "graphic"
+    },
+    {
+      "fg": "breadcrumbs/overflow/icon/hover",
+      "bg": "breadcrumbs/overflow/bg/hover",
+      "kind": "graphic"
+    },
+    {
+      "fg": "breadcrumbs/overflow/icon/pressed",
+      "bg": "breadcrumbs/overflow/bg/pressed",
+      "kind": "graphic"
+    },
+    {
+      "fg": "link/secondary/text/default",
+      "bg": "color/bg/page/main",
+      "kind": "text"
+    },
+    {
+      "fg": "breadcrumbs/focus-ring",
+      "bg": "color/bg/page/main",
+      "kind": "graphic"
+    }
+  ],
+  "exceptions": [],
+  "decisions": [
+    "Уровни пути — экземпляры Link / Standalone, Type Secondary, Size M, State Default/Hover/Pressed (+ Focused). Документ прямо строит уровень на Link, а все его числа совпадают с Link M: текст 14/20/400 (typography/link/m), иконка 16 (link/size/m/icon), цвета «вторичной» ссылки default 60 % → hover/pressed 85 % (link/secondary/text/* → color/action/text/base/medium/*), подчёркивание на hover — поведение Standalone Link. Свои токены ссылок не заводятся: только разделитель, текущая страница, кнопка «…», высота строки и промежуток. Иконка «дом» в корне и мобильный вариант «← Родитель» — Left Icon у того же Link.",
+    "Документ: цвет ссылок `color/action/text/neutral/secondary/*`, текущей — `color/static/text/neutral/primary`, разделителя — `color/static/icon/neutral/tertiary`. В FEroom это `link/secondary/*` (через экземпляр), `color/static/text/base/hard` и `color/static/indicator/base/light` (45 %, ≥ 3 : 1 к фону в light и dark).",
+    "Текущая страница — не ссылка, поэтому это собственный текстовый слой со статическим цветом и собственной типографикой `typography/breadcrumbs/m/current/*` (те же 14/20/400/0, что у typography/link/m — по правилу каждый компонент получает свой L2). Стиль `typography/action/breadcrumbs/m/current` (группа action: компонент интерактивный, как link).",
+    "Кнопка «…» — собственная часть, а не экземпляр Button: у Button Icon Only наименьший размер S = 24 с отступами и другой формой, а в строке пути «…» должна быть по высоте равна ссылке Link M (20). Цвета — как у ghost-кнопки: фон `color/action/bg/base/ghost/*`, иконка `color/action/indicator/base/medium/*` (тот же тон, что link/secondary/icon, чтобы «…» не выделялась среди уровней). Иконка — `ellipsis` из набора Lucide. Disabled нет (документ).",
+    "Разделитель — иконка `chevron-right` 12 (альтернатива «/» — значение свойства компонента, не токен). Отступ 4 с каждой стороны реализован промежутком auto layout `gap/breadcrumbs/m` = 4 между всеми элементами строки — между названиями получается 4 + 12 + 4.",
+    "Высота строки 24 (`size/breadcrumbs/m`) — зона нажатия по вертикали; ссылка Link M (20) центрируется внутри. Имена документа `size/control/s`, `space/inline/tight`, `size/icon/xs`, `space/stack/default`, `space/focus-ring/offset` в FEroom не существуют — заведены свои L2. Отступ «крошки → заголовок страницы» (8) — правило раскладки страницы, токен не заводится.",
+    "Кольцо фокуса кнопки «…»: толщина 1 и скругление 7 — как у Link M (border/link/focus-regular, radius/link/focus/m), чтобы в одной строке фокус ссылок и «…» выглядел одинаково. Документ просит 2 px — расхождение, открытый вопрос: менять ли фокус Link M целиком.",
+    "Размер один (документ), но в именах сохранён сегмент `m` (`breadcrumbs/size/m/*`) — компактный вариант S (12/16, Link S) добавится без переименований.",
+    "Инверсия: документ говорит «наследует режим фрейма, отдельного варианта нет»; в FEroom инверсия делается токенами `inverse-*`. Но у Link, из экземпляров которого состоит путь, инверсных токенов нет, поэтому ось Inverse у Breadcrumbs не заводится: свои inverse-токены разделителя и текущей страницы без инверсного Link дали бы нечитаемые ссылки. Появится вместе с инверсией Link.",
+    "Меню скрытых уровней — Dropdown/Menu (отдельный компонент бэклога), его токены здесь не создаются. Tooltip для обрезанных названий — экземпляр Tooltip.",
+    "Анимации и тени не создаются, эффект-стили не нужны."
+  ]
+}
